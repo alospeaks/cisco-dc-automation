@@ -175,7 +175,7 @@ I have made my repository public, which means anyone should have access to my fi
 ***I have run through the lab and saved all my configurations here.  Bookmark it, if you have difficulties with the lab, you can take a look at my codes.  At the end of the lab, you should also have all your scripts uploaded to git hub. Make sure after you finish each section commit and push your code to gitlab as git does not do automatic push.  git add . , git commit -m 'message'  and  git push.***
 
 
-###Git cheat sheet**
+#Git cheat sheet**
 ```
 git add *
 git commit -m "your comment"
@@ -190,7 +190,7 @@ http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf
 
 
 
-###Git Tips
+#Git Tips
 ####How do i push my update with one command?
 you need to create a script similar to this?
 ```
@@ -206,4 +206,5 @@ make it executable ..chmod 700
 
 git config -I
 
+git remote set-url origin https://<username>:<password>@github.com/Hemakuma/cisco-dc-automation.git
 git remote set-url orgin http://<username>:<password>@github.com/hemakuma/training.git
