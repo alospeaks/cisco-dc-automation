@@ -188,9 +188,9 @@ https://github.com/Hemakuma/training/blob/master/ansible/Dockerfile
 
 1. Spin up a nxos ansible container
     1. Mac Users  
-    `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible/ubuntu14.04-ansible`
+    `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
     2. Windows Users  
-    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible/ubuntu14.04-ansible`
+    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
 
     This will start the container and log you in. From inside the container.
 
