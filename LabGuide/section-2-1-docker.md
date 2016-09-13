@@ -1,29 +1,5 @@
 **Table of Contents**
-- [Docker](#)
-	- [Docker Toolbox](#)
-		- [Exercise-1](#exercise-1)
-			- [Installing Docker-Toolbox](#exercise-1)
-		- [Exercise-2](#exercise-2)
-			- [Working with Docker Machine Utility](#exercise-2)
-		- [Exercise-3](#exercise-3)
-			- [Ssh into your Docker VM](#)
-		- [Exercise-4](#exercise-4)
-			- [Creating source file.](#)
-		- [Exercise-5](#exercise-5)
-			- [Setting the Environment variables using source file](#)
-	- [Docker Containers](#)
-		- [Nxtoolkit Container](#)
-		- [Exercise-6](#exercise-6)
-			- [Creating nxtoolkit image](#)
-		- [Exercise-7](#exercise-7)
-			- [Spin up a nxtoolkit Container using this image](#)
-		- [Ansible Docker Container](#)
-		- [Exercise-8](#exercise-8)
-			- [Build Ansible Dockerfile](#)
-		- [Exercise-9](#exercise-9)
-			- [Creating Ansible Container using Docker](#)
-		- [Python Docker Container](#)
-- [Docker Tips](#docker-tips)
+
 
 
 #Docker
