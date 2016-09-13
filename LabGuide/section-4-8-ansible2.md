@@ -4,6 +4,7 @@ Ansible is an open-source software platform for configuring ,managing and orches
 Playbooks contains one or multiple plays and plays contains one or multiple tasks.  Tasks talks to ansible module. Ansible module are python scripts that configures the devices in the inventory  list.   Playbook is applied to host inventory file.  Inventory file contains list of all the devices that needs to be automated. Within a single play, you can specify which host this play applies to  from the list of all available host defined in the inventory file.
 
 ![ansible-0](/images/ansible-0.png)
+
 ![ansibel-1](/images/ansible-1.png)
 
 
