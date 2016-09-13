@@ -194,24 +194,8 @@ https://github.com/Hemakuma/training/blob/master/ansible/Dockerfile
 
     This will start the container and log you in. From inside the container.
 
-2. Copy my ansible scripts to your directory.
-3.
-
- Copy all the example scripts on your own directory so that you can edit it using Atom on your laptop.
-    1. `pwd` ...you should be inside your `myscripts` directory.  if not  then type   
-    2. `cd /nxos-ansible/myscripts/`
-    3. `cp -r /nxos-ansible/example-playbooks/* .``
-    4. copy the template directory to myscripts directory too
-    5. `cp -r /nxos-ansible/templates/ .`
-    6. `ls`
-    7. Now all these files will be available on your sublime.
-
-6. Go to your Atom editor and you should all these files under ansible folder.
-
-
-
-###Python Docker Container
-
+2. exit the container.  We will use this container later in the ansible exercises.
+3. Go to your Atom editor and you should all these files under ansible folder.
 
 
 #Docker Tips
