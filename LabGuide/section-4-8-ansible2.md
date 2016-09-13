@@ -20,7 +20,7 @@ http://docs.ansible.com/ansible/list_of_network_modules.html
 ##Exercise 1
 ####Creating Ansible Container using Docker
 See section-2-1
-
+https://github.com/Hemakuma/cisco-dc-automation/blob/master/LabGuide/section-2-1-docker.md#exercise-8
 
 ##Exercise 2
 ####Login in to your Ansible Container
