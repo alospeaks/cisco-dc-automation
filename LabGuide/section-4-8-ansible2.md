@@ -30,7 +30,6 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/LabGuide/section-2-1
 cd training
 source source.docker
 docker attach ansible
-
 ```
 
 
@@ -41,7 +40,23 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 1. Switch to `ATOM` Editor , close all the currently opened files.
 2. Right click on `ansible` folder and select `New File`.
 3. Save this file as `hosts`
-3. add the the following lines to the file http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hosts
+3. add the the following lines to the file   
+```
+[all:vars]
+ansible_connection = local
+
+[n9k-1]
+172.16.123.134
+[n9k-2]
+10.114.217.158
+
+[DC-1:children]
+n9k-1
+
+[DC-2:children]
+n9k-2
+
+```
 4. Delete all the host from the above file , except for the switch that is assigned to you.  Your host file should be similar to the picture below.
 
 ![ansibel-1](/images/ansible-2.png)
