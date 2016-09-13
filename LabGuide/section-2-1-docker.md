@@ -161,7 +161,6 @@ go to training directory
 
 You are now ready to do off box programming.
 
-
 ##Ansible Docker Container
 Lets install install in a docker container.
 
