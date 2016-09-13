@@ -85,8 +85,8 @@ Ensure following vlans are configured on all the switches.
 |10	| web|
 | 20 |	app|
 |30	|db|
-|40	|misc|
-|99	|native-vlan|
+|40	|misc
+|99	|native-vlan
 
 Take a look at the "how to " folder and see if you can use any of the script to meet this requirement.
 Modify examples-vlan.yml.  Study the code,  notice that as you have many different ways of configuring the vlans.  Lets comment out some of them. In ansible, if you add # at the beginning of the line, ansible treats it as if it is a comment line, therefore it will not execute it.
