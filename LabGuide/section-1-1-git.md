@@ -1,0 +1,209 @@
+#GIT Exercises
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [GIT Exercises](#git-exercises)
+	- [Introduction](#introduction)
+	- [Exercise-1](#exercise-1)
+			- [Installing git](#installing-git)
+		- [Mac Users](#mac-users)
+		- [Windows Users](#windows-users)
+	- [Exercise-2](#exercise-2)
+			- [Generating ssh keys](#generating-ssh-keys)
+		- [Mac](#mac)
+		- [Windows](#windows)
+	- [Exercise-3](#exercise-3)
+			- [Creating github account and uploading your ssh key](#creating-github-account-and-uploading-your-ssh-key)
+	- [Exercise-4](#exercise-4)
+			- [Creating a New Project on Github.com](#creating-a-new-project-on-githubcom)
+	- [Exercise-5](#exercise-5)
+			- [Putting a directory under git control.](#putting-a-directory-under-git-control)
+	- [Exercise-6](#exercise-6)
+			- [Cloning your github repository](#cloning-your-github-repository)
+	- [Exercise-7](#exercise-7)
+			- [Editing Files using ATOM Editor](#editing-files-using-atom-editor)
+	- [Exercise-8](#exercise-8)
+			- [Saving file to your Repository](#saving-file-to-your-repository)
+	- [Exercise-9](#exercise-9)
+			- [Verify that file exit on github](#verify-that-file-exit-on-github)
+		- [Exercise-10](#exercise-10)
+			- [Viewing someone else's repository. (optional)](#viewing-someone-elses-repository-optional)
+		- [Git cheat sheet**](#git-cheat-sheet)
+
+<!-- /TOC -->
+## Introduction
+GIT is a very popular and efficient open source Version Control System. It tracks content such as files and directories for changes. Files transition between 3 states, modified, staged and committed file.  Repository are local but if you want to share your codes with your team, you can also push it to remote/central repository.
+![GitHub](/images/git-intro-1.png)
+
+## Exercise-1
+####Installing git
+
+##### Mac Users
+1. **Xcode** is a large suite of software development tools and libraries from Apple.  This includes git package.  Lets install xcode-select, command line utility for xcode.
+2. Open up a terminal window.  `Cmd+space`  and type `terminal`
+3. on the terminal type  `xcode-select --install`
+4. A software update popup window will appear.
+5. click on `Install`.
+6. Wait for it to install the Command line tools.
+7. type  `git --help`
+8. you see all the options for git command.
+
+##### Windows Users
+1. Download  and install `mysGit` package. Use all the default setting for installation.  Git for Windows
+2. you should see Git Bash icon on your desktop.  Whenever we say open terminal in this lab guide, please open `git Bash terminal` on windows.  
+
+**Do not open the command line**
+
+
+## Exercise-2
+####Generating ssh keys
+
+We will need to authenticate to the github server.  For this, we need to upload the ssh public key to the git server. Let's generate the public keys.
+### Mac
+1. open up a terminal window and type the following.  Replace the cec id with your own cec-id
+2. `ssh-keygen -t rsa -C "<cec id>@cisco.com"``
+3. Use all he default values and leave passphrase empty.
+4. copy the rsa public cert to the clipboard
+5. type  `pbcopy < ~/.ssh/id_rsa.pub`
+
+### Windows
+1. Open git Bash terminal. You should have a icon on the desktop.
+2. generate the ssh public key.  Type the following in the git bash terminal
+3. `ssh-keygen -t rsa -C "<cec id>@cisco.com"``
+4. Leave the passphrase blank and use all the default values.
+5. copy the key. On the terminal window type  
+6. `clip < ~/.ssh/id_rsa.pub`
+
+  You will need key for Exercise 3
+
+
+## Exercise-3
+####Creating github account and uploading your ssh key
+
+  1. Point your browser to http://github.com
+  2. Create a account if you don't have it already.
+  3. ![GitHub](/images/github-1.png)
+  3. Login using your  username/password
+  4. Upload the public ssh key of your laptop  to  the github server.
+  5. click on `Your Profile`  
+  ![GitHub](/images/git-sshkey-1.png)
+  7. Click on `Edit profile`  
+  ![GitHub](/images/git-sshkey-2.png)
+  8. Click on the `SSH Key`
+  ![GitHub](/images/git-sshkey-3.png)
+  9. Click on the `New SSH Key` and fill out the form. Paste the key that you copied in exercise 2.
+  ![GitHub](/images/git-sshkey-4.png)
+
+  Your key should be added to the github server now.
+
+
+## Exercise-4
+####Creating a New Project on Github.com
+
+  1. click on the + button to add a new repository to your account.  
+  ![GitHub](/images/git-pro-1.png)
+  3. Name the repository `training`
+  4. Fill in the form as below
+  ![project](/images/git-pro-2.png)
+  5. Keep this screen open, as we will need to cut and paste this information in the next exercise.
+
+
+## Exercise-5
+####Putting a directory under git control.
+
+  Git doesn't track all the files, you need to initialize a directory to get it under git control.  This git initialized directory is called the repository. For this exercise, we will be  basically  cloning the the project that you just create on github.com. This will create a directory called training on your home folder.  You should see README.md file that was automatically generated by github when you created the account.
+  1. Clone your repository from github.com to your laptop.
+  2. Click on the `clone or download` button and then click on the copy button.
+  ![copyprojec](/images/git-pro-3.png)  
+  ![copyprojec2](/images/git-pro-4.png)
+
+## Exercise-6
+####Cloning your github repository
+
+  1. Open up a terminal window on your laptop.  (windows users, please open up a  `git bash window`  )
+  2. make sure you are in your home directory.  do `pwd` , it should show something like this  `/Users/<your-user-id>/``
+  3. type `git clone <paste the copied content>` and press enter
+  When connecting to gitlab for the first time using git from your laptop, it will ask you to install github keys to your known host, select `yes`  
+  ![copyproject](/images/git-clone-1.png)
+
+## Exercise-7
+####Editing Files using ATOM Editor
+
+  1. Open up your "ATOM" editor.
+  2. Open up the `training` directory in Atom.  `File --> Add Project Folder`  
+  ![atom-1](/images/atom-1.png)  
+  3. then select the `training folder` located in your home directory.  
+  ![atom-1](/images/atom-2.png)  
+  4. Double click on the README file to edit it.
+  5. Type some text eg This is the programmability Training lab.  
+   ![atom-1](/images/atom-3.png)  
+  6. Save the file:  `CMD + S` (Ctrl+S for Windows)
+
+
+## Exercise-8
+####Saving file to your Repository
+1. Lets push the modified `README.md` to github
+2. From your terminal window (from the training directory)
+3. Push this file to your central repository on github.com using the following git commands.
+
+```
+	git add .
+    git commit -m 'updated README'
+    git push
+```
+
+  ![atom-1](/images/git-clone-3.png)  
+4. you will be asked for your password
+5. Learn these 3 command, as we go through the exercises, you can use these command to save your configuration on github.
+
+## Exercise-9
+####Verify that file exit on github
+
+1. Go back to your github.com web page.
+2. Click on README file. You should see your changed README file.
+3. Click on `History` button
+5. compare what has changed.  Green = something got added; red = something got deleted.
+
+### Exercise-10
+####Viewing someone else's repository. (optional)
+
+I have made my repository public, which means anyone should have access to my files. You should also be able to view my repo.  You can also make your repo public if you want to share your code with others.   This options can be configured per project in gitlab.  
+
+1. Using your chrome browser, go to https://github.com/Hemakuma/training
+2. Click on Files to see all my scripts  
+
+
+***I have run through the lab and saved all my configurations here.  Bookmark it, if you have difficulties with the lab, you can take a look at my codes.  At the end of the lab, you should also have all your scripts uploaded to git hub. Make sure after you finish each section commit and push your code to gitlab as git does not do automatic push.  git add . , git commit -m 'message'  and  git push.***
+
+
+###Git cheat sheet**
+```
+git add *
+git commit -m "your comment"
+git push  
+git log  
+git status  
+git show  
+
+```
+
+http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf
+
+
+
+###Git Tips
+####How do i push my update with one command?
+you need to create a script similar to this?
+```
+#!/bin/bash
+echo 'updating git'
+git add .
+git commit -m 'updated'
+git push
+```
+make it executable ..chmod 700
+
+###How do i config git so that update does not ask for username/password?
+
+git config -I
+
+git remote set-url orgin http://<username>:<password>@github.com/hemakuma/training.git
