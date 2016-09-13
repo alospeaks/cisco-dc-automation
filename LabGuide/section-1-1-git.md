@@ -204,7 +204,9 @@ make it executable ..chmod 700
 
 ###How do i config git so that update does not ask for username/password?
 
-git config -I
+`git config -I`
 
-git remote set-url origin https://<username>:<password>@github.com/Hemakuma/cisco-dc-automation.git
-git remote set-url orgin http://<username>:<password>@github.com/hemakuma/training.git
+
+
+`git remote set-url origin https://<username>:<password>@github.com/Hemakuma/cisco-dc-automation.git
+git remote set-url orgin http://<username>:<password>@github.com/hemakuma/training.git`
