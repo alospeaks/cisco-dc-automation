@@ -71,14 +71,32 @@ You can read more about Inventory file here:  Inventory http://docs.ansible.com/
 Most of the scripts are already created in the how-to folder.  You will modify it to meet our requirements.
 Lets modify the examples-ping.yml file using ATOM.
 
-1. Switch to your Ansible terminal
-2. cd how-to
-3. cp examples-ping.yml hk-ping.yml
 4. Switch to your ATOM window
-5. go to Ansible folder and then to how to folder
-6. double click "hk-ping" to edit the file.
-7. change line 4 from hosts: n9k1 to hosts: all to ping all the hosts in your inventory.
-8. HELP: http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hk-ping.yml
+5. go to Ansible folder
+2. Right click and create a new file.
+3. name it `ping.yml`
+4. copy and past the following :
+    ```
+    ---
+    - name: ping testing
+      hosts: N9K-1
+      connection: local
+      gather_facts: no
+
+      tasks:
+
+        # test reachability to 8.8.8.8 using mgmt vrf
+        - nxos_ping: dest=8.8.8.8 vrf=management host={{ inventory_hostname }}
+
+        # Test reachability to a few different public IPs using mgmt vrf
+        # if device has name lookups turned on, you can use names
+        - nxos_ping: dest={{ item }} vrf=management host={{ inventory_hostname }}
+          with_items:
+            - 8.8.8.8
+            - 4.4.4.4
+            - 198.6.1.4
+    ```
+
 9. CMD+S to save it
 10. Switch to ansible container terminal
     1. run this playbook.
