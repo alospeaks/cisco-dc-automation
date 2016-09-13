@@ -109,9 +109,7 @@ You should not see any containers at this time.  We going to create containers i
 To see your docker host, type `docker-machine ls`.
 
 
-##Docker Containers
-
-### Nxtoolkit Container
+## Nxtoolkit Container
 ### Exercise-6
 ####Creating nxtoolkit image
 1. Go to your `ATOM` Editor
@@ -164,7 +162,7 @@ go to training directory
 You are now ready to do off box programming.
 
 
-###Ansible Docker Container
+##Ansible Docker Container
 Lets install install in a docker container.
 
 ###Exercise-8
@@ -177,7 +175,7 @@ Lets install install in a docker container.
     1. `mkdir ansible`
     2. `cd ansible`
 4. Create a Dockerfile.
-5. Switcht to `ATOM` editor
+5. Switch to `ATOM` editor
 5. Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
 4. Copy and paste the content from here to this new file.  
 https://github.com/Hemakuma/training/blob/master/ansible/Dockerfile  
@@ -196,6 +194,7 @@ https://github.com/Hemakuma/training/blob/master/ansible/Dockerfile
     `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible/ubuntu14.04-ansible`
 
     This will start the container and log you in. From inside the container.
+
 2. Copy my ansible scripts to your directory.
 3.
 
