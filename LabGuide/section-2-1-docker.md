@@ -26,7 +26,7 @@
 - [Docker Tips](#docker-tips)
 
 
-#Docker exercises
+#Docker
 
 To do off box programming , you will need to install python, ansible etc on your laptop.  To get you started quickly and to save time, we will use docker to quickly download a pre-installed and pre-configure container.  Containers are becoming very popular now, so this will give you some hands on  docker  and how to use it.  This is the future, so do spend some time learning this technology.  Here is a quick comparison between container and hypervisors
 ![docker](/images/docker-i-1.png)
