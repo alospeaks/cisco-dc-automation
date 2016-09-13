@@ -208,5 +208,4 @@ make it executable ..chmod 700
 
 
 
-`git remote set-url origin https://<username>:<password>@github.com/Hemakuma/cisco-dc-automation.git
-git remote set-url orgin http://<username>:<password>@github.com/hemakuma/training.git`
+`git remote set-url origin https://<username>:<password>@github.com/Hemakuma/cisco-dc-automation.git`

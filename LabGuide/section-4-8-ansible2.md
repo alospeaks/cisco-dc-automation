@@ -3,7 +3,9 @@
 Ansible is an open-source software platform for configuring ,managing and orchestrating compute and switching infrastructure. Ansible features a state-driven resource model that describes the desired state of computer systems and services.  Ansible is agentless and uses push model while puppet and chef are pull model using agents on the host.  Ansible uses YAML to configure playbooks.
 Playbooks contains one or multiple plays and plays contains one or multiple tasks.  Tasks talks to ansible module. Ansible module are python scripts that configures the devices in the inventory  list.   Playbook is applied to host inventory file.  Inventory file contains list of all the devices that needs to be automated. Within a single play, you can specify which host this play applies to  from the list of all available host defined in the inventory file.
 
-![ansibel-1](/images/ansible-1)
+![ansible-0](/images/ansible-0.png)
+![ansibel-1](/images/ansible-1.png)
+
 
 
 **Hosts:** Remote machines Ansible manages.  
