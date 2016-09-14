@@ -175,7 +175,7 @@ Lets install Ansible on  a docker container.
 5. Switch to `ATOM` editor
 5. Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
 4. Copy and paste the content from here to this new file.  
-https://github.com/Hemakuma/training/blob/master/ansible/Dockerfile  
+https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_ansible  
 2. Build the image. From the terminal, type  
     `docker build -t ansible .`
 3. Verify that ansible image is created.  
