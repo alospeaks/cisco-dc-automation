@@ -84,7 +84,9 @@ Take a look at the examples on this page.
       hosts: n9k-1
       connection: local
       gather_facts: no
-
+      environment:
+        - ANSIBLE_NET_USERNAME: admin
+        - ANSIBLE_NET_PASSWORD: cisco123
       tasks:
 
         # test reachability to 8.8.8.8 using mgmt vrf
@@ -92,17 +94,22 @@ Take a look at the examples on this page.
 
         # Test reachability to a few different public IPs using mgmt vrf
         # if device has name lookups turned on, you can use names
-        - nxos_ping: dest={{ item }} vrf=management host={{ inventory_hostname }}
+        - nxos_ping: dest={{ item }} vrf=management username=admin password=cisco123 host={{ inventory_hostname }}
           with_items:
             - 8.8.8.8
             - 4.4.4.4
             - 198.6.1.4
+
     ```
 
 9. `CMD+S` to save it
 10. Switch to ansible container terminal
     1. run this playbook.
     2. `ansible-playbook -i hosts ping.yml`
+
+Note:  Environment variables can be set at the play or task level.
+
+http://docs.ansible.com/ansible/faq.html
 
 ### Exercise 5
 ####Practical Example - Automating VLAN provisioning
