@@ -5,3 +5,35 @@ ip access-list 50-SNMP-Access
    permit ip {{ sourceip }} any
    {% endfor %}
    deny ip any any
+
+#ntp server configuration
+{% for ntpserver in ntp_servers %}
+ntp server {{ ntpserver }} use-vrf management
+{% endfor %}
+ntp source-interface  mgmt0
+
+#radius configuration
+{% for radius in radius_servers %}
+radius-server host {{ radius.server }} key 7 {{ radius.key }} accounting
+{% endfor %}
+ip radius source-interface mgmt0
+
+#alias configuration
+{% for alias in alias_list %}
+cli alias name {{ alias }}
+{% endfor %}
+
+#logging configuration
+{% for server in logging_servers %}
+logging server {{ server }} 5 use-vrf management
+{% endfor %}
+logging timestamp microseconds
+logging monitor 7
+logging level syslog 5
+logging level local7 6
+no logging console
+
+#vty line configuration
+line vty
+  session-limit 15
+  exec-timeout 10
