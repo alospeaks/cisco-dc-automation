@@ -266,9 +266,25 @@ This playbook will use the data file and render those into the jinja2 template.
 ####Adding more base configuration
 1. update your data file with other data that you need to have in your base configuration.
 2. Here is my list, you can add anything u like.
-3. 
+3. https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
+4. ![ansible2](/images/ansibe2.png)
 
+####Updating the jinja2 template
+1. From the 'Atom' editor
+2. open `basetemplate.j2`
+3. update the template to reflect what u want in your configuration.
+4. It should look similar to this.
+    ![ansible2](/images/ansibe2.png)
+5. Take a look at my template here:  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
 
+#### Run the playbook again
+1. Switch to the ansible terminal
+2. `ansible-playbook -i hosts baseconfig.yml`
+
+#### Verify the configuration on the switches
+1. switch to ssh session to the switch
+2. `show run`
+3. verify the configuration
 
 ###Exercise 5
 ####Base Configuration on switches
