@@ -67,6 +67,24 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 You can read more about Inventory file here:  Inventory http://docs.ansible.com/ansible/intro_inventory.html
 
 ### Exercise 4
+####Creating credentials file
+1. Under ansible folder , create a new file
+2. name it credentials.yml
+3. copy and paste the following.
+4.
+```
+---
+creds:
+    username:   admin
+    password:   cisco
+```
+We will use this file in our playbooks.
+
+**All core networking modules implement a provider argument, which is a collection of arguments used to define the characteristics of how to connect to the device.
+The provider argument accepts keyword arguments and passes them through to the task to assign connection and authentication parameters.**
+https://docs.ansible.com/ansible/intro_networking.html
+
+### Exercise 4
 ####Ping Test.  Make sure your Switch can reach internet.
 You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
 http://docs.ansible.com/ansible/nxos_ping_module.html
@@ -111,6 +129,54 @@ Note:  Environment variables can be set at the play or task level.
 http://docs.ansible.com/ansible/faq.html  
 If you want to hide your password, use ansible vault.  
 http://docs.ansible.com/ansible/playbooks_vault.html
+
+###Exercise 5
+####Using the nxos_config module
+Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
+http://docs.ansible.com/ansible/nxos_config_module.html
+
+```
+---
+- name: snmp access-list
+  hosts: n9k-1
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: obtain login credentials
+      include_vars: credentials.yml
+
+    - nxos_config:
+        lines:
+          - 5 permit ip 10.132.243.9/32 any
+          - 10 permit ip 10.241.16.91/32 any
+          - 20 permit ip 140.84.159.66/32 any
+          - 30 permit ip 140.84.54.128/26 any
+          - 40 permit ip 152.69.77.16/28 any
+          - 50 permit ip 152.69.77.32/28 any
+          - 60 permit ip 10.153.162.0/23 any
+          - 70 permit ip 10.153.162.0/23 any
+          - 80 permit ip 10.153.162.0/23 any
+          - 90 permit ip 10.153.162.0/23 any
+          - 240 deny ip any any
+        parents: ip access-list 50-SNMP-Access
+        before: ip access-list 50-SNMP-Access
+        match: exact
+        provider: "{{ creds }}"
+
+```
+###Exercise 5
+####Using the nxos_template module
+Manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
+
+
+
+###Exercise 5
+####Base Configuration on switches
+Ensure the all the switches in the DC has following base configuration
+
+
+ntp server 10.68.0.41 use-vrf management
+
 
 ### Exercise 5
 ####Practical Example - Automating VLAN provisioning
@@ -200,6 +266,78 @@ notice how the register variable is used in the template.
 12. Examine the output
 13. click on ansible folder.
 14. you should see `neighbors.json` file.  Double click it and examine the output.
+
+
+##Customer User Cases
+ would like to see at minimum for the use cases the replacement of base config files (e.g. AAA, syslog/snmp, acl 50, NTP, etc)  for Cisco
+
+
+ntp server 10.68.0.41 use-vrf management
+ntp server 10.68.0.42 use-vrf management
+ntp server 10.246.0.1 use-vrf management
+ntp server 10.246.0.2 use-vrf management
+ntp server 144.20.15.229 use-vrf management
+ntp server 144.20.15.230 use-vrf management
+ntp source-interface  mgmt0
+
+ip access-list 50-SNMP-Access
+  5 permit ip 10.132.243.9/32 any
+  10 permit ip 10.241.16.91/32 any
+  20 permit ip 140.84.159.66/32 any
+  30 permit ip 140.84.54.128/26 any
+  40 permit ip 152.69.77.16/28 any
+  50 permit ip 152.69.77.32/28 any
+  60 permit ip 10.153.162.0/23 any
+  70 permit ip 10.153.162.0/23 any
+  80 permit ip 10.153.162.0/23 any
+  90 permit ip 10.153.162.0/23 any
+  100 permit ip 148.87.43.0/24 any
+  110 permit ip 141.146.7.0/25 any
+  120 permit ip 148.87.109.0/25 any
+  130 permit ip 10.177.40.45/32 any
+  140 permit ip 10.172.212.62/32 any
+  150 permit ip 192.135.82.116/32 any
+  160 permit ip 10.165.246.75/32 any
+  170 permit ip 148.87.13.32/27 any
+  180 permit ip 139.185.121.0/24 any
+  190 permit ip 10.167.208.87/32 any
+  200 permit ip 10.221.65.11/32 any
+  210 permit ip 172.17.10.3/32 any
+  220 permit ip 172.17.16.35/32 any
+  230 permit ip 10.222.24.144/28 any
+  240 deny ip any any
+
+radius-server host 10.230.86.165 key 7 “radiuskey” authentication accounting
+radius-server host 152.69.76.90 key 7 “radiuskey" authentication accounting
+
+aaa group server radius pdit_radius
+    server 10.230.86.165
+    server 152.69.76.90
+    use-vrf management
+    source-interface mgmt0
+
+
+cli alias name wri copy run start
+cli alias name q exit
+cli alias name swt switchto vdc
+cli alias name wr copy run start
+line console
+  exec-timeout 10
+line vty
+  session-limit 15
+  exec-timeout 10
+
+ip radius source-interface mgmt0
+
+logging server 144.20.94.2 5 use-vrf management
+logging server 10.222.24.82 5 use-vrf management
+logging server 10.236.130.4 5 use-vrf management
+logging timestamp microseconds
+logging monitor 7
+logging level syslog 5
+logging level local7 6
+no logging console
+
 
 
 #Ansible Tips

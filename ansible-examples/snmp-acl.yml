@@ -1,0 +1,26 @@
+---
+- name: snmp access-list
+  hosts: n9k-1
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: obtain login credentials
+      include_vars: credentials.yml
+
+    - nxos_config:
+        lines:
+          - 5 permit ip 10.132.243.9/32 any
+          - 10 permit ip 10.241.16.91/32 any
+          - 20 permit ip 140.84.159.66/32 any
+          - 30 permit ip 140.84.54.128/26 any
+          - 40 permit ip 152.69.77.16/28 any
+          - 50 permit ip 152.69.77.32/28 any
+          - 60 permit ip 10.153.162.0/23 any
+          - 70 permit ip 10.153.162.0/23 any
+          - 80 permit ip 10.153.162.0/23 any
+          - 90 permit ip 10.153.162.0/23 any
+          - 240 deny ip any any
+        parents: ip access-list 50-SNMP-Access
+        before: ip access-list 50-SNMP-Access
+        match: exact
+        provider: "{{ creds }}"
