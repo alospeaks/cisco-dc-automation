@@ -70,7 +70,8 @@ You can read more about Inventory file here:  Inventory http://docs.ansible.com/
 ####Ping Test.  Make sure your Switch can reach internet.
 You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
 http://docs.ansible.com/ansible/nxos_ping_module.html
-Take a look at the examples on that page.
+
+Take a look at the examples on this page.
 
 4. Switch to your ATOM window
 5. go to Ansible folder
@@ -98,10 +99,10 @@ Take a look at the examples on that page.
             - 198.6.1.4
     ```
 
-9. CMD+S to save it
+9. `CMD+S` to save it
 10. Switch to ansible container terminal
     1. run this playbook.
-    2. ansible-playbook -i hosts hk-ping.yml
+    2. `ansible-playbook -i hosts ping.yml`
 
 ### Exercise 5
 ####Practical Example - Automating VLAN provisioning
