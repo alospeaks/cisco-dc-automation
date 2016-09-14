@@ -108,9 +108,8 @@ Take a look at the examples on this page.
     2. `ansible-playbook -i hosts ping.yml`
 
 Note:  Environment variables can be set at the play or task level.
-
-http://docs.ansible.com/ansible/faq.html
-If you want to hide your password, use ansible vault.
+http://docs.ansible.com/ansible/faq.html  
+If you want to hide your password, use ansible vault.  
 http://docs.ansible.com/ansible/playbooks_vault.html
 
 ### Exercise 5
