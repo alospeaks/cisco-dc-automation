@@ -192,3 +192,8 @@ notice how the register variable is used in the template.
 12. Examine the output
 13. click on ansible folder.
 14. you should see `neighbors.json` file.  Double click it and examine the output.
+
+
+#Ansible Tips
+###How to see which ansible modules are installed?
+ansible-doc --list | egrep ^'nxos'
