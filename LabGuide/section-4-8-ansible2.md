@@ -252,14 +252,14 @@ This playbook will use the data file and render those into the jinja2 template.
             provider: "{{ creds }}"
             src: basetemplate.j2
     ```
-### Running the playbook
+#### Running the playbook
 1. Switch to ansible container template
 2. cd to ansible folder and run the playbook
-3. ansible-playbook -i hosts baseconfig.yml
+3. `ansible-playbook -i hosts baseconfig.yml`
 
-### Verifying the configuration on the switches
+#### Verifying the configuration on the switches
 1. switch to ssh session to the switch
-2. show run
+2. `show run`
 3. verify the configuration
 
 
