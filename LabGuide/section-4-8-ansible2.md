@@ -320,6 +320,8 @@ Ensure following vlans are configured on all the switches.
 Take a look at the "how to " folder and see if you can use any of the script to meet this requirement.
 Modify examples-vlan.yml.  Study the code,  notice that as you have many different ways of configuring the vlans.  Lets comment out some of them. In ansible, if you add # at the beginning of the line, ansible treats it as if it is a comment line, therefore it will not execute it.
 
+![ansiblevlan](/images/ansible2-6.png)
+
 1. Make a copy of the sample playbook.
     1. Switch to your ansible terminal
     2. cp examples-vlan.yml  hk-vlan.yml
