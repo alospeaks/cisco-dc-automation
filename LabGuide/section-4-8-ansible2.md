@@ -192,6 +192,20 @@ Steps:
 
 
 ###Exercise 6
+####Creating the data file
+1. Switch back to the `ATOM` editor
+2. Right click on the `ansible` folder and select `New File`
+3. name the folder `base-vars.yml`
+4. copy and paste the following in the file.
+    ```
+    snmp_acl:
+        - 10.241.16.91/32
+        - 10.132.243.9/32
+        - 152.69.77.32/28
+    ```
+5. Save the file `cmd + S`
+
+###Exercise 7
 ####Using Creating Jinja2 template
 1. Switch back to the `ATOM` editor
 2. Right click on the `ansible` folder and select `New Folder`
@@ -210,6 +224,43 @@ Steps:
     ```
 7. Save the file `cmd + S`
 
+
+###Exercise 8
+####Creating playbook to configure switch using jinja2 template
+In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp servers.  
+
+This playbook will use the data file and render those into the jinja2 template.
+
+1. switch to `ATOM` editor
+2. create a new playbook. Right click on the `ansible` folder and select `New File`
+3. name it `baseconfig.yml`
+    ```
+    ---
+    - name: template testing
+      hosts: n9k-1
+      connection: local
+      gather_facts: no
+      tasks:
+        - name: obtain login credentials
+          include_vars: credentials.yml
+        #contents all the base configuration data
+        - name: getting the data file
+          include_vars: base-vars.yml
+
+        - name: configure base template
+          nxos_template:
+            provider: "{{ creds }}"
+            src: basetemplate.j2
+    ```
+### Running the playbook
+1. Switch to ansible container template
+2. cd to ansible folder and run the playbook
+3. ansible-playbook -i hosts baseconfig.yml
+
+### Verifying the configuration on the switches
+1. switch to ssh session to the switch
+2. show run
+3. verify the configuration
 
 
 ###Exercise 5
