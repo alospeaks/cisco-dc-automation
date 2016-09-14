@@ -165,6 +165,11 @@ http://docs.ansible.com/ansible/nxos_config_module.html
         provider: "{{ creds }}"
 
 ```
+###using nxos_vlan module
+http://docs.ansible.com/ansible/nxos_vlan_module.html
+
+
+
 ###Exercise 6
 ####Using the nxos_template module
 Separating data from the configuration.
@@ -248,7 +253,6 @@ This modules provides a way to push a set of commands onto a network device by e
 2. cd to ansible folder and run the playbook
 3. `ansible-playbook -i hosts baseconfig.yml`
 
-![ansible2](/images/ansible2-4.png)
 
 #### Verifying the configuration on the switches
 1. switch to ssh session to the switch
@@ -293,7 +297,7 @@ ntp server 10.68.0.41 use-vrf management
 ### Exercise 5
 ####Practical Example - Automating VLAN provisioning
 **Problem Statement**
-Users perform manual Day-1 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-1 configuration activity is performing routine VLAN related operations:
+Users perform manual Day-1 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-2 configuration activity is performing routine VLAN related operations:
 1. Check if VLAN exists
 2. Change names and descriptions of VLANs
 3. Configure a VLAN
@@ -328,6 +332,9 @@ Let's comment out first 3 task in this file.  to comment out, just add # infront
 change the vlan id and name to match your requirement
 Help:  http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hk-vlan.yml
 CMD+S to save it.
+
+![ansiblevlan](/images/ansible2-5.png)
+
 Now lets first verify that we do not have these vlans configured on our switch.
 Switch to the Switch CLI terminal
 show vlan
