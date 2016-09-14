@@ -169,11 +169,10 @@ http://docs.ansible.com/ansible/nxos_config_module.html
 ####Using the nxos_template module
 Separating data from the configuration.
 
-Manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
+nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
 
-jinja2 template:
-Jinja2 is a very popular and powerful Python-based template engine.
-Templates look very similar to normal text-based files except for the occasional variables or code that surrounds the special tags. These get evaluated and are mostly replaced by values at runtime, creating a text file, which is then copied to the destination host. The following are the two types of tags that Jinja2 templates accept:
+What is Jinja2 Template?
+Jinja2 is a very popular and powerful Python-based template engine. Templates look very similar to normal text-based files except for the occasional variables or code that surrounds the special tags. These get evaluated and are mostly replaced by values at runtime, creating a text file, which is then copied to the destination host. The following are the two types of tags that Jinja2 templates accept:
 
 `{{ }}` embeds variables inside a template and prints its value in the resulting file. This is the most common use of a template.
 For example:
@@ -184,12 +183,13 @@ For example:
 Now that we have looked at the code that Jinja2 templates provide, let's understand where this data comes from, which is then embedded in the template at runtime. Data can come from either facts or variables. When it comes to a Jinja2 template, the same rules apply to the usage of facts and variables. Facts are a type of variable; the differentiating factor here is the origin of the two. Facts are automatically available and discovered at runtime, and variables are user-defined.
 
 
-Steps:
-1. Always start with the actual configuration file,
+Steps to create the templates:
+1. Always start with the actual configuration file.
 2. Identify the parameters that needs to be dynamically generated
-3. create the template
-4. create the variable file
+3. create a template. Add variables as you see fit.
+4. create the variable file.
 5. create the playbook
+6. run the playbook
 
 
 ###Exercise 7
@@ -227,9 +227,9 @@ Steps:
 
 ###Exercise 8
 ####Creating playbook to configure switch using jinja2 template
-In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp servers.  
+In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp access list.  
 
-This playbook will use the data file and render those into the jinja2 template. The playbook uses the nxos template module.
+This playbook will use the data file (base-vars.yml) and render those data into the jinja2 template (basetemplate.j2). The playbook (baseconfig.yml) calls this jinja2 template via ansible  nxos template module.
 
 This modules provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
 
