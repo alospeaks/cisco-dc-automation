@@ -68,8 +68,9 @@ You can read more about Inventory file here:  Inventory http://docs.ansible.com/
 
 ### Exercise 4
 ####Ping Test.  Make sure your Switch can reach internet.
-Most of the scripts are already created in the how-to folder.  You will modify it to meet our requirements.
-Lets modify the examples-ping.yml file using ATOM.
+You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
+http://docs.ansible.com/ansible/nxos_ping_module.html
+Take a look at the examples on that page.
 
 4. Switch to your ATOM window
 5. go to Ansible folder
