@@ -31,7 +31,7 @@ cd training
 source source.docker
 docker attach ansible
 ```
-
+2. you should be inside your ansible docker container.
 
 ### Exercise 3
 ####Creating Host Inventory File
@@ -68,17 +68,18 @@ You can read more about Inventory file here:  Inventory http://docs.ansible.com/
 
 ### Exercise 4
 ####Creating credentials file
-1. Under ansible folder , create a new file
-2. name it credentials.yml
+1. Under `ansible` folder , create a new file
+2. name it `credentials.yml`
 3. copy and paste the following.
 4.
 ```
 ---
 creds:
+    host: "{{ inventory_hostname }}"
     username:   admin
-    password:   cisco
+    password:   cisco123
 ```
-We will use this file in our playbooks.
+To login into the switches, we need the username and password.  This file with conbination with `provider` keyword in ansbile playbook will let ansible login into the devices.  
 
 **All core networking modules implement a provider argument, which is a collection of arguments used to define the characteristics of how to connect to the device.
 The provider argument accepts keyword arguments and passes them through to the task to assign connection and authentication parameters.**
