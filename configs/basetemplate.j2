@@ -1,0 +1,7 @@
+#snmp acl configuration
+no ip access-list 50-SNMP-Access
+ip access-list 50-SNMP-Access
+   {% for sourceip in snmp_acl %}
+   permit ip {{ sourceip }} any
+   {% endfor %}
+   deny ip any any

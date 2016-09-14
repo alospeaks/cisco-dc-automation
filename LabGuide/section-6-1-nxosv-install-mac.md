@@ -82,12 +82,16 @@ If you installed VM Fusion with default settings, all your VMs will be located u
     ```
 6. Save the configuraiton
     `copy run start`
+7. checkpoint your configuration
+    `checkpoint file bootflash:startconfig`
 
 7. Find out the ip address of the mgmt interfaces.
     `show ip int brief vrf mgmt`
     note down this ip.  now you can ssh to the box via ssh
 
-
+*Tip*
+If you want to rollback your configuration, use
+`rollback running-config file bootflash:startconfig`
 
 ##Connect to the switch using ssh and http
 From a new terminal window, ssh to the ip address of your NXOSv switch.  There is no port forwarding configured but the switch ip address is visible on the host.
