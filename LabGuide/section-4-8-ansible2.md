@@ -228,29 +228,19 @@ Steps:
 ####Creating playbook to configure switch using jinja2 template
 In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp servers.  
 
-This playbook will use the data file and render those into the jinja2 template.
+This playbook will use the data file and render those into the jinja2 template. The playbook uses the nxos template module.
+
+This modules provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
 
 1. switch to `ATOM` editor
 2. create a new playbook. Right click on the `ansible` folder and select `New File`
 3. name it `baseconfig.yml`
-    ```
-    ---
-    - name: template testing
-      hosts: n9k-1
-      connection: local
-      gather_facts: no
-      tasks:
-        - name: obtain login credentials
-          include_vars: credentials.yml
-        #contents all the base configuration data
-        - name: getting the data file
-          include_vars: base-vars.yml
+4. It should look like this
 
-        - name: configure base template
-          nxos_template:
-            provider: "{{ creds }}"
-            src: basetemplate.j2
-    ```
+    ![ansible2](/images/ansible2-1.png)
+
+5. you can take a look at my file here:   https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/baseconfig.yml
+
 
 #### Running the playbook
 1. Switch to ansible container terminal

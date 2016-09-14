@@ -1,0 +1,17 @@
+---
+- name: template testing
+  hosts: n9k-1
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: obtain login credentials
+      include_vars: credentials.yml
+    #contains all the base configuration data
+    - name: getting the data file
+      include_vars: base-vars.yml
+
+    #renders the jinja2 template
+    - name: configure base template
+      nxos_template:
+        provider: "{{ creds }}"
+        src: basetemplate.j2
