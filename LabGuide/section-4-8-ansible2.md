@@ -164,7 +164,7 @@ http://docs.ansible.com/ansible/nxos_config_module.html
         provider: "{{ creds }}"
 
 ```
-###Exercise 5
+###Exercise 6
 ####Using the nxos_template module
 Separating data from the configuration.
 
@@ -191,7 +191,7 @@ Steps:
 5. create the playbook
 
 
-###Exercise 6
+###Exercise 7
 ####Creating the data file
 1. Switch back to the `ATOM` editor
 2. Right click on the `ansible` folder and select `New File`
@@ -267,14 +267,17 @@ This playbook will use the data file and render those into the jinja2 template.
 1. update your data file with other data that you need to have in your base configuration.
 2. Here is my list, you can add anything u like.
 3. https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
-4. ![ansible2](/images/ansibe2.png)
+
+![ansible2](/images/ansibe2.png)
 
 ####Updating the jinja2 template
 1. From the 'Atom' editor
 2. open `basetemplate.j2`
 3. update the template to reflect what u want in your configuration.
 4. It should look similar to this.
+
     ![ansible2](/images/ansibe2.png)
+
 5. Take a look at my template here:  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
 
 #### Run the playbook again
