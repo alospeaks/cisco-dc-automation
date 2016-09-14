@@ -247,6 +247,8 @@ This modules provides a way to push a set of commands onto a network device by e
 2. cd to ansible folder and run the playbook
 3. `ansible-playbook -i hosts baseconfig.yml`
 
+![ansible2](/images/ansible2-4.png)
+
 #### Verifying the configuration on the switches
 1. switch to ssh session to the switch
 2. `show run`
