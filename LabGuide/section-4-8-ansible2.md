@@ -81,7 +81,7 @@ Take a look at the examples on this page.
     ```
     ---
     - name: ping testing
-      hosts: N9K-1
+      hosts: n9k-1
       connection: local
       gather_facts: no
 
