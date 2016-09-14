@@ -1,0 +1,26 @@
+---
+ntp_servers:
+    - 10.68.0.41
+    - 10.68.0.42
+    - 10.246.0.1
+    - 10.246.0.2
+
+snmp_acl:
+    - 10.241.16.91/32
+    - 10.132.243.9/32
+    - 152.69.77.32/28
+
+logging_servers:
+    - 144.20.94.2
+    - 10.222.24.82
+    - 10.236.130.4
+
+radius_servers:
+    - { server: 10.230.86.165, key: radiuskey}
+    - { server: 152.69.76.91, key: radiuskey}
+
+
+alias_list:
+    - wr copy run start
+    - q exit
+    - rb rollback running-config file bootflash:startconfig

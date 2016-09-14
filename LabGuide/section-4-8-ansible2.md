@@ -205,7 +205,6 @@ Steps:
     ```
 5. Save the file `cmd + S`
 
-###Exercise 7
 ####Using Creating Jinja2 template
 1. Switch back to the `ATOM` editor
 2. Right click on the `ansible` folder and select `New Folder`
@@ -254,7 +253,7 @@ This playbook will use the data file and render those into the jinja2 template.
     ```
 
 #### Running the playbook
-1. Switch to ansible container template
+1. Switch to ansible container terminal
 2. cd to ansible folder and run the playbook
 3. `ansible-playbook -i hosts baseconfig.yml`
 
@@ -262,6 +261,13 @@ This playbook will use the data file and render those into the jinja2 template.
 1. switch to ssh session to the switch
 2. `show run`
 3. verify the configuration
+
+###Exercise 9
+####Adding more base configuration
+1. update your data file with other data that you need to have in your base configuration.
+2. Here is my list, you can add anything u like.
+3. 
+
 
 
 ###Exercise 5
