@@ -268,7 +268,7 @@ This playbook will use the data file and render those into the jinja2 template.
 2. Here is my list, you can add anything u like.
 3. https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
 
-![ansible2](/images/ansibe2.png)
+![ansible2](/images/ansibe2-1.png)
 
 ####Updating the jinja2 template
 1. From the 'Atom' editor
@@ -276,7 +276,7 @@ This playbook will use the data file and render those into the jinja2 template.
 3. update the template to reflect what u want in your configuration.
 4. It should look similar to this.
 
-    ![ansible2](/images/ansibe2.png)
+    ![ansible2](/images/ansibe2-2.png)
 
 5. Take a look at my template here:  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
 
