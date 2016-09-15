@@ -402,6 +402,32 @@ notice how the register variable is used in the template.
 #Roles
 Roles simplify the organization of the playbook.
 
+###Exercise
+####Create ansible roles directory structure
+1. Switch to 'ansible container'
+2. cd to roles directory
+3. type `ansible-galaxy init login`
+4. type `ansible-galaxy init baseconfig`
+5. type `ansible-galaxy init vlans`
+
+####Configuring roles
+1. Switch to `Atom` Editor
+2. go to `login` folder under `roles`.
+3. expand it
+4. navigate to `vars` folder and open `main.yml`
+5. type in the following:
+6.
+```
+---
+creds:
+    host: "{{ inventory_hostname }}"
+    transport: nxapi
+    username:   admin
+    password:   cisco123
+```
+
+![ansiblerole](/images/ansiblerole-1.png)
+
 
 
 ##Customer User Cases
