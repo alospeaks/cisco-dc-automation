@@ -33,7 +33,18 @@ docker attach ansible
 ```
 2. you should be inside your ansible docker container.
 
+
 ### Exercise 3
+#### Setting up the directory structure to host ansible files
+1. Switch to `ATOM` Editor
+2. Right click on the ansible folder
+3. Select new folder
+4. name it `roles`
+5. Repeat above and create following folders.
+    6. templates
+    7. groups_vars
+    8. hosts_vars
+
 ####Creating Host Inventory File
 Inventory file contains list of hosts that you want to manage from Ansible.  In our case, it will list of switches that we want to manage by ansible. These host/swiches can be organized in groups.
 
@@ -66,7 +77,6 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 7. Name the file as  `hosts`
 You can read more about Inventory file here:  Inventory http://docs.ansible.com/ansible/intro_inventory.html
 
-### Exercise 4
 ####Creating credentials file
 1. Under `ansible` folder , create a new file
 2. name it `credentials.yml`
@@ -387,6 +397,11 @@ notice how the register variable is used in the template.
 12. Examine the output
 13. click on ansible folder.
 14. you should see `neighbors.json` file.  Double click it and examine the output.
+
+
+#Roles
+Roles simplify the organization of the playbook.
+
 
 
 ##Customer User Cases
