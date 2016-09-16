@@ -229,12 +229,13 @@ RUN pip install cryptography
 ## upgrade to the latest VERSION
 RUN pip install ansible --upgrade
 ```
-6. `Cmd + S`, to save the file
+7. `Cmd + S`, to save the file
 
 
 #### Pull the Jenkins image from dockerhub
-3. Open up a terminal window,
-4.  type `source source.docker`
+1. Open up a terminal window,
+2. navigate to the training directory
+3.  type `source source.docker`
 5. `cd to jenkins` folder
 7. Lets pull the jenkins image from the dockerhub first
 8. `docker images`
