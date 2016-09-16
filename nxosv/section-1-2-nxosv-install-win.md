@@ -63,19 +63,21 @@ You can optionally save the settings into "Saved Sessions".
 The output in PuTTY should look something like this:
 ![nxos-w](/images/nxosv-w-17.png)
 
-####Setup 5: Performing initial configuration
+###Setup 5: Performing initial configuration
 1. Cancel the auto provisioning.  
 2. Set the admin password to cisco123  (u need to select )
 1. Provision the management interface.
+
     ```
     config t
     inter mgmt0
     ip addr dhcp
     ```
-5. Set the boot variable
+5. Set the boot variable  
     `boot nxos bootflash:xosv-final.7.0.3.I2.2e.bin`
 
 6. Enable feature features
+
     ```
     feature nxapi
     feature scp-server
