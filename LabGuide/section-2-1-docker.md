@@ -202,13 +202,13 @@ configure the /etc/hosts and put the entry for your nxosv switch.
 
 ## Jenkins  Container
 ### Exercise 9
-####creating Jenkins Container
+####Creating Jenkins Container
 1. Switch to `Atom` Editor
 2. create a new folder under training.
 3. Right click on training and select `New Folder`
 4. name it `jenkins`
 
-###create Dockerfile
+###Create Dockerfile
 
 Lets create a docker file to build a new image that has jenkins and ansible installed.  For jenkins, we will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
 
