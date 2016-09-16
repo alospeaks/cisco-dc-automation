@@ -82,7 +82,9 @@ The output in PuTTY should look something like this:
     feature nxapi
     feature scp-server
     ```
-6. Save the configuraiton
+6. create a service account   
+`username service password cisco123 role priv-15`
+7. Save the configuraiton
     `copy run start`
 7. checkpoint your configuration
     `checkpoint file bootflash:startconfig`
@@ -94,5 +96,3 @@ The output in PuTTY should look something like this:
 *Tip*
 If you want to rollback your configuration, use
 `rollback running-config file bootflash:startconfig`
-
-You can now proceed  to "Initial Switch Configuration" section on NXOSv on VM Fusion guide.
