@@ -249,7 +249,7 @@ RUN pip install ansible --upgrade
 13. Run the jenkins-ansbile container based on this image.
 
 	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 jenkins-ansible`
-14. Wait until u see message "Jenins is fully up and running"
+14. Wait until u see message "Jenkins is fully up and running"
 
 ![jenkins](/images/jenkins-11.png)
 
@@ -262,6 +262,8 @@ RUN pip install ansible --upgrade
 6. Open up a chrome browser and login in.
 7. http://<ip>:8080
 8. type in the admin password that you copied previously.
+
+	![jenkins](/images/jenkins-12.png)
 10. click install plugins and select none (we will install plugins manually)
 11. next
 12. create a user account (admin/cisco123)
