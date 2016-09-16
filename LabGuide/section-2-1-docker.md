@@ -265,10 +265,13 @@ RUN pip install ansible --upgrade
 
 	![jenkins](/images/jenkins-12.png)
 10. click install plugins and select none (we will install plugins manually)
-11. next
+
+	![jenkins](/images/jenkins-13.png)
+
 12. create a user account (admin/cisco123)
 
-make sure to install ansible 2.1.1 on the jenkins server
+	![jenkins](/images/jenkins-13.png)
+
 
 **Tips**
 To login into the jenkins container, try this
