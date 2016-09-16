@@ -224,7 +224,7 @@ Lets create a docker file. We will use prebuild image of Jenkins from dockerhub.
 1. Switch to `Atom`  Editor
 7. Right click on the `jenkins` folder and select `New File`
 8. name it `Dockerfile`
-9. past the following
+9. paste the following
 
 ```
 #VERSION 1.0
