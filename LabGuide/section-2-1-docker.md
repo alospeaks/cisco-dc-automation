@@ -196,6 +196,58 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 3. Go to your Atom editor and you should all these files under ansible folder.
 
 
+## Jenkins  Container
+### Exercise 9
+####creating Jenkins Container
+1. create a new folder under training. (u can use ATOM or command line)
+2. name it 'jenkins'
+3. Open up a terminal window,
+4.  type `source source.docker`
+5. `cd to jenkins` folder
+6. This time we going to pull a prebuild docker image from docker hub.
+7. Type `docker pull jenkins`
+6. Run the jenkins container.  Note this will download the prebuild jenkins container from docker hub. you do'nt need to build the docker image.
+
+
+	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 -v /Users/hemakuma/training/jenkins:/var/jenkins_home jenkins`
+
+	-v /your/home:/var/jenkins_home jenkins
+5.Get the admin password
+	1. Open another terminal window and navigate to training folder
+	2. source `source source.docker`
+	3. type `docker exec -it jenkins  cat /var/jenkins_home/secrets/initialAdminPassword `
+	4. copy the password
+	5. type `docker-machine ip default` and note down the ip
+6. Open up a chrome browser and login in.
+7. http://<ip>:8080
+8. type in the admin password that you copied previously.
+10. click install plugins and select none (we will install plugins manually)
+11. next
+12. create a user account (admin/cisco123)
+
+####
+Installing jenins plugins
+
+We only need git plugin for now
+
+1. go to the dashboard
+2. on the left side, click on "Manage Jenkins"
+3. Then select plugins
+	1. github plugin
+5. no restart
+6. once install, you need to restart your server
+
+![jenkins](/images/jenins-10.png)
+
+### Creating a job
+
+
+### Manually running a job
+
+
+### Using console to see the log output
+
+
 #Docker Tips
 If your boot2docker can not resolve dns entry?
 `docker-machine default ssh`

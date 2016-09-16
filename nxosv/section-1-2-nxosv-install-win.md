@@ -63,4 +63,34 @@ You can optionally save the settings into "Saved Sessions".
 The output in PuTTY should look something like this:
 ![nxos-w](/images/nxosv-w-17.png)
 
+####Setup 5: Performing initial configuration
+1. Cancel the auto provisioning.  
+2. Set the admin password to cisco123  (u need to select )
+1. Provision the management interface.
+    ```
+    config t
+    inter mgmt0
+    ip addr dhcp
+    ```
+5. Set the boot variable
+    `boot nxos bootflash:xosv-final.7.0.3.I2.2e.bin`
+
+6. Enable feature features
+    ```
+    feature nxapi
+    feature scp-server
+    ```
+6. Save the configuraiton
+    `copy run start`
+7. checkpoint your configuration
+    `checkpoint file bootflash:startconfig`
+
+7. Find out the ip address of the mgmt interfaces.
+    `show ip int brief vrf mgmt`
+    note down this ip.  now you can ssh to the NXOSv via ssh
+
+*Tip*
+If you want to rollback your configuration, use
+`rollback running-config file bootflash:startconfig`
+
 You can now proceed  to "Initial Switch Configuration" section on NXOSv on VM Fusion guide.
