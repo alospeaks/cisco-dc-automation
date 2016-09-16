@@ -203,19 +203,24 @@ configure the /etc/hosts and put the entry for your nxosv switch.
 ## Jenkins  Container
 ### Exercise 9
 ####creating Jenkins Container
-1. create a new folder under training. (u can use ATOM or command line)
+1. Switch to `Atom` Editor
+2. create a new folder under training.
+3. Right click on training and select `New Folder`
 2. name it `jenkins`
+
+#### Pull the Jenkins image from dockerhub
 3. Open up a terminal window,
 4.  type `source source.docker`
 5. `cd to jenkins` folder
-6. Lets create a docker file. We will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment by Jenkins.
 7. Lets pull the jenkins image from the dockerhub first
-8. switch to the terminal window and navigate to jenkins folder
 8. `docker images`
 8. `docker pull jenkins`
 9. `docker images`  <-- u should see the new image
 
 ###create Dockerfile
+
+Lets create a docker file. We will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
+
 1. Switch to `Atom`  Editor
 7. Right click on the `jenkins` folder and select `New File`
 8. name it `Dockerfile`
@@ -225,7 +230,6 @@ configure the /etc/hosts and put the entry for your nxosv switch.
 #VERSION 1.0
 FROM jenkins
 MAINTAINER Hemant Kumar, hemakuma@cisco.com
-#RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get update && apt-get -y upgrade && apt-get install -y  vim git python curl openssh-server  python-pip python-dev build-essential libssl-dev libffi-dev
 RUN pip install --upgrade pip
 RUN pip install ansible==2.1.1
@@ -234,22 +238,25 @@ RUN pip install cryptography
 ##if this fails, use pip install cryptography --upgrade; failed in jenkins container
 ## upgrade to the latest VERSION
 RUN pip install ansible --upgrade
-WORKDIR myscript
 ```
-6. This time we going to pull a prebuild docker image from docker hub.
-7. Type `docker pull jenkins`
-6. Run the jenkins container.  Note this will download the prebuild jenkins container from docker hub. you do'nt need to build the docker image.
+6. Cmd + S, to save the file
 
+####Build the new image
+1. switch back to the terminal window
+2. you shoud be in the jenkins directory
+3. type `Docker build -t  jenkins-ansible .`
+4. this should build a new image
+5. `docker images | grep jenkins`
+6. Run the jenkins-ansbile container based on this image.
 
-	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 -v /Users/hemakuma/training/jenkins:/var/jenkins_home jenkins`
+	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 -v /Users/hemakuma/training/jenkins:/var/jenkins_home jenkins-ansible`
 
-	-v /your/home:/var/jenkins_home jenkins
-5.Get the admin password
+7. Get the admin password
 	1. Open another terminal window and navigate to training folder
 	2. source `source source.docker`
 	3. type `docker exec -it jenkins  cat /var/jenkins_home/secrets/initialAdminPassword `
 	4. copy the password
-	5. type `docker-machine ip default` and note down the ip
+	5. type `docker-machine ip default` and note down the ip address of the docker host
 6. Open up a chrome browser and login in.
 7. http://<ip>:8080
 8. type in the admin password that you copied previously.
