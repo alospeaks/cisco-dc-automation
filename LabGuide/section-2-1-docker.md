@@ -206,25 +206,15 @@ configure the /etc/hosts and put the entry for your nxosv switch.
 1. Switch to `Atom` Editor
 2. create a new folder under training.
 3. Right click on training and select `New Folder`
-2. name it `jenkins`
-
-#### Pull the Jenkins image from dockerhub
-3. Open up a terminal window,
-4.  type `source source.docker`
-5. `cd to jenkins` folder
-7. Lets pull the jenkins image from the dockerhub first
-8. `docker images`
-8. `docker pull jenkins`
-9. `docker images`  <-- u should see the new image
+4. name it `jenkins`
 
 ###create Dockerfile
 
-Lets create a docker file. We will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
+Lets create a docker file to build a new image that has jenkins and ansible installed.  For jenkins, we will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
 
-1. Switch to `Atom`  Editor
-7. Right click on the `jenkins` folder and select `New File`
-8. name it `Dockerfile`
-9. paste the following
+5. Right click on the `jenkins` folder and select `New File`
+6. name it `Dockerfile`
+7. paste the following
 
 ```
 #VERSION 1.0
@@ -239,7 +229,18 @@ RUN pip install cryptography
 ## upgrade to the latest VERSION
 RUN pip install ansible --upgrade
 ```
-6. Cmd + S, to save the file
+6. `Cmd + S`, to save the file
+
+
+#### Pull the Jenkins image from dockerhub
+3. Open up a terminal window,
+4.  type `source source.docker`
+5. `cd to jenkins` folder
+7. Lets pull the jenkins image from the dockerhub first
+8. `docker images`
+8. `docker pull jenkins`
+9. `docker images`  <-- u should see the new image
+
 
 ####Build the new image
 1. switch back to the terminal window
