@@ -248,7 +248,7 @@ RUN pip install ansible --upgrade
 12. `docker images | grep jenkins`
 13. Run the jenkins-ansbile container based on this image.
 
-	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 -v /Users/hemakuma/training/jenkins:/var/jenkins_home jenkins-ansible`
+	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 jenkins-ansible`
 
 7. Get the admin password
 	1. Open another terminal window and navigate to training folder
