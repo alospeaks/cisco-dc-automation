@@ -11,9 +11,15 @@ Playbooks contains one or multiple plays and plays contains one or multiple task
 
 **Hosts:** Remote machines Ansible manages.  
 **Groups:** Group of hosts assigned to a pool that can be conveniently targeted and managed together.  
-**Inventory:** File describing the Hosts and Groups in Ansible.  
+**Inventory:** File describing the Hosts and Groups in Ansible. what groups a host belongs to, the
+properties those groups and hosts have.
 **Modules:** Modules (also referred to as “task plugins” or “library plugins”) are the components that do the actual work in Ansible. They are what gets executed in each playbook task.  
 **Playbooks:** A collection of plays which the Ansible Engine orchestrates, configures, administers, or deploys. These playbooks describe the policy to be executed to the host(s).  People refer to these playbooks as "design plans" which are designed to be human- readable and are developed in a basic text language called **YAML**.
+**Play**: specify a list of tasks that are run in sequence across one or more hosts. Each task
+can also run multiple times with a variable taking a different value. Playbooks are expressed in
+YAML format
+**Roles**: are a way to encapsulate common tasks and properties for reuse, if you find yourself writing
+the same tasks in multiple playbooks, turn them into roles.
 
 http://docs.ansible.com/ansible/list_of_network_modules.html
 
