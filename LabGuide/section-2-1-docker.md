@@ -270,7 +270,7 @@ RUN pip install ansible --upgrade
 
 12. create a user account (admin/cisco123)
 
-	![jenkins](/images/jenkins-13.png)
+	![jenkins](/images/jenkins-14.png)
 
 
 **Tips**
