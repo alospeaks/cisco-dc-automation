@@ -231,7 +231,6 @@ RUN pip install ansible --upgrade
 ```
 7. `Cmd + S`, to save the file
 
-
 #### Pull the Jenkins image from dockerhub
 1. Open up a terminal window,
 2. navigate to the training directory
@@ -244,12 +243,10 @@ RUN pip install ansible --upgrade
 
 
 ####Build the new image
-1. switch back to the terminal window
-2. you shoud be in the jenkins directory
-3. type `Docker build -t  jenkins-ansible .`
-4. this should build a new image
-5. `docker images | grep jenkins`
-6. Run the jenkins-ansbile container based on this image.
+10. type `Docker build -t  jenkins-ansible .`
+11. this should build a new image
+12. `docker images | grep jenkins`
+13. Run the jenkins-ansbile container based on this image.
 
 	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 -v /Users/hemakuma/training/jenkins:/var/jenkins_home jenkins-ansible`
 
