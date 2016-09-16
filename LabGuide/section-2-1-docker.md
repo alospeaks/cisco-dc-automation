@@ -195,15 +195,47 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 2. exit the container.  We will use this container later in the ansible exercises.
 3. Go to your Atom editor and you should all these files under ansible folder.
 
+####Configuring the container
+configure the /etc/hosts and put the entry for your nxosv switch.
+
+(can we do it via the dockerfile)
 
 ## Jenkins  Container
 ### Exercise 9
 ####creating Jenkins Container
 1. create a new folder under training. (u can use ATOM or command line)
-2. name it 'jenkins'
+2. name it `jenkins`
 3. Open up a terminal window,
 4.  type `source source.docker`
 5. `cd to jenkins` folder
+6. Lets create a docker file. We will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment by Jenkins.
+7. Lets pull the jenkins image from the dockerhub first
+8. switch to the terminal window and navigate to jenkins folder
+8. `docker images`
+8. `docker pull jenkins`
+9. `docker images`  <-- u should see the new image
+
+###create Dockerfile
+1. Switch to `Atom`  Editor
+7. Right click on the `jenkins` folder and select `New File`
+8. name it `Dockerfile`
+9. past the following
+
+```
+#VERSION 1.0
+FROM jenkins
+MAINTAINER Hemant Kumar, hemakuma@cisco.com
+#RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
+RUN apt-get update && apt-get -y upgrade && apt-get install -y  vim git python curl openssh-server  python-pip python-dev build-essential libssl-dev libffi-dev
+RUN pip install --upgrade pip
+RUN pip install ansible==2.1.1
+RUN pip install markupsafe
+RUN pip install cryptography
+##if this fails, use pip install cryptography --upgrade; failed in jenkins container
+## upgrade to the latest VERSION
+RUN pip install ansible --upgrade
+WORKDIR myscript
+```
 6. This time we going to pull a prebuild docker image from docker hub.
 7. Type `docker pull jenkins`
 6. Run the jenkins container.  Note this will download the prebuild jenkins container from docker hub. you do'nt need to build the docker image.
@@ -225,6 +257,16 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 11. next
 12. create a user account (admin/cisco123)
 
+make sure to install ansible 2.1.1 on the jenkins server
+
+**Tips**
+To login into the jenkins container, try this
+docker exec -u 0 -it jenkins bash
+
+all the files are under /var/jenkins_home/workspace/  ; your git will be cloned into this directory
+
+or since u mapped the files, u can see all the logs locally on your laptop. just open the jenkins folder under training
+
 ####
 Installing jenins plugins
 
@@ -238,6 +280,10 @@ We only need git plugin for now
 6. once install, you need to restart your server
 
 ![jenkins](/images/jenins-10.png)
+
+
+
+
 
 ### Creating a job
 

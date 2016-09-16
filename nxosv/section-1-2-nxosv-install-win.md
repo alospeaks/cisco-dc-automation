@@ -65,7 +65,8 @@ The output in PuTTY should look something like this:
 
 ###Setup 5: Performing initial configuration
 1. Cancel the auto provisioning.  
-2. Set the admin password to cisco123  (u need to select )
+2. Set the admin password to cisco123  (u need to disable password strength check)
+3. set the hostname `hostname leaf1`
 1. Provision the management interface.
 
     ```
