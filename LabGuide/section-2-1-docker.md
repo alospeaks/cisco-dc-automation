@@ -207,6 +207,11 @@ configure the /etc/hosts and put the entry for your nxosv switch.
 
 (can we do it via the dockerfile)
 
+
+#Creating Docker host for Tools
+We will create a different docker host jenkins, gitlab and gerrit
+
+
 ## Jenkins  Container
 ### Exercise 9
 ####Creating Jenkins Container
@@ -261,6 +266,42 @@ RUN pip install ansible --upgrade
 ![jenkins](/images/jenkins-11.png)
 
 **STOP HERE , we will do the rest in the Jenkins Section**
+
+### Create gitlab container
+
+
+1. On the terminal window
+2. go to training folder
+4. source the tools machine ..
+5. `source source.tools`
+6. Type the following:
+
+```
+docker run --detach \
+    --hostname gitlab.example.com \
+    --publish 443:443 --publish 80:80 --publish 2222:22 \
+    --name gitlab \
+    --restart always \
+    --volume /srv/gitlab/config:/etc/gitlab \
+    --volume /srv/gitlab/logs:/var/log/gitlab \
+    --volume /srv/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest
+```
+
+7. Find the ip of the tool docker machine
+8. `docker-machine ip tools`
+8. Switch to the chrome browser
+8. http://<ip address of the tools machine>
+9. create a new user
+
+	```
+	admin/cisco123
+
+	```
+
+10. create new project and name it `training`
+
+![gitlab](/images/gitlab-1.png)
 
 #Docker Tips
 If your boot2docker can not resolve dns entry?
