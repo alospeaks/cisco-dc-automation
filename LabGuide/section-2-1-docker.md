@@ -293,7 +293,9 @@ We only need github and gitlab plugin for now
 
 	![jenkins](/images/jenkins-16.png)
 5. Don't  restart yet
-6. once install, you need to restart your server
+
+	![jenkins](/images/jenkins-17.png)
+6. Once install, you need to restart your server
 
 ![jenkins](/images/jenins-10.png)
 
