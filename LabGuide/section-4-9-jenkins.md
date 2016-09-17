@@ -59,8 +59,7 @@ We only need github and gitlab plugin for now
 
 	![jenkins](/images/jenkins-jobs-2.png)
 
-5. git hub configuration
-Login into your github account and get the url for the `training` repository.
+5. Login into your github account and get the url for the `training` repository.
 
 ![jenkins](/images/jenkins-jobs-3.png)
 
