@@ -43,6 +43,7 @@ Virtual box is a x86 virtualization product.  Basically it lets you run virutal 
 ####Verify Virtual box installation
 1. On the terminal window type `vboxmanage -v`
 
+# Do not install this. This tool is not needed for the lab.
 ##Vagrant Tool
 ###Exercise 4
 ####Installing Vagrant Tool
@@ -60,16 +61,3 @@ Verify that it is installed correctly
 1. Open a terminal window
 2. Type `vagrant -v` and `vagrant -h`
 3. make sure you see help options
-
-
-##Docker
-
-##Ansible
-
-##Jenkins
-
-##GitLabs
-
-##GoCD
-
-##Gerrit
