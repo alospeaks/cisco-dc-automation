@@ -275,22 +275,24 @@ RUN pip install ansible --upgrade
 
 **Tips**
 To login into the jenkins container, try this
-docker exec -u 0 -it jenkins bash
+`docker exec -u 0 -it jenkins bash`
 
 all the files are under /var/jenkins_home/workspace/  ; your git will be cloned into this directory
 
-or since u mapped the files, u can see all the logs locally on your laptop. just open the jenkins folder under training
-
 ####
 Installing jenins plugins
+We only need github and gitlab plugin for now
 
-We only need git plugin for now
-
-1. go to the dashboard
+1. Go to the dashboard
 2. on the left side, click on "Manage Jenkins"
+
+	![jenkins](/images/jenkins-15.png)
 3. Then select plugins
 	1. github plugin
-5. no restart
+	2. gitlab plugin
+
+	![jenkins](/images/jenkins-16.png)
+5. Don't  restart yet
 6. once install, you need to restart your server
 
 ![jenkins](/images/jenins-10.png)
