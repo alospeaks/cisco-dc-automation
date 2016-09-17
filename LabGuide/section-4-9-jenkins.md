@@ -67,7 +67,7 @@ Fill in the "Source Code Management Form"
 
 ![jenkins](/images/jenkins-jobs-4.png)
 
-![jenkins](/images/jenkins-jobs-5.png)
+![jenkins](/images/jenkins-jobs-8.png)
 
 6. set the trigger
 7.
@@ -78,7 +78,7 @@ Fill in the "Source Code Management Form"
 echo "Running Ansible against: $FQDN"
 # http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking
 export ANSIBLE_HOST_KEY_CHECKING=False
-pushd /var/jenkins_home/workspace/training/ansible/
+pushd /var/jenkins_home/workspace/deploy-prod/ansible/
     ansible-playbook -i hosts <playbook>.yml
 popd
 
