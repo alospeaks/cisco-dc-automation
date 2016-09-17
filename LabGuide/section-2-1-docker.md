@@ -43,6 +43,13 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 1. Download and install docker toolbox. Use all the default settings for the installation.
 	https://www.docker.com/products/docker-toolbox
 
+
+####Tune your VM for faster performance
+1. Open up virtual box
+2. select the 'default' VM
+3. click on `settings`
+4. increase the memory to 4G and CPU to 4. (higher the better)
+
 ###Exercise-2
 ####Working with Docker Machine Utility
 When you installed docker tool, docker-machine automatically got installed. `docker-machine` utility lets you manage docker engines. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
@@ -280,7 +287,7 @@ To login into the jenkins container, try this
 all the files are under /var/jenkins_home/workspace/  ; your git will be cloned into this directory
 
 ####
-Installing jenins plugins
+Installing jenkins plugins
 We only need github and gitlab plugin for now
 
 1. Go to the dashboard
@@ -295,16 +302,17 @@ We only need github and gitlab plugin for now
 5. Don't  restart yet
 
 	![jenkins](/images/jenkins-17.png)
-6. Once install, you need to restart your server
-
-	![jenkins](/images/jenins-10.png)
-
-
-
-
+6. Once install, you need to restart your server. Check the 'restart box' at the end of the screen or
+7. On the url of the browser type `http://<ip>:8080/restart`
 
 ### Creating a job
+1. Click on "Create new Job"
 
+ 	![jenkins](/images/jenkins-jobs-1.png)
+3. Name the job `deploy-prod`
+4. use `free style project`
+
+	![jenkins](/images/jenkins-jobs-2.png)
 
 ### Manually running a job
 
