@@ -1,27 +1,4 @@
 **Table of Contents**
-- [Docker](#)
-	- [Docker Toolbox](#)
-		- [Exercise-1](#exercise-1)
-			- [Installing Docker-Toolbox](#)
-		- [Exercise-2](#exercise-2)
-			- [Working with Docker Machine Utility](#)
-		- [Exercise-3](#exercise-3)
-			- [Ssh into your Docker VM](#)
-		- [Exercise-4](#exercise-4)
-			- [Creating source file.](#)
-		- [Exercise-5](#exercise-5)
-			- [Setting the Environment variables using source file](#)
-	- [Nxtoolkit Container](#)
-		- [Exercise-6](#exercise-6)
-			- [Creating nxtoolkit image](#)
-		- [Exercise-7](#exercise-7)
-			- [Spin up a nxtoolkit Container using this image](#)
-	- [Ansible Docker Container](#)
-		- [Exercise-8](#exercise-8)
-			- [Build Ansible Dockerfile](#)
-		- [Exercise-9](#exercise-9)
-			- [Creating Ansible Container using Docker](#)
-- [Docker Tips](#docker-tips)
 
 
 #Docker
@@ -267,31 +244,16 @@ RUN pip install ansible --upgrade
 
 **STOP HERE , we will do the rest in the Jenkins Section**
 
-### Create gitlab container
+## Gitlab Container
+### Create gitlab docker compose file
 
+1. Switch to `ATOM` editor
+2. Create a new folder called `gitlab` under `training` folder.
+3. Right click on the `gitlab` folder and select `New File`
+4. name it `docker-compose.yml`
+5. Paste the following:
 
-1. On the terminal window
-2. go to training folder
-4. source the tools machine ..
-5. `source source.tools`
-6. Type the following:
-
-	```
-	docker run --detach \
-	    --hostname gitlab.example.com \
-	    --publish 443:443 --publish 80:80 --publish 2222:22 \
-	    --name gitlab \
-		--external_url 'http://192.168.99.101' \
-	    --restart always \
-	    --volume /srv/gitlab/config:/etc/gitlab \
-	    --volume /srv/gitlab/logs:/var/log/gitlab \
-	    --volume /srv/gitlab/data:/var/opt/gitlab \
-	    gitlab/gitlab-ce:latest
-
-	```
-
-	using docker compose
-
+```
 gitlab:
   image: 'gitlab/gitlab-ce:latest'
   restart: always
@@ -304,47 +266,44 @@ gitlab:
     - '80:80'
     - '443:443'
     - '2222:22'
+
   volumes:
     - '/srv/gitlab/config:/etc/gitlab'
     - '/srv/gitlab/logs:/var/log/gitlab'
     - '/srv/gitlab/data:/var/opt/gitlab'
+  # privileged: true
 
 
+```
 
+###Spin up gitlab container
 
-	gitlab:  
-	 container_name: gitlab
-	 image: gitlab/gitlab-ce:latest
-	 hostname: gitlab
-	 environment:
-	   GITLAB_OMNIBUS_CONFIG: |
-	     external_url 'http://192.168.99.101'
-	     gitlab_rails['gitlab_shell_ssh_port'] = 2222
-	 ports:
-	  - "8050:8050"
-	  - "522:22"
-	 volumes:
-	  - /media/elton/usb-gitlab/gitlab/config:/etc/gitlab
-	  - /media/elton/usb-gitlab/gitlab/logs:/var/log/gitlab
-	  - /media/elton/usb-gitlab/gitlab/data:/var/opt/gitlab
-	 privileged: true
+1. On the terminal window
+2. go to training folder
+4. source the tools machine ..
+5. `source source.tools`
+6. cd `training`
+7. type ` docker-compose up`
+8. this should start up the gitlab container
+9. Verify `docker ps`
+10. type `docker-machine ip default`
+10. Wait for few mins
 
+### Configure gitlab
 
-7. type `docker ps`  (verify that container is running)
-7. Find the ip of the tool docker machine
-8. `docker-machine ip tools`
-8. Switch to the chrome browser
-8. `http://<ip address of the tools machine>`
-9. create a new user
+1. Open up chrome browser
+2. http://<ip of the docker node>
+3. create a new user
 
 	```
 	admin/cisco123
 
 	```
 
-10. create new project and name it `training`
+4. create new project and name it `training`
 
 ![gitlab](/images/gitlab-1.png)
+
 
 #Docker Tips
 If your boot2docker can not resolve dns entry?
