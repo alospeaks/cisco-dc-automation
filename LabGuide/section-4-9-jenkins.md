@@ -91,6 +91,10 @@ popd
 
 8. Click on `Build Now`
 
+ ![jenkins](/images/jenkins-jobs-10.png)
+
+9. The the output
+
  ![jenkins](/images/jenkins-jobs-9.png)
 
 ### Manually running a job
