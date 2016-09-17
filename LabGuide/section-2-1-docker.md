@@ -276,18 +276,19 @@ RUN pip install ansible --upgrade
 5. `source source.tools`
 6. Type the following:
 
-```
-docker run --detach \
-    --hostname gitlab.example.com \
-    --publish 443:443 --publish 80:80 --publish 2222:22 \
-    --name gitlab \
-    --restart always \
-    --volume /srv/gitlab/config:/etc/gitlab \
-    --volume /srv/gitlab/logs:/var/log/gitlab \
-    --volume /srv/gitlab/data:/var/opt/gitlab \
-    gitlab/gitlab-ce:latest
-```
+	```
+	docker run --detach \
+	    --hostname gitlab.example.com \
+	    --publish 443:443 --publish 80:80 --publish 2222:22 \
+	    --name gitlab \
+	    --restart always \
+	    --volume /srv/gitlab/config:/etc/gitlab \
+	    --volume /srv/gitlab/logs:/var/log/gitlab \
+	    --volume /srv/gitlab/data:/var/opt/gitlab \
+	    gitlab/gitlab-ce:latest
+	```
 
+7. docker ps  (verify that container is running)
 7. Find the ip of the tool docker machine
 8. `docker-machine ip tools`
 8. Switch to the chrome browser
