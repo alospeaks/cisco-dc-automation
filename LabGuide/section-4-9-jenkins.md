@@ -98,6 +98,6 @@ popd
  ![jenkins](/images/jenkins-jobs-9.png)
 
 ### Manually running a job
-
+you can only run it manually now since your jenkin server is not reachable via internet.
 
 ### Using console to see the log output
