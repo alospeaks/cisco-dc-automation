@@ -313,6 +313,26 @@ We only need github and gitlab plugin for now
 4. use `free style project`
 
 	![jenkins](/images/jenkins-jobs-2.png)
+5. git hub configuration
+
+![jenkins](/images/jenkins-jobs-3.png)
+
+![jenkins](/images/jenkins-jobs-4.png)
+
+![jenkins](/images/jenkins-jobs-5.png)
+6. set the trigger
+![jenkins](/images/jenkins-jobs-6.png)
+
+```
+#!/bin/bash
+echo "Running Ansible against: $FQDN"
+# http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking
+export ANSIBLE_HOST_KEY_CHECKING=False
+pushd /var/jenkins_home/workspace/training/ansible/
+    ansible-playbook -i hosts <playbook>.yml
+popd
+
+```
 
 ### Manually running a job
 
