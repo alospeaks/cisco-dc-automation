@@ -24,7 +24,7 @@ Virtual box is a x86 virtualization product.  Basically it lets you run virutal 
 1. On the terminal window type `vboxmanage -v`
 
 
-## Do not install this section. This tool is not needed for the lab.
+## Do not do the sections below. These tool are not needed for the lab.
 ##Vagrant Tool
 ###Exercise 4
 ####Installing Vagrant Tool
