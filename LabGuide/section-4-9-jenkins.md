@@ -63,6 +63,8 @@ We only need github and gitlab plugin for now
 
 ![jenkins](/images/jenkins-jobs-3.png)
 
+Fill in the "Source Code Management Form"
+
 ![jenkins](/images/jenkins-jobs-4.png)
 
 ![jenkins](/images/jenkins-jobs-5.png)
