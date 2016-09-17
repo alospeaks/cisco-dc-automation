@@ -1,10 +1,15 @@
 #Jenkins
 
 
+###Update the hosts file
+1. Open another terminal window and navigate to training folder
+2. source `source source.docker`
+3. update the hosts files since we are not using dns
+2. type `docker exec -it jenkinsecho 172.16.123.135 leaf1 > /etc/hosts`
+
+
 ###Getting Jenkins login password
-7. Get the admin password
-	1. Open another terminal window and navigate to training folder
-	2. source `source source.docker`
+1. Get the admin password
 	3. type `docker exec -it jenkins  cat /var/jenkins_home/secrets/initialAdminPassword `
 	4. copy the password
 	5. type `docker-machine ip default` and note down the ip address of the docker host
@@ -83,6 +88,10 @@ pushd /var/jenkins_home/workspace/deploy-prod/ansible/
 popd
 
 ```
+
+8. Click on `Build Now`
+
+ ![jenkins](/images/jenkins-jobs-9.png)
 
 ### Manually running a job
 
