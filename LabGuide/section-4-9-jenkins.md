@@ -93,7 +93,7 @@ popd
 
  ![jenkins](/images/jenkins-jobs-10.png)
 
-9. The the output
+9. Take a look at the console output
 
  ![jenkins](/images/jenkins-jobs-9.png)
 
