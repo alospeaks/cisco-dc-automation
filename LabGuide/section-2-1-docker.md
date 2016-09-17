@@ -281,18 +281,60 @@ RUN pip install ansible --upgrade
 	    --hostname gitlab.example.com \
 	    --publish 443:443 --publish 80:80 --publish 2222:22 \
 	    --name gitlab \
+		--external_url 'http://192.168.99.101' \
 	    --restart always \
 	    --volume /srv/gitlab/config:/etc/gitlab \
 	    --volume /srv/gitlab/logs:/var/log/gitlab \
 	    --volume /srv/gitlab/data:/var/opt/gitlab \
 	    gitlab/gitlab-ce:latest
+
 	```
 
-7. docker ps  (verify that container is running)
+	using docker compose
+
+gitlab:
+  image: 'gitlab/gitlab-ce:latest'
+  restart: always
+  hostname: 'gitlab.cisco.com'
+  environment:
+    GITLAB_OMNIBUS_CONFIG: |
+      external_url 'http://192.168.99.101'
+      # Add any other gitlab.rb configuration here, each on its own line
+  ports:
+    - '80:80'
+    - '443:443'
+    - '2222:22'
+  volumes:
+    - '/srv/gitlab/config:/etc/gitlab'
+    - '/srv/gitlab/logs:/var/log/gitlab'
+    - '/srv/gitlab/data:/var/opt/gitlab'
+
+
+
+
+	gitlab:  
+	 container_name: gitlab
+	 image: gitlab/gitlab-ce:latest
+	 hostname: gitlab
+	 environment:
+	   GITLAB_OMNIBUS_CONFIG: |
+	     external_url 'http://192.168.99.101'
+	     gitlab_rails['gitlab_shell_ssh_port'] = 2222
+	 ports:
+	  - "8050:8050"
+	  - "522:22"
+	 volumes:
+	  - /media/elton/usb-gitlab/gitlab/config:/etc/gitlab
+	  - /media/elton/usb-gitlab/gitlab/logs:/var/log/gitlab
+	  - /media/elton/usb-gitlab/gitlab/data:/var/opt/gitlab
+	 privileged: true
+
+
+7. type `docker ps`  (verify that container is running)
 7. Find the ip of the tool docker machine
 8. `docker-machine ip tools`
 8. Switch to the chrome browser
-8. http://<ip address of the tools machine>
+8. `http://<ip address of the tools machine>`
 9. create a new user
 
 	```
