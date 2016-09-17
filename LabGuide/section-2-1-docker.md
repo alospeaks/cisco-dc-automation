@@ -69,7 +69,7 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 
 ###Exercise-2
 ####Working with Docker Machine Utility
-When you installed docker tool, docker-machine automatically got installed. `docker-machine` utility lets you manage docker engines. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
+When you installed docker tool, `docker-machine` automatically got installed. `docker-machine` utility lets you manage docker engines on different hypervisors including virtualbox. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
 
 ***Make sure you do not have any VPN connections such as Cisco's Anyconnect turned on.***
 
