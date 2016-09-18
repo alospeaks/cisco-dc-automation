@@ -97,7 +97,7 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 
 	![jenkins](/images/jenkins-401.png)
 
-6. Run a shell script to run the playbook to deploy.
+6. Run a shell script to run the ansible playbook.
 
 	![jenkins](/images/jenkins-402.png)
 
