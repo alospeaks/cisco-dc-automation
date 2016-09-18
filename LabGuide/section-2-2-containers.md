@@ -145,7 +145,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 2. Take a look at the README.md
 3. you should see the new contents.
 
-
+  ![gitlab](/images/gitlab-302.png)
 
 ## Jenkins  Container
 ### Exercise 4
