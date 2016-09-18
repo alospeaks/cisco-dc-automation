@@ -73,7 +73,7 @@ We need gitlab plugin for now.  Lets install them.
 #### Creating a job
 Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON format and uses them to configure Jenkins. You can keep your job descriptions in human readable text format in a version control system to make changes and auditing easier
 
-1. Click on "Create new Job"
+1. Click on `Create new Job`
 
  	![jenkins](/images/jenkins-jobs-1.png)
 3. Name the job `deploy-prod`
@@ -85,17 +85,18 @@ Freestyle project: This provides the ability to create a completely custom job t
 
 5. Login into your github account and get the url for the `training` repository.
 
-![jenkins](/images/jenkins-jobs-3.png)
+	![jenkins](/images/jenkins-jobs-3.png)
 
-Fill in the "Source Code Management Form"
+	Fill in the "Source Code Management Form"
 
-![jenkins](/images/jenkins-jobs-4.png)
+	![jenkins](/images/jenkins-jobs-4.png)
 
-![jenkins](/images/jenkins-jobs-8.png)
+	![jenkins](/images/jenkins-jobs-8.png)
 
 6. set the trigger
 7.
-![jenkins](/images/jenkins-jobs-6.png)
+
+	![jenkins](/images/jenkins-jobs-6.png)
 
 ```
 #!/bin/bash
