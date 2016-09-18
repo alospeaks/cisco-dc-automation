@@ -38,8 +38,6 @@ Docker compose is one way of spinning up docker containers.
           - '/srv/gitlab/config:/etc/gitlab'
           - '/srv/gitlab/logs:/var/log/gitlab'
           - '/srv/gitlab/data:/var/opt/gitlab'
-        # privileged: true
-
 
       ```
 ###Exercise-2
