@@ -101,30 +101,43 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 
 	![jenkins](/images/jenkins-402.png)
 
+	Make sure to change the playbook name to meet your requirement
+
 	```
 	#!/bin/bash
 	echo "Running Ansible against: $FQDN"
 	# http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking
 	export ANSIBLE_HOST_KEY_CHECKING=False
 	pushd /var/jenkins_home/workspace/deploy-prod/
-	    ansible-playbook -i hosts <playbook>.yml
+	    ansible-playbook -i hosts r-baseconfig.yml
 	popd
 
 	```
-Note: jenkins will fetch the repo and stop it under `/var/jenkins_home/workspace/deploy-prod/` directory.
+Note: jenkins will fetch the repo and store the contents  under `/var/jenkins_home/workspace/deploy-prod/` directory.
 
 8. Click on `Save`
 8. Click on `Build Now`
 
  ![jenkins](/images/jenkins-jobs-10.png)
 
-9. Take a look at the console output
+9. Take a look at the console output.  Click on the build and select `Console Output`
 
  ![jenkins](/images/jenkins-jobs-9.png)
 
+10. Copy the CI integration url so that we can create a webhook in gitlab
+	1. Click on the `deploy-prod` job
+	2. click on the `Configure`
+	3. go down to the `Build Triggers` section
+	4. copy the CI service url
 
+	![jenkins](/images/jenkins-403.png)
+We will use this information in the next exercise.
 ### Exercise-6
-#### Using console to see the log output
+#### Configure the webhook on the gitlab.
+If you like the gitlab notify Jenkins that something has changed in the repo and go deploy it again, you need to configure something called webhook.
+
+1. Switch to back to the `gitlab` tab.
+2.	
 
 
 ### Exercise-6
