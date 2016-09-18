@@ -89,8 +89,6 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 
 	![jenkins](/images/gitlab-305.png)
 
-	![jenkins](/images/jenkins-jobs-3.png)
-
 5. Fill in the "Source Code Management Form"
 
 	![jenkins](/images/jenkins-jobs-4.png)
