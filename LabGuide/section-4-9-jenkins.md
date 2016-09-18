@@ -79,15 +79,19 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 3. Name the job `deploy-prod`
 4. use `free style project`
 
-	Freestyle project: This provides the ability to create a completely custom job that can behave in any way we choose. 
+	Freestyle project: This provides the ability to create a completely custom job that can behave in any way we choose.
 
 	![jenkins](/images/jenkins-jobs-2.png)
 
-5. Login into your github account and get the url for the `training` repository.
+5. Switch to your gitlab tab on the browser.  
+	1. Click on the `Project`
+	2. copy the url for the `ansible` project.
+
+	![jenkins](/images/gitlab-305.png)
 
 	![jenkins](/images/jenkins-jobs-3.png)
 
-	Fill in the "Source Code Management Form"
+5. Fill in the "Source Code Management Form"
 
 	![jenkins](/images/jenkins-jobs-4.png)
 
