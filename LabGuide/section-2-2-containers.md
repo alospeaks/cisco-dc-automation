@@ -73,9 +73,9 @@ Docker compose is one way of spinning up docker containers.
 
 	```
 
-4. Click on create `New project` and name it `traininglabs`
+4. Click on create `New project` and name it `ansible`
 
-  ![gitlab](/images/gitlab-101.png)
+  ![gitlab](/images/gitlab-300.png)
 
 #### Cloning the Repository
 1. Switch to the terminal window
