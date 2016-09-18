@@ -148,13 +148,14 @@ For the lab environment, we want to quickly push the changes to the remote repo 
   ![gitlab](/images/gitlab-302.png)
 
 ## Jenkins  Container
-### Exercise 4
+### Exercise 1
 ####Creating Jenkins Container
 1. Switch to `Atom` Editor
 2. create a new folder under `training`.
 3. Right click on training and select `New Folder`
 4. name it `jenkins`
 
+### Exercise 2
 ###Create Dockerfile
 
 Lets create a docker file to build a new image that has jenkins and ansible installed.  For jenkins, we will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
@@ -181,6 +182,7 @@ RUN pip install ansible --upgrade
 ```
 7. `Cmd + S`, to save the file
 
+### Exercise 3
 ####Build the new image
 1. Open up a terminal window,
 2. navigate to the training directory
@@ -193,12 +195,43 @@ RUN pip install ansible --upgrade
 
 	`docker run --name jenkins -h jenkins -d --restart=always -p 8080:8080 -p 50000:50000 hemakuma/jenkins-ansible`
 
+**STOP HERE , we will do the rest of jenkins exercises in the Jenkins Section**
 
-**We will configure Jenkins Server in Jenkins section later**
+
+##Ansible Docker Container
+Lets install Ansible on  a docker container.
+
+###Exercise-1
+####Build Ansible Dockerfile
+1. Switch to `ATOM` editor
+2. Right click on the `Training` folder and select `New Folder`.  Name it `ansible`.
+3. Now Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
+4. Copy and paste the content from here to this new file.  
+https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_ansible  
+5. Build the image. From the terminal, type  
+    `docker build -t ansible --tag hemakuma/ansible .`
+6. Verify that ansible image is created.  
+    1. `docker images`
+
+###Exercise-2
+####Creating Ansible Container using Docker
+
+1. Spin up a nxos ansible container
+    1. Mac Users  
+    `docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
+    2. Windows Users  
+    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
+
+    This will start the container and log you in. From inside the container.
+
+2. exit the container.  We will use this container later in the ansible exercises.
+3. Go to your Atom editor and you should all these files under ansible folder.
+
+
 
 ## Nxtoolkit Container
 Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  nxtoolkit provides python libraries and examples on how to interact with Cisco's Nexus switches using NXAPI.
-### Exercise-5
+### Exercise-1
 ####Creating nxtoolkit image
 1. Go to your `ATOM` Editor
 2. Right click on the `training` folder and select `New Folder`. Name it `nxtoolkit`
@@ -212,6 +245,7 @@ https://github.com/Hemakuma/training/blob/master/nxtoolkit/Dockerfile
 This docker file will create a docker image for nxtoolkit
 5. Save the file `CMD-S`. Name the file `Dockerfile`.  Click save. (for windows users use ctrl+S)
 
+### Exercise 2
 ####Creating the docker images for nxtoolkit
 6. Switch back to your terminal window (Windows users use Git Bash)
 go to training directory
@@ -226,7 +260,8 @@ go to training directory
 ![docker-3](/images/docker-c-3.png)
 10. Now lets spin up one container using this image. This will be your nxtookkit container that have everything installed for you to get started with python coding.
 
-###Exercise-7
+
+###Exercise 3
 ####Spin up a nxtoolkit Container using this image
 1. Switchback to the terminal window.
 2. type `pwd` to verify your working directory. You should be in the `training/nxtoolkit` directory
@@ -254,42 +289,12 @@ go to training directory
 
 You are now ready to do off box programming.
 
-##Ansible Docker Container
-Lets install Ansible on  a docker container.
-
-###Exercise-8
-####Build Ansible Dockerfile
-1. Switch to `ATOM` editor
-2. Right click on the `Training` folder and select `New Folder`.  Name it `ansible`.
-3. Now Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
-4. Copy and paste the content from here to this new file.  
-https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_ansible  
-5. Build the image. From the terminal, type  
-    `docker build -t ansible --tag hemakuma/ansible .`
-6. Verify that ansible image is created.  
-    1. `docker images`
-
-###Exercise-9
-####Creating Ansible Container using Docker
-
-1. Spin up a nxos ansible container
-    1. Mac Users  
-    `docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
-    2. Windows Users  
-    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
-
-    This will start the container and log you in. From inside the container.
-
-2. exit the container.  We will use this container later in the ansible exercises.
-3. Go to your Atom editor and you should all these files under ansible folder.
-
-
 
 ##Using Docker Compose
 
 
 
-**STOP HERE , we will do the rest in the Jenkins Section**
+
 
 #Docker Tips
 If your boot2docker can not resolve dns entry?
