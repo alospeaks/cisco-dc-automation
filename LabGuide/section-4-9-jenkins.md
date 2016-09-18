@@ -132,12 +132,13 @@ Note: jenkins will fetch the repo and store the contents  under `/var/jenkins_ho
 
 	![jenkins](/images/jenkins-403.png)
 We will use this information in the next exercise.
+
 ### Exercise-6
 #### Configure the webhook on the gitlab.
 If you like the gitlab notify Jenkins that something has changed in the repo and go deploy it again, you need to configure something called webhook.
 
 1. Switch to back to the `gitlab` tab.
-2.	
+2.
 
 
 ### Exercise-6
