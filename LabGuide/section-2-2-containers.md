@@ -10,35 +10,38 @@ We need gitlab for our source control.  We could use github but we wanted to see
 ####Create gitlab docker compose file
 Docker compose is one way of spinning up docker containers.
 
-1. Switch to `ATOM` editor
-2. Right click on the `Training` Folder and select new folder. Name it `gitlab`
-3. Right click on the `gitlab` folder and select `New File`
-4. name it `docker-compose.yml`
-5. Paste the following content into the file and save it:
-***Make sure to change the `external_url 'http://192.168.99.101'` reflect the ip address of your docker host.  you can get the ip address from the terminal window by typing `docker-machine ip default`***
+1. Switch to the terminal window
+  2. type `docker-machine ip default`
+  3. Copy the ip address from the output
+2. Switch to `ATOM` editor
+  1. Right click on the `Training` Folder and select new folder. Name it `gitlab`
+  2. Right click on the `gitlab` folder and select `New File`
+  3. name it `docker-compose.yml`
+  4. Paste the following content into the file and save it:
+  5. Make sure to change the `external_url` to reflect the ip address of you docker machine.
 
-```
-gitlab:
-  image: 'gitlab/gitlab-ce:latest'
-  restart: always
-  hostname: 'gitlab.cisco.com'
-  environment:
-    GITLAB_OMNIBUS_CONFIG: |
-      external_url 'http://192.168.99.101'
-      # Add any other gitlab.rb configuration here, each on its own line
-  ports:
-    - '80:80'
-    - '443:443'
-    - '2222:22'
+      ```
+      gitlab:
+        image: 'gitlab/gitlab-ce:latest'
+        restart: always
+        hostname: 'gitlab.cisco.com'
+        environment:
+          GITLAB_OMNIBUS_CONFIG: |
+            external_url 'http://192.168.99.101'
+            # Add any other gitlab.rb configuration here, each on its own line
+        ports:
+          - '80:80'
+          - '443:443'
+          - '2222:22'
 
-  volumes:
-    - '/srv/gitlab/config:/etc/gitlab'
-    - '/srv/gitlab/logs:/var/log/gitlab'
-    - '/srv/gitlab/data:/var/opt/gitlab'
-  # privileged: true
+        volumes:
+          - '/srv/gitlab/config:/etc/gitlab'
+          - '/srv/gitlab/logs:/var/log/gitlab'
+          - '/srv/gitlab/data:/var/opt/gitlab'
+        # privileged: true
 
 
-```
+      ```
 ###Exercise-2
 ####Spin up gitlab container
 
