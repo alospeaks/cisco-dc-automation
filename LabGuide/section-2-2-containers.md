@@ -96,6 +96,7 @@ Lets create a docker file to build a new image that has jenkins and ansible inst
 #VERSION 1.0
 FROM jenkins
 MAINTAINER Hemant Kumar, hemakuma@cisco.com
+USER root
 RUN apt-get update && apt-get -y upgrade && apt-get install -y  vim git python curl openssh-server  python-pip python-dev build-essential libssl-dev libffi-dev
 RUN pip install --upgrade pip
 RUN pip install ansible==2.1.1
@@ -104,6 +105,8 @@ RUN pip install cryptography
 ##if this fails, use pip install cryptography --upgrade; failed in jenkins container
 ## upgrade to the latest VERSION
 RUN pip install ansible --upgrade
+#RUN echo 172.16.123.135 leaf1 > /etc/hosts
+
 ```
 7. `Cmd + S`, to save the file
 
@@ -134,14 +137,18 @@ Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  n
 ### Exercise-5
 ####Creating nxtoolkit image
 1. Go to your `ATOM` Editor
-2. Create a new folder called `nxtoolkit` in the `training` folder
-![docker](/images/docker-c-2.png)
+2. Right click on the `training` folder and select `New Folder`. Name it `nxtoolkit`
+
+  ![docker](/images/docker-c-2.png)
+
 3. Now Right click on the `nxtoolkit` folder and select `New File`
 4. Name this file `Dockerfile`
 4. Copy and paste the content from here to this new file.  
 https://github.com/Hemakuma/training/blob/master/nxtoolkit/Dockerfile  
 This docker file will create a docker image for nxtoolkit
 5. Save the file `CMD-S`. Name the file `Dockerfile`.  Click save. (for windows users use ctrl+S)
+
+####Creating the docker images for nxtoolkit
 6. Switch back to your terminal window (Windows users use Git Bash)
 go to training directory
 6. `cd nxtoolkit`

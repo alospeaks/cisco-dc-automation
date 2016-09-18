@@ -21,3 +21,9 @@ jenkins:
     content: ./jenkins
   #  dockerfile: Dockerfile
     image: jenkins-ansible
+  image: jenkins-ansible
+  restart: always
+  hostname: jenkins
+  ports:
+    - '8080:8080'
+    - '50000:50000'
