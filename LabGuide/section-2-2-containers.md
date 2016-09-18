@@ -231,11 +231,11 @@ go to training directory
 1. Switchback to the terminal window.
 2. type `pwd` to verify your working directory. You should be in the `training/nxtoolkit` directory
 3. Mac Users    
-    `docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/nxtoolkit:/opt/nxtoolkit/myscripts  nxtoolkit`
+    `docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/labs/nxtoolkit:/opt/nxtoolkit/myscripts  nxtoolkit`
 
 4. Windows Users  
     Launch Docker Quickstart Terminal and run the following command:  
-    `docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/nxtoolkit:/opt/nxtoolkit/myscripts  nxtoolkit`
+    `winpty docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/labs/nxtoolkit:/opt/nxtoolkit/myscripts  nxtoolkit`
 
     -v option basically lets you mount a volume inside your container so that you can access it from your laptop HDD.  This way you can edit your code on your laptop but it will be available inside the container.
     You should now be inside your nxtoolkit container.
@@ -274,9 +274,9 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 
 1. Spin up a nxos ansible container
     1. Mac Users  
-    `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
+    `docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
     2. Windows Users  
-    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
+    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
 
     This will start the container and log you in. From inside the container.
 
