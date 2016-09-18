@@ -102,11 +102,11 @@ Docker compose is one way of spinning up docker containers.
 
   ![gitlab](/images/gitlab-104.png)
 
-#### Scripting the git pushd
+#### Scripting the git push
 For the lab environment, we want to quickly push the changes to the remote repo on the gitlab. In this exercise we going to create a script to automate this process.
 
 1. Switch to `ATOM` Editor
-2. Go to the `labs` folder
+2. Go to the `ansible` folder inside `labs` folder
 3. Right click and select `New File`
 4. name it `gitpush.sh`
 5. add the following content to the file
@@ -122,7 +122,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 6. Save the file `cmd + S`
 
 #### Modifying the README file.
-1. Open up the `README.md` file from the labs folder
+1. Open up the `README.md` file from the `ansible` folder
 2. Add some contents to it eg `this is my first gitlab edit`
 3. Save it.
 
