@@ -79,7 +79,7 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 3. Name the job `deploy-prod`
 4. use `free style project`
 
-Freestyle project: This provides the ability to create a completely custom job that can behave in any way we choose.
+	Freestyle project: This provides the ability to create a completely custom job that can behave in any way we choose. 
 
 	![jenkins](/images/jenkins-jobs-2.png)
 
