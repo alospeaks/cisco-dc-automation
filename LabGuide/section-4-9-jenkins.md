@@ -34,13 +34,7 @@ Jenkins is an open source tool that is used for scheduling and running automated
 
 13. Click next and then `start using jenkins`
 
-**Tips**
 
-Sometime you will need to login into jenkins container to troubleshoot this. Use this method:
-
-`docker exec -u 0 -it jenkins bash`
-
-All the files are under ``/var/jenkins_home/workspace/``  ; your git will be cloned into this directory
 
 ####
 Installing jenkins plugins
@@ -107,3 +101,13 @@ popd
 you can only run it manually now since your jenkin server is not reachable via internet.
 
 ### Using console to see the log output
+
+
+###Troubleshooting
+**Tips**
+
+Sometime you will need to login into jenkins container to troubleshoot this. Use this method:
+
+`docker exec -u 0 -it jenkins bash`
+
+All the files are under ``/var/jenkins_home/workspace/``  ; your git will be cloned into this directory
