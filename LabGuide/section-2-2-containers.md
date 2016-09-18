@@ -102,7 +102,7 @@ Docker compose is one way of spinning up docker containers.
 
 4. Make sure you see "README.md".
 
-  ![gitlab](/images/gitlab-104.png)
+  ![gitlab](/images/gitlab-303.png)
 
 ###Exercise-6
 #### Scripting the git push
