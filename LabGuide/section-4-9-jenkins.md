@@ -5,8 +5,10 @@ Jenkins is an open source tool that is used for scheduling and running automated
 ####Update the hosts file
 1. Open another terminal window and navigate to training folder
 2. source `source source.docker`
-3. update the hosts files since we are not using dns
-2. type `docker exec -it jenkins echo 172.16.123.135 leaf1 > /etc/hosts`
+3. Find out the ip address of your `nxosv` switch.  you can login into the switch and type `show ip int brief vrf  management`.  Note down the ip.
+4. Update the hosts files on the jenkins server  since we are not using dns
+5. type `docker exec -it jenkins echo 172.16.123.135 leaf1 > /etc/hosts`
+6. repeat this for all the switches you have.
 
 ### Exercise-2
 ####Getting Jenkins login password
