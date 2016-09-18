@@ -1,11 +1,11 @@
 #Jenkins
-
+Jenkins is an open source tool that is used for scheduling and running automated tests and deployment.  It is essentially the friendly butler of automation who will handle all of your automation tasks for you once you tell him to do so and he only needs to be told once.
 
 ###Update the hosts file
 1. Open another terminal window and navigate to training folder
 2. source `source source.docker`
 3. update the hosts files since we are not using dns
-2. type `docker exec -it jenkinsecho 172.16.123.135 leaf1 > /etc/hosts`
+2. type `docker exec -it jenkins echo 172.16.123.135 leaf1 > /etc/hosts`
 
 
 ###Getting Jenkins login password
@@ -16,7 +16,7 @@
 
 ###Login into Jenkins Server
 6. Open up a chrome browser and login in.
-7. http://<ip>:8080
+7. `http://<ip>:8080`
 8. type in the admin password that you copied previously.
 
 	![jenkins](/images/jenkins-12.png)
@@ -34,7 +34,7 @@
 To login into the jenkins container, try this
 `docker exec -u 0 -it jenkins bash`
 
-all the files are under /var/jenkins_home/workspace/  ; your git will be cloned into this directory
+All the files are under ``/var/jenkins_home/workspace/``  ; your git will be cloned into this directory
 
 ####
 Installing jenkins plugins
