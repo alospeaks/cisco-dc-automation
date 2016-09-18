@@ -91,10 +91,10 @@ Docker compose is one way of spinning up docker containers.
 
   ![gitlab](/images/gitlab-301.png)
 
-### Verify that file got uploaded to gitlab
+#### Verify that file got uploaded to gitlab
 1. Switch back to you browser
-2. refesh it
-3. click on the file tab
+2. Refresh it
+3. Click on the `file tab`
 
   ![gitlab](/images/gitlab-103.png)
 
@@ -102,6 +102,15 @@ Docker compose is one way of spinning up docker containers.
 
   ![gitlab](/images/gitlab-104.png)
 
+#### Scripting the git pushd
+For the lab environment, we want to quickly push the changes to the remote repo on the gitlab. In this exercise we going to create a script to automate this process.
+
+1. Switch to `ATOM` Editor
+2. Go to the `labs` folder
+3. Right click and select `New File`
+4. name it `gitpush.sh`
+5. add the following content to the file
+6. 
 
 ## Jenkins  Container
 ### Exercise 4
