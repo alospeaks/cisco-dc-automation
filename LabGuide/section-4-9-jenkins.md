@@ -93,24 +93,27 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 
 	![jenkins](/images/jenkins-400.png)
 
-	![jenkins](/images/jenkins-jobs-8.png)
+7. Set the trigger for the build job.
 
-6. set the trigger
-7.
+	![jenkins](/images/401.png)
 
-	![jenkins](/images/jenkins-jobs-6.png)
+6. Run a shell script to run the playbook to deploy.
+
+	![jenkins](/images/jenkins-402.png)
 
 ```
 #!/bin/bash
 echo "Running Ansible against: $FQDN"
 # http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking
 export ANSIBLE_HOST_KEY_CHECKING=False
-pushd /var/jenkins_home/workspace/deploy-prod/ansible/
+pushd /var/jenkins_home/workspace/deploy-prod/
     ansible-playbook -i hosts <playbook>.yml
 popd
 
 ```
+Note: jenkins will fetch the repo and stop it under `/var/jenkins_home/workspace/deploy-prod/` directory.
 
+8. Click on `Save`
 8. Click on `Build Now`
 
  ![jenkins](/images/jenkins-jobs-10.png)
