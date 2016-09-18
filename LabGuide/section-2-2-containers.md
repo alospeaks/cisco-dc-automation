@@ -146,7 +146,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 
   ![gitlab](/images/gitlab-302.png)
 
-4. You can compare what changed by clicking on the `History` tab and then selecting the `update` you want to compare.
+4. You can compare what changed by clicking on the `README.md` and then on the `History` tab. Select the `update` you want to compare.
 
   ![gitlab](/images/gitlab-304.png)
 
