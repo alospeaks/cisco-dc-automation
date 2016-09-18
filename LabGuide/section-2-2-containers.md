@@ -146,9 +146,6 @@ RUN pip install ansible --upgrade
 
 	`docker run --name jenkins -h jenkins -d --restart=always -p 8080:8080 -p 50000:50000 hemakuma/jenkins-ansible`
 
-14. Wait until u see message `Jenkins is fully up and running`
-
-  ![jenkins](/images/jenkins-11.png)
 
 **We will configure Jenkins Server in Jenkins section later**
 

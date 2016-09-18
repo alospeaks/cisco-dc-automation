@@ -22,6 +22,8 @@ Jenkins is an open source tool that is used for scheduling and running automated
 	![jenkins](/images/jenkins-12.png)
 10. click install plugins and select none (we will install plugins manually)
 
+	![jenkins](/images/jenkins-200.png)
+
 	![jenkins](/images/jenkins-13.png)
 
 12. create a user account (admin/cisco123)
