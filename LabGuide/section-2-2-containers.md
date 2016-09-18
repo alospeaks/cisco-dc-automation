@@ -154,6 +154,7 @@ go to training directory
 6. `cd nxtoolkit`
 7. `ls` <-- make sure your dockerfile is in this directory.
 8. type `Docker build -t  nxtoolkit .`
+9. or u can tag it too, make sure to use your id ..`docker build -t nxtoolkit --tag hemakuma/nxtoolkit .`
 
     ***Don't forget the dot at the end. There is a space between nxtoolkit and dot.  For Windows users, don't forget the `winpty` in front of the docker command.
     It should build you the image for the nxtoolkit.  It should take about 5-10min to complete.***
