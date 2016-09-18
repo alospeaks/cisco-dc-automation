@@ -95,7 +95,7 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 
 7. Set the trigger for the build job.
 
-	![jenkins](/images/401.png)
+	![jenkins](/images/jenkins-401.png)
 
 6. Run a shell script to run the playbook to deploy.
 
