@@ -144,7 +144,7 @@ RUN pip install ansible --upgrade
 7. Verify that the images is in your local repo: `docker images | grep jenkins`
 8. Run the jenkins-ansbile container based on this image.
 
-	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 hemakuma/jenkins-ansible`
+	`docker run --name jenkins -h jenkins -d --restart=always -p 8080:8080 -p 50000:50000 hemakuma/jenkins-ansible`
 
 14. Wait until u see message `Jenkins is fully up and running`
 
