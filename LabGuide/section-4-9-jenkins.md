@@ -8,6 +8,7 @@ Jenkins is an open source tool that is used for scheduling and running automated
 3. Find out the ip address of your `nxosv` switch.  you can login into the switch and type `show ip int brief vrf  management`.  Note down the ip.
 4. Update the hosts files on the jenkins server  since we are not using dns
 5. type
+
 	`docker exec -it jenkins echo 172.16.123.135 leaf1 > /etc/hosts`
 6. repeat this for all the switches you have.
 
