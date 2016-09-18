@@ -138,8 +138,16 @@ We will use this information in the next exercise.
 If you like the gitlab notify Jenkins that something has changed in the repo and go deploy it again, you need to configure something called webhook.
 
 1. Switch to back to the `gitlab` tab.
-2.
+2. Go to `ansible` project
+3. Click on `settings` and then select webhook.
 
+	![jenkins](/images/jenkins-404.png)
+4. paste the url that you copied from the jenkins page
+
+	![jenkins](/images/jenkins-405.png)
+5. Click on `Add Webhook`
+
+6. Click on `Test`.  Make sure you get success.
 
 ### Exercise-6
 #### Manually running a job
