@@ -40,6 +40,9 @@ Docker compose is one way of spinning up docker containers.
           - '/srv/gitlab/data:/var/opt/gitlab'
 
       ```
+
+
+
 ###Exercise-2
 ####Spin up gitlab container
 
