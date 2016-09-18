@@ -9,7 +9,8 @@ Jenkins is an open source tool that is used for scheduling and running automated
 4. Update the hosts files on the jenkins server  since we are not using dns
 5. type
 
-	`docker exec -it jenkins echo 172.16.123.135 leaf1 > /etc/hosts`
+	`docker exec -it jenkins /bin/sh -c "echo 172.16.123.135 leaf1 > /etc/hosts"`
+
 6. repeat this for all the switches you have.
 
 ### Exercise-2
@@ -122,5 +123,9 @@ you can only run it manually now since your jenkin server is not reachable via i
 Sometime you will need to login into jenkins container to troubleshoot this. Use this method:
 
 `docker exec -u 0 -it jenkins bash`
+
+or
+
+`docker exec -it jenkins /bin/bash`
 
 All the files are under ``/var/jenkins_home/workspace/``  ; your git will be cloned into this directory
