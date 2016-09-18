@@ -101,16 +101,16 @@ Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON fo
 
 	![jenkins](/images/jenkins-402.png)
 
-```
-#!/bin/bash
-echo "Running Ansible against: $FQDN"
-# http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking
-export ANSIBLE_HOST_KEY_CHECKING=False
-pushd /var/jenkins_home/workspace/deploy-prod/
-    ansible-playbook -i hosts <playbook>.yml
-popd
+	```
+	#!/bin/bash
+	echo "Running Ansible against: $FQDN"
+	# http://www.ansibleworks.com/docs/gettingstarted.html#a-note-about-host-key-checking
+	export ANSIBLE_HOST_KEY_CHECKING=False
+	pushd /var/jenkins_home/workspace/deploy-prod/
+	    ansible-playbook -i hosts <playbook>.yml
+	popd
 
-```
+	```
 Note: jenkins will fetch the repo and stop it under `/var/jenkins_home/workspace/deploy-prod/` directory.
 
 8. Click on `Save`
