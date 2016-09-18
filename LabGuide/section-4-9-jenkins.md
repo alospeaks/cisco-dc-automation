@@ -32,10 +32,12 @@ Jenkins is an open source tool that is used for scheduling and running automated
 
 	![jenkins](/images/jenkins-201.png)
 
-
+13. Click next and then `start using jenkins`
 
 **Tips**
-To login into the jenkins container, try this
+
+Sometime you will need to login into jenkins container to troubleshoot this. Use this method:
+
 `docker exec -u 0 -it jenkins bash`
 
 All the files are under ``/var/jenkins_home/workspace/``  ; your git will be cloned into this directory
