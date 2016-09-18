@@ -1,6 +1,8 @@
 #Jenkins
 Jenkins is an open source tool that is used for scheduling and running automated tests and deployment.  It is essentially the friendly butler of automation who will handle all of your automation tasks for you once you tell him to do so and he only needs to be told once.
 
+In the Server world, Jenkins can be used to perform the typical build server work, such as doing continuous/official/nightly builds, run tests, or perform some repetitive batch tasks.
+
 ### Exercise-1
 ####Update the hosts file
 1. Open another terminal window and navigate to training folder
@@ -69,11 +71,15 @@ We need gitlab plugin for now.  Lets install them.
 
 ### Exercise-5
 #### Creating a job
+Jenkins Job Builder takes simple descriptions of Jenkins jobs in YAML or JSON format and uses them to configure Jenkins. You can keep your job descriptions in human readable text format in a version control system to make changes and auditing easier
+
 1. Click on "Create new Job"
 
  	![jenkins](/images/jenkins-jobs-1.png)
 3. Name the job `deploy-prod`
 4. use `free style project`
+
+Freestyle project: This provides the ability to create a completely custom job that can behave in any way we choose.
 
 	![jenkins](/images/jenkins-jobs-2.png)
 
