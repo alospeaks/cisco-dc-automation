@@ -61,7 +61,7 @@ Docker compose is one way of spinning up docker containers.
 ###Exercise-3
 #### Configure gitlab
 
-1. Open up chrome browser
+1. Open up chrome browser and point it to:
 2. `http://<ip of the docker node>`
 3. create a new user
 
@@ -76,8 +76,62 @@ Docker compose is one way of spinning up docker containers.
 
 
 
+## Jenkins  Container
+### Exercise 4
+####Creating Jenkins Container
+1. Switch to `Atom` Editor
+2. create a new folder under `training`.
+3. Right click on training and select `New Folder`
+4. name it `jenkins`
+
+###Create Dockerfile
+
+Lets create a docker file to build a new image that has jenkins and ansible installed.  For jenkins, we will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
+
+5. Right click on the `jenkins` folder and select `New File`
+6. name it `Dockerfile`
+7. paste the following
+
+```
+#VERSION 1.0
+FROM jenkins
+MAINTAINER Hemant Kumar, hemakuma@cisco.com
+RUN apt-get update && apt-get -y upgrade && apt-get install -y  vim git python curl openssh-server  python-pip python-dev build-essential libssl-dev libffi-dev
+RUN pip install --upgrade pip
+RUN pip install ansible==2.1.1
+RUN pip install markupsafe
+RUN pip install cryptography
+##if this fails, use pip install cryptography --upgrade; failed in jenkins container
+## upgrade to the latest VERSION
+RUN pip install ansible --upgrade
+```
+7. `Cmd + S`, to save the file
+
+#### Pull the Jenkins image from dockerhub
+1. Open up a terminal window,
+2. navigate to the training directory
+3.  type `source source.docker`
+5. `cd to jenkins` folder
+7. Lets pull the jenkins image from the dockerhub first
+8. `docker images`
+8. `docker pull jenkins`
+9. `docker images`  <-- u should see the new image
+
+
+####Build the new image
+10. type `Docker build -t  jenkins-ansible .`
+11. this should build a new image
+12. `docker images | grep jenkins`
+13. Run the jenkins-ansbile container based on this image.
+
+	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 jenkins-ansible`
+14. Wait until u see message "Jenkins is fully up and running"
+
+![jenkins](/images/jenkins-11.png)
+
 ## Nxtoolkit Container
-### Exercise-6
+Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  nxtoolkit provides python libraries and examples on how to interact with Cisco's Nexus switches using NXAPI.
+### Exercise-5
 ####Creating nxtoolkit image
 1. Go to your `ATOM` Editor
 2. Create a new folder called `nxtoolkit` in the `training` folder
@@ -173,59 +227,6 @@ configure the /etc/hosts and put the entry for your nxosv switch.
 #Creating Docker host for Tools
 We will create a different docker host jenkins, gitlab and gerrit
 
-
-## Jenkins  Container
-### Exercise 9
-####Creating Jenkins Container
-1. Switch to `Atom` Editor
-2. create a new folder under training.
-3. Right click on training and select `New Folder`
-4. name it `jenkins`
-
-###Create Dockerfile
-
-Lets create a docker file to build a new image that has jenkins and ansible installed.  For jenkins, we will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
-
-5. Right click on the `jenkins` folder and select `New File`
-6. name it `Dockerfile`
-7. paste the following
-
-```
-#VERSION 1.0
-FROM jenkins
-MAINTAINER Hemant Kumar, hemakuma@cisco.com
-RUN apt-get update && apt-get -y upgrade && apt-get install -y  vim git python curl openssh-server  python-pip python-dev build-essential libssl-dev libffi-dev
-RUN pip install --upgrade pip
-RUN pip install ansible==2.1.1
-RUN pip install markupsafe
-RUN pip install cryptography
-##if this fails, use pip install cryptography --upgrade; failed in jenkins container
-## upgrade to the latest VERSION
-RUN pip install ansible --upgrade
-```
-7. `Cmd + S`, to save the file
-
-#### Pull the Jenkins image from dockerhub
-1. Open up a terminal window,
-2. navigate to the training directory
-3.  type `source source.docker`
-5. `cd to jenkins` folder
-7. Lets pull the jenkins image from the dockerhub first
-8. `docker images`
-8. `docker pull jenkins`
-9. `docker images`  <-- u should see the new image
-
-
-####Build the new image
-10. type `Docker build -t  jenkins-ansible .`
-11. this should build a new image
-12. `docker images | grep jenkins`
-13. Run the jenkins-ansbile container based on this image.
-
-	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 jenkins-ansible`
-14. Wait until u see message "Jenkins is fully up and running"
-
-![jenkins](/images/jenkins-11.png)
 
 **STOP HERE , we will do the rest in the Jenkins Section**
 
