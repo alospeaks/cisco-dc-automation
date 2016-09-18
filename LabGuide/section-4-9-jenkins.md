@@ -1,20 +1,22 @@
 #Jenkins
 Jenkins is an open source tool that is used for scheduling and running automated tests and deployment.  It is essentially the friendly butler of automation who will handle all of your automation tasks for you once you tell him to do so and he only needs to be told once.
 
-###Update the hosts file
+### Exercise-1
+####Update the hosts file
 1. Open another terminal window and navigate to training folder
 2. source `source source.docker`
 3. update the hosts files since we are not using dns
 2. type `docker exec -it jenkins echo 172.16.123.135 leaf1 > /etc/hosts`
 
-
-###Getting Jenkins login password
+### Exercise-2
+####Getting Jenkins login password
 1. Get the admin password
 	3. type `docker exec -it jenkins  cat /var/jenkins_home/secrets/initialAdminPassword `
 	4. copy the password
 	5. type `docker-machine ip default` and note down the ip address of the docker host
 
-###Login into Jenkins Server
+### Exercise-3
+####Login into Jenkins Server
 6. Open up a chrome browser and login in.
 7. `http://<ip>:8080`
 8. type in the admin password that you copied previously.
@@ -35,8 +37,8 @@ Jenkins is an open source tool that is used for scheduling and running automated
 13. Click next and then `start using jenkins`
 
 
-
-### Installing jenkins plugins
+### Exercise-4
+#### Installing jenkins plugins
 
 We need github and gitlab plugin for now.  Lets install them.
 
@@ -55,7 +57,8 @@ We need github and gitlab plugin for now.  Lets install them.
 6. Once install, you need to restart your server. Check the 'restart box' at the end of the screen or
 7. On the url of the browser type `http://<ip>:8080/restart`
 
-### Creating a job
+### Exercise-5
+#### Creating a job
 1. Click on "Create new Job"
 
  	![jenkins](/images/jenkins-jobs-1.png)
@@ -97,10 +100,16 @@ popd
 
  ![jenkins](/images/jenkins-jobs-9.png)
 
-### Manually running a job
+
+### Exercise-6
+#### Using console to see the log output
+
+
+### Exercise-6
+#### Manually running a job
 you can only run it manually now since your jenkin server is not reachable via internet.
 
-### Using console to see the log output
+
 
 
 ###Troubleshooting
