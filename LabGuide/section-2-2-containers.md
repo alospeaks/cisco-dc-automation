@@ -87,7 +87,7 @@ Docker compose is one way of spinning up docker containers.
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
-  git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/ansible.git  
+  `git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/ansible.git `
 
   ![gitlab](/images/gitlab-301.png)
 
