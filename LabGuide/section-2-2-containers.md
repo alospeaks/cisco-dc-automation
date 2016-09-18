@@ -132,7 +132,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 ###Exercise-8
 #### Push the Updated file to gitlab using script
 1. Switch back to the terminal window.
-2. you should be in the labs directory
+2. you should be in the `ansible` directory  (`training/labs/ansible`)
 3. make the gitpush.sh script executable.
 4. `chmod +x gitpush.sh`
 5. Now use it to push the `README.md` to gitlab.
