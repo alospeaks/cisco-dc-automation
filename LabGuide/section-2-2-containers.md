@@ -77,6 +77,7 @@ Docker compose is one way of spinning up docker containers.
 
   ![gitlab](/images/gitlab-300.png)
 
+###Exercise-4
 #### Cloning the Repository
 1. Switch to the terminal window
 2. `cd training`
@@ -91,6 +92,7 @@ Docker compose is one way of spinning up docker containers.
 
   ![gitlab](/images/gitlab-301.png)
 
+###Exercise-5
 #### Verify that file got uploaded to gitlab
 1. Switch back to you browser
 2. Refresh it
@@ -102,6 +104,7 @@ Docker compose is one way of spinning up docker containers.
 
   ![gitlab](/images/gitlab-104.png)
 
+###Exercise-6
 #### Scripting the git push
 For the lab environment, we want to quickly push the changes to the remote repo on the gitlab. In this exercise we going to create a script to automate this process.
 
@@ -117,15 +120,16 @@ For the lab environment, we want to quickly push the changes to the remote repo 
     git add .
     git commit -m 'updated'
     git push
-
     ```
 6. Save the file `cmd + S`
 
+###Exercise-7
 #### Modifying the README file.
 1. Open up the `README.md` file from the `ansible` folder
 2. Add some contents to it eg `this is my first gitlab edit`
 3. Save it.
 
+###Exercise-8
 #### Push the Updated file to gitlab using script
 1. Switch back to the terminal window.
 2. you should be in the labs directory
@@ -135,10 +139,13 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 6. type
 7. `./gitpush.sh`
 
+###Exercise-9
 #### Verify the file has changed on gitlab.
 1. Switch to browser
 2. Take a look at the README.md
 3. you should see the new contents.
+
+
 
 ## Jenkins  Container
 ### Exercise 4
