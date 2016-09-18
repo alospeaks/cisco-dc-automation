@@ -20,15 +20,17 @@ Jenkins is an open source tool that is used for scheduling and running automated
 8. type in the admin password that you copied previously.
 
 	![jenkins](/images/jenkins-12.png)
-10. click install plugins and select none (we will install plugins manually)
+10. Click `Select plugins to install`. and select none (we will install plugins manually)
 
 	![jenkins](/images/jenkins-200.png)
 
+11. Select none (we will install plugins manually)
+
 	![jenkins](/images/jenkins-13.png)
 
-12. create a user account (admin/cisco123)
+12. Create a user account (<yourid>/cisco123)
 
-	![jenkins](/images/jenkins-14.png)
+	![jenkins](/images/jenkins-201.png)
 
 
 
