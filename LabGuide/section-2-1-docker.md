@@ -63,15 +63,18 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 
 ####Tune your VM for faster performance
 1. Open up virtual box
-2. select the 'default' VM
+2. shutdown the `default VM`.  Right click and select power off.
+2. select the `default` VM
 3. click on `settings`
+4. click on `system` then `Motherboard` , them `processor`
 4. increase the memory to `4G and CPU to 4`. (higher the better)
+5. do not start the VM yet. we will do it in the next exercise.
 
 ###Exercise-2
 ####Working with Docker Machine Utility
 When you installed docker tool, `docker-machine` automatically got installed. `docker-machine` utility lets you manage docker engines on different hypervisors including virtualbox. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
 
-***Make sure you do not have any VPN connections such as Cisco's Anyconnect turned on.***
+***Make sure you do not have any VPN connections such as Cisco's Anyconnect turned on. This will break the docker functionality***
 
 1. Open up Terminal window (windows use open up `gitbash`)
 2. Under home directory create a folder and name it `training`
