@@ -110,7 +110,35 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 3. Right click and select `New File`
 4. name it `gitpush.sh`
 5. add the following content to the file
-6. 
+
+    ```
+    #!/bin/bash
+    echo 'updating git'
+    git add .
+    git commit -m 'updated'
+    git push
+
+    ```
+6. Save the file `cmd + S`
+
+#### Modifying the README file.
+1. Open up the `README.md` file from the labs folder
+2. Add some contents to it eg `this is my first gitlab edit`
+3. Save it.
+
+#### Push the Updated file to gitlab using script
+1. Switch back to the terminal window.
+2. you should be in the labs directory
+3. make the gitpush.sh script executable.
+4. `chmod +x gitpush.sh`
+5. Now use it to push the `README.md` to gitlab.
+6. type
+7. `./gitpush.sh`
+
+#### Verify the file has changed on gitlab.
+1. Switch to browser
+2. Take a look at the README.md
+3. you should see the new contents.
 
 ## Jenkins  Container
 ### Exercise 4
