@@ -90,7 +90,7 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 ####Creating source file.
 Source file are used to set the environment variable to communicate to the docker process running install a VM installed in the virtualbox.
 
-1. Open up a terminal (Windows users:  Restart `Git Bash` to make it aware of newly installed docker files)
+1. In the same terminal window
 2. type `docker-machine env default`
 3. Copy the content to the clipboard.
 4. Go to your **Atom** window
