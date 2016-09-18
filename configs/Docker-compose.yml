@@ -17,5 +17,7 @@ gitlab:
     - '/srv/gitlab/data:/var/opt/gitlab'
 
 jenkins:
-  build: ./jenkins
-  
+  build:
+    content: ./jenkins
+  #  dockerfile: Dockerfile
+    image: jenkins-ansible
