@@ -81,6 +81,8 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 3. cd `~`
 4. `mkdir training`
 4. `docker-machine ls`
+5. `docker-machine start default`
+6. `docker-machine ls`
 ![docker1](/images/docker-m-1.png)
 5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a ubuntu VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.  Here are few commands you can run.
 6. type `docker-machine env default`
