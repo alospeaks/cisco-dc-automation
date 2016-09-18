@@ -84,10 +84,20 @@ Docker compose is one way of spinning up docker containers.
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
-git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/traininglabs.git  
+  git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/traininglabs.git  
 
   ![gitlab](/images/gitlab-102.png)
 
+### Verify that file got uploaded to gitlab
+1. Switch back to you browser
+2. refesh it
+3. click on the file tab
+
+  ![gitlab](/images/gitlab-103.png)
+
+4. Make sure you see "README.md".
+
+  ![gitlab](/images/gitlab-104.png)
 
 
 ## Jenkins  Container
