@@ -46,10 +46,7 @@ Docker compose is one way of spinning up docker containers.
 ###Exercise-2
 ####Spin up gitlab container
 
-1. On the terminal window
-2. go to training folder.  ` cd training`
-4. set the environment variable. type
-5. `source source.docker`
+1. Switch to the terminal window
 6. cd `gitlab`
 7. type ` docker-compose up`
 8. this should start up the gitlab container.
