@@ -45,21 +45,26 @@ Jenkins is an open source tool that is used for scheduling and running automated
 ### Exercise-4
 #### Installing jenkins plugins
 
-We need github and gitlab plugin for now.  Lets install them.
+We need gitlab plugin for now.  Lets install them.
 
 1. Go to the dashboard
-2. on the left side, click on "Manage Jenkins"
+2. on the left side, click on `Manage Jenkins`
+3. On the right side, click on `Manage Plugins`
 
 	![jenkins](/images/jenkins-15.png)
 3. Then select plugins
-	1. github plugin
-	2. gitlab plugin
+	1. Click on the `Available` plugins
+	2. on the `Filter` , type git
+	3. Find the following plugin and check the select box.
+		1. gitlab plugin
 
 	![jenkins](/images/jenkins-16.png)
-5. Don't  restart yet
+
+5. Click on `Install without restart`
 
 	![jenkins](/images/jenkins-17.png)
-6. Once install, you need to restart your server. Check the 'restart box' at the end of the screen or
+
+6. Once install, you need to restart your server. Check the `restart box` at the end of the screen or
 7. On the url of the browser type `http://<ip>:8080/restart`
 
 ### Exercise-5
