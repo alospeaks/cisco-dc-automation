@@ -47,11 +47,14 @@ Docker compose is one way of spinning up docker containers.
 ####Spin up gitlab container
 
 1. Switch to the terminal window
-6. cd `gitlab`
-7. type ` docker-compose up`
-8. this should start up the gitlab container.
-9. Verify `docker ps`
-10. Wait for few mins
+2. cd `gitlab`
+3. type ` docker-compose up -d`
+4. this should start up the gitlab container.  It will take couple of mins to download the images.
+
+  ![docker-comp](/images/docker-comp-1.png)
+
+5. Verify `docker ps`
+10. Wait for few mins for the services to come up inside the container then do next exercise.
 
 ###Exercise-3
 #### Configure gitlab
