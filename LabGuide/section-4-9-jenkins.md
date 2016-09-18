@@ -36,9 +36,9 @@ Jenkins is an open source tool that is used for scheduling and running automated
 
 
 
-####
-Installing jenkins plugins
-We only need github and gitlab plugin for now
+#### Installing jenkins plugins
+
+We need github and gitlab plugin for now.  Lets install them.
 
 1. Go to the dashboard
 2. on the left side, click on "Manage Jenkins"
