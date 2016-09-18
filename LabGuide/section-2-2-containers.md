@@ -53,7 +53,9 @@ Docker compose is one way of spinning up docker containers.
 
   ![docker-comp](/images/docker-comp-1.png)
 
-5. Verify `docker ps`
+5. Wait for this process to finish.  It should take couple of mins.
+6. Verify that your gitlab container is running. Type  `docker ps`
+7. type `docker-machine ip default`  Note down this ip somewhere, you will need it throughout this lab.
 10. Wait for few mins for the services to come up inside the container then do next exercise.
 
 ###Exercise-3
