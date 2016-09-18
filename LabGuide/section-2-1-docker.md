@@ -100,9 +100,9 @@ Source file are used to set the environment variable to communicate to the docke
 
 6. Navigate to the `training` folder in your home directory.
 7. Click `Open` to open this folder in the `ATOM` editor
-6. Right click on `training` folder and select `New File`
+6. Right click on `training` folder and select `New File`. Name it `source.docker`.
 7. Paste the clipboard content to this file.
-8. Save it as `source.docker`.  `CMD+S or Ctrl+S` to save
+8. Save it   `CMD+S or Ctrl+S`
 
 ### Exercise-5
 ####Setting the Environment variables using source file
