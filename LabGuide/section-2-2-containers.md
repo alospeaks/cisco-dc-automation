@@ -134,27 +134,21 @@ RUN pip install ansible --upgrade
 ```
 7. `Cmd + S`, to save the file
 
-#### Pull the Jenkins image from dockerhub
+####Build the new image
 1. Open up a terminal window,
 2. navigate to the training directory
-3.  type `source source.docker`
-5. `cd to jenkins` folder
-7. Lets pull the jenkins image from the dockerhub first
-8. `docker images`
-8. `docker pull jenkins`
-9. `docker images`  <-- u should see the new image
-
-
-####Build the new image
-10. type `Docker build -t  jenkins-ansible .`
-11. this should build a new image
-12. `docker images | grep jenkins`
-13. Run the jenkins-ansbile container based on this image.
+3. type `source source.docker`
+4. cd to `jenkins` folder
+5. type `Docker build -t  jenkins-ansible --tag hemakuma/jenkins-ansible .`
+6. This should build a new image
+7. Verify that the images is in your local repo: `docker images | grep jenkins`
+8. Run the jenkins-ansbile container based on this image.
 
 	`docker run --name jenkins -h jenkins -it --restart=always -p 8080:8080 -p 50000:50000 jenkins-ansible`
-14. Wait until u see message "Jenkins is fully up and running"
 
-![jenkins](/images/jenkins-11.png)
+14. Wait until u see message `Jenkins is fully up and running`
+
+  ![jenkins](/images/jenkins-11.png)
 
 ## Nxtoolkit Container
 Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  nxtoolkit provides python libraries and examples on how to interact with Cisco's Nexus switches using NXAPI.
