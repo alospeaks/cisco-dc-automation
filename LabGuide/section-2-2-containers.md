@@ -12,7 +12,7 @@ Docker compose is one way of spinning up docker containers.
 
 1. Switch to the terminal window
   2. type `docker-machine ip default`
-  3. Copy the ip address from the output
+  3. Copy the ip address from the output. you will need to modify the docker compose file in step 2.
 2. Switch to `ATOM` editor
   1. Right click on the `Training` Folder and select new folder. Name it `gitlab`
   2. Right click on the `gitlab` folder and select `New File`
@@ -23,11 +23,12 @@ Docker compose is one way of spinning up docker containers.
       ```
       gitlab:
         image: 'gitlab/gitlab-ce:latest'
+        container_name: gitlab
         restart: always
         hostname: 'gitlab.cisco.com'
         environment:
           GITLAB_OMNIBUS_CONFIG: |
-            external_url 'http://192.168.99.101'
+            external_url 'http://192.168.99.102'
             # Add any other gitlab.rb configuration here, each on its own line
         ports:
           - '80:80'
@@ -153,8 +154,8 @@ This docker file will create a docker image for nxtoolkit
 go to training directory
 6. `cd nxtoolkit`
 7. `ls` <-- make sure your dockerfile is in this directory.
-8. type `Docker build -t  nxtoolkit .`
-9. or u can tag it too, make sure to use your id ..`docker build -t nxtoolkit --tag hemakuma/nxtoolkit .`
+8. type `docker build -t nxtoolkit --tag hemakuma/nxtoolkit . `
+9. or u can tag it too, make sure to use your id ..
 
     ***Don't forget the dot at the end. There is a space between nxtoolkit and dot.  For Windows users, don't forget the `winpty` in front of the docker command.
     It should build you the image for the nxtoolkit.  It should take about 5-10min to complete.***
@@ -219,14 +220,10 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 2. exit the container.  We will use this container later in the ansible exercises.
 3. Go to your Atom editor and you should all these files under ansible folder.
 
-####Configuring the container
-configure the /etc/hosts and put the entry for your nxosv switch.
-
-(can we do it via the dockerfile)
 
 
-#Creating Docker host for Tools
-We will create a different docker host jenkins, gitlab and gerrit
+##Using Docker Compose
+
 
 
 **STOP HERE , we will do the rest in the Jenkins Section**
@@ -239,6 +236,13 @@ If your boot2docker can not resolve dns entry?
 echo "nameserver 8.8.8.8" > /etc/resolv.conf && sudo /etc/init.d/docker restart
 
 ```
+
+Sometimes the images gets large and u do not have enough space on the VM
+` df -h `
+
+to check the disk usage.
+
+you can use --disksize option of docker-machine create to create a bigger size disk.  By default its only 2G.
 
 **Some common docker commands**
 ```
