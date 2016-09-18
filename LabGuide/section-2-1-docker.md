@@ -108,15 +108,10 @@ Source file are used to set the environment variable to communicate to the docke
 ####Setting the Environment variables using source file
 Now, you can use the `source.docker` file to source your environment variables.
 
-1. Switch to your terminal Window and type the following commands.  
-        ```
-        cd ~
-        cd  training
-        source source.docker
-        docker ps
-        ```
-
-2. This will show you all the containers running on your docker host.  Your docker host name is `default`.  You should not see any containers at this time.  We going to create containers in the next exercise.
+1. Switch to your terminal Window.
+2. type `source source.docker`  Note: you should be in the training folder to run this command.
+2. type `docker ps`
+3. This will show you all the containers running on your docker host.  Your docker host name is `default`.  You should not see any containers at this time.  We going to create containers in the next exercise.
 
 
 ### Common Docker-machine commands
