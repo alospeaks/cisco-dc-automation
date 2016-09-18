@@ -62,7 +62,7 @@ Docker compose is one way of spinning up docker containers.
 #### Configure gitlab
 
 1. Open up chrome browser
-2. http://<ip of the docker node>
+2. `http://<ip of the docker node>`
 3. create a new user
 
 	```
