@@ -93,13 +93,13 @@ Source file are used to set the environment variable to communicate to the docke
 1. In the same terminal window
 2. type `docker-machine env default`
 3. Copy the content to the clipboard.
-4. Go to your **Atom** window
+4. Open the **Atom** Editor.
 5. Go to `File` menu and then select `Add Project Folder`
 
 	![atom100](/images/atom-100.png)
 
 6. Navigate to the `training` folder in your home directory.
-5. Create a new file under `training` folder
+7. Click `Open` to open this folder in the `ATOM` editor
 6. Right click on `training` folder and select `New File`
 7. Paste the clipboard content to this file.
 8. Save it as `source.docker`.  `CMD+S or Ctrl+S` to save
