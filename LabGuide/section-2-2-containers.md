@@ -1,9 +1,11 @@
 
 #Docker Containers
-
+Lets build some containers on our docker engine.
 ## Gitlab Container
-### Create gitlab docker compose file
+We need gitlab for our source control.  We could use github but we wanted to see fully integration with Jenkins and other tools, therefore installed it locally.  With dockers, this is pretty issue.  If you don't understand something, please google it up. We will be using docker-compose and dockerfiles. Please google it up and read little bit on it.
 
+### Create gitlab docker compose file
+Docker compose is one way of spinning up docker containers.
 1. Switch to `ATOM` editor
 2. Right click on the `Training` Folder and select new folder. Name it `gitlab`
 3. Right click on the `gitlab` folder and select `New File`
@@ -49,7 +51,7 @@ gitlab:
 ### Configure gitlab
 
 1. Open up chrome browser
-2. http://<ip of the docker node> 
+2. http://<ip of the docker node>
 3. create a new user
 
 	```
