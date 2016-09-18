@@ -66,14 +66,23 @@ Docker compose is one way of spinning up docker containers.
 2. `http://<ip of the docker node>`
 3. create a new user
 
-	```
-	admin/cisco123
+  ![gitlab](/images/gitlab-100.png)
 
 	```
+	<yourid>/cisco123
 
-4. create new project and name it `training`
+	```
 
-![gitlab](/images/gitlab-1.png)
+4. Click on create `New project` and name it `traininglabs`
+
+  ![gitlab](/images/gitlab-101.png)
+
+#### Cloning the Repository
+1. Switch to the terminal window
+2. `cd training`
+3. Follow the instructions from the gitlab site to create a new repository.
+4. Do not copy or paste.  
+  ![gitlab](/images/gitlab-102.png)
 
 
 
