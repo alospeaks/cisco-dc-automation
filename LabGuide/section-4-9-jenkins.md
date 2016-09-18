@@ -150,10 +150,10 @@ If you like the gitlab notify Jenkins that something has changed in the repo and
 6. Click on `Test`.  Make sure you get success.
 
 ### Exercise-6
-#### Manually running a job
-you can only run it manually now since your jenkin server is not reachable via internet.
-
-
+#### Test the automate deployment
+Go into your ansible folder and change something.
+Push the configuration to gitlab.
+Watch the jenkins server and see how it will automatically deploy
 
 
 ###Troubleshooting
