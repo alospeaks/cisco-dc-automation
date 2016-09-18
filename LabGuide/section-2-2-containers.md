@@ -2,7 +2,6 @@
 #Docker Containers
 Lets build some containers on our docker engine.
 
-
 ## Gitlab Container
 We need gitlab for our source control.  We could use github but we wanted to see fully integration with Jenkins and other tools, therefore installed it locally.  With dockers, this is pretty issue.  If you don't understand something, please google it up. We will be using docker-compose and dockerfiles. Please google it up and read little bit on it.
 
@@ -146,6 +145,11 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 3. you should see the new contents.
 
   ![gitlab](/images/gitlab-302.png)
+
+4. you can compare what go change by clicking on the `History` tab and then selecting the `update` you want to compare.
+
+  ![gitlab](/images/gitlab-304.png)
+
 
 ## Jenkins  Container
 ### Exercise 1
