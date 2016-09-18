@@ -89,7 +89,7 @@ Docker compose is one way of spinning up docker containers.
 
   git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/ansible.git  
 
-  ![gitlab](/images/gitlab-102.png)
+  ![gitlab](/images/gitlab-301.png)
 
 ### Verify that file got uploaded to gitlab
 1. Switch back to you browser
