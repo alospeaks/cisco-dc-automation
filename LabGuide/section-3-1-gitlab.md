@@ -161,10 +161,19 @@ You will use the 2nd account to review the changes. You will use your first acco
 1. sign out from gitlab.
 2. Fill in the form for `New User` account
 
-![gitlab](/images/gitlab-400.png)
+  ![gitlab](/images/gitlab-400.png)
 
 3. Sign back in gitlab using the new account.  Make sure it works.
 
+###Exercise 2
+####Giving access to your projects to this user.
+1. Login to gitlab using your regular account.
+2. Give access to both `ansible` and `nxtoolkit` to the `developer` user.
+3. Select the project and the click on `setting`.
+
+  ![gitlab](/images/gitlab-510.png)
+4. Click on `Members`
+5. 
 
 ##Adding project to ATOM
 
