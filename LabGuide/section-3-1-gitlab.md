@@ -114,7 +114,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 3. cd `containers`
 4. type the following.  Remember, this time we are not cloning it. We are just putting a existing folder under git control.
 
-  ![gitlab](/images/gitlab-500.png)
+  ![gitlab](/images/gitlab-501.png)
 
 ##Creating nxtoolkit repository on gitlab.
 
