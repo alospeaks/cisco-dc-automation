@@ -178,6 +178,8 @@ You will use the 2nd account to review the changes. You will use your first acco
 
 5. Repeat the process for the `nxtoolkit` repository
 
+  ![gitlab](/images/gitlab-512.png)
+
 ##Adding project to ATOM
 
 ###Exercise 1
