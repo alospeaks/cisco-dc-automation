@@ -173,7 +173,10 @@ You will use the 2nd account to review the changes. You will use your first acco
 
   ![gitlab](/images/gitlab-510.png)
 4. Click on `Members`
-5. 
+
+  ![gitlab](/images/gitlab-511.png)
+
+5. Repeat the process for the `nxtoolkit` repository
 
 ##Adding project to ATOM
 
