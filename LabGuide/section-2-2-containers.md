@@ -3,7 +3,7 @@
 Lets build some containers on our docker engine.
 
 ## Gitlab Container
-We need gitlab for our source control.  We could use github but we wanted to see fully integration with Jenkins and other tools, therefore installed it locally.  With dockers, this is pretty issue.  If you don't understand something, please google it up. We will be using docker-compose and dockerfiles. Please google it up and read little bit on it.
+We need gitlab for distributed source control of our files.  We could use github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, this is pretty easy.  If you don't understand any part, please google it up. We will be using lot of docker-compose and dockerfiles. Please google it up and read little bit about it.
 
 ###Exercise-1
 ####Create gitlab docker compose file
@@ -13,7 +13,8 @@ Docker compose is one way of spinning up docker containers.
   2. type `docker-machine ip default`
   3. Copy the ip address from the output. you will need to modify the docker compose file in step 2.
 2. Switch to `ATOM` editor
-  1. Right click on the `Training` Folder and select new folder. Name it `gitlab`
+  1. Right click on the `training` Folder and select new folder. Name it `containers`.
+  2. Right click on `container` and Select new folder. Name it `gitlab`
   2. Right click on the `gitlab` folder and select `New File`
   3. name it `docker-compose.yml`
   4. Paste the following content into the file and save it:
@@ -56,108 +57,14 @@ Docker compose is one way of spinning up docker containers.
 5. Wait for this process to finish.  It should take couple of mins.
 6. Verify that your gitlab container is running. Type  `docker ps`
 7. type `docker-machine ip default`  Note down this ip somewhere, you will need it throughout this lab.
-10. Wait for few mins for the services to come up inside the container then do next exercise.
 
-###Exercise-3
-#### Configure gitlab
-
-1. Open up chrome browser and point it to:
-2. `http://<ip of the docker node>`
-3. create a new user
-
-  ![gitlab](/images/gitlab-100.png)
-
-	```
-	<yourid>/cisco123
-
-	```
-
-4. Click on create `New project` and name it `ansible`
-
-  ![gitlab](/images/gitlab-300.png)
-
-###Exercise-4
-#### Cloning the Repository
-1. Switch to the terminal window
-2. `cd training`
-3. make new directory called `labs`
-4. `mkdir labs`
-5. `cd labs`
-3. Follow the instructions from the gitlab site to create a new repository.
-
-  ![gitlab](/images/gitlab20.png)
-4. Do not copy and paste everything at once.  Do line by line.
-5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
-
-  `git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/ansible.git `
-
-  ![gitlab](/images/gitlab-301.png)
-
-###Exercise-5
-#### Verify that file got uploaded to gitlab
-1. Switch back to you browser
-2. Refresh it
-3. Click on the `file tab`
-
-  ![gitlab](/images/gitlab-103.png)
-
-4. Make sure you see "README.md".
-
-  ![gitlab](/images/gitlab-303.png)
-
-###Exercise-6
-#### Scripting the git push
-For the lab environment, we want to quickly push the changes to the remote repo on the gitlab. In this exercise we going to create a script to automate this process.
-
-1. Switch to `ATOM` Editor
-2. Go to the `ansible` folder inside `labs` folder
-3. Right click and select `New File`
-4. name it `gitpush.sh`
-5. add the following content to the file
-
-    ```
-    #!/bin/bash
-    echo 'updating git'
-    git add .
-    git commit -m 'updated'
-    git push
-    ```
-6. Save the file `cmd + S`
-
-###Exercise-7
-#### Modifying the README file.
-1. Open up the `README.md` file from the `ansible` folder
-2. Add some contents to it eg `this is my first gitlab edit`
-3. Save it.
-
-###Exercise-8
-#### Push the Updated file to gitlab using script
-1. Switch back to the terminal window.
-2. you should be in the `ansible` directory  (`training/labs/ansible`)
-3. make the gitpush.sh script executable.
-4. `chmod +x gitpush.sh`
-5. Now use it to push the `README.md` to gitlab.
-6. type
-7. `./gitpush.sh`
-
-###Exercise-9
-#### Verify the file has changed on gitlab.
-1. Switch to browser
-2. Take a look at the README.md
-3. you should see the new contents.
-
-  ![gitlab](/images/gitlab-302.png)
-
-4. You can compare what changed by clicking on the `README.md` and then on the `History` tab. Select the `update` you want to compare.
-
-  ![gitlab](/images/gitlab-304.png)
-
+**We will configure gitlab in the gitlab section**
 
 ## Jenkins  Container
 ### Exercise 1
 ####Creating Jenkins Container
 1. Switch to `Atom` Editor
-2. create a new folder under `training`.
+2. create a new folder under `containers`.
 3. Right click on training and select `New Folder`
 4. name it `jenkins`
 
@@ -210,7 +117,7 @@ Lets install Ansible on  a docker container.
 ###Exercise-1
 ####Build Ansible Dockerfile
 1. Switch to `ATOM` editor
-2. Right click on the `Training` folder and select `New Folder`.  Name it `ansible`.
+2. Right click on the `containers` folder and select `New Folder`.  Name it `ansible`.
 3. Now Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
 4. Copy and paste the content from here to this new file.  
 https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_ansible  
@@ -240,7 +147,7 @@ Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  n
 ### Exercise-1
 ####Creating nxtoolkit image
 1. Go to your `ATOM` Editor
-2. Right click on the `training` folder and select `New Folder`. Name it `nxtoolkit`
+2. Right click on the `containers` folder and select `New Folder`. Name it `nxtoolkit`
 
   ![docker](/images/docker-c-2.png)
 
