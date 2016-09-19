@@ -30,8 +30,10 @@ Object Store
 2. Open up Chrome browser and  in the address field, point it to the url of your NXOSv switch.
     1. `https://<switchip>/visore.html`
     2. Authenticate  (admin/cisco123)
-3. You will see screen like below. Everything in the green column are the attributes of this object.  Anything in the yellow are the values of the those attributes and the pink row is the class of this object.  
-![nxrest-1](/images/nxrest-4.png)  
+3. You will see screen like below. Everything in the `green column` are the `attributes` of this object.  Anything in the `yellow` are the `values of the those attributes` and the `pink` row is the `class of this object`.  
+
+    ![nxrest-1](/images/nxrest-4.png)  
+
 4. Object are in a Tree called MIT. The top level (Root of MIT) is called System class (topSystem) and the dn for this Class (dn=sys).
 5. Click on the `green right arrow`, in the dn row to see the child object of this class.  (basically you are navigating the MIT to see varies object in the class)
 6. Navigate to the interfaceEntity class (you can search for it ..use cmd + F).  This class holds all the objects related to the interfaces , both physical and virtual interfaces.
