@@ -103,7 +103,7 @@ Source file are used to set the environment variable to communicate to the docke
 6. Paste the content here and save it as `source.docker`
 
 	![atom100](/images/source-1.png)
-
+7. Close `ATOM`  editor window.
 
 ### Exercise-5
 ####Setting the Environment variables using source file
