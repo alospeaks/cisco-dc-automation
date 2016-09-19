@@ -11,7 +11,7 @@
     2. `config t`
     3. `feature nxapi`
     4. `show nxapi`
-    5. `show ip int brief vrf management` 
+    5. `show ip int brief vrf management`
 
 ![sandbox](/images/sandbox-2.png)
 
@@ -40,11 +40,13 @@ vlan 999
 name web
 ```
 as shown below.
+
 3. make sure that you have selected message format to be `json` and command type to be `cli_config`
 4. Click on `POST` to send the commands via http to the switch.
+
 **NX-API Browser interface supports several command types. Make sure you have it set for cli_config in this case or your copied code will execute with an error.**
 
-![sandbox](/images/sandbox-4.png)
+    ![sandbox](/images/sandbox-4.png)
 
 5. In the `RESPONSE` window, make sure you get status `code 200`
 6. Click on the Python button in the Request Window  and copy the content.  We will use this for the next exercise.
