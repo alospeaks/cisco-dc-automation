@@ -34,17 +34,17 @@
 ####Configuring VLAN 999 using Sandbox
 1. Now configure `VLAN 999`.  See the screen capture below.
 2. In the command window, type
-```
-config t
-vlan 999
-name web
-```
-as shown below.
+    ```
+    config t
+    vlan 999
+    name web
+    ```
+    as shown below.
 
 3. make sure that you have selected message format to be `json` and command type to be `cli_config`
 4. Click on `POST` to send the commands via http to the switch.
 
-**NX-API Browser interface supports several command types. Make sure you have it set for cli_config in this case or your copied code will execute with an error.**
+    **NX-API Browser interface supports several command types. Make sure you have it set for cli_config in this case or your copied code will execute with an error.**
 
     ![sandbox](/images/sandbox-4.png)
 
