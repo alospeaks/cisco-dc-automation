@@ -57,6 +57,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 #### Cloning the Repository
 1. Switch to the terminal window
 2. `cd training`
+3. `cd ansible`
 3. Follow the instructions from the gitlab site to create a new repository.
 
   ![gitlab](/images/gitlab20.png)
