@@ -43,8 +43,8 @@ Object Store
 9. Note down the dn for this object.  We will use this dn to configure port eth1/1 from the REST Client. This will be the full url  http://<switch ip>/api/mo/<dn>.json that you need to point to in order to modify any attributes of this object.  
 ![nxrest-1](/images/nxrest-100.png)  
 10. Save this URL for the next exercise.
-11. Once you get the feel of the classes, know the names, you can query the classes directly.  In the Query field type l1PhysIf and press search. You will see all the object related to this class. In this case, you will see all the interfaces.
-12. (optional) Now Repeat all of the above steps to find the dn to configure a new vlan.  Hint, vlans are also called l2bd.
+11. Once you get the feel of the classes, know the names, you can query the classes directly.  In the Query field type `l1PhysIf` and press `search`. You will see all the object related to this class. In this case, you will see all the interfaces.
+12. (optional) Now Repeat all of the above steps to find the dn to configure a new vlan.  Hint, vlans are also called `l2bd`.
 
 
 **Common classes**  
