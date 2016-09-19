@@ -117,8 +117,6 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 6. type
 7. `./gitpush.sh`
 
-**Copy the gitpush.sh file to nxtoolkit. Change the permission so that it can be executed from command line. You can use ATOM to copy and paste.**
-
 **Note: if you have installed git-plus plugin for your ATOM editor, you can use cmd+shift+H to do git push. Windows users use ctrl+shift+H**
 
 ###Exercise-7
@@ -132,6 +130,17 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 4. You can compare what changed by clicking on the `README.md` and then on the `History` tab. Select the `update` you want to compare.
 
   ![gitlab](/images/gitlab-304.png)
+
+
+###Exercise-8
+#### gitpush.sh script for nxtoolkit repository.
+1. Using `ATOM` copy the `gitpush.sh` file from `ansible` folder.
+2. Paste it in the `nxtoolkit` folder.
+3. Switch back to the terminal window.
+2. you should be in the `nxtoolkit` directory  (`training/nxtoolkit`)
+3. make the gitpush.sh script executable.
+4. `chmod +x gitpush.sh`
+7. `./gitpush.sh`
 
 ##Creating `nxtoolkit` repository on gitlab.
 ###Exercise-1
