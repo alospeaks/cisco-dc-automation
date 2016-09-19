@@ -136,11 +136,11 @@ go to training directory
 1. Switchback to the terminal window.
 2. type `pwd` to verify your working directory. You should be in the `training/nxtoolkit` directory
 3. Mac Users    
-    `docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/labs/nxtoolkit:/opt/nxtoolkit/myscripts  hemakuma/nxtoolkit`
+    `docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/nxtoolkit:/opt/nxtoolkit/myscripts  hemakuma/nxtoolkit`
 
 4. Windows Users  
     Launch Docker Quickstart Terminal and run the following command:  
-    `winpty docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/labs/nxtoolkit:/opt/nxtoolkit/myscripts  hemakuma/nxtoolkit`
+    `winpty docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/nxtoolkit:/opt/nxtoolkit/myscripts  hemakuma/nxtoolkit`
 
     -v option basically lets you mount a volume inside your container so that you can access it from your laptop HDD.  This way you can edit your code on your laptop but it will be available inside the container.
     You should now be inside your nxtoolkit container.
