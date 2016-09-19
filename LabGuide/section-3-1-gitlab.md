@@ -229,46 +229,11 @@ git branch vxlan
 git checkout vxlan
 
 show merge request on gitlab web
-
 git log
 git add .
 git commit
 git push -u origin [master or any other branch]
 
-
-
-
-
-show merge requests
-show comparing
-
-
-
-create a project using your own accounts
-
-give access to the project all the users ...developer1, reviewer1
-
-make sure to give them "Developer"  access
-
-
-on you laptop create a directory called gitlab
-
-create another folder called developer1
-
-clone the repo as a develper
-
-create a branch
-
-make changes and pushd
-
-request for merge and assign to another user
-
-here is where go review will come in handy
-
-login in as another user ...review the changes and merge it
-
-
-H
 
 ```
 git branch mtuchange
@@ -281,14 +246,14 @@ git checkout -b mtuchange
 
 ###Steps:
 
-Clone project
-git clone git@example.com:project-name.git
-Create branch with your feature
-git checkout -b $feature_name
-Write code. Commit changes
-git commit -am "My feature is ready"
-Push your branch to GitLab
-git push origin $feature_name
-Review your code on commits page
-Create a merge request
-Your team lead will review the code & merge it to the main branch
+1. Clone project
+2. git clone git@example.com:project-name.git
+3. Create branch with your feature
+4. git checkout -b $feature_name
+5. Write code. Commit changes
+6. git commit -am "My feature is ready"
+7. Push your branch to GitLab
+8. git push origin $feature_name
+9. Review your code on commits page
+10. Create a merge request
+11. Your team lead will review the code & merge it to the main branch
