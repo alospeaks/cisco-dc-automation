@@ -65,7 +65,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
   `git clone http://hemakuma:cisco123@192.168.99.100/hemakuma/ansible.git `
 
-  ![gitlab](/images/gitlab-301.png)
+  ![gitlab](/images/gitlab-505.png)
 
 ###Exercise-3
 #### Verify that file got uploaded to gitlab
