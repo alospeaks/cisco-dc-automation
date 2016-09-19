@@ -68,7 +68,7 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 
 ####Tune your VM for faster performance
 1. Open up virtual box
-2. shutdown the `default VM`.  Right click and select power off.
+2. Power off the `default VM`.  Right click and select `power off`.
 2. select the `default` VM
 3. click on `settings`
 4. click on `system` then `Motherboard` , them `processor`
@@ -99,15 +99,11 @@ Source file are used to set the environment variable to communicate to the docke
 2. type `docker-machine env default`
 3. Copy the content to the clipboard.
 4. Open the **Atom** Editor.
-5. Go to `File` menu and then select `Add Project Folder`
+5. Go to `File` menu and then select `New File`
+6. Paste the content here and save it as `source.docker`
 
-	![atom100](/images/atom-100.png)
+	![atom100](/images/source-1.png)
 
-6. Navigate to the `training` folder in your home directory.
-7. Click `Open` to open this folder in the `ATOM` editor
-6. Right click on `training` folder and select `New File`. Name it `source.docker`.
-7. Paste the clipboard content to this file.
-8. Save it   `CMD+S or Ctrl+S`
 
 ### Exercise-5
 ####Setting the Environment variables using source file
