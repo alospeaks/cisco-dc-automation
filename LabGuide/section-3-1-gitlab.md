@@ -54,7 +54,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 6. Do not close this window. We will use the information on this page for the next exercise.
 
 ###Exercise-2
-#### Cloning the Repository
+#### Putting `ansible` directory under git control.
 1. Switch to the terminal window
 2. `cd training`
 3. `cd ansible`
