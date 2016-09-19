@@ -271,7 +271,9 @@ You will use the 2nd account to review the changes. You will use your first acco
 5. Take a look at the `README.md` file.  Notice that you do not see the changes that you made.
 6. Switch back to terminal window
 7. `git pull`
-8. Switch back to `ATOM` and view the `README.md` file. Do you see the changes that go merged.
+8. Switch back to `ATOM` and view the `README.md` file. Do you see the changes that got merged.
+
+**This is how u can do peer reviews for your configuration files**
 
 ###Exercise 6
 #### Remove the branch
@@ -279,27 +281,8 @@ You will use the 2nd account to review the changes. You will use your first acco
 2. `git branch -d readmeupdate`
 3. this should remove the branch.  We don't need it as we have merged our changes to the master (trunk)
 
-create files in the ansible folder
-show Branching
-git branch
-git branch vxlan
-git checkout vxlan
-
-show merge request on gitlab web
-git log
-git add .
-git commit
-git push -u origin [master or any other branch]
 
 
-```
-git branch mtuchange
-git checkout mtuchange
-
-or
-git checkout -b mtuchange
-
-```
 
 ###Steps:
 
@@ -314,3 +297,9 @@ git checkout -b mtuchange
 9. Review your code on commits page
 10. Create a merge request
 11. Your team lead will review the code & merge it to the main branch
+
+### Some useful git command
+git log
+git config -l
+git status
+git show
