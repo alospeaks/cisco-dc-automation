@@ -55,17 +55,17 @@ Docker compose is one way of spinning up docker containers. Basically you create
   ```
 
 ###Exercise-2
-####Spin up gitlab container
+####Spin up gitlab and jenkins container
 
 1. Switch to the terminal window
-2. cd `gitlab`
+2. cd `training`
 3. type ` docker-compose up -d`
 4. this should start up the gitlab container.  It will take couple of mins to download the images.
 
   ![docker-comp](/images/docker-comp-1.png)
 
 5. Wait for this process to finish.  It should take couple of mins.
-6. Verify that your gitlab container is running. Type  `docker ps`
+6. Verify that your gitlab and jenkins container is running. Type  `docker ps`
 7. type `docker-machine ip default`  Note down this ip somewhere, you will need it throughout this lab.
 
 **We will configure gitlab in the gitlab section**
