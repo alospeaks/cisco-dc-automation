@@ -1,6 +1,6 @@
 
 ##Sandbox
-**NXOS provide a sandbox environment to generate your python codes.  Note, sandbox uses NXAPI-CLI, basically sending cli command wrapped in json or xml. You can access this sandbox via web browser and pointing to the ip address of the switch.  Make sure feature nxapi is enabled.**
+**NXOS provide a sandbox environment to generate your python codes.  Note, sandbox uses NXAPI-CLI, basically sending cli command wrapped in json or xml over http. It like running CLI but without logging in the switch. You can access this sandbox via web browser and pointing to the ip address of the switch.  Make sure feature nxapi is enabled.**
 
 ![sandbox](/images/sandbox-1.png)
 
