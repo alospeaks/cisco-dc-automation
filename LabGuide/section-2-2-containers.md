@@ -85,7 +85,7 @@ Docker compose is one way of spinning up docker containers.
 5. `cd labs`
 3. Follow the instructions from the gitlab site to create a new repository.
 
-  ![gitlab](/images/gitlab-20.png)
+  ![gitlab](/images/gitlab20.png)
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
