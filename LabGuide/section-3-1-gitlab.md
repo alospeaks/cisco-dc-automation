@@ -103,7 +103,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 ###Exercise-5
 #### Modifying the README file.
 1. Open up the `README.md` file from the `ansible` folder using `ATOM`
-2. Add some contents to it eg `this is my first gitlab edit`
+2. Add some contents to it eg `this is my second gitlab edit`
 3. Save it.
 
 ###Exercise-6
