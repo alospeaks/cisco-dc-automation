@@ -136,7 +136,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 1. login to the gitlab using your own account.
 2. create a new `project`, name it `nxtoolkit`
 
-    ![gitlab](/images/nxtoolkit-506.png)
+    ![gitlab](/images/nxtoolkit-507.png)
 
 ###Exercise-2
 #### Putting nxtoolkit directory under git Repository
