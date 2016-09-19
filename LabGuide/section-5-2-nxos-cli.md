@@ -31,7 +31,7 @@ The best way to get started is to use the sandbox to generate your base code and
     5. Press enter twice to see the bash shell of the container
     6. This will log you into your nxtoolkit container.  You should see `root@nxtoolkit` prompt
 
-![nxcli-2](/images/nxcli-2.png)
+    ![nxcli-2](/images/nxcli-2.png)
 
 3. Verify that your create-vlan.py exists in the container.
     1. `cd myscripts`
