@@ -5,12 +5,13 @@
 ![sandbox](/images/sandbox-1.png)
 
 ### Exercise 1:  Enabling NXAPI on your NXOSv Switch
-1. Open up a terminal Window (or putty).
-2. ssh to your switch (see the table above for your assigned IP. use admin/cisco123)
-    1. `ssh admin@<ip of the switch>`  
+1. Open up a terminal Window (or gitbash).
+2. ssh to your switch (if you using nxosv, see nxov section).  use admin/cisco123
+    1. `ssh admin@<ip of the switch>`    eg for mac nxosv you can also do `telnet 127.0.0.0 9002`
     2. `config t`
     3. `feature nxapi`
-    4. `show nxapi`  
+    4. `show nxapi`
+    5. `show ip int brief vrf management` 
 
 ![sandbox](/images/sandbox-2.png)
 
