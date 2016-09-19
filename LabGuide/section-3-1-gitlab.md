@@ -135,10 +135,10 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 
   `git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/nxtoolkit.git `
 
-## Creating more gitlab users.
+## Creating gitlab users.
 ### Exercise 1
-### Create another gitlab account
-You will use the 2nd account to review the changes.  You will pretend to be the reviewer.
+### Create another gitlab account (`developer`)
+You will use the 2nd account to review the changes. You request for merge request using your account and then sign back in as `developer` to review and accept the changes.
 
 1. sign out from gitlab.
 2. Fill in the form for `New User` account
@@ -148,12 +148,79 @@ You will use the 2nd account to review the changes.  You will pretend to be the 
 3. Sign back in gitlab using the new account.  Make sure it works.
 
 
-Adding project to ATOM
+##Adding project to ATOM
 
-show how to open project in ATOM
+###Exercise 1
+####Editoring Projects in ATOM
+1. Switch to `ATOM` Editor
+2. Go to `File`  and `Add project Folder`
+3. Navigate to `ansible`  folder under training and open it.
+4. Repeat the same for `nxtoolkit` folder.
 
 
-# Branching
+## Branching
+
+###Exercise 1
+#### Creating a git branch
+1. switch to terminal window
+2. navigate to `ansible` folder. `cd training` ; `cd ansible`
+3. create a new branch called `readmeupdate`
+4. `git branch`  to see what branches you currently have and where the `HEAD` is pointing to.  You should only see the `master` branch and the `HEAD` should be pointing to it.
+5. `git branch readmeupdate`  to create a new branch.
+6. `git checkout readmeupdate` to switch to new branch.
+7. `git branch`  now the HEAD should be pointing to the new branch.
+
+  ![branch](/images/branch-1.png)
+
+8. Now lets make some changes to the `README.md` file.
+
+###Exercise 2
+#### Editing README.md file
+1. Switch to `ATOM` Editor.
+2. Go to `ansible` folder and open up `README.md` file.
+3. Edit the file. Put some text in it eg . `This is my 2nd edit using branch feature`.
+4. CMD+S to save the file
+
+  ![branch](/images/branch-1.png)
+
+###Exercise 3
+#### Push the branch to remote repository (gitlab)
+1. Switch back to terminal window.
+2. you should be in the `ansible` directory
+3. push your changes to gitlab.  you want to push your branch to the gitlab.
+4. you should still be in your `readmeupdate` branch.  Verify `git branch`
+5. `git add .`  to add the changes
+6. `git commit -m  'updated readme file' ` to commit the file
+7. `git push -u origin readmeupdate` push the branch to gitlab
+
+
+###Exercise 4
+#### Create `Merge Request` on gitlab
+1. Switch to the chrome browser
+2. Switch to the gitlab tab.
+3. Assign this request to `developer` user.  Make sure developer has access to this repository.
+
+###Exercise 5
+#### Merge the branch with master branch
+1. Log out of gitlab accounts
+2. log back in using `developer`  account.
+3. Merge the `readmeupdate` to `master` branch.
+
+####Verify the merge
+1. Switch back to your terminal window
+2. make sure you are in the master branch
+3. `git checkout master`
+4. Switch to `ATOM` Editor.
+5. Take a look at the `README.md` file.  Notice that you do not see the changes that you made.
+6. Switch back to terminal window
+7. `git pull`
+8. Switch back to `ATOM` and view the `README.md` file. Do you see the changes that go merged.
+
+###Exercise 6
+#### Remove the branch
+1. switch to the terminal window.
+2. `git branch -d readmeupdate`
+3. this should remove the branch.  We don't need it as we have merged our changes to the master (trunk)
 
 create files in the ansible folder
 show Branching
