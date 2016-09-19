@@ -30,7 +30,7 @@ https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddom
 In next exercise we will create a REST request.
 
 ## Exercise-2
-####Creating a First REST Request
+####Creating your First REST Request
 HTTP has 2 types of message, **Request** and **Response**. The request message has methods. Commonly used methods are **POST, GET, DELETE**
 
 Lets create a REST request message to login into the nexus switch.  This will be a POST method.
@@ -38,13 +38,13 @@ Lets create a REST request message to login into the nexus switch.  This will be
 1. Create a new Postman Collection.
 2. Name it `NXOS-API`
 
-![postman](/images/postman-1.png)  
+    ![postman](/images/postman-1.png)  
 
 3. Click on `Create`
 4. Now Create a new API request to login the NXOS switch.
 5. Fill the form as the follows..
 
-![postman](/images/postman-2.png)
+    ![postman](/images/postman-2.png)
 
 6. url field type `http://<yourswitch ip>/api/aaaLogin.json`
 7. make sure to select 'JSON' for the payload. Enter the following json code.
@@ -84,7 +84,7 @@ Create the json rest request to view the current configuration on eth1/1.  use G
 7. Click on `Send`   Send button.
 7. Take note of the adminSt, accessVlan and descr from the Response window.  We are going to modify these attributes of this object in the next exercise.
 
-![postman](/images/postman-3.png)  
+    ![postman](/images/postman-3.png)  
 
 ## Exercise-4
 ####Viewing the Vlan configuration
