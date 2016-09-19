@@ -2,47 +2,55 @@
 #Docker Containers
 Lets build some containers on our docker engine.
 
-## Gitlab Container
+## Gitlab and Jenkins Container
 We need gitlab for distributed source control of our files.  We could have used github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, installing these opensource software is pretty easy.  
 
 ###Exercise-1
-####Create gitlab docker compose file
+####Create  docker compose file
 Docker compose is one way of spinning up docker containers. Basically you create a docker-compose.yml file and run docker-compose up command.
 
 1. Switch to the terminal window
   2. type `docker-machine ip default`
   3. Copy the ip address from the output. you will need to modify the docker compose file in step 2.
-2. Open up `ATOM` editor (or create a new Windows)
-  1. Right click on the `training` Folder and select new folder. Name it `containers`.
-  2. Right click on `container` and Select new folder. Name it `gitlab`
-  2. Right click on the `gitlab` folder and select `New File`
-  3. name it `docker-compose.yml`
-  4. Paste the following content into the file and save it:
-  5. Make sure to change the `external_url` to reflect the ip address of you docker machine.
+2. Switch to `ATOM` editor.
+  1. Right click on the `training` Folder and select new file.
+  2. name it `docker-compose.yml`
+  3. Paste the following content into the file and save it:
+  4. Make sure to change the `external_url` to reflect the ip address of you docker machine.
+  ```
+      ---
+      version: '2'
+      services:
+        gitlab:
+          image: 'gitlab/gitlab-ce:latest'
+          container_name: gitlab
+          restart: always
+          hostname: 'gitlab.cisco.com'
+          environment:
+            GITLAB_OMNIBUS_CONFIG: |
+              external_url 'http://192.168.99.100'
+              #  change the ip to match your docker host
+              # Add any other gitlab.rb configuration here, each on its own line
+          ports:
+            - '80:80'
+            - '443:443'
+            - '2222:22'
 
-      ```
-      gitlab:
-        image: 'gitlab/gitlab-ce:latest'
-        container_name: gitlab
-        restart: always
-        hostname: 'gitlab.cisco.com'
-        environment:
-          GITLAB_OMNIBUS_CONFIG: |
-            external_url 'http://192.168.99.102'
-            # Add any other gitlab.rb configuration here, each on its own line
-        ports:
-          - '80:80'
-          - '443:443'
-          - '2222:22'
+          volumes:
+            - '/srv/gitlab/config:/etc/gitlab'
+            - '/srv/gitlab/logs:/var/log/gitlab'
+            - '/srv/gitlab/data:/var/opt/gitlab'
 
-        volumes:
-          - '/srv/gitlab/config:/etc/gitlab'
-          - '/srv/gitlab/logs:/var/log/gitlab'
-          - '/srv/gitlab/data:/var/opt/gitlab'
+        jenkins:
+            image: hemakuma/jenkins-ansible
+            container_name: jenkins-ansible
+            restart: always
+            hostname: jenkins-ansible
+            ports:
+              - '8080:8080'
+              - '50000:50000'
 
-      ```
-
-
+```
 
 ###Exercise-2
 ####Spin up gitlab container

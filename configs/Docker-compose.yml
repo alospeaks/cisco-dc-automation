@@ -3,11 +3,13 @@ version: '2'
 services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
     restart: always
     hostname: 'gitlab.cisco.com'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://192.168.99.102'
+        #  change the ip to match your docker host
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - '80:80'
@@ -19,16 +21,27 @@ services:
       - '/srv/gitlab/logs:/var/log/gitlab'
       - '/srv/gitlab/data:/var/opt/gitlab'
 
-  #jenkins:
-  #  build: ./jenkins
-  #  build:
-    #  context: ./jenkins
-    #  dockerfile: Dockerfile
-    #   image: jenkins-ansible
-    # image: jenkins-ansible
-    # container_name: jenkins-ansible
-    # restart: always
-    # hostname: jenkins
-    # ports:
-    #   - '8080:8080'
-    #   - '50000:50000'
+  jenkins:
+      image: hemakuma/jenkins-ansible
+      container_name: jenkins-ansible
+      restart: always
+      hostname: jenkins-ansible
+      ports:
+        - '8080:8080'
+        - '50000:50000'
+
+  # ansible:
+  #     image: hemakuma/ansible
+  #     container_name: ansible
+  #     restart: always
+  #     hostname: ansible
+  #     volumes:
+  #       - '~/training/ansible:/nxos-ansible/myscripts'
+  #
+  # nxtoolkit:
+  #     image: hemakuma/nxtoolkit
+  #     container_name: nxtoolkit
+  #     restart: always
+  #     hostname: nxtoolkit
+  #     volumes:
+  #       - '~/training/nxtoolkit:/opt/nxtoolkit/myscripts'
