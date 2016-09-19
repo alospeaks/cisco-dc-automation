@@ -107,10 +107,7 @@ Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  n
 ### Exercise-1
 ####Creating nxtoolkit image
 1. Go to your `ATOM` Editor
-2. Right click on the `containers` folder and select `New Folder`. Name it `nxtoolkit`
-
-  ![docker](/images/docker-c-2.png)
-
+2. Right click on the `training` folder and select `New Folder`. Name it `nxtoolkit`
 3. Now Right click on the `nxtoolkit` folder and select `New File`
 4. Name this file `Dockerfile`
 4. Copy and paste the content from here to this new file.  
