@@ -109,6 +109,7 @@ Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  n
     `winpty docker run --name nxtoolkit -h nxtoolkit -it --restart=always -v ~/training/nxtoolkit:/opt/nxtoolkit/myscripts  hemakuma/nxtoolkit`
 
     -v option basically lets you mount a volume inside your container so that you can access it from your laptop HDD.  This way you can edit your code on your laptop but it will be available inside the container.
+    
     **You should now be inside your nxtoolkit container.**
     ![docker-4](/images/docker-c-4.png)
 4. type `ls` <-- you should see your myscripts directory
