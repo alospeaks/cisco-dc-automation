@@ -12,7 +12,7 @@ Docker compose is one way of spinning up docker containers. Basically you create
 1. Switch to the terminal window
   2. type `docker-machine ip default`
   3. Copy the ip address from the output. you will need to modify the docker compose file in step 2.
-2. Switch to `ATOM` editor
+2. Open up `ATOM` editor (or create a new Windows)
   1. Right click on the `training` Folder and select new folder. Name it `containers`.
   2. Right click on `container` and Select new folder. Name it `gitlab`
   2. Right click on the `gitlab` folder and select `New File`
