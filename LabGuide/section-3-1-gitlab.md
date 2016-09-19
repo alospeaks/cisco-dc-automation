@@ -23,7 +23,7 @@ GIT is a very popular and efficient open source Version Control System. It track
 **Do not open the command line**
 
 
-For this lab, we have installed our own gitlab server on the docker container.
+For this lab, we have installed our own gitlab server on the docker container. We will use this server for all our exercises. 
 
 ##Creating `ansible` repository on gitlab.
 ###Exercise-1
