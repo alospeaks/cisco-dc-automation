@@ -15,9 +15,7 @@ Table Of Contents
 			- [Modifying Objects Configuring Physical interfaces](#exercise-6)
 
 # Working With Rest Client (Postman)
-Postman helps you be extremely efficient while working with APIs.
-
-With Postman, you can construct requests quickly, save them for later use and analyze the responses sent by the API.
+Postman helps you be extremely efficient while working with APIs. With Postman, you can construct requests quickly, save them for later use and analyze the responses sent by the API.
 
 We will be using `Postman`REST client  to sent REST API calls to the nexus switch to change the MO.  For this, you will need have google chrome browser installed.  if you don't have chrome browser, please installed it.
 
