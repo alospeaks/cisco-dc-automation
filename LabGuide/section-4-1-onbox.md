@@ -1,5 +1,7 @@
 #NXOS Onbox Programmability Guide
 ---
+In progress ..do not do this section
+
 ##EEM
 ##Scheduler
 ##Python

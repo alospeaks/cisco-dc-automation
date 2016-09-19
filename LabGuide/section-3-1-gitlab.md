@@ -310,7 +310,11 @@ You will use the 2nd account to review the changes. You will use your first acco
 11. Your team lead will review the code & merge it to the main branch
 
 ### Some useful git command
+
+```
 git log
 git config -l
 git status
 git show
+
+```
