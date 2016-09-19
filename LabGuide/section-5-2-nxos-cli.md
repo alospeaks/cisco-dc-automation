@@ -15,11 +15,11 @@ The best way to get started is to use the sandbox to generate your base code and
 
 1. Create vlan 900 using python code generated from sandbox.
     1. Switch to `ATOM` text editor
-    2. Open up the `create-vlan.py` file.  It should be already open. Remember we created this file  in the Sandbox section Exercise 5. If you skipped that part, go back and redo it.
-    3. Lets modify the content of `create-vlan.py` file.  Change "YOURIP = <switchip>", USER=admin, PASSWORD=cisco123
-    4. change the vlan to "900" and name it "db"
+    2. Open up the `create-vlan.py` file.  It should be already open. Remember we created this file  in the Sandbox section. If you skipped that part, go back and redo it.
+    3. Lets modify the content of `create-vlan.py` file.  Change `YOURIP = <switchip>`, USER=admin, PASSWORD=cisco123
+    4. change the vlan to `900` and name it `db`
 
-![nxcli-1](/images/nxcli-1.png)
+        ![nxcli-1](/images/nxcli-1.png)
 
     5.  `CMD+S` to save the file
 
