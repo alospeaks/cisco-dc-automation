@@ -147,7 +147,9 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
-  `git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/nxtoolkit.git `
+  `git remote add origin http://hemakuma:cisco123@192.168.99.100/hemakuma/nxtoolkit.git `
+
+      ![gitlab](/images/gitlab-507.png)
 
 ## Creating gitlab users.
 ### Exercise 1
