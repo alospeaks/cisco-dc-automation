@@ -7,7 +7,7 @@ We need gitlab for distributed source control of our files.  We could have used 
 
 ###Exercise-1
 ####Create gitlab docker compose file
-Docker compose is one way of spinning up docker containers.
+Docker compose is one way of spinning up docker containers. Basically you create a docker-compose.yml file and run docker-compose up command.
 
 1. Switch to the terminal window
   2. type `docker-machine ip default`
