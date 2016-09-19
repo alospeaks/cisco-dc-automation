@@ -130,17 +130,12 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 1. Switch to the terminal window
 2. `cd training`
 3. Follow the instructions from the gitlab site to create a new repository by cloning it.
-
-  ![gitlab](/images/gitlab20.png)
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
   `git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/nxtoolkit.git `
 
-  ![gitlab](/images/gitlab-301.png)
-
-
-
+## Creating more gitlab users.
 ### Exercise 1
 ### Create another gitlab account
 You will use the 2nd account to review the changes.  You will pretend to be the reviewer.
@@ -151,6 +146,35 @@ You will use the 2nd account to review the changes.  You will pretend to be the 
 ![gitlab](/images/gitlab-400.png)
 
 3. Sign back in gitlab using the new account.  Make sure it works.
+
+
+Adding project to ATOM
+
+show how to open project in ATOM
+
+
+# Branching
+
+create files in the ansible folder
+show Branching
+git branch
+git branch vxlan
+git checkout vxlan
+
+show merge request on gitlab web
+
+git log
+git add .
+git commit
+git push -u origin [master or any other branch]
+
+
+
+
+
+show merge requests
+show comparing
+
 
 
 create a project using your own accounts
