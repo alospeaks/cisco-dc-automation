@@ -204,7 +204,7 @@ You will use the 2nd account to review the changes. You will use your first acco
 1. Switch to `ATOM` Editor.
 2. Go to `ansible` folder and open up `README.md` file.
 3. Look at the right hand bottom corner to see which branch you are on. (this only works if you have git-plus plugin installed)
-3. Edit the file. Put some text in it eg . `This is my 2nd edit using branch feature`.
+3. Edit the file. Put some text in it eg . `This is my 3rd edit using branch feature`.
 4. `CMD+S` to save the file
 
   ![branch](/images/branch-1.png)
