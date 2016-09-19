@@ -149,7 +149,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 
   `git remote add origin http://hemakuma:cisco123@192.168.99.100/hemakuma/nxtoolkit.git `
 
-      ![gitlab](/images/gitlab-507.png)
+  ![gitlab](/images/gitlab-507.png)
 
 ## Creating gitlab users.
 ### Exercise 1
