@@ -116,7 +116,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 6. type
 7. `./gitpush.sh`
 
-**Note: if you have install git-plus plugin for your ATOM editor, you can use cmd+shift+H to do git push. Windows users use ctrl+shift+H**
+**Note: if you have installed git-plus plugin for your ATOM editor, you can use cmd+shift+H to do git push. Windows users use ctrl+shift+H**
 
 ###Exercise-7
 #### Verify the file has changed on gitlab.
