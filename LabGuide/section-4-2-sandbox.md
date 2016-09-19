@@ -49,10 +49,10 @@
     ![sandbox](/images/sandbox-4.png)
 
 5. In the `RESPONSE` window, make sure you get status `code 200`
-6. Click on the Python button in the Request Window  and copy the content.  We will use this for the next exercise.
+6. Click on the `Python button` in the Request Window  and copy the content.  We will use this for the next exercise.
 7. Switch to the ssh session of the switch
     1. verify that vlan 999 is configured on the switch
-    2. show vlan
+    2. `show vlan`
 
 ### Exercise 5
 ####Generating Python Code.
