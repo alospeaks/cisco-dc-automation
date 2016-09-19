@@ -9,7 +9,16 @@ To write codes, you will need a good text editor that does syntax highlighting. 
 
 1. Download and install atom editor for your OS.
 http://atom.io
-2. You might want to add some plugins later.
+
+#### Add git-plus plugins
+1. Click on Atom
+2. click on Preference.
+3. click on `Install`
+4. search for `git-plus`
+5. Click install to install the package.
+
+**Tips on using git-plus**
+cmd + shift + H  <-- to get the command window
 
 ##Virtual Box
 ### Exercise-2
