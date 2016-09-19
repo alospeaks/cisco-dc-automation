@@ -236,9 +236,17 @@ You will use the 2nd account to review the changes. You will use your first acco
 
 ###Exercise 4
 #### Create `Merge Request` on gitlab
-1. Switch to the chrome browser
-2. Switch to the gitlab tab.
-3. Assign this request to `developer` user.  Make sure developer has access to this repository.
+1. Switch to the chrome browser.
+2. Login to gitlab using your regular account.
+3. Go to your `ansible` repository.
+
+  ![branch](/images/gitlab-513.png)
+
+4. you should see `Create Merge Request` button. Click on it
+5. fill in the form as below and click on the submit button at the bottom.
+
+  ![branch](/images/gitlab-514.png)
+
 
 ###Exercise 5
 #### Merge the branch with master branch
