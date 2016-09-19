@@ -76,7 +76,11 @@ Lets install Ansible on  a docker container.
 
 ###Exercise-1
 #### Run the Ansible container
-1. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
+1. Switch to `ATOM` editor
+  1. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
+  2. Right click on the `ansible` folder and select `New File`. Name it `README.md`
+  3. Type something in it and save.
+2. Switch to the terminal window
 2. Spin up a nxos ansible container
     1. Mac Users  
     `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`

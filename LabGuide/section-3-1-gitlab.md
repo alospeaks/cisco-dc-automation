@@ -58,7 +58,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 1. Switch to the terminal window
 2. `cd training`
 3. `cd ansible`
-3. Follow the instructions from the gitlab site to create a new repository.
+4. Follow the instructions from the gitlab site to create a new repository.
 
   ![gitlab](/images/gitlab20.png)
 4. Do not copy and paste everything at once.  Do line by line.
@@ -75,7 +75,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 2. Refresh it
 3. Click on the `file tab`
 
-  ![gitlab](/images/gitlab-103.png)
+  ![gitlab](/images/gitlab-506.png)
 
 4. Make sure you see "README.md".
 
