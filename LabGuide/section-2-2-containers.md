@@ -75,21 +75,9 @@ Docker compose is one way of spinning up docker containers. Basically you create
 Lets install Ansible on  a docker container.
 
 ###Exercise-1
-####Build Ansible Dockerfile
-1. Switch to `ATOM` editor
-2. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
-3. Now Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
-4. Copy and paste the content from here to this new file.  
-https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_ansible  
-5. Build the image. From the terminal, type  
-    `docker build -t ansible --tag hemakuma/ansible .`
-6. Verify that ansible image is created.  
-    1. `docker images`
-
-###Exercise-2
-####Creating Ansible Container using Docker
-
-1. Spin up a nxos ansible container
+#### Run the Ansible container
+1. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
+2. Spin up a nxos ansible container
     1. Mac Users  
     `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
     2. Windows Users  
@@ -104,34 +92,12 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 
 ## Nxtoolkit Container
 Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  nxtoolkit provides python libraries and examples on how to interact with Cisco's Nexus switches using NXAPI.
-### Exercise-1
-####Creating nxtoolkit image
-1. Go to your `ATOM` Editor
+###Exercise-1
+#### Run the Nxtoolkit container
+1. Switch to `ATOM`
 2. Right click on the `training` folder and select `New Folder`. Name it `nxtoolkit`
-3. Now Right click on the `nxtoolkit` folder and select `New File`
-4. Name this file `Dockerfile`
-4. Copy and paste the content from here to this new file.  
-https://github.com/Hemakuma/training/blob/master/nxtoolkit/Dockerfile  
-This docker file will create a docker image for nxtoolkit
-5. Save the file `CMD-S`. Name the file `Dockerfile`.  Click save. (for windows users use ctrl+S)
 
-### Exercise 2
-####Creating the docker images for nxtoolkit
-6. Switch back to your terminal window (Windows users use Git Bash)
-go to training directory
-6. `cd nxtoolkit`
-7. `ls` <-- make sure your dockerfile is in this directory.
-8. type `docker build -t nxtoolkit --tag hemakuma/nxtoolkit . `
-9. or u can tag it too, make sure to use your id ..
-
-    ***Don't forget the dot at the end. There is a space between nxtoolkit and dot.  For Windows users, don't forget the `winpty` in front of the docker command.
-    It should build you the image for the nxtoolkit.  It should take about 5-10min to complete.***
-9. Type `docker images` to verify it. Look for the nxtoolkit image.
-![docker-3](/images/docker-c-3.png)
-10. Now lets spin up one container using this image. This will be your nxtookkit container that have everything installed for you to get started with python coding.
-
-
-###Exercise 3
+###Exercise 2
 ####Spin up a nxtoolkit Container using this image
 1. Switchback to the terminal window.
 2. type `pwd` to verify your working directory. You should be in the `training/nxtoolkit` directory
@@ -239,5 +205,8 @@ RUN pip install ansible --upgrade
 8. Run the jenkins-ansbile container based on this image.
 
 	`docker run --name jenkins -h jenkins -d --restart=always -p 8080:8080 -p 50000:50000 hemakuma/jenkins-ansible`
+
+
+##nxtookkit
 
 **STOP HERE , we will do the rest of jenkins exercises in the Jenkins Section**
