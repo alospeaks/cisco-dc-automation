@@ -180,6 +180,8 @@ You will use the 2nd account to review the changes. You will use your first acco
 5. Navigate to `ansible`  folder under `training` and open it.
 6. Repeat the same for `nxtoolkit` folder.
 
+*you want to this way so that `ATOM` can track your git changes.  Each git repo should be a `atom project`*
+
 
 ## Branching
 
