@@ -130,29 +130,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 
   ![gitlab](/images/gitlab-304.png)
 
-
-##Creating `Containers` repository on gitlab.
-
-###Exercise-1
-#### Create containers Repository
-1. Switch to gitlab page.
-2. Click on + sign to create a new project
-
-  ![gitlab](/images/gitlab-500.png)
-3. name it `containers`
-4. click `create project`
-
-###Exercise-2
-#### Put the `containers` folder under git control
-1. switch to terminal Window
-2. cd `training`
-3. cd `containers`
-4. type the following.  Remember, this time we are not cloning it. We are just putting a existing folder under git control.
-
-  ![gitlab](/images/gitlab-501.png)
-
 ##Creating `nxtoolkit` repository on gitlab.
-
 ###Exercise-1
 #### Create nxtoolkit project
 1. login to the gitlab using your own account.
