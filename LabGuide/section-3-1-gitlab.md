@@ -63,7 +63,8 @@ For this lab, we have installed our own gitlab server on the docker container. W
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
-  `git clone http://hemakuma:cisco123@192.168.99.100/hemakuma/ansible.git `
+  `git remote add origin http://hemakuma:cisco123@192.168.99.100/hemakuma/ansible.git`
+
 
   ![gitlab](/images/gitlab-505.png)
 
