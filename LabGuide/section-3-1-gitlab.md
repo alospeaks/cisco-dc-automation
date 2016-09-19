@@ -1,6 +1,6 @@
 #gitlab
 
-##Creating ansible repository on gitlab.
+##Creating `ansible` repository on gitlab.
 ###Exercise-1
 #### Configure gitlab
 
@@ -96,7 +96,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
   ![gitlab](/images/gitlab-304.png)
 
 
-##Creating Containers repository on gitlab.
+##Creating `Containers` repository on gitlab.
 
 ###Exercise-1
 #### Create containers Repository
@@ -116,7 +116,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 
   ![gitlab](/images/gitlab-501.png)
 
-##Creating nxtoolkit repository on gitlab.
+##Creating `nxtoolkit` repository on gitlab.
 
 ###Exercise-1
 #### Create nxtoolkit project
