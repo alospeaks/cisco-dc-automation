@@ -36,7 +36,7 @@ HTTP has 2 types of message, **Request** and **Response**. The request message h
 Lets create a REST request message to login into the nexus switch.  This will be a POST method.
 
 1. Create a new Postman Collection.
-2. Name it `Training`
+2. Name it `NXOS-API`
 
     ![postman](/images/postman-1.png)  
 
@@ -61,7 +61,7 @@ Lets create a REST request message to login into the nexus switch.  This will be
     ```
 
 8. Click on `Save` and select `save as`
-8. Save the request to the `Training` collection.
+8. Save the request to the `NXOS-API` collection.
 9. Name it `NXOS-Login`
 10. Get you authentication token by clicking on the `Send` Button at the right side of the url. You should see your token in the RESPONSE Window
 
@@ -76,7 +76,7 @@ Create the json rest request to view the current configuration on eth1/1.  use G
 `dn = sys/intf/phys-[eth1/1]`
 3. Make a copy of the login request. From `Save` menu , select 'Save As'
 4. Name it `Get-Interface-Status`
-5. Select `Training` collection.
+5. Select `NXOS-API` collection.
 6. Change the request to be of `GET` type
 4. Change the url will be `http://switch-ip/api/mo/sys/intf/phys-[eth1/1].json`
 4. Create a New Request.  Click on the NXOS-API Collection folder and click + button.  Request Name : "Get-int-status".  Click create.
@@ -105,7 +105,7 @@ You should not see vlan 300 in the RESPONSE window.  If you do see it, delete by
 1. Using visore, locate the dn of the vlan. Take this time to learn how to use visore.  Hint: look for class "BDEntity". Use the mind map above to help u out too. Remember since we have not created the vlan 300 as yet, that object will not be in data store.  You will need the class name to create the object of that class. In this case, we will be creating a child object of class BDEntity.  This child class is call L2BD.
 2. Switch to Postman window
 3. Get the authentication token (send login-noxs request)
-4. Create a new request called `config-vlan` in the `Training` folder.
+4. Create a new request called `config-vlan` in the `NXOS-API` folder.
 5. In the URL field , select `POST` and then type your object url.  It should look something like this `http://<switchip>/api/mo/sys/bd.json`
 6. In the BODY of the POST Request type following JSON code.  
 https://github.com/Hemakuma/networkautomation/blob/master/configs/config-vlan.json
@@ -127,7 +127,7 @@ admin state = shutdown
 2. To modify this object, your url will be `http://<switch ip:/api/mo/<dn>.json`. subsitute dn from step # 1.
 3. Switch to Postman window.
 4. Get the authentication token (send `noxs-login` request)
-5. Create a New Request. Name it `Config-Phy-Int`.  Add it to the `Training` collection.
+5. Create a New Request. Name it `Config-Phy-Int`.  Add it to the `NXOS-API` collection.
 6. In the URL field , select `POST` and then type your object url (see picture below).  It should look something like this `http://<switchip:>/api/mo/sys/intf/phys-[eth1/1].json`
 7. In the BODY of the POST Request type following JSON code.
 https://github.com/Hemakuma/networkautomation/blob/master/configs/config-phy-int.json
