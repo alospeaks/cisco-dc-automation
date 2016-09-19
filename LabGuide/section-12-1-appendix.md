@@ -85,3 +85,60 @@ go to training directory
     ![folder](/images/docker-c-5.png)
 
 You are now ready to do off box programming.
+
+
+#Do not do this in the class
+##Manual way of building images
+
+## Jenkins  Container
+### Exercise 1
+####Creating Jenkins Container
+1. Switch to `Atom` Editor
+2. create a new folder under `containers`.
+3. Right click on training and select `New Folder`
+4. name it `jenkins`
+
+### Exercise 2
+###Create Dockerfile
+
+Lets create a docker file to build a new image that has jenkins and ansible installed.  For jenkins, we will use prebuild image of Jenkins from dockerhub.  However we want to install ansible on it so that we can initiate deployment from the Jenkins server.
+
+5. Right click on the `jenkins` folder and select `New File`
+6. name it `Dockerfile`
+7. paste the following
+
+```
+#VERSION 1.0
+FROM jenkins
+MAINTAINER Hemant Kumar, hemakuma@cisco.com
+USER root
+RUN apt-get update && apt-get -y upgrade && apt-get install -y  vim git python curl openssh-server  python-pip python-dev build-essential libssl-dev libffi-dev
+RUN pip install --upgrade pip
+RUN pip install ansible==2.1.1
+RUN pip install markupsafe
+RUN pip install cryptography
+##if this fails, use pip install cryptography --upgrade; failed in jenkins container
+## upgrade to the latest VERSION
+RUN pip install ansible --upgrade
+#RUN echo 172.16.123.135 leaf1 > /etc/hosts
+
+```
+7. `Cmd + S`, to save the file
+
+### Exercise 3
+####Build the new image
+1. Open up a terminal window,
+2. navigate to the training directory
+3. type `source source.docker`
+4. cd to `jenkins` folder
+5. type `Docker build -t  jenkins-ansible --tag hemakuma/jenkins-ansible .`
+6. This should build a new image
+7. Verify that the images is in your local repo: `docker images | grep jenkins`
+8. Run the jenkins-ansbile container based on this image.
+
+	`docker run --name jenkins -h jenkins -d --restart=always -p 8080:8080 -p 50000:50000 hemakuma/jenkins-ansible`
+
+
+##nxtookkit
+
+**STOP HERE , we will do the rest of jenkins exercises in the Jenkins Section**
