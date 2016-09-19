@@ -51,7 +51,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
   ![gitlab](/images/gitlab-300.png)
 
 5. Click on `Create Project`.
-6. Use the information on this page for the next exercise.
+6. Do not close this window. We will use the information on this page for the next exercise.
 
 ###Exercise-2
 #### Cloning the Repository
@@ -63,7 +63,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
-  `git clone http://hemakuma:cisco123@192.168.99.102/hemakuma/ansible.git `
+  `git clone http://hemakuma:cisco123@192.168.99.100/hemakuma/ansible.git `
 
   ![gitlab](/images/gitlab-301.png)
 
