@@ -119,7 +119,7 @@ The beauty of scripting comes, when u start manipulating the data and creating l
     3. `scp cdp2descv2.py admin@<yourswitch ip>:`
     4. don't forget the : at the end.
 
-![nxcli-1](/images/nxcli-5.png)
+    ![nxcli-1](/images/nxcli-5.png)
 
 7. Switch to the switch CLI terminal.
     1. `dir`
@@ -134,6 +134,6 @@ The beauty of scripting comes, when u start manipulating the data and creating l
 8. Since you don't have other switches connected to your virtual switch, you will get some errors
 9. Here is the output of from my lab.  
 
-![nxcli-1](/images/nxcli-6.png)  
+    ![nxcli-1](/images/nxcli-6.png)  
 
 *With Camden release, we have introduced object based restful NX API.  I prefer using objects rather than using CLI wrapped into http. Next section, we will programming using REST API*
