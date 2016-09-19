@@ -1,5 +1,6 @@
 #Off Box Programmming
-There is different ways that you can modify the attributes of the MO (See picture below).  In this section will be using NXAPI-CLI based and NXAPI-REST based to manipulate these objects.
+There is different ways that you can modify the attributes of the managed objects (MO). See picture below.  In this section will be using NXAPI-CLI based and NXAPI-REST based to manipulate these objects.
+Both methods are modifying the underlaying MOs.  NXAPI-CLI is sending CLI commands over HTTP to the switch.  The webserver in the switch strips off the http and sends the command to the CLI API which then modifies the MO.  NXAPI-REST directly modifying the MO.
 
 ![ob-1](/images/ob-1.png)  
 
