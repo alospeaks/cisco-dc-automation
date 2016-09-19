@@ -18,7 +18,7 @@ Docker compose is one way of spinning up docker containers. Basically you create
   3. Paste the following content into the file and save it:
   4. Make sure to change the `external_url` to reflect the ip address of you docker machine.
   https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Docker-compose.yml
-  
+
   ```
       ---
       version: '2'
@@ -52,7 +52,7 @@ Docker compose is one way of spinning up docker containers. Basically you create
               - '8080:8080'
               - '50000:50000'
 
-```
+  ```
 
 ###Exercise-2
 ####Spin up gitlab container
