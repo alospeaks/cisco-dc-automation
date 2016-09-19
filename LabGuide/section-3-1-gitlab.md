@@ -139,9 +139,10 @@ For the lab environment, we want to quickly push the changes to the remote repo 
     ![gitlab](/images/nxtoolkit-20.png)
 
 ###Exercise-2
-#### Cloning the Repository
+#### Putting nxtoolkit directory under git Repository
 1. Switch to the terminal window
 2. `cd training`
+3. `cd nxtoolkit`
 3. Follow the instructions from the gitlab site to create a new repository by cloning it.
 4. Do not copy and paste everything at once.  Do line by line.
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
