@@ -44,24 +44,6 @@ The best way to get started is to use the sandbox to generate your base code and
     2. `show vlan`  <-- verify that vlan got created
 
 ###Exercise-2
-####Write a python script to show the version of the switch.
-Homework.  Do not do it in the class.
-
-Use the sandbox to generate the python code to show the version os running on your switch. Make sure to use `json-rpc`.  It is easier to read json rpc format.
-
-![nxcli-1](/images/nx-cli-1.png)
-
-My script is found here https://github.com/Hemakuma/networkautomation/blob/master/configs/hk-show-version.py
-
-You can modify this script so that it can get the current version of all the switches in your network. You will need created a file called `switch_ips` that lists all the switch.  The script reads this file to get which switch it needs to contact to get the version information.  My switch ip file looks like this https://github.com/Hemakuma/networkautomation/blob/master/configs/switch_IPs
-You need to put the switch_ip file in the same directory as your script.
-Your output should look like this  
-
-![nxcli-1](/images/nxcli-3.png)
-
-*Keep the nxtoolkit container, ATOM text editor and ssh  session  to switch  open all the time. We will be using all of them frequently.  Learn how to switch between them quickly to check and verify your configurations.*
-
-###Exercise-3
 ####VLAN Consistency Checker
 Its no fun just creating one vlan. We could do this with CLI faster.   Lets write up a little complex script.  This script uses `python lists` and `for` loops.  Google it up and learn little bit about lists and loops.  The goal should be to start learning from others code.  See how they do it and they practice with your own. Google if it doesn't make sense.
 
@@ -80,6 +62,30 @@ https://github.com/Hemakuma/networkautomation/blob/master/configs/vlan-consist-c
 7. Go to your nxtoolkit container terminal window and run this script.  This script should be in your `myscript` folder.  
 8. run the script `python vlan-consist-check.py`  
 9. Login to your switch (ssh admin@<switch ip> )and verify that those vlans are created.  `Show vlan`
+
+
+###Exercise-3
+####Write a python script to show the version of the switch.
+**Homework.  Do not do it in the class.**
+
+Use the sandbox to generate the python code to show the version os running on your switch. Make sure to use `json-rpc`.  It is easier to read json rpc format.
+
+![nxcli-1](/images/nx-cli-1.png)
+
+My script is found here
+
+ https://github.com/Hemakuma/networkautomation/blob/master/configs/hk-show-version.py
+
+You can modify this script so that it can get the current version of all the switches in your network. You will need created a file called `switch_ips` that lists all the switch.  The script reads this file to get which switch it needs to contact to get the version information.  My switch ip file looks like this
+
+https://github.com/Hemakuma/networkautomation/blob/master/configs/switch_IPs
+
+You need to put the switch_ip file in the same directory as your script.
+Your output should look like this  
+
+![nxcli-1](/images/nxcli-3.png)
+
+*Keep the nxtoolkit container, ATOM text editor and ssh  session  to switch  open all the time. We will be using all of them frequently.  Learn how to switch between them quickly to check and verify your configurations.*
 
 ###Exercise-4
 ####Downloading Sample Codes
