@@ -38,9 +38,14 @@
 - [Docker Tips](#)
 
 #Docker
-Docker is container management software for linux.  You can create lightweight containers (isolated environment) to run your application.  We will be using Dockers are lot in this lab. We will be using to install all the devops tools that we need using dockers.  
+Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
 
-To do off box programming , you will need to install python, ansible etc on your laptop.  To get you started quickly and to save time, we will use docker to quickly download a pre-installed and pre-configure containers.  Containers are becoming very popular now, so this will give you some hands on  docker  and how to use it.  Here is a quick comparison between container and hypervisors
+We will be using Dockers are lot in this lab so spent some time learning it on the internet.
+
+To do off box programming , you will need to install python, ansible etc on your laptop.  To get you started quickly and to save time, we will use docker to quickly download a pre-installed and pre-configure containers.  
+
+Containers are becoming very popular now, so this will give you some hands on  docker  and how to use it.  Here is a quick comparison between container and hypervisors
+
 ![docker](/images/docker-i-1.png)
 
 Learn more about dockers at https://www.docker.com/
