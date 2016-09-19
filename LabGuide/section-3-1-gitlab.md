@@ -156,7 +156,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 ## Creating gitlab users.
 ### Exercise 1
 ### Create another gitlab account (`developer`)
-You will use the 2nd account to review the changes. You request for merge request using your account and then sign back in as `developer` to review and accept the changes.
+You will use the 2nd account to review the changes. You will use your first account to request the merge and using 2nd account to review , approve and merge the changes to the trunk.
 
 1. sign out from gitlab.
 2. Fill in the form for `New User` account
@@ -171,9 +171,14 @@ You will use the 2nd account to review the changes. You request for merge reques
 ###Exercise 1
 ####Editoring Projects in ATOM
 1. Switch to `ATOM` Editor
-2. Go to `File`  and `Add project Folder`
-3. Navigate to `ansible`  folder under training and open it.
-4. Repeat the same for `nxtoolkit` folder.
+2. Right click on the `training folder`
+3. Click on `Remove Project Folder`
+
+  ![gitlab](/images/gitlab-509.png)
+
+4. Go to `File`  and `Add project Folder`
+5. Navigate to `ansible`  folder under `training` and open it.
+6. Repeat the same for `nxtoolkit` folder.
 
 
 ## Branching
