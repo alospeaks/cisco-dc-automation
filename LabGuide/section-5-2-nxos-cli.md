@@ -52,7 +52,7 @@ Its no fun just creating one vlan. We could do this faster with CLI.   Lets writ
 1. In `ATOM` , right click on `nxtoolkit` and create `New File`. Name it `vlan-consist-check.py`  
 2. Get the code from git hub here
 
-    ![vlan](/configs/vlan-consit-check.py)
+    ![vlan](/configs/vlan-consist-check.py)
 
 
 3. copy and  paste the code in new file.  
