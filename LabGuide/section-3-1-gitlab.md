@@ -252,7 +252,16 @@ You will use the 2nd account to review the changes. You will use your first acco
 #### Merge the branch with master branch
 1. Log out of gitlab accounts
 2. log back in using `developer`  account.
-3. Merge the `readmeupdate` to `master` branch.
+3. Select `ansible` repository.
+4. Click on the menu button
+
+  ![branch](/images/gitlab-515.png)
+
+5. Click on th `Merge Request`
+6. Then select the request.
+7. Merge the `readmeupdate` to `master` branch.
+
+  ![branch](/images/gitlab-516.png)
 
 ####Verify the merge
 1. Switch back to your terminal window
