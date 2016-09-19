@@ -77,7 +77,7 @@ Lets install Ansible on  a docker container.
 ###Exercise-1
 ####Build Ansible Dockerfile
 1. Switch to `ATOM` editor
-2. Right click on the `containers` folder and select `New Folder`.  Name it `ansible`.
+2. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
 3. Now Right click on the `ansible` folder and select `New File`,  and name this file as `Dockerfile`
 4. Copy and paste the content from here to this new file.  
 https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_ansible  
@@ -91,9 +91,9 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Dockerfile_a
 
 1. Spin up a nxos ansible container
     1. Mac Users  
-    `docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
+    `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
     2. Windows Users  
-    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/labs/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts ansible`
+    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
 
     This will start the container and log you in. From inside the container.
 
