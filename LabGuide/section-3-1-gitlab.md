@@ -23,7 +23,7 @@ GIT is a very popular and efficient open source Version Control System. It track
 **Do not open the command line**
 
 
-For this lab, we have installed our own gitlab server on the docker container. We will use this server for all our exercises. 
+For this lab, we have installed our own gitlab server on the docker container. We will use this server for all our exercises.
 
 ##Creating `ansible` repository on gitlab.
 ###Exercise-1
@@ -31,7 +31,11 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
 1. Open up chrome browser and point it to:
 2. `http://<ip of the docker node>`
-3. create a new user
+3. change the admin password to `cisco123`
+
+  ![gitlab](/images/gitlab-550.png)
+
+4. create a new user
 
   ![gitlab](/images/gitlab-100.png)
 
