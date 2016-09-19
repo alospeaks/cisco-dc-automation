@@ -180,17 +180,17 @@ You will use the 2nd account to review the changes. You will use your first acco
 5. Navigate to `ansible`  folder under `training` and open it.
 6. Repeat the same for `nxtoolkit` folder.
 
-*you want to this way so that `ATOM` can track your git changes.  Each git repo should be a `atom project`*
+*You want to this do way so that `ATOM` can track your git changes.  Each git repo should be a `atom project`*
 
 
 ## Branching
 
 ###Exercise 1
 #### Creating a git branch
-1. switch to terminal window
-2. navigate to `ansible` folder. `cd training` ; `cd ansible`
-3. create a new branch called `readmeupdate`
-4. `git branch`  to see what branches you currently have and where the `HEAD` is pointing to.  You should only see the `master` branch and the `HEAD` should be pointing to it.
+1. Switch to terminal window
+2. Navigate to `ansible` folder. `cd training` ; `cd ansible`
+4. Type `git branch`  to see what branches you currently have and where the `HEAD` is pointing to.  You should only see the `master` branch and the `HEAD` should be pointing to it.
+5. Create a new branch called `readmeupdate`
 5. `git branch readmeupdate`  to create a new branch.
 6. `git checkout readmeupdate` to switch to new branch.
 7. `git branch`  now the HEAD should be pointing to the new branch.
