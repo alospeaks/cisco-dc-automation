@@ -117,6 +117,8 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 6. type
 7. `./gitpush.sh`
 
+**Copy the gitpush.sh file to nxtoolkit. Change the permission so that it can be executed from command line. You can use ATOM to copy and paste.**
+
 **Note: if you have installed git-plus plugin for your ATOM editor, you can use cmd+shift+H to do git push. Windows users use ctrl+shift+H**
 
 ###Exercise-7
@@ -273,7 +275,7 @@ You will use the 2nd account to review the changes. You will use your first acco
 7. `git pull`
 8. Switch back to `ATOM` and view the `README.md` file. Do you see the changes that got merged.
 
-**This is how u can do peer reviews for your configuration files**
+**This is how you can do peer reviews for your configuration files.**
 
 ###Exercise 6
 #### Remove the branch
