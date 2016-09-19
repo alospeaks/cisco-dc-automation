@@ -51,11 +51,14 @@ Its no fun just creating one vlan. We could do this faster with CLI.   Lets writ
 
 1. In `ATOM` , right click on `nxtoolkit` and create `New File`. Name it `vlan-consist-check.py`  
 2. Get the code from git hub here
-https://github.com/Hemakuma/networkautomation/blob/master/configs/vlan-consist-check.py  
+
+    ![vlan](/configs/vlan-consit-check.py)
+
+
 3. copy and  paste the code in new file.  
 4. Modify the file to reflect your switch ip, username + password
 
-![nxcli-1](/images/nxcli-4.png)
+    ![nxcli-1](/images/nxcli-4.png)
 
 5. Save the file `CMD + S` as `vlan-consist-check.py`  
 6. Read the code and try to make sense of it.  Keep doing this with all the scripts we write.  You will see a pattern on how the codes are written.  
