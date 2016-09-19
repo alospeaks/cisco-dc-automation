@@ -24,7 +24,7 @@ Object Store
 
 ###Exercise 1
 ####Browsing the object store
-*Make your switch has following feature enabled. `feature nxapi`.*  
+*Make sure your switch has following feature enabled. `feature nxapi`.*  
 
 1. Objects are stored in DME (data management engine) and are exposed north bound via API.  You can look at the objects and their attributes using a inbuilt app on the switch called visore.
 2. Open up Chrome browser and  in the address field, point it to the url of your NXOSv switch.
