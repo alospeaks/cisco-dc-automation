@@ -45,7 +45,7 @@ The best way to get started is to use the sandbox to generate your base code and
 
 ###Exercise-2
 ####VLAN Consistency Checker
-Its no fun just creating one vlan. We could do this with CLI faster.   Lets write up a little complex script.  This script uses `python lists` and `for` loops.  Google it up and learn little bit about lists and loops.  The goal should be to start learning from others code.  See how they do it and they practice with your own. Google if it doesn't make sense.
+Its no fun just creating one vlan. We could do this faster with CLI.   Lets write up a little complex script.  This script uses `python lists` and `for` loops.  Google it up and learn little bit about lists and loops.  The goal should be to start learning from others code.  See how they do it and they practice with your own. Google if it doesn't make sense.
 
 **Goal:** Create a script to ensure the required vlans are present all the switches you manage in your network.  This is a very common requirement for lots of customers.  They want to make sure all the switches have same vlans configured.
 
