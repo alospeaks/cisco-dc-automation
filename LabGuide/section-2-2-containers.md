@@ -3,7 +3,7 @@
 Lets build some containers on our docker engine.
 
 ## Gitlab Container
-We need gitlab for distributed source control of our files.  We could use github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, this is pretty easy.  If you don't understand any part, please google it up. We will be using lot of docker-compose and dockerfiles. Please google it up and read little bit about it.
+We need gitlab for distributed source control of our files.  We could have used github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, installing these opensource software is pretty easy.  
 
 ###Exercise-1
 ####Create gitlab docker compose file
