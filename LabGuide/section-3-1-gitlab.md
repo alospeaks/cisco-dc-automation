@@ -284,7 +284,7 @@ You will use the 2nd account to review the changes. You will use your first acco
 
 
 
-###Steps:
+### Summary Steps
 
 1. Clone project
 2. git clone git@example.com:project-name.git
