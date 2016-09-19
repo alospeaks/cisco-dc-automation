@@ -62,6 +62,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
   ![gitlab](/images/gitlab20.png)
 4. Do not copy and paste everything at once.  Do line by line.
+5. For git commit command, use -m flag.  `git commit -m 'your message'`
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
 
   `git remote add origin http://hemakuma:cisco123@192.168.99.100/hemakuma/ansible.git`
