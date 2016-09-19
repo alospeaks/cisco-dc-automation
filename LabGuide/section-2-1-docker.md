@@ -125,7 +125,7 @@ docker-machine start default
 
 
 ##Extras
-**Do not this in the class**
+**Do not do this in the class**
 
 ###Exercise-3
 ####Ssh into your Docker VM
