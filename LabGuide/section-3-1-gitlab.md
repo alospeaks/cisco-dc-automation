@@ -46,6 +46,8 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
 4. Click on create `New project` and name it `ansible`
 
+  ![gitlab](/images/gitlab-551.png)
+
   ![gitlab](/images/gitlab-300.png)
 
 5. Click on `Create Project`.
