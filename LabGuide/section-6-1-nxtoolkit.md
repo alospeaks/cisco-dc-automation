@@ -130,9 +130,8 @@ List Comprehensions in Python
    2. `cp nx-create-l2bds.py hk-create-l2dbs.py`
 2. Switch to `ATOM `window
    1. Modify the file  `hk-create-l2bds.py` as per the requirement.
-HELP: https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-create-l2bds.py
-
-   2. Save the file `CMD+S`
+   2. HELP: https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-create-l2bds.py
+   3. Save the file `CMD+S`
 3. Switch to nxtoolkit terminal window.
    1. Before you run your script, verify that vlan does not exist on the switch using your script.
    2. `./nx-show-l2bds.py`
