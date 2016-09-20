@@ -20,16 +20,10 @@ Most of these tools can be installed on your laptop
 ![intro](/images/intro-4.png)
 
 If you can not install NXOSv on your laptop, use of these NXOSv installed in the lab.
-###IP address Assignment
-
-|Student No.| IP Address| Device Name|
-|-----------|-----------|------------|
-1	|10.114.217.157	|N9K-1
-2	|10.114.217.158	|N9K-2
-3	|10.114.217.159	|N9K-3
-4	|10.114.217.160	|N9K-4
 
 
-References:
+##References:
 Programmability eBook
 http://www.cisco.com/c/dam/en/us/td/docs/switches/datacenter/nexus9000/sw/open_nxos/programmability/guide/Programmability_Open_NX-OS.pdf?utm_content=buffer49ea2&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+http://www.cisco.com/c/dam/en/us/td/docs/switches/datacenter/nexus9000/sw/open_nxos/programmability/guide/Programmability_Open_NX-OS.pdf
