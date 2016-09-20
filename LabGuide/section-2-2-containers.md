@@ -3,10 +3,10 @@
 Lets build some containers on our docker engine.
 
 ## Gitlab and Jenkins Container
-We need gitlab for distributed source control of our files.  We could have used github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, installing these opensource software is pretty easy.  
+We need gitlab for distributed source control of our files.  We could have used github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, installing these opensource software is pretty easy.  In this section we will be installing couple of docker containers.
 
 ###Exercise-1
-####Create  docker compose file
+####Create docker compose file to install gitlab and jenkins
 Docker compose is one way of spinning up docker containers. Basically you create a docker-compose.yml file and run docker-compose up command.
 
 1. Switch to the terminal window
