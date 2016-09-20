@@ -66,7 +66,7 @@ https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 10. `./nx-show-l2bds.py`
 11. compare the results with step 1.
 
-Keep both of the terminal window open; use nxtoolkit terminal to run the python scripts and use the ssh session to switch to verify the configurations.
+**TIP** Going forward, keep both of the terminal window open; use nxtoolkit terminal to run the python scripts and use the ssh session to switch to verify the configurations.
 
 ### Exercise 5:  Create a Script that displays all the interfaces that have "operational state" as up.
 Video Demo
