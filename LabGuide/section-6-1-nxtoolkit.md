@@ -79,7 +79,7 @@ https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 7. Go to `ATOM` editor
 8. open up this file by double clicking it.
 9. Modify `hk-show-interfaces.py` script to achieve the above goal. You want to see all the interfaces whose `operational state` is `up`
-10. HELP : http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples/hk-show-interfaces.py
+10. HELP : https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-show-interfaces.py
 11. Switch to your nxtoolkit terminal  and run the script
 12. `./hk-show-interfaces.py`
 13. Switch to  switch CLI terminal , shut some of the interfaces eg
@@ -90,6 +90,8 @@ https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
    ```
 14. Repeat step 4
 15. compare the results.
+
+   ![nxtoolkit](/images/nxtoolkit-31)
 
 **Note:**
 All interfaces are store in a python list called `data`.  This list contains tuples that has attribute of each interface.
