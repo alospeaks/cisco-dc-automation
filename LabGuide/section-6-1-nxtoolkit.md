@@ -29,6 +29,7 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
    source source.docker
    docker attach nxtoolkit
    ```
+
 ### Exercise 3:  Running nxos show commands using nxtoolkit
 1. Inside nxtoolkit container, type the following.
 2. `cd myscripts`
