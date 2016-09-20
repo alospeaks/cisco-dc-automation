@@ -139,3 +139,10 @@ Exit
 ```
 
 `exit` will get back to your Mac Terminal
+
+### Some helpful docker commands
+
+To recreate the docker vm or to create a new
+
+`docker-machine create --driver virtualbox default`
+`docker-machine [stop/start/restart/rm] default`
