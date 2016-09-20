@@ -130,7 +130,7 @@ List Comprehensions in Python
    2. `cp nx-create-l2bds.py hk-create-l2dbs.py`
 2. Switch to `ATOM `window
    1. Modify the file  `hk-create-l2bds.py` as per the requirement.
-HELP: http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples/hk-create-l2bds.py
+HELP: https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-create-l2bds.py
 
    2. Save the file `CMD+S`
 3. Switch to nxtoolkit terminal window.
