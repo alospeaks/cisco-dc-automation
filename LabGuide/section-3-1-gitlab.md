@@ -3,24 +3,8 @@
 GIT is a very popular and efficient open source Version Control System. It tracks content such as files and directories for changes. Files transition between 3 states, modified, staged and committed file.  Repository are local but if you want to share your codes with your team, you can also push it to remote/central repository.
 ![GitHub](/images/git-intro-1.png)
 
-### Exercise-1
-####Installing git
+**Make sure you git installed on your system.  See devops tools section.**
 
-##### Mac Users
-1. **Xcode** is a large suite of software development tools and libraries from Apple.  This includes git package.  Lets install xcode-select, command line utility for xcode.
-2. Open up a terminal window.  `Cmd+space`  and type `terminal`
-3. on the terminal type  `xcode-select --install`
-4. A software update popup window will appear.
-5. click on `Install`.
-6. Wait for it to install the Command line tools.
-7. type  `git --help`
-8. you see all the options for git command.
-
-##### Windows Users
-1. Download  and install `mysGit` package. Use all the default setting for installation. https://git-for-windows.github.io/ 
-2. you should see Git Bash icon on your desktop.  Whenever we say open terminal in this lab guide, please open `git Bash terminal` on windows.  
-
-**Do not open the command line**
 
 
 For this lab, we have installed our own gitlab server on the docker container. We will use this server for all our exercises.
