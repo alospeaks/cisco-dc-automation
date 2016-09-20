@@ -203,9 +203,8 @@ Optional ...do it later; not in the class
 
 Configure following SVIs:
 
-   vlan 300:  192.168.50.1/24
-
-   vlan 301: 192.168.51.1/24
+   1. vlan 300:  192.168.50.1/24
+   2. vlan 301: 192.168.51.1/24
 
 Note: vlans should be already created by the script in exercise 6.
 
