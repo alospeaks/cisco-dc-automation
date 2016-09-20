@@ -21,9 +21,10 @@ http://atom.io
 cmd + shift + H  <-- to get the command window
 
 ##Virtual Box
+Virtual box is a x86 virtualization product.  Basically it lets you run virutal machines on your laptop.
+
 ### Exercise-2
 ####Installing Virtual box
-Virtual box is a x86 virtualization product.  Basically it lets you run virutal machines on your laptop.
 
 1. Download and install Virtualbox for your OS.
     https://www.virtualbox.org/
@@ -35,6 +36,7 @@ Virtual box is a x86 virtualization product.  Basically it lets you run virutal 
 
 
 ## GIT
+For source control.
 ### Exercise-1
 ####Installing git
 ##### Mac Users

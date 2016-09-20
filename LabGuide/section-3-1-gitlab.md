@@ -3,7 +3,7 @@
 GIT is a very popular and efficient open source Version Control System. It tracks content such as files and directories for changes. Files transition between 3 states, modified, staged and committed file.  Repository are local but if you want to share your codes with your team, you can also push it to remote/central repository.
 ![GitHub](/images/git-intro-1.png)
 
-**Make sure you git installed on your system.  See devops tools section.**
+**Make sure you have git installed on your system.  See devops tools section.**
 
 
 
