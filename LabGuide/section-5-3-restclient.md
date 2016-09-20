@@ -79,9 +79,6 @@ Create the json rest request to view the current configuration on eth1/1.  use G
 5. Select `NXOS-API` collection.
 6. Change the request to be of `GET` type
 4. Change the url will be `http://switch-ip/api/mo/sys/intf/phys-[eth1/1].json`
-4. Create a New Request.  Click on the NXOS-API Collection folder and click + button.  Request Name : "Get-int-status".  Click create.
-5. In the URL field , select GET and then type your object url (see the picture below).  It should look something like this http://10.114.217.215/api/mo/sys/phys-[eth1/1].json
-6. Click on the `Save`
 7. Click on `Send`   Send button.
 7. Take note of the adminSt, accessVlan and descr from the Response window.  We are going to modify these attributes of this object in the next exercise.
 
@@ -107,10 +104,12 @@ You should not see vlan 300 in the RESPONSE window.  If you do see it, delete by
 3. Get the authentication token (send login-noxs request)
 4. Create a new request called `config-vlan` in the `NXOS-API` folder.
 5. In the URL field , select `POST` and then type your object url.  It should look something like this `http://<switchip>/api/mo/sys/bd.json`
-6. In the BODY of the POST Request type following JSON code.  
+6. Change the request type to be `POST`
+7. In the BODY of the POST Request type following JSON code.  
 https://github.com/Hemakuma/networkautomation/blob/master/configs/config-vlan.json
 7. Send a POST request by pressing on the `Send` button.
-8. Verify the vlan is configured. Send  `get-vlan-infor` request again  and verify that this time around you got some data about vlan 300
+8. Verify the vlan is configured.
+9. Select  `get-vlan-infor` request again from your collection. Then press `SEND`.  Verify that this time around you got some data about vlan 300
 
 ##Exercise-6
 ####Modifying Objects Configuring Physical interfaces
