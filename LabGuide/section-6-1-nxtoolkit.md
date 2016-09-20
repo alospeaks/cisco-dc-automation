@@ -189,6 +189,7 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
 2.    `cp nx-config-ipv4.py hk-config-ipv4.py`
 3. Switch to ATOM
    1. modify the file as per the requirement.
+   2. Hint: you will need to change the interface to layer 3 mode first before configuring the ip.
    2. HELP: https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-config-ipv4.py
    3. Save the file
 4. Switch to nxtoolkit container
