@@ -135,14 +135,15 @@ List Comprehensions in Python
 3. Switch to nxtoolkit terminal window.
    1. Before you run your script, verify that vlan does not exist on the switch using your script.
    2. `./nx-show-l2bds.py`
-   3. run the script  `./nx-create-l2bds.py`
+   3. run the script  `./hk-create-l2bds.py`
    4. Verify on the switch that both of the vlans are now configured using the script
    5. `./nx-show-l2bds.py`
 
 
 **References**
-*nxtoolkit/nxtoolkit.py at master · datacenter/nxtoolkit · GitHub
-By now you should have got the hang of how to run scripts. How to switch between terminals , how to get in container , how to edit file etc.  Therefore  going forward, we will not show you all the details.  This will help you with your learning.  Cut /paste does not help much.  If you get stuck, check out my files on the gitllab*
+https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxtoolkit.py
+
+By now you should have got the hang of how to run scripts. How to switch between terminals , how to get in container , how to edit file etc.  Therefore  going forward, we will not show you all the details.  This will help you with your learning.  Cut /paste does not help much.  If you get stuck, check out my files on the gitllab
 
 http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
 
@@ -158,22 +159,21 @@ description: "Configured by nxtoolkit"
 ```
 
 1. Take a look at sample scripts to see if any of the script can help with your requirement.
-2. Looks like nx-config-interface.py  is close to our requirement.
+2. Looks like `nx-config-interface.py`  is close to our requirement.
 3. Lets make a copy of it and modify it.
 4. Switch to your nxtoolkit terminal
 5. `cp nx-config-interface.py hk-config-interface.py`
-5. Switch to ATOM. window.  Double click hk-config-interface.py to edit it.
+5. Switch to `ATOM` window.  Double click `hk-config-interface.py` to edit it.
 6. Change the code to reflect your requirement.
 
-HELP:  http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples/hk-config-interface.py
-
+   HELP:  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-config-interface.py
 7. Save the file  `CMD+S`
 8. Switch to switch CLI terminal and to verify the current configuration before modifying it.
 `show run interface`
 9. Switch to nxtoolkit window
 10. Run the script from the nxtookit container.
 `./hk-config-interface.py`
-11. 1Repeat step 8 and compare the result.
+11. Repeat step 8 and compare the result.
 
 **Reference**
 Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make sense of it.  https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
@@ -182,14 +182,14 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
 ####Configuring L3 Interface
 
 **Goal:** Configure interface eth1/2 with ip address of 192.168.60.1/24
-**Solution:**  modify nx-config-ipv4.py
+
+**Solution:**  modify `nx-config-ipv4.py`
 
 1. Switch to your nxtoolkit container terminal
    `cp nx-config-ipv4.py hk-config-ipv4.py`
 2. Switch to ATOM
    1. modify the file as per the requirement.
-   2.
-   HELP: http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples/hk-config-ipv4.py
+   2. HELP: https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-config-ipv4.py
    3. Save the file
 3. Switch to nxtoolkit container
    1. run the file the script
@@ -199,6 +199,7 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
 ###Exercise 9
 ####Configuring SVI (optional)
 Optional ...do it later; not in the class
+
 Configure following SVIs
 vlan 300:  192.168.50.1/24
 vlan 301: 192.168.51.1/24
@@ -214,7 +215,7 @@ Note: vlans should be already created by the script in exercise 6.
 5. Inside the nxtoolkit container, run this script.
 6. Verify on the switch that both of the vlans are configured.
 
-HELP  http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
+   HELP  http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
 
 ###Exercise 10
 ####Deleting SVI (optional)
@@ -224,10 +225,10 @@ vlan 301
 **Solution:** Modify `nx-config-svi.py`
 
 1. Login to your nxtoolkit container
-2. cp hk-config-svi.py hk-delete-svi.py
+2. `cp hk-config-svi.py hk-delete-svi.py`
 3. Open the file using ATOM.
 4. Modify the file as per the requirement.
 5. Save the file
 6. On the nxtoolkit container, run the file.
 7. Verify on the switch that both of the vlans are configured.
-   1. show run int vlan300
+   1. `show run int vlan300`
