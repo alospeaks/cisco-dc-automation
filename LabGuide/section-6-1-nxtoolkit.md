@@ -91,7 +91,7 @@ https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 14. Repeat step 4
 15. compare the results.
 
-   ![nxtoolkit](/images/nxtoolkit-31)
+   ![nxtoolkit](/images/nxtoolkit-31.png)
 
 **Note:**
 All interfaces are store in a python list called `data`.  This list contains tuples that has attribute of each interface.
