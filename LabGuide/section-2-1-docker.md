@@ -84,8 +84,7 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 5. `docker-machine ls`
 5. `docker-machine create --driver virtualbox default`
 6. `docker-machine ls`  <-- you should see the docker engine running.
-5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a boot2docker VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.  Here are few commands you can run.
-
+5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a boot2docker VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.
 
 
 ###Exercise 2
@@ -109,7 +108,7 @@ Source file are used to set the environment variable to communicate to the docke
 3. Copy the content to the clipboard.
 4. Open the **Atom** Editor.
 5. Go to `File` menu and then select `New File`
-6. Paste the content here and save it as `source.docker`
+6. Paste the content here in the `training` folder as `source.docker`
 
 	![atom100](/images/source-1.png)
 
