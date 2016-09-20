@@ -100,6 +100,8 @@ Here is a sample list with  tuples looks like
 
 Now we want to display only the interfaces that have "operational state = up".   This means we need to do some list comprehension.  Start learning Python now . We have lots of references on the  jive site.
 
+![nxtoolkit](/images/nxtoolkit-31.png)
+
 Comprehensions — Python 3 Patterns, Recipes and Idioms
 ```
    data_up = [x for x in data if x[3] == "up"]
