@@ -17,7 +17,7 @@ GIT is a very popular and efficient open source Version Control System. It track
 8. you see all the options for git command.
 
 ##### Windows Users
-1. Download  and install `mysGit` package. Use all the default setting for installation.  Git for Windows
+1. Download  and install `mysGit` package. Use all the default setting for installation. https://git-for-windows.github.io/ 
 2. you should see Git Bash icon on your desktop.  Whenever we say open terminal in this lab guide, please open `git Bash terminal` on windows.  
 
 **Do not open the command line**
