@@ -120,7 +120,7 @@ Now, you can use the `source.docker` file to source your environment variables.
 1. Switch to your terminal Window.
 2. type `source source.docker`  Note: you should be in the training folder to run this command.
 2. type `docker ps`
-3. This will show you all the containers running on your docker host.  Your docker host name is `default`.  You should not see any containers at this time.  We going to create containers in the next exercise.
+3. This will show you all the containers running on your docker host.  Your docker host name is `default`.  You should not see any containers at this time.  We are going to create containers in the next section (containers).
 
 
 ### Common Docker-machine commands
