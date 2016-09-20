@@ -28,6 +28,7 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
    cd training
    source source.docker
    docker attach nxtoolkit
+   
    ```
 
 ### Exercise 3:  Running nxos show commands using nxtoolkit
