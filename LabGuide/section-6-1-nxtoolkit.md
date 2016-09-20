@@ -201,9 +201,12 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
 ####Configuring SVI (optional)
 Optional ...do it later; not in the class
 
-Configure following SVIs
+Configure following SVIs:
+
 vlan 300:  192.168.50.1/24
+
 vlan 301: 192.168.51.1/24
+
 Note: vlans should be already created by the script in exercise 6.
 
 **Solution:**  Modify `nx-config-svi.py`
