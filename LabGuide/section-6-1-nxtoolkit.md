@@ -122,16 +122,17 @@ List Comprehensions in Python
 ### Exercise 6
 ###Configuring VLAN using nxtoolkit
 **Goal:** Configure Vlan 300 and 301 using nxtoolkit
+
 **Solution:** Modify `nx-create-l2bds.py`
 
 1. Switch to nxtoolkit window
    1. make sure you are in samples directory
-   2. cp nx-create-l2bds.py hk-create-l2dbs.py
-2. Switch to ATOM window
-   1. Modify the file  hk-create-l2bds.py as per the requirement.
+   2. `cp nx-create-l2bds.py hk-create-l2dbs.py`
+2. Switch to `ATOM `window
+   1. Modify the file  `hk-create-l2bds.py` as per the requirement.
 HELP: http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples/hk-create-l2bds.py
 
-   2. Save the file CMD+S
+   2. Save the file `CMD+S`
 3. Switch to nxtoolkit terminal window.
    1. Before you run your script, verify that vlan does not exist on the switch using your script.
    2. `./nx-show-l2bds.py`
@@ -142,7 +143,9 @@ HELP: http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples
 
 **References**
 *nxtoolkit/nxtoolkit.py at master · datacenter/nxtoolkit · GitHub
-By now you should have got the hang of how to run scripts. How to switch between terminals , how to get in container , how to edit file etc.  Therefore  going forward, we will not show you all the details.  This will help you with your learning.  Cut /paste does not help much.  If you get stuck, check out my files on the gitllab* http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
+By now you should have got the hang of how to run scripts. How to switch between terminals , how to get in container , how to edit file etc.  Therefore  going forward, we will not show you all the details.  This will help you with your learning.  Cut /paste does not help much.  If you get stuck, check out my files on the gitllab*
+
+http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
 
 
 ###Exercise 7

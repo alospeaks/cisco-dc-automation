@@ -60,10 +60,10 @@ def main():
 
     # Display the data downloaded
     template = "{0:17} {1:6} {2:^6} {3:^6} {4:7} {5:6} {6:9}"
-   # print(template.format("INTERFACE", "TYPE", "ADMIN", "OPER",
-     #                     "SPEED", "MTU", "USAGE"))
-    #print(template.format("---------", "----", "------", "------",
-    #                      "-----", "---", "---------"))
+    print(template.format("INTERFACE", "TYPE", "ADMIN", "OPER",
+                          "SPEED", "MTU", "USAGE"))
+    print(template.format("---------", "----", "------", "------",
+                          "-----", "---", "---------"))
     #for rec in data:
     #    print(template.format(*rec))
     # For learning purpose, you can uncomment some of these.
