@@ -24,12 +24,6 @@ the same tasks in multiple playbooks, turn them into roles.
 http://docs.ansible.com/ansible/list_of_network_modules.html
 
 ##Exercise 1
-####Creating Ansible Container using Docker
-See section-2-1
-
-https://github.com/Hemakuma/cisco-dc-automation/blob/master/LabGuide/section-2-1-docker.md#exercise-8
-
-##Exercise 2
 ####Login in to your Ansible Container
 1. Go to your terminal window and type the following:
 ```
@@ -40,7 +34,7 @@ docker attach ansible
 2. you should be inside your ansible docker container.
 
 
-### Exercise 3
+### Exercise 2
 #### Setting up the directory structure to host ansible files
 1. Switch to `ATOM` Editor
 2. Right click on the ansible folder
@@ -51,6 +45,7 @@ docker attach ansible
     7. groups_vars
     8. hosts_vars
 
+### Exercise 3
 ####Creating Host Inventory File
 Inventory file contains list of hosts that you want to manage from Ansible.  In our case, it will list of switches that we want to manage by ansible. These host/swiches can be organized in groups.
 
@@ -83,25 +78,27 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 7. Name the file as  `hosts`
 You can read more about Inventory file here:  Inventory http://docs.ansible.com/ansible/intro_inventory.html
 
+### Exercise 4
 ####Creating credentials file
 1. Under `ansible` folder , create a new file
 2. name it `credentials.yml`
 3. copy and paste the following.
 4.
-```
----
-creds:
-    host: "{{ inventory_hostname }}"
-    username:   admin
-    password:   cisco123
-```
-To login into the switches, we need the username and password.  This file with conbination with `provider` keyword in ansbile playbook will let ansible login into the devices.  
+    ```
+    ---
+    creds:
+        host: "{{ inventory_hostname }}"
+        username:   admin
+        password:   cisco123
+    ```
+
+To login into the switches, we need the `username` and `password`.  This file with combination with `provider` keyword in ansbile playbook will let ansible login into the devices.  
 
 **All core networking modules implement a provider argument, which is a collection of arguments used to define the characteristics of how to connect to the device.
 The provider argument accepts keyword arguments and passes them through to the task to assign connection and authentication parameters.**
 https://docs.ansible.com/ansible/intro_networking.html
 
-### Exercise 4
+### Exercise 5
 ####Ping Test.  Make sure your Switch can reach internet.
 You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
 http://docs.ansible.com/ansible/nxos_ping_module.html
@@ -147,7 +144,7 @@ http://docs.ansible.com/ansible/faq.html
 If you want to hide your password, use ansible vault.  
 http://docs.ansible.com/ansible/playbooks_vault.html
 
-###Exercise 5
+###Exercise 6
 ####Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
 http://docs.ansible.com/ansible/nxos_config_module.html
@@ -186,7 +183,7 @@ http://docs.ansible.com/ansible/nxos_vlan_module.html
 
 
 
-###Exercise 6
+###Exercise 7
 ####Using the nxos_template module
 Separating data from the configuration.
 
@@ -213,7 +210,7 @@ Steps to create the templates:
 6. run the playbook
 
 
-###Exercise 7
+###Exercise 8
 ####Creating the data file
 1. Switch back to the `ATOM` editor
 2. Right click on the `ansible` folder and select `New File`
@@ -227,6 +224,7 @@ Steps to create the templates:
     ```
 5. Save the file `cmd + S`
 
+###Exercise 9
 ####Using Creating Jinja2 template
 1. Switch back to the `ATOM` editor
 2. Right click on the `ansible` folder and select `New Folder`
@@ -246,7 +244,7 @@ Steps to create the templates:
 7. Save the file `cmd + S`
 
 
-###Exercise 8
+###Exercise 10
 ####Creating playbook to configure switch using jinja2 template
 In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp access list.  
 
@@ -275,7 +273,7 @@ This modules provides a way to push a set of commands onto a network device by e
 2. `show run`
 3. verify the configuration
 
-###Exercise 9
+###Exercise 11
 ####Adding more base configuration
 1. update your data file with other data that you need to have in your base configuration.
 2. Here is my list, you can add anything u like.
@@ -302,7 +300,7 @@ This modules provides a way to push a set of commands onto a network device by e
 2. `show run`
 3. verify the configuration
 
-###Exercise 5
+###Exercise 12
 ####Base Configuration on switches
 Ensure the all the switches in the DC has following base configuration
 
@@ -310,7 +308,7 @@ Ensure the all the switches in the DC has following base configuration
 ntp server 10.68.0.41 use-vrf management
 
 
-### Exercise 5
+### Exercise 13
 ####Practical Example - Automating VLAN provisioning
 **Problem Statement**
 Users perform manual Day-1 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-2 configuration activity is performing routine VLAN related operations:
@@ -363,7 +361,7 @@ Repeat step 3 and compare the result.
 Repeat step 4.  What do you notice? do you see all green?  This the idempotent nature of ansible.  It will not change anything if there is no change.  Compare is will cli, if you repeat the command, it will reconfig the switch eventhough it is already configured.
 
 
-### Exercise 6
+### Exercise 14
 ###Configure ipv4 address to the interface
 Configure interface eth1/1 with 10.1.100.2/24
 
@@ -381,7 +379,7 @@ http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hk-ipv4i
 11. ansible-playbook -i hosts hk-ipv4interface.yml
 12. Repeat 3 and compare the result.
 
-### Exercise 7
+### Exercise 15
 ####Show neighbors
 
 1. Switch to your ansible terminal
@@ -408,7 +406,7 @@ notice how the register variable is used in the template.
 #Roles
 Roles simplify the organization of the playbook.
 
-###Exercise
+###Exercise 1
 ####Create ansible roles directory structure
 1. Switch to 'ansible container'
 2. cd to roles directory
@@ -416,6 +414,7 @@ Roles simplify the organization of the playbook.
 4. type `ansible-galaxy init baseconfig`
 5. type `ansible-galaxy init vlans`
 
+###Exercise 2
 ####Configuring roles
 1. Switch to `Atom` Editor
 2. go to `login` folder under `roles`.
@@ -437,6 +436,9 @@ creds:
 
 
 ##Customer User Cases
+
+###Exercise 1
+####Configuring roles
  would like to see at minimum for the use cases the replacement of base config files (e.g. AAA, syslog/snmp, acl 50, NTP, etc)  for Cisco
 
 
