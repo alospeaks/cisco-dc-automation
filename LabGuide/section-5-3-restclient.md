@@ -132,14 +132,14 @@ admin state = shutdown
 https://github.com/Hemakuma/networkautomation/blob/master/configs/config-phy-int.json
 8. Save the request by click the `Save` button.
 
-![postman](/images/postman-4-0.png)
+    ![postman](/images/postman-4-0.png)
 
 9. Send a `POST` request to the switch by pressing on the `Send` button.
 
-![postman](/images/postman-4.png)
+    ![postman](/images/postman-4.png)
 
 10. Now click on your `Get-interface-status`  request in the Postman window.  `Send`  this GET request  to the the switch and compare the results from exercise 2.
 
-![postman](/images/postman-4.png)  
+    ![postman](/images/postman-4.png)  
 
 11. Switch to your ssh terminal to the switch.  `do show interface ethernet 1/1`.
