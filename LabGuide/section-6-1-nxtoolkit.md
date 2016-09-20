@@ -186,15 +186,15 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
 **Solution:**  modify `nx-config-ipv4.py`
 
 1. Switch to your nxtoolkit container terminal
-   `cp nx-config-ipv4.py hk-config-ipv4.py`
-2. Switch to ATOM
+2.    `cp nx-config-ipv4.py hk-config-ipv4.py`
+3. Switch to ATOM
    1. modify the file as per the requirement.
    2. HELP: https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-config-ipv4.py
    3. Save the file
-3. Switch to nxtoolkit container
+4. Switch to nxtoolkit container
    1. run the file the script
    2. `./hk-config-ipv4.py`
-4. Verify the configuration using on the switch CLI.
+5. Verify the configuration using on the switch CLI.
 
 ###Exercise 9
 ####Configuring SVI (optional)
