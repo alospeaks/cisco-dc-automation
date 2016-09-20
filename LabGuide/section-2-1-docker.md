@@ -69,6 +69,7 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 ###Exercise 2
 #### Creating a docker engine
 The default docker engine is outdated.  Lets remove it and create a new one with new image.
+
 1. switch the bash terminal window.
 2. `docker-machine ls`
 3. `docker-machine stop default`
