@@ -81,11 +81,13 @@ Lets install Ansible on  a docker container.
   2. Right click on the `ansible` folder and select `New File`. Name it `README.md`
   3. Type something eg `This is my first edit` in it and save.
 2. Switch to the terminal window
-  2. Spin up a nxos ansible container
+  2. Spin up a nxos ansible container.  Remember to replace my userid `hemakuma` with your.  Not do not replace it for the image name. Leave the image name to `hemakuma/ansible`
       1. Mac Users  
       `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
       2. Windows Users  
       `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
+
+      if you having issues, try running the command directly from the docker engine.  `docker-machine ssh default`
 
     This will start the container and log you in. From inside the container.
 
