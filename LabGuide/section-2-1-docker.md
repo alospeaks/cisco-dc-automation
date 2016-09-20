@@ -66,6 +66,18 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 	https://www.docker.com/products/docker-toolbox
 
 
+###Exercise 2
+#### Creating a docker engine
+The default docker engine is outdated.  Lets remove it and create a new one with new image.
+1. switch the bash terminal window.
+2. `docker-machine ls`
+3. `docker-machine stop default`
+4. `docker-machine rm default`
+5. `docker-machine create --driver virtualbox default`
+6. `docker-machine ls`  <-- you should see the docker engine running.
+
+###Exercise 3
+(Don't do it in the class if you only have 8G RAM)
 ####Tune your VM for faster performance
 1. Open up virtual box
 2. Power off the `default VM`.  Right click and select `power off`.
