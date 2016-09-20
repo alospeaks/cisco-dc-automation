@@ -89,9 +89,7 @@ Lets install Ansible on  a docker container.
 
     This will start the container and log you in. From inside the container.
 
-2. exit the container.  We will use this container later in the ansible exercises.
-3. Go to your Atom editor and you should all these files under ansible folder.
-
+  2. Exit the container by typing `exit`.  We will use this container later in the ansible exercises.
 
 
 ## Nxtoolkit Container
