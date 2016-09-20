@@ -60,7 +60,7 @@ Docker compose is one way of spinning up docker containers. Basically you create
 1. Switch to the terminal window
 2. cd `training`
 3. type ` docker-compose up -d`
-4. this should start up the gitlab container.  It will take couple of mins to download the images.
+4. this should start up the gitlab and jenkins container.  It will take couple of mins to download the images.
 
   ![docker-comp](/images/docker-comp-1.png)
 
@@ -79,13 +79,13 @@ Lets install Ansible on  a docker container.
 1. Switch to `ATOM` editor
   1. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
   2. Right click on the `ansible` folder and select `New File`. Name it `README.md`
-  3. Type something in it and save.
+  3. Type something eg `This is my first edit` in it and save.
 2. Switch to the terminal window
-2. Spin up a nxos ansible container
-    1. Mac Users  
-    `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
-    2. Windows Users  
-    `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
+  2. Spin up a nxos ansible container
+      1. Mac Users  
+      `docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
+      2. Windows Users  
+      `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
 
     This will start the container and log you in. From inside the container.
 
