@@ -66,34 +66,33 @@ https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 10. `./nx-show-l2bds.py`
 11. compare the results with step 1.
 
-**TIP** Going forward, keep both of the terminal window open; use nxtoolkit terminal to run the python scripts and use the ssh session to switch to verify the configurations.
+**TIP:**  Going forward, keep both of the terminal window open; use nxtoolkit terminal to run the python scripts and use the ssh session to switch to verify the configurations.
 
 ### Exercise 5:  Create a Script that displays all the interfaces that have "operational state" as up.
-Video Demo
 
-1. Lets make copy of `nx-show-interfaces.py` and modify the copy  (u can name anything you like but for me, to easily find my scripts, i put my initials as prefix to the original script)
+1. Lets make copy of `nx-show-interfaces.py` and modify the copy  (u can name it anything you like but i usually put my initials as prefix to the original script so that i can easily find my scripts later )
 2. In your nxtoolkit terminal
-3. pwd
+3. `pwd`
 4. you should be inside the
 5. `/opt/nxtoolkit/myscripts/samples`
 6. `cp nx-show-interfaces.py hk-show-interfaces.py`
-7. Go to ATOM editor
+7. Go to `ATOM` editor
 8. open up this file by double clicking it.
-9. Modify `hk-show-interfaces.py` script to achieve the above goal.
+9. Modify `hk-show-interfaces.py` script to achieve the above goal. You want to see all the interfaces whose `operational state` is `up`
 10. HELP : http://gitlab.cisco.com/hemakuma/se-training/blob/master/nxtoolkit/samples/hk-show-interfaces.py
 11. Switch to your nxtoolkit terminal  and run the script
 12. `./hk-show-interfaces.py`
 13. Switch to  switch CLI terminal , shut some of the interfaces eg
-```
-config t
-int eth 1/4
-shut
-```
+   ```
+   config t
+   int eth 1/4
+   shut
+   ```
 14. Repeat step 4
 15. compare the results.
 
-Note:
-All interfaces are store in a python list called "data'.  This list contains tuples that has attribute of each interface.
+**Note:**
+All interfaces are store in a python list called `data`.  This list contains tuples that has attribute of each interface.
 Here is a sample list with  tuples looks like
 [('eth1/33', 'leaf', 'up', u'down', 'auto', '1500', 'discovery'), ('eth1/34', 'leaf', 'up', u'down', 'auto', '1500', 'discovery'), ('eth1/36', 'leaf', 'up', u'down', 'auto', '1500', 'discovery'), ('eth1/37', 'leaf', 'up', u'down', 'auto', '1500', 'discovery'), ('eth1/38', 'leaf', 'up', u'down', 'auto', '1500', 'discovery'),.....]
 
