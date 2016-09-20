@@ -28,7 +28,7 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
    cd training
    source source.docker
    docker attach nxtoolkit
-   
+
    ```
 
 ### Exercise 3:  Running nxos show commands using nxtoolkit
@@ -36,10 +36,12 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
 2. `cd myscripts`
 3. `cd samples`
 4. `ls  | grep show ` <-- to see all the show scripts
-5. Lets run the `show interfaces script`
-6. since all the files are executable, we can just run it without typing python. It will automatically associate it with python program.
+5. Lets run the few of show interfaces scripts.
+6. Since all the files are executable, we can just run it without typing python. It will automatically associate it with python program.
 7. Type `./nx-show-interfaces.py`  to run  the script or you can type `python nx-show-interfaces.py`
 you don't need to pass any credentials as it is automatically read from the `credentials.py` file that you created.
+
+   ![nxtoolkit](/images/nxtoolkit-30.png)
 8. Examine the output
 9. Switch to ATOM window
 10. Navigate to the samples folder and located the `nx-show-interfaces.py` file
