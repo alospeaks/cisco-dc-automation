@@ -66,28 +66,6 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 	https://www.docker.com/products/docker-toolbox
 
 
-###Exercise 2
-#### Creating a docker engine
-The default docker engine is outdated.  Lets remove it and create a new one with new image.
-
-1. switch the bash terminal window.
-2. `docker-machine ls`
-3. `docker-machine stop default`
-4. `docker-machine rm default`
-5. `docker-machine create --driver virtualbox default`
-6. `docker-machine ls`  <-- you should see the docker engine running.
-
-###Exercise 3
-(Don't do it in the class if you only have 8G RAM)
-####Tune your VM for faster performance
-1. Open up virtual box
-2. Power off the `default VM`.  Right click and select `power off`.
-2. select the `default` VM
-3. click on `settings`
-4. click on `system` then `Motherboard` , them `processor`
-4. increase the memory to `4G and CPU to 4`. (higher the better)
-5. do not start the VM yet. we will do it in the next exercise.
-
 ###Exercise-2
 ####Working with Docker Machine Utility
 When you installed docker tool, `docker-machine` automatically got installed. `docker-machine` utility lets you manage docker engines on different hypervisors including virtualbox. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
@@ -98,11 +76,29 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 2. Under home directory create a folder and name it `training`
 3. cd `~`
 4. `mkdir training`
+5. `cd training`
 4. `docker-machine ls`
-5. `docker-machine start default`
-6. `docker-machine ls`
 ![docker1](/images/docker-m-1.png)
-5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a ubuntu VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.  Here are few commands you can run.
+3. `docker-machine stop default`
+4. `docker-machine rm default`
+5. `docker-machine ls`
+5. `docker-machine create --driver virtualbox default`
+6. `docker-machine ls`  <-- you should see the docker engine running.
+5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a boot2docker VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.  Here are few commands you can run.
+6.
+
+
+###Exercise 2
+(Don't do it in the class if you only have 8G RAM)
+####Tune your VM for faster performance
+1. Open up virtual box
+2. Power off the `default VM`.  Right click and select `power off`.
+2. select the `default` VM
+3. click on `settings`
+4. click on `system` then `Motherboard` , them `processor`
+4. increase the memory to `4G and CPU to 4`. (higher the better)
+5. do not start the VM yet. we will do it in the next exercise.
+
 
 ### Exercise-4
 ####Creating source file.
