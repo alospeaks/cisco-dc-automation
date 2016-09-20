@@ -195,7 +195,7 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
 4. Switch to nxtoolkit container
    1. run the file the script
    2. `./hk-config-ipv4.py`
-5. Verify the configuration using on the switch CLI.
+5. Verify the configuration on the switch CLI.
 
 ###Exercise 9
 ####Configuring SVI (optional)
@@ -216,7 +216,7 @@ Note: vlans should be already created by the script in exercise 6.
 5. Inside the nxtoolkit container, run this script.
 6. Verify on the switch that both of the vlans are configured.
 
-   HELP  http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
+   HELP  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-config-svi.py
 
 ###Exercise 10
 ####Deleting SVI (optional)
