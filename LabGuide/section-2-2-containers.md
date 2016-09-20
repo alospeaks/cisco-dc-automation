@@ -11,11 +11,11 @@ Docker compose is one way of spinning up docker containers. Basically you create
 
 1. Switch to the terminal window
   2. type `docker-machine ip default`
-  3. Copy the ip address from the output. you will need to modify the docker compose file in step 2.
+  3. write this ip somewhere. You will need this through out the lab.
 2. Switch to `ATOM` editor.
   1. Right click on the `training` Folder and select new file.
   2. name it `docker-compose.yml`
-  3. Paste the following content into the file and save it:
+  3. Copy and Paste the following content into the file and save it:
   4. Make sure to change the `external_url` to reflect the ip address of you docker machine.
   https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/Docker-compose.yml
 

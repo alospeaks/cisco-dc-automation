@@ -29,19 +29,3 @@ services:
       ports:
         - '8080:8080'
         - '50000:50000'
-
-  # ansible:
-  #     image: hemakuma/ansible
-  #     container_name: ansible
-  #     restart: always
-  #     hostname: ansible
-  #     volumes:
-  #       - '~/training/ansible:/nxos-ansible/myscripts'
-  #
-  # nxtoolkit:
-  #     image: hemakuma/nxtoolkit
-  #     container_name: nxtoolkit
-  #     restart: always
-  #     hostname: nxtoolkit
-  #     volumes:
-  #       - '~/training/nxtoolkit:/opt/nxtoolkit/myscripts'
