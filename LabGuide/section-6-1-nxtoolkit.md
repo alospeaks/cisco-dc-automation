@@ -11,8 +11,8 @@ All the python scripts requires switch login information (Credentials).  You can
 1. Switch to  `ATOM` editor window
 2. Close all the files that are open in ATOM to make space for nxtoolkit programming files.
 3. Make sure you see the `sample` folder under `nxtoolkit` folder. Expand this folder to see all the files. All your object based scripts are located in the this folder.
-4. In your ATOM editor, create a new file called `credentials.py`.  Right click on the samples folder under nxtoolkit folder and select `NEW File`
-5. Put the following content in this file. Change the URL to point to your  switch ip.
+4. In your ATOM editor, create a new file called `credentials.py`.  Right click on the `samples` folder under nxtoolkit folder and select `NEW File`
+5. Put the following content in this file. Make sure to change the `URL` to point to your  switch ip.
 https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.py
 5. Save the file. `CMD+S`
 6. close the file
@@ -21,14 +21,14 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
 ### Exercise 2
 ####Logging in your nxtoolkit container
 1. Close any terminal window you have already open.
-2. Open a new terminal window.  For exercises in this section, we will use this terminal.  (windows users, open up git bash terminal)
+2. Open a new terminal window.  For exercises in this section, we will use this terminal.  (windows users, open up `git bash` terminal)
 3. Login to the container
-```
-cd ~
-cd training
-source source.docker
-docker attach nxtoolkit
-```
+   ```
+   cd ~
+   cd training
+   source source.docker
+   docker attach nxtoolkit
+   ```
 ### Exercise 3:  Running nxos show commands using nxtoolkit
 1. Inside nxtoolkit container, type the following.
 2. `cd myscripts`
