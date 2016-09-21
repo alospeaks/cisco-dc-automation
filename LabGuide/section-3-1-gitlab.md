@@ -123,7 +123,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 2. you should be in the `nxtoolkit` directory  (`training/nxtoolkit`)
 3. make the gitpush.sh script executable.
 4. `chmod +x gitpush.sh`
-7. `./gitpush.sh`
+7. We will use this script in the next exercise
 
 ##Creating `nxtoolkit` repository on gitlab.
 ###Exercise-1
