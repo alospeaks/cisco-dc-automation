@@ -87,7 +87,7 @@ Lets install Ansible on  a docker container.
       2. Windows Users  
       `winpty docker run --name ansible -h ansible -it --restart=always -v ~/training/ansible:/nxos-ansible/myscripts --workdir /nxos-ansible/myscripts hemakuma/ansible`
 
-      if you having issues, try running the command directly from the docker engine.  `docker-machine ssh default`
+        **Windows users if you having issues, try running the command directly from the docker engine.  `docker-machine ssh default`**
 
     This will start the container and log you in. From inside the container.
 
