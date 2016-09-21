@@ -276,11 +276,14 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
   3. `git checkout master`
 4. Switch to `ATOM` Editor.
   5. Take a look at the `README.md` file.  Notice that you do not see the changes that you made.
-6. Switch back to terminal window
-7. `git pull`
-8. Switch back to `ATOM` and view the `README.md` file. Do you see the changes that got merged.
+6. Switch back to terminal window.
+  7. pull down the changes from your central repository
+  7. `git pull`
+8. Switch back to `ATOM`
+  9. view the `README.md` file.
+  10. Do you see the changes that got merged?
 
-**This is how you can do peer reviews for your configuration files.**
+**This is how you can do simple peer reviews on your configuration files.**
 
 ###Exercise 7
 #### Remove the branch
