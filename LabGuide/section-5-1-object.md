@@ -26,11 +26,12 @@ Object Store
 ####Browsing the object store
 *Make sure your switch has following feature enabled. `feature nxapi`.*  
 
-1. Objects are stored in DME (data management engine) and are exposed north bound via API.  You can look at the objects and their attributes using a inbuilt app on the switch called visore.
-2. Open up Chrome browser and  in the address field, point it to the url of your NXOSv switch.
+Objects are stored in data store inside the switch. Data management engine (DME) is used to manipulate object inside the Data store. There is a northbound API that exposures switch features externally and also there is a southbound API that interacts with the physical hardware.  Everything inside the switch is modeled inside this object store in a MIT. You can look at the objects stored in the data store and get their attributes using a inbuilt app on the switch called visore.
+
+1. Open up Chrome browser and  in the address field, point it to the url of your NXOSv switch.
     1. `https://<switchip>/visore.html`
     2. Authenticate  (admin/cisco123)
-3. You will see screen like below. Everything in the `green column` are the `attributes` of this object.  Anything in the `yellow` are the `values of the those attributes` and the `pink` row is the `class of this object`.  
+2. You will see screen like below. Everything in the `green column` are the `attributes` of this object.  Anything in the `yellow` are the `values of the those attributes` and the `pink` row is the `class of this object`.  
 
     ![nxrest-1](/images/nxrest-4.png)  
 
