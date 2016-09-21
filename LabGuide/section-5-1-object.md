@@ -48,7 +48,7 @@ Object Store
 11. Once you get the feel of the classes, know the names, you can query the classes directly.  In the Query field type `l1PhysIf` and press `search`. You will see all the object related to this class. In this case, you will see all the interfaces.
 12. (optional) Now Repeat all of the above steps to find the dn to configure a new vlan.  Hint, vlans are also called `l2bd`.
 
-
+----
 **Common classes**  
 
 InterfaceEntity <-- to manupliate all the physical interfaces  

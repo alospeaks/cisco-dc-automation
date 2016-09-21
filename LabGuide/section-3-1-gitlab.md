@@ -288,7 +288,9 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 ###Exercise 7
 #### Remove the branch
 1. switch to the terminal window.
+2. `git branch`
 2. `git branch -d readmeupdate`
+3. `git branch`
 3. this should remove the branch.  We don't need it as we have merged our changes to the master (trunk)
 
 
