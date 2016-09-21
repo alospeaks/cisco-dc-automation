@@ -271,10 +271,11 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 ###Exercise 6
 ####Verify the merge
 1. Switch back to your terminal window
-2. make sure you are in the master branch
-3. `git checkout master`
+  2. make sure you are in the master branch
+  3. `git branch`
+  3. `git checkout master`
 4. Switch to `ATOM` Editor.
-5. Take a look at the `README.md` file.  Notice that you do not see the changes that you made.
+  5. Take a look at the `README.md` file.  Notice that you do not see the changes that you made.
 6. Switch back to terminal window
 7. `git pull`
 8. Switch back to `ATOM` and view the `README.md` file. Do you see the changes that got merged.
