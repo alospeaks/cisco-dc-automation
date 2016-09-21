@@ -42,6 +42,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 1. Switch to the terminal window (docker quick start)
 2. `cd training`
 3. `cd ansible`
+4. `touch READMe.md`
 4. Follow the instructions from the gitlab site to create a new repository.
 
   ![gitlab](/images/gitlab20.png)
@@ -139,6 +140,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 1. Switch to the terminal window
 2. `cd training`
 3. `cd nxtoolkit`
+4. `touch README.md`
 3. Follow the instructions from the gitlab site to create a new repository by cloning it.
 4. Do not copy and paste everything at once.  Do line by line.
 5. For git commit command, use -m flag.  `git commit -m 'your message'`
