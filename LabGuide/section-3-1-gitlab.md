@@ -167,7 +167,7 @@ You will use the 2nd account to review the changes. You will use your first acco
 ####Giving access to your projects to this user.
 1. Sign out as developer account and log back in using your regular account
 2. Give access to both `ansible` and `nxtoolkit` to the `developer` user.
-3. Select the project and the click on `setting`.
+3. Select the `ansible` project and the click on `setting`.
 
   ![gitlab](/images/gitlab-510.png)
 4. Click on `Members`
@@ -179,10 +179,11 @@ You will use the 2nd account to review the changes. You will use your first acco
   ![gitlab](/images/gitlab-512.png)
 
 ##Adding project to ATOM
-
+With git-plus plugin, you can manage git updates directly from ATOM.  In order to do this, you need to open each git repository as ATOM project.
 ###Exercise 1
-####Editoring Projects in ATOM
+####Adding git Projects in ATOM
 1. Switch to `ATOM` Editor
+2. Close all the open files.
 2. Right click on the `training folder`
 3. Click on `Remove Project Folder`
 
