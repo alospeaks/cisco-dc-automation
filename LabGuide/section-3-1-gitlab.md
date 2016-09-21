@@ -192,6 +192,8 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 4. Go to `File`  and `Add project Folder`
 5. Navigate to `ansible`  folder under `training` and open it.
 6. Repeat the same for `nxtoolkit` folder.
+7. click on any file inside nxtoolkit folder and take a look at the bottom right corner. It should tell you will git branch.
+8. Now u can run git add / commit / push directly from ATOM.  Go to Package menu and select git-plus.
 
 *You want to this do way so that `ATOM` can track your git changes.  Each git repo should be a `atom project`*
 
