@@ -140,7 +140,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
   2. `cd training`
   3. `cd nxtoolkit`
   4. `touch README.md`
-3. Follow the instructions from the gitlab site to create a new repository by cloning it.
+3. Follow the instructions from the gitlab site to put our nxtoolkit directory under git version control.
 4. Do not copy and paste everything at once.  Do line by line.
 5. For git commit command, use -m flag.  `git commit -m 'your message'`
 5. Modify the first line as follows. Add your username and password to the url ..hemakuma:cisco123@
@@ -148,6 +148,8 @@ For the lab environment, we want to quickly push the changes to the remote repo 
   `git remote add origin http://hemakuma:cisco123@192.168.99.100/hemakuma/nxtoolkit.git `
 
   ![gitlab](/images/gitlab-508.png)
+6. Switch to gitlab browser and verify that files have been uploaded.
+
 
 ## Creating gitlab users.
 ### Exercise 1
@@ -163,7 +165,7 @@ You will use the 2nd account to review the changes. You will use your first acco
 
 ###Exercise 2
 ####Giving access to your projects to this user.
-1. Login to gitlab using your regular account.
+1. Sign out as developer account and log back in using your regular account
 2. Give access to both `ansible` and `nxtoolkit` to the `developer` user.
 3. Select the project and the click on `setting`.
 
