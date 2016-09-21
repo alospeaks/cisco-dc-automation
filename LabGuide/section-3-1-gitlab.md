@@ -268,6 +268,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
   ![branch](/images/gitlab-516.png)
 
+###Exercise 6
 ####Verify the merge
 1. Switch back to your terminal window
 2. make sure you are in the master branch
@@ -280,7 +281,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
 **This is how you can do peer reviews for your configuration files.**
 
-###Exercise 6
+###Exercise 7
 #### Remove the branch
 1. switch to the terminal window.
 2. `git branch -d readmeupdate`
@@ -288,6 +289,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
 
 
+-----
 
 ### Summary Steps
 
