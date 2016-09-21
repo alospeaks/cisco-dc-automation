@@ -65,6 +65,12 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 1. Download and install docker toolbox. Use all the default settings for the installation.
 	https://www.docker.com/products/docker-toolbox
 
+2. This should have install `Docker Quickstart` icon on your desktop.  
+
+Whenever we say open terminal in this lab guide, please open `Docker Quickstart` on windows.  
+
+**Do not open the command line**
+
 
 ###Exercise-2
 ####Working with Docker Machine Utility

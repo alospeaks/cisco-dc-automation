@@ -52,10 +52,7 @@ For source control.
 ##### Windows Users
 1. Download  and install `mysGit` package. Use all the default setting for installation. https://git-for-windows.github.io/
 2. Use all the default during installation.
-2. You should see Git Bash icon on your desktop.  Whenever we say open terminal in this lab guide, please open `git Bash terminal` on windows.  
-
-**Do not open the command line**
-
+2. You should see Git Bash icon on your desktop.  
 
 ## Do not do the sections below. These tool are not needed for the lab.
 ##Vagrant Tool

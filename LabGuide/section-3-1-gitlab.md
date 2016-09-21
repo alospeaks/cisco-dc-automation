@@ -39,7 +39,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
 ###Exercise-2
 #### Putting `ansible` directory under git control.
-1. Switch to the terminal window
+1. Switch to the terminal window (docker quick start)
 2. `cd training`
 3. `cd ansible`
 4. Follow the instructions from the gitlab site to create a new repository.
