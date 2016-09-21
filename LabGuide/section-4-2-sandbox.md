@@ -26,6 +26,7 @@
 ####Show command from Sandbox.
 1. In the command window, type `show vlan` , and click `POST`.
 2. make sure in the message format, you have selected `json` and command type = `cli_show`
+3. notice the objects in both the `Request` and `Response` window.  Basically object are key value pairs. It is structured, so that you can query and key and get the response.  It becomes very easy to parse it now.
 3. In the Response Window, check if  999 is present.  You should see only one VLAN in the response window.
 
 ![sandbox](/images/sandbox-13.png)
@@ -59,12 +60,10 @@
 You can use sandbox to generate your base python code for off box programming.
 
 1. Save this python script that you copied from exercise 4 to a file (create-vlan.py)
-    1. Switch to  `ATOM` editor window
-    2. Right click on the `training` folder and  select `New Folder`
-4. Name the folder `nxtoolkit`
-5. Right click on `nxtookit` folder and select create `New File`.
+1. Switch to  `ATOM` editor window
+5. Right click on `nxtookit` folder and select create `New File`. name it `create-vlan.py`
 6. paste the content in this file
 7. save the file (`CMD + S or Ctrl+S`).
-8. name it `create-vlan.py`
+
 
 ***We will use this file in the next section, when we do off-box programming using python***
