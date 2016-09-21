@@ -84,7 +84,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
     git commit -m 'updated'
     git push
     ```
-6. Save the file `cmd + S`
+6. Save and close the file `cmd + S`
 
 ###Exercise-5
 #### Modifying the README file.
@@ -101,8 +101,6 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 5. Now use it to push the `README.md` to gitlab.
 6. type
 7. `./gitpush.sh`
-
-**Note: if you have installed git-plus plugin for your ATOM editor, you can use cmd+shift+H to do git push. Windows users use ctrl+shift+H**
 
 ###Exercise-7
 #### Verify the file has changed on gitlab.
