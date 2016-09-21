@@ -244,7 +244,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
   ![branch](/images/gitlab-513.png)
 
 4. you should see `Create Merge Request` button. Click on it
-5. fill in the form as below and click on the submit button at the bottom.
+5. fill in the form as below and click on the `submit` button at the bottom.
 
   ![branch](/images/gitlab-514.png)
 
@@ -259,8 +259,12 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
   ![branch](/images/gitlab-515.png)
 
 5. Click on th `Merge Request`
-6. Then select the request.
-7. Merge the `readmeupdate` to `master` branch.
+6. Then select the `readmeupdate` merge request.
+7. Click on the `Changes`  tab.  Take a look at all the changes that happen to the file line by line.
+8. Add your comment to line 2.
+8. Click on the `Discussion` tab.  
+9. Write your review in the section below.
+7. Then on the top, click `Accept Merge Request`
 
   ![branch](/images/gitlab-516.png)
 
