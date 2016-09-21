@@ -136,9 +136,10 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 ###Exercise-2
 #### Putting nxtoolkit directory under git Repository
 1. Switch to the terminal window
-2. `cd training`
-3. `cd nxtoolkit`
-4. `touch README.md`
+2. `pwd`  <-- make sure you are in the nxtoolkit directory
+  2. `cd training`
+  3. `cd nxtoolkit`
+  4. `touch README.md`
 3. Follow the instructions from the gitlab site to create a new repository by cloning it.
 4. Do not copy and paste everything at once.  Do line by line.
 5. For git commit command, use -m flag.  `git commit -m 'your message'`
