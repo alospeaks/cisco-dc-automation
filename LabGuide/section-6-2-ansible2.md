@@ -430,6 +430,7 @@ notice how the register variable is used in the template.
 #Roles
 Roles simplify the organization of the playbook.
 
+##Base Configuration
 ###Exercise 1
 ####Create ansible roles directory structure
 1. Switch to 'ansible container'
@@ -437,6 +438,8 @@ Roles simplify the organization of the playbook.
 3. type `ansible-galaxy init login`
 4. type `ansible-galaxy init baseconfig`
 5. type `ansible-galaxy init vlans`
+6. type `ansible-galaxy init uplinks`
+7. type `ansible-galaxy init hostports`
 
 ###Exercise 2
 ####Configuring roles
@@ -549,9 +552,9 @@ We created a role to hold all the base configuration data.  Base configuration i
 
 ###Excercise 8
 #### New NTP server
-Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this will not be disruption in change.
+Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
 
-1. switch to `ATOM` editor
+1. Switch to `ATOM` editor
     2. Navigate to `ansible --> roles --> baseconfig --> vars`
     2. Open up the `main.yml` file
     3. add this a line to your `NTP server list`
@@ -561,6 +564,127 @@ Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You
     2. `ansible-playbook -i hosts deploy-baseconfig.yml`
 3. Login into your switch.
     1. Verify that ansible has made those configuration.
+4. Switch to `ATOM` editor.
+    1. Navigate to `ansible --> roles --> baseconfig-->backup`
+    2. you should see your backupfiles
+
+
+----
+
+## Hostport Configuration.
+Another command operations tasks to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
+
+###Exercise 1
+#### Hostport configuration repository
+We created a role to hold all the hostport configuration data.  Host port configuration includes things like `switch port access mode`,  etc that needs to be  provisioned to per switches basis.
+
+Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need create folder for each host in this folder.  Ansible will search this folder to look for the variables.
+
+1. Navigate to `ansible --> hosts_vars`
+2. Right click and select `New Folder`
+3. copy and paste the following code.
+
+    ```
+    ---
+    hostports:
+       - {int: "ethernet1/5", des: ESXI-1}
+       - {int: "ethernet1/6", des: ESXI-2}
+       - {int: "ethernet1/7", des: Openstack-nova-server-1}
+       - {int: "ethernet1/8", des: Openstack-nova-server-2}
+    ```
+4. Save the file `Cmd+S`
+
+###Exercise 2
+#### Create handler to save the configuration
+1. Navigate to `ansible --> roles --> baseconfig --> handlers`
+2. Open up the `main.yml` file
+3. Copy and paste the following
+    ```
+    ---
+    # handlers file for baseconfig
+    - name: Save Config
+      nxos_config:
+        provider: "{{ creds }}"
+        lines:
+          - 'copy run start'
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 3
+#### Create tasks to create configure the switch ports.
+This time, we are going to use `nxos_interface`  and `nxos_switchport` module to make these changes.  Read more about it here
+
+https://docs.ansible.com/ansible/nxos_interface_module.html
+
+
+1. Navigate to `ansible --> roles --> baseconfig --> tasks`
+2. Open up the `main.yml` file
+3. Copy and paste the following:
+
+    ```
+    ---
+
+    # tasks file for hostports
+    - name: Ensure that port is in layer 2 mode
+      nxos_interface:
+        provider: "{{ creds }}"
+        interface: Ethernet1/5
+        description: 'Configured by Ansible'
+        mode: layer2
+
+    - nxos_switchport:
+        provider: "{{ creds }}"
+        interface: eth1/5
+        mode: access
+        access_vlan: 20
+      notify:
+        - Save Config
+    ```
+5. Save the file `CMD + S`
+
+
+###Exercise 6
+#### Create playbook to push host port configuration to the switch.
+1. Navigate to `ansible` folder
+2. Right click and select `New File`. Name it `deploy-hostport.yml`
+3. Copy and paste the following:
+
+    ```
+    ---
+    - hosts: all
+      connection: local
+      strategy: free
+      roles:
+        - { role: login, tags: [ 'login' ] }
+        - { role: hostport, tags: [ 'login', 'base'] }
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 7
+#### Lets run the playbook
+1. Switch to the `ansible container` terminal window.
+2. Run the playbook
+    1. `ansible-playbook -i hosts deploy-baseconfig.yml`
+3. Login into your switch.
+4. Verify that ansible has made those configuration.
+
+###Excercise 8
+#### New NTP server
+Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
+
+1. Switch to `ATOM` editor
+    2. Navigate to `ansible --> roles --> baseconfig --> vars`
+    2. Open up the `main.yml` file
+    3. add this a line to your `NTP server list`
+    4. `- 192.200.0.2`
+2. Switch to the ansible terminal window
+    1. Run the playbook again
+    2. `ansible-playbook -i hosts deploy-baseconfig.yml`
+3. Login into your switch.
+    1. Verify that ansible has made those configuration.
+4. Switch to `ATOM` editor.
+    1. Navigate to `ansible --> roles --> baseconfig-->backup`
+    2. you should see your backupfiles
 
 
 ##Customer User Cases

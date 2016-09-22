@@ -91,6 +91,7 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 5. `docker-machine create --driver virtualbox default`
 6. `docker-machine ls`  <-- you should see the docker engine running.
 5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a boot2docker VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.
+6. make sure your running docker Client version 1.12.0 or higher on your laptop.  `docker version`. 
 
 
 ###Exercise 2
