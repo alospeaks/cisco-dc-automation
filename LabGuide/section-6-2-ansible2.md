@@ -523,24 +523,21 @@ We created a role to hold all the base configuration data.  Base configuration i
 
 
 ###Exercise 6
-#### Create playbook to run this role.
+#### Create playbook to push this base configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-baseconfig.yml`
 3. Copy and paste the following:
 
     ```
     ---
-
     - hosts: nk9-1
       connection: local
       strategy: free
       roles:
         - { role: login, tags: [ 'login' ] }
         - { role: baseconfig, tags: [ 'login', 'base'] }
-
     ```
 4. Save the file `CMD + S`
-
 
 ###Exercise 6
 #### Lets run the playbook
