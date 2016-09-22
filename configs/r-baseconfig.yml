@@ -1,0 +1,18 @@
+---
+# tasks file for baseconfig
+#renders the jinja2 template
+#remove snmp acl if exist, because u can not do no acl on the template. template will re apply it
+# only in version 2.2
+# - name: Remove snmp acl if exit
+#   nxos_acl:
+#     name: 50-SNMP-Access
+#     state: absent
+#     provider: "{{ creds }}"
+
+- name: configure base template
+  nxos_template:
+    provider: "{{ creds }}"
+    src: basetemplate.j2
+    backup: yes
+  notify:
+    - Save Config

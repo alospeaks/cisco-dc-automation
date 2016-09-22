@@ -471,6 +471,85 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.ym
 
     ![ansiblerole](/images/ansible-301.png)
 
+
+###Exercise 3
+#### Create jinja2 template for the base configuration.
+1. Navigate to `ansible --> roles --> baseconfig --> templates`
+2. Right click on the `templates` folder and select `New File`. Name it `basetemplate.j2`
+3. copy and paste the content from this link.  This is the jinja 2 template.
+https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
+
+4. Save the file `CMD + S`
+
+###Exercise 4
+#### Create handler to save the configuration
+1. Navigate to `ansible --> roles --> baseconfig --> handlers`
+2. Open up the `main.yml` file
+3. Copy and paste the following
+    ```
+    ---
+    # handlers file for baseconfig
+    - name: Save Config
+      nxos_config:
+        provider: "{{ creds }}"
+        lines:
+          - 'copy run start'
+
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 5
+#### Create tasks to push the based configuration
+1. Navigate to `ansible --> roles --> baseconfig --> tasks`
+2. Open up the `main.yml` file
+3. Copy and paste the following:
+4.
+
+    ```
+    ---
+    # tasks file for baseconfig
+    #renders the jinja2 template
+
+    - name: configure base template
+      nxos_template:
+        provider: "{{ creds }}"
+        src: basetemplate.j2
+        backup: yes
+      notify:
+        - Save Config
+    ```
+4. Save the file `CMD + S`
+
+
+###Exercise 6
+#### Create playbook to run this role.
+1. Navigate to `ansible` folder
+2. Right click and select `New File`. Name it `deploy-baseconfig.yml`
+3. Copy and paste the following:
+
+    ```
+    ---
+
+    - hosts: nk9-1
+      connection: local
+      strategy: free
+      roles:
+        - { role: login, tags: [ 'login' ] }
+        - { role: baseconfig, tags: [ 'login', 'base'] }
+
+    ```
+4. Save the file `CMD + S`
+
+
+###Exercise 6
+#### Lets run the playbook
+1. Switch to the `ansible container` terminal window.
+2. Run the playbook
+    1. `ansible-playbook -i hosts deploy-baseconfig.yml`
+3. Login into your switch.
+4. Verify that ansible has made those configuration.
+
+
 ##Customer User Cases
 
 ###Exercise 1
