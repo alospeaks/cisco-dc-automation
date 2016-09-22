@@ -332,58 +332,6 @@ Ensure the all the switches in the DC has following base configuration
 ntp server 10.68.0.41 use-vrf management
 
 
-### Exercise 13
-####Practical Example - Automating VLAN provisioning
-**Problem Statement**
-Users perform manual Day-1 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-2 configuration activity is performing routine VLAN related operations:
-1. Check if VLAN exists
-2. Change names and descriptions of VLANs
-3. Configure a VLAN
-
-It would be beneficial to automate this repetitive configuration with a goal of reducing time and effort needed to complete the configurations, while reducing the probability of errors.
-
-Today networks are in high demand and change constantly due to proliferation of customer demands. Network engineers need the ability to automate their network in a simple and manageable way.  One of the most frequent network changes is creation and removal of VLANs where network engineers are accommodating dynamic customer demands.
-
-**Solution  - Ansible automation**
-Ensure following vlans are configured on all the switches.
-
-| Vlan id |	vlan name |
-|---------|-----------|
-|10	| web|
-| 20 |	app|
-|30	|db|
-|40	|misc
-|99	|native-vlan
-
-Take a look at the "how to " folder and see if you can use any of the script to meet this requirement.
-Modify examples-vlan.yml.  Study the code,  notice that as you have many different ways of configuring the vlans.  Lets comment out some of them. In ansible, if you add # at the beginning of the line, ansible treats it as if it is a comment line, therefore it will not execute it.
-
-![ansiblevlan](/images/ansible2-6.png)
-
-1. Make a copy of the sample playbook.
-    1. Switch to your ansible terminal
-    2. cp examples-vlan.yml  hk-vlan.yml
-2. Modify this file to meet your requirement
-5. Switch to ATOM window
-6. double click hk-vlan.yml file to edit it.
-7. Change the hosts: field to match your switch name that you put in the hosts file.  The play will only configure this particular switch.
-
-Let's comment out first 3 task in this file.  to comment out, just add # infront of the line.
-change the vlan id and name to match your requirement
-Help:  http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hk-vlan.yml
-CMD+S to save it.
-
-![ansiblevlan](/images/ansible2-5.png)
-
-Now lets first verify that we do not have these vlans configured on our switch.
-Switch to the Switch CLI terminal
-show vlan
-Run the ansible playbook
-Switch to ansible container terminal and type
-ansible-playbook -i hosts hk-vlan.yml
-Repeat step 3 and compare the result.
-Repeat step 4.  What do you notice? do you see all green?  This the idempotent nature of ansible.  It will not change anything if there is no change.  Compare is will cli, if you repeat the command, it will reconfig the switch eventhough it is already configured.
-
 
 ### Exercise 14
 ###Configure ipv4 address to the interface
@@ -570,6 +518,124 @@ Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You
 
 
 ----
+## VLAN configuration
+
+### Exercise 13
+####Practical Example - Automating VLAN provisioning
+**Problem Statement**
+Users perform manual Day-2 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-2 configuration activity is performing routine VLAN related operations:
+1. Check if VLAN exists
+2. Change names and descriptions of VLANs
+3. Configure a VLAN
+
+It would be beneficial to automate this repetitive configuration with a goal of reducing time and effort needed to complete the configurations, while reducing the probability of errors.
+
+**Solution  - Ansible automation**
+Ensure following vlans are configured on all the switches.
+
+| Vlan id |	vlan name |
+|---------|-----------|
+|10	| web|
+| 20 |	app|
+|30	|db|
+|40	|misc
+|99	|native-vlan
+
+
+
+Now lets first verify that we do not have these vlans configured on our switch.
+Switch to the Switch CLI terminal
+show vlan
+Run the ansible playbook
+Switch to ansible container terminal and type
+ansible-playbook -i hosts hk-vlan.yml
+Repeat step 3 and compare the result.
+Repeat step 4.  What do you notice? do you see all green?  This the idempotent nature of ansible.  It will not change anything if there is no change.  Compare is will cli, if you repeat the command, it will reconfig the switch eventhough it is already configured.
+
+
+#### vlan configuration repository
+We created a role to hold all the vlan configuration data. Lets modify it to meet the above requirement.
+
+Let update the vars directory with all over variables.
+
+1. Navigate to `ansible --> roles --> vlans --> vars`
+2. Open `main.yml`
+3. copy and paste the following code.
+
+    ```
+    vlans:
+        - { vlan_id: 10, name: web, state: present }
+        - { vlan_id: 20, name: app, state: present }
+        - { vlan_id: 30, name: db, state: present }
+        - { vlan_id: 40, name: misc, state: absent }
+        - { vlan_id: 99, name: native_vlan, state: present }
+    ```
+4. Save the file `Cmd+S`
+
+###Exercise 2
+#### Create handler to save the configuration
+1. Navigate to `ansible --> roles --> vlans --> handlers`
+2. Open up the `main.yml` file
+3. Copy and paste the following
+
+    ```
+    ---
+    # handlers file for baseconfig
+    - name: Save Config
+      nxos_config:
+        provider: "{{ creds }}"
+        lines:
+          - 'copy run start'
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 3
+#### Create playbook tasks to configure the switch ports.
+This time, we are going to use `nxos_vlan` module to make these changes.  Read more about it here
+https://docs.ansible.com/ansible/nxos_vlan_module.html
+
+1. Navigate to `ansible --> roles --> vlans --> tasks`
+2. Open up the `main.yml` file
+3. Copy and paste the following:
+
+    ```
+    ---
+    -   name: configuring the vlans
+        nxos_vlan: vlan_id={{ item.vlan_id }}  name={{ item.name }} state={{ item.state }}  provider="{{ creds }}"
+        with_items: "{{vlans}}"
+        notify:
+          - Save Config
+    ```
+5. Save the file `CMD + S`
+
+
+###Exercise 6
+#### Create playbook to push host port configuration to the switch.
+1. Navigate to `ansible` folder
+2. Right click and select `New File`. Name it `deploy-vlans.yml`
+3. Copy and paste the following:
+
+    ```
+    ---
+    - hosts: all
+      connection: local
+      strategy: free
+      roles:
+        - { role: login, tags: [ 'login' ] }
+        - { role: vlans, tags: [ 'login', 'vlans'] }
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 7
+#### Lets run the playbook
+1. Switch to the `ansible container` terminal window.
+2. Run the playbook
+    1. `ansible-playbook -i hosts deploy-vlans.yml`
+3. Login into your switch.
+4. Verify that ansible has made those configuration.
+
+
+----
 
 ## Hostport Configuration.
 Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
@@ -612,13 +678,13 @@ Since the config is per switch basis, we need to hold the variables in the `host
 4. Save the file `CMD + S`
 
 ###Exercise 3
-#### Create tasks to create configure the switch ports.
+#### Create playbook tasks to configure the switch ports.
 This time, we are going to use `nxos_interface`  and `nxos_switchport` module to make these changes.  Read more about it here
 
 https://docs.ansible.com/ansible/nxos_interface_module.html
+https://docs.ansible.com/ansible/nxos_switchport_module.html
 
-
-1. Navigate to `ansible --> roles --> baseconfig --> tasks`
+1. Navigate to `ansible --> roles --> hostports --> tasks`
 2. Open up the `main.yml` file
 3. Copy and paste the following:
 
@@ -647,7 +713,7 @@ https://docs.ansible.com/ansible/nxos_interface_module.html
 ###Exercise 6
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
-2. Right click and select `New File`. Name it `deploy-hostport.yml`
+2. Right click and select `New File`. Name it `deploy-hostports.yml`
 3. Copy and paste the following:
 
     ```
@@ -657,7 +723,7 @@ https://docs.ansible.com/ansible/nxos_interface_module.html
       strategy: free
       roles:
         - { role: login, tags: [ 'login' ] }
-        - { role: hostport, tags: [ 'login', 'base'] }
+        - { role: hostports, tags: [ 'login', 'hostports'] }
     ```
 4. Save the file `CMD + S`
 
@@ -665,7 +731,7 @@ https://docs.ansible.com/ansible/nxos_interface_module.html
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
-    1. `ansible-playbook -i hosts deploy-baseconfig.yml`
+    1. `ansible-playbook -i hosts deploy-hostports.yml`
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
