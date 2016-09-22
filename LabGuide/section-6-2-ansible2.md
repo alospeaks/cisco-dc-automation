@@ -190,7 +190,8 @@ Separating data from the configuration.
 
 nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
 
-What is Jinja2 Template?
+**What is Jinja2 Template?**
+
 Jinja2 is a very popular and powerful Python-based template engine. Templates look very similar to normal text-based files except for the occasional variables or code that surrounds the special tags. These get evaluated and are mostly replaced by values at runtime, creating a text file, which is then copied to the destination host. The following are the two types of tags that Jinja2 templates accept:
 
 `{{ }}` embeds variables inside a template and prints its value in the resulting file. This is the most common use of a template.
@@ -202,7 +203,8 @@ For example:
 Now that we have looked at the code that Jinja2 templates provide, let's understand where this data comes from, which is then embedded in the template at runtime. Data can come from either facts or variables. When it comes to a Jinja2 template, the same rules apply to the usage of facts and variables. Facts are a type of variable; the differentiating factor here is the origin of the two. Facts are automatically available and discovered at runtime, and variables are user-defined.
 
 
-Steps to create the templates:
+**Steps to create the templates:**
+
 1. Always start with the actual configuration file.
 2. Identify the parameters that needs to be dynamically generated
 3. create a template. Add variables as you see fit.
@@ -228,11 +230,10 @@ Steps to create the templates:
 ###Exercise 9
 ####Using Creating Jinja2 template
 1. Switch back to the `ATOM` editor
-2. Right click on the `ansible` folder and select `New Folder`
-3. name the folder `templates`
-4. Right click on the `templates` folder and select `New File`
-5. name the file `basetemplate.j2`
-6. copy and paste the following:
+2. Right click on the `templates` folder and select `New File`
+3. name the file `basetemplate.j2`
+4. copy and paste the following:
+
     ```
     #snmp acl configuration
     no ip access-list 50-SNMP-Access
