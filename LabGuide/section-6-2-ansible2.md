@@ -466,8 +466,10 @@ We created a role to hold all the base configuration data.  Base configuration i
 1. Navigate to `ansible --> roles --> baseconfig --> vars`
 2. Open up the `main.yml` file
 3. copy and paste the following code.
+4.
 https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
-4. Your file should look like this.
+4. Save the file `Cmd+S`
+5. Your file should look like this.
 
     ![ansiblerole](/images/ansible-301.png)
 
