@@ -454,6 +454,17 @@ Roles simplify the organization of the playbook.
 ![ansiblerole](/images/ansiblerole-1.png)
 
 
+###Exercise 3
+#### Base configuration repository
+We recreate a role for base configuration.  All the base configuration such ntp, snmp, alias etc will be provisioned via this role.
+
+1. Navigate to `ansible --> roles --> baseconfig --> vars`
+2. Open up the `main.yml` file
+3. copy and paste the following code.
+https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
+4. Your file should look like this.
+5.
+
 
 ##Customer User Cases
 
