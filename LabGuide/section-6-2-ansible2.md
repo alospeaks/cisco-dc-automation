@@ -128,16 +128,24 @@ Note:  Environment variables can be set at the play or task level.
 http://docs.ansible.com/ansible/faq.html  
 
 ##Exercise 6
-####Login in to your Ansible Container and Run the Playboog
+####Login in to your Ansible Container and Run the Playbook
 1. Go to your terminal window and type the following:
-```
-cd training
-source source.docker
-docker attach ansible
-```
+    ```
+    cd training
+    source source.docker
+    docker attach ansible
+    ```
 2. you should be inside your ansible docker container.
-3. run this playbook.
-    2. `ansible-playbook -i hosts ping.yml`
+3. update the hosts file on the ansible container. Since we not using dns for host resolution, we need to update the hosts file on the container
+    1. insid the ansible container type
+    2. `vim /etc/hosts`
+    3. press `i` to insert text
+    4. add a new entry to reflect all your hosts
+
+        ![hosts](/images/ansible-300.png)
+    5. Save the file ...`esc`  then type `:wq`
+3. Run Ping playbook.
+    1. `ansible-playbook -i hosts ping.yml`
 
 
 
