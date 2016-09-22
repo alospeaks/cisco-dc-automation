@@ -581,7 +581,7 @@ We created a role to hold all the hostport configuration data.  Host port config
 Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need create folder for each host in this folder.  Ansible will search this folder to look for the variables.
 
 1. Navigate to `ansible --> hosts_vars`
-2. Right click and select `New Folder`
+2. Right click and select `New Folder`. Name it `n9k-1.yml`
 3. copy and paste the following code.
 
     ```
@@ -596,9 +596,10 @@ Since the config is per switch basis, we need to hold the variables in the `host
 
 ###Exercise 2
 #### Create handler to save the configuration
-1. Navigate to `ansible --> roles --> baseconfig --> handlers`
+1. Navigate to `ansible --> roles --> hostports --> handlers`
 2. Open up the `main.yml` file
 3. Copy and paste the following
+
     ```
     ---
     # handlers file for baseconfig
