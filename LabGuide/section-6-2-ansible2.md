@@ -95,10 +95,7 @@ https://docs.ansible.com/ansible/intro_networking.html
 You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
 http://docs.ansible.com/ansible/nxos_ping_module.html
 
-Take a look at the examples on this page.
-
-1. go to Ansible folder
-2. Right click and create a new file.
+1. Under `ansible` folder , create a new file
 3. name it `ping.yml`
 4. copy and past the following :
     ```
@@ -130,9 +127,7 @@ Take a look at the examples on this page.
 Note:  Environment variables can be set at the play or task level.
 http://docs.ansible.com/ansible/faq.html  
 
-
-
-##Exercise 1
+##Exercise 6
 ####Login in to your Ansible Container and Run the Playboog
 1. Go to your terminal window and type the following:
 ```
