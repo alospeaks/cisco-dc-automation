@@ -66,7 +66,7 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 
 5. We are using  ansible connection as local rather than ssh, because the nxos ansible modules use nxapi to configure the switches rather than ssh.
 6. Save the file `CMD + S`
-7. Name the file as  `hosts`
+
 You can read more about Inventory file here:  Inventory http://docs.ansible.com/ansible/intro_inventory.html
 
 ### Exercise 4
@@ -82,6 +82,7 @@ You can read more about Inventory file here:  Inventory http://docs.ansible.com/
         username:   admin
         password:   cisco123
     ```
+4. Save the file `cmd + S`
 
 To login into the switches, we need the `username` and `password`.  This file with combination with `provider` keyword in ansbile playbook will let ansible login into the devices.  
 
