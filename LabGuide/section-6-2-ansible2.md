@@ -549,7 +549,7 @@ We created a role to hold all the base configuration data.  Base configuration i
 
 ###Excercise 8
 #### New NTP server
-Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we go one file and make this change and then run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  This will be on disruption in service.
+Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this will not be disruption in change.
 
 1. switch to `ATOM` editor
     2. Navigate to `ansible --> roles --> baseconfig --> vars`
