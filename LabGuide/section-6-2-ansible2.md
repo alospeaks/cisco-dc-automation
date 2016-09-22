@@ -219,6 +219,7 @@ Now that we have looked at the code that Jinja2 templates provide, let's underst
 2. Right click on the `ansible` folder and select `New File`
 3. name the folder `base-vars.yml`
 4. copy and paste the following in the file.
+
     ```
     snmp_acl:
         - 10.241.16.91/32
