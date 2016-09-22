@@ -496,16 +496,14 @@ We created a role to hold all the base configuration data.  Base configuration i
         provider: "{{ creds }}"
         lines:
           - 'copy run start'
-
     ```
 4. Save the file `CMD + S`
 
 ###Exercise 5
-#### Create tasks to push the based configuration
+#### Create tasks to create a template for base configuration.
 1. Navigate to `ansible --> roles --> baseconfig --> tasks`
 2. Open up the `main.yml` file
 3. Copy and paste the following:
-4.
 
     ```
     ---
@@ -520,7 +518,8 @@ We created a role to hold all the base configuration data.  Base configuration i
       notify:
         - Save Config
     ```
-4. Save the file `CMD + S`
+4. Note we are specifying the jinja2 template to be used to build this baseconfig file.  Also we are going to back the configuration prior to making any changes.  Finally we will save the configurtion.
+5. Save the file `CMD + S`
 
 
 ###Exercise 6
