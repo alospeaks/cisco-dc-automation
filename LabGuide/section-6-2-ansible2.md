@@ -23,18 +23,9 @@ the same tasks in multiple playbooks, turn them into roles.
 
 http://docs.ansible.com/ansible/list_of_network_modules.html
 
-##Exercise 1
-####Login in to your Ansible Container
-1. Go to your terminal window and type the following:
-```
-cd training
-source source.docker
-docker attach ansible
-```
-2. you should be inside your ansible docker container.
 
 
-### Exercise 2
+### Exercise 1
 #### Setting up the directory structure to host ansible files
 1. Switch to `ATOM` Editor
 2. Right click on the `ansible` folder
@@ -49,8 +40,7 @@ docker attach ansible
 ####Creating Host Inventory File
 Inventory file contains list of hosts that you want to manage from Ansible.  In our case, it will list of switches that we want to manage by ansible. These host/swiches can be organized in groups.
 
-1. Switch to `ATOM` Editor , close all the currently opened files.
-2. Right click on `ansible` folder and select `New File`.
+2. In the `ATOM` Editor , right click on `ansible` folder and select `New File`.
 3. Save this file as `hosts`
 3. add the the following lines to the file   
 
@@ -106,8 +96,7 @@ http://docs.ansible.com/ansible/nxos_ping_module.html
 
 Take a look at the examples on this page.
 
-4. Switch to your ATOM window
-5. go to Ansible folder
+1. go to Ansible folder
 2. Right click and create a new file.
 3. name it `ping.yml`
 4. copy and past the following :
@@ -136,14 +125,26 @@ Take a look at the examples on this page.
     ```
 
 9. `CMD+S` to save it
-10. Switch to ansible container terminal
-    1. run this playbook.
-    2. `ansible-playbook -i hosts ping.yml`
 
 Note:  Environment variables can be set at the play or task level.
 http://docs.ansible.com/ansible/faq.html  
-If you want to hide your password, use ansible vault.  
-http://docs.ansible.com/ansible/playbooks_vault.html
+
+
+
+##Exercise 1
+####Login in to your Ansible Container and Run the Playboog
+1. Go to your terminal window and type the following:
+```
+cd training
+source source.docker
+docker attach ansible
+```
+2. you should be inside your ansible docker container.
+3. run this playbook.
+    2. `ansible-playbook -i hosts ping.yml`
+
+
+
 
 ###Exercise 6
 ####Using the nxos_config module
