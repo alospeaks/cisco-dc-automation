@@ -441,15 +441,15 @@ Roles simplify the organization of the playbook.
 3. expand it
 4. navigate to `vars` folder and open `main.yml`
 5. type in the following:
-6.
-```
----
-creds:
-    host: "{{ inventory_hostname }}"
-    transport: nxapi
-    username:   admin
-    password:   cisco123
-```
+
+    ```
+    ---
+    creds:
+        host: "{{ inventory_hostname }}"
+        transport: nxapi
+        username:   admin
+        password:   cisco123
+    ```
 
 ![ansiblerole](/images/ansiblerole-1.png)
 
@@ -459,9 +459,11 @@ creds:
 
 ###Exercise 1
 ####Configuring roles
- would like to see at minimum for the use cases the replacement of base config files (e.g. AAA, syslog/snmp, acl 50, NTP, etc)  for Cisco
+  base config automation (e.g. AAA, syslog/snmp, acl 50, NTP, etc)  for Cisco
 
+Here is the Customers base configuration that they like to automate using ansible.
 
+```
 ntp server 10.68.0.41 use-vrf management
 ntp server 10.68.0.42 use-vrf management
 ntp server 10.246.0.1 use-vrf management
@@ -528,6 +530,7 @@ logging level syslog 5
 logging level local7 6
 no logging console
 
+```
 
 
 #Ansible Tips
