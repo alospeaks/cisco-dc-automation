@@ -530,7 +530,7 @@ We created a role to hold all the base configuration data.  Base configuration i
 
     ```
     ---
-    - hosts: nk9-1
+    - hosts: n9k-1
       connection: local
       strategy: free
       roles:
