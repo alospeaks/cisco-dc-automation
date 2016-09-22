@@ -4,14 +4,14 @@ This lab is focusing on getting you started with the basic on nexus open-nxos  p
 Slides used in this lab is on the box.  https://cisco.box.com/s/x5ets0d5wcrs1q8t3n7wihowy94v2p4s
 
 ## Objective
-To teach you how to program Nexus switches using varies tools/apps via RESTful API calls.  At the end of the day, each tool changes the managed object stored inside the data model.  In this lab we will be using CLI, REST Client, Python, nxtoolkit and ansible to make configuration changes to the switches.
+To learn how to program Nexus switches using varies tools/apps via RESTful API calls.  At the end of the day, each tool changes the managed object stored inside the data model.  In this lab we will be using CLI, REST Client, Python, nxtoolkit and ansible to make configuration changes to the switches.
 
 ![intro](/images/intro-2.png)
 
 ## Lab Setup
 For this lab, we will be using N9K NXOSv switch.  You need to have this virtual switch installed on your laptop.  If you have not already installed it,  see  the prerequisite section above for the details on how to install NXOSv it on your laptop.
 
-For those, who for some reason can not install NXOSv on your laptop, we have installed 20 VM with NXOSv in our lab.  The IPs and hostnames are given below.
+For those, who for some reason can not install NXOSv on your laptop, use the physical switches in our lab.  The IPs and hostnames are given below.
 
 ![intro](/images/intro-3.png)
 
@@ -19,7 +19,7 @@ Most of these tools can be installed on your laptop
 
 ![intro](/images/intro-4.png)
 
-If you can not install NXOSv on your laptop, use of these NXOSv installed in the lab.
+If you can not install NXOSv on your laptop, use the physical switches in the lab.
 
 
 ##References:
