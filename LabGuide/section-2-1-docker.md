@@ -40,7 +40,7 @@
 #Docker
 Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
 
-We will be using Dockers are lot in this lab so spent some time learning it on the internet.
+We will be using Dockers a lot in this lab so spent some time learning it on the internet.
 
 To do off box programming , you will need to install python, ansible etc on your laptop.  To get you started quickly and to save time, we will use docker to quickly download a pre-installed and pre-configure containers.  
 
@@ -65,7 +65,7 @@ Docker-toolbox allows you to run docker on your laptop (both in mac or windows).
 1. Download and install docker toolbox. Use all the default settings for the installation.
 	https://www.docker.com/products/docker-toolbox
 
-2. This should have install `Docker Quickstart` icon on your desktop.  
+2. This should have installed `Docker Quickstart` icon on your desktop.  
 
 Whenever we say open terminal in this lab guide, please open `Docker Quickstart` on windows.  
 
