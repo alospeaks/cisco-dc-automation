@@ -98,19 +98,19 @@ http://docs.ansible.com/ansible/nxos_ping_module.html
 1. Under `ansible` folder , create a new file
 3. name it `ping.yml`
 4. copy and past the following :
+
     ```
     ---
     - name: ping testing
       hosts: n9k-1
       connection: local
       gather_facts: no
-      environment:
-        - ANSIBLE_NET_USERNAME: admin
-        - ANSIBLE_NET_PASSWORD: cisco123
       tasks:
+        - name: obtain login credentials
+          include_vars: credentials.yml
 
         # test reachability to 8.8.8.8 using mgmt vrf
-        - nxos_ping: dest=8.8.8.8 vrf=management host={{ inventory_hostname }}
+        - nxos_ping: dest=8.8.8.8 vrf=management host={{ inventory_hostname }} provider="{{ creds }}"
 
         # Test reachability to a few different public IPs using mgmt vrf
         # if device has name lookups turned on, you can use names
@@ -118,7 +118,6 @@ http://docs.ansible.com/ansible/nxos_ping_module.html
           with_items:
             - 8.8.8.8
             - 4.4.4.4
-            - 198.6.1.4
 
     ```
 
