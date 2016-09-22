@@ -143,13 +143,14 @@ http://docs.ansible.com/ansible/faq.html
 
         ![hosts](/images/ansible-300.png)
     5. Save the file ...`esc`  then type `:wq`
+    6. `ping n9k-1`  make sure the host is able to resolve it.
 3. Run Ping playbook.
     1. `ansible-playbook -i hosts ping.yml`
 
 
 
 
-###Exercise 6
+###Exercise 6 (don't do this WIP)
 ####Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
 http://docs.ansible.com/ansible/nxos_config_module.html
@@ -183,14 +184,14 @@ http://docs.ansible.com/ansible/nxos_config_module.html
         provider: "{{ creds }}"
 
 ```
-###using nxos_vlan module
+###using nxos_vlan module (WIP)
 http://docs.ansible.com/ansible/nxos_vlan_module.html
 
+The to ansible scalabilty and readability is to how you separate your data from the configuration.
 
 
 ###Exercise 7
 ####Using the nxos_template module
-Separating data from the configuration.
 
 nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
 
@@ -199,12 +200,11 @@ nxos_template manages network device configurations over SSH or NXAPI. This modu
 Jinja2 is a very popular and powerful Python-based template engine. Templates look very similar to normal text-based files except for the occasional variables or code that surrounds the special tags. These get evaluated and are mostly replaced by values at runtime, creating a text file, which is then copied to the destination host. The following are the two types of tags that Jinja2 templates accept:
 
 `{{ }}` embeds variables inside a template and prints its value in the resulting file. This is the most common use of a template.
-For example:
+For example: `{{ hostname }}`
 
-    `{{ hostname }}`
 `{% %}` embeds statements of code inside a template, for example, for a loop, it embeds the if-else statements, which are evaluated at runtime but are not printed.
 
-Now that we have looked at the code that Jinja2 templates provide, let's understand where this data comes from, which is then embedded in the template at runtime. Data can come from either facts or variables. When it comes to a Jinja2 template, the same rules apply to the usage of facts and variables. Facts are a type of variable; the differentiating factor here is the origin of the two. Facts are automatically available and discovered at runtime, and variables are user-defined.
+So where does jinja2 gets the values for its variables?  At the runtime of the playbook, Jinja2 has access to all the variable that is reference inside that particular playbook.  So the variables inside the jinja2 template is substituted with the values from the facts and variable obtained from the playbook at the run time.
 
 
 **Steps to create the templates:**
@@ -455,20 +455,20 @@ Roles simplify the organization of the playbook.
         password:   cisco123
     ```
 
-![ansiblerole](/images/ansiblerole-1.png)
+    ![ansiblerole](/images/ansiblerole-1.png)
 
+6. Save the file `Cmd+S`
 
 ###Exercise 3
 #### Base configuration repository
-We recreate a role for base configuration.  All the base configuration such ntp, snmp, alias etc will be provisioned via this role.
+We created a role for base configuration.  All the base configuration such ntp, snmp, alias etc will be provisioned via this role.
 
 1. Navigate to `ansible --> roles --> baseconfig --> vars`
 2. Open up the `main.yml` file
 3. copy and paste the following code.
 https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
 4. Your file should look like this.
-5.
-
+    ![ansiblerole](/images/ansiblerole-301.png)
 
 ##Customer User Cases
 
