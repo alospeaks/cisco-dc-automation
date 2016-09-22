@@ -461,7 +461,7 @@ Roles simplify the organization of the playbook.
 
 ###Exercise 3
 #### Base configuration repository
-We created a role for base configuration.  All the base configuration such ntp, snmp, alias etc will be provisioned via this role.
+We created a role to hold all the base configuration data.  Base configuration includes things like ntp, snmp, alias etc that needs to be  provisioned to all switches.
 
 1. Navigate to `ansible --> roles --> baseconfig --> vars`
 2. Open up the `main.yml` file
