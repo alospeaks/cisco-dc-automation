@@ -479,7 +479,7 @@ We created a role to hold all the base configuration data.  Base configuration i
 2. Right click on the `templates` folder and select `New File`. Name it `basetemplate.j2`
 3. copy and paste the content from this link.  This is the jinja 2 template.
 
-https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
+    https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
 
 4. Save the file `CMD + S`
 
