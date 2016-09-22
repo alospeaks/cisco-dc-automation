@@ -230,7 +230,7 @@ Now that we have looked at the code that Jinja2 templates provide, let's underst
 
 ###Exercise 9
 ####Using Creating Jinja2 template
-1. Switch back to the `ATOM` editor
+1. Go to `Ansible` folder and then to `templates` folder
 2. Right click on the `templates` folder and select `New File`
 3. name the file `basetemplate.j2`
 4. copy and paste the following:
@@ -255,12 +255,29 @@ This playbook will use the data file (base-vars.yml) and render those data into 
 
 This modules provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
 
-1. switch to `ATOM` editor
-2. create a new playbook. Right click on the `ansible` folder and select `New File`
+2. Using `ATOM` create a new playbook. Right click on the `ansible` folder and select `New File`
 3. name it `baseconfig.yml`
 4. It should look like this
 
-    ![ansible2](/images/ansible2-1.png)
+    ```
+    ---
+    - name: template testing
+      hosts: n9k-1
+      connection: local
+      gather_facts: no
+      tasks:
+        - name: obtain login credentials
+          include_vars: credentials.yml
+        #contains all the base configuration data
+        - name: getting the data file
+          include_vars: base-vars.yml
+
+        #renders the jinja2 template
+        - name: configure base template
+          nxos_template:
+            provider: "{{ creds }}"
+            src: basetemplate.j2
+    ```
 
 5. you can take a look at my file here:   https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/baseconfig.yml
 
