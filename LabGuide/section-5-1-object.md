@@ -29,7 +29,7 @@ Object Store
 Objects are stored in data store inside the switch. Data management engine (DME) is used to manipulate object inside the Data store. There is a northbound API that exposures switch features externally and also there is a southbound API that interacts with the physical hardware.  Everything inside the switch is modeled inside this object store in a MIT. You can look at the objects stored in the data store and get their attributes using a inbuilt app on the switch called visore.
 
 1. Open up Chrome browser and  in the address field, point it to the url of your NXOSv switch.
-    1. `https://<switchip>/visore.html`
+    1. `http://<switchip>/visore.html`
     2. Authenticate  (admin/cisco123)
 2. You will see screen like below. Everything in the `green column` are the `attributes` of this object.  Anything in the `yellow` are the `values of the those attributes` and the `pink` row is the `class of this object`.  
 

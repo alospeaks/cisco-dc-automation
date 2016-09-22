@@ -37,7 +37,7 @@ docker attach ansible
 ### Exercise 2
 #### Setting up the directory structure to host ansible files
 1. Switch to `ATOM` Editor
-2. Right click on the ansible folder
+2. Right click on the `ansible` folder
 3. Select new folder
 4. name it `roles`
 5. Repeat above and create following folders.
@@ -53,6 +53,7 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 2. Right click on `ansible` folder and select `New File`.
 3. Save this file as `hosts`
 3. add the the following lines to the file   
+
     ```
     [all:vars]
     ansible_connection = local
@@ -83,7 +84,7 @@ You can read more about Inventory file here:  Inventory http://docs.ansible.com/
 1. Under `ansible` folder , create a new file
 2. name it `credentials.yml`
 3. copy and paste the following.
-4.
+
     ```
     ---
     creds:

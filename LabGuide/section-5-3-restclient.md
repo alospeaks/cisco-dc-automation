@@ -26,7 +26,7 @@ https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddom
 2. Open up Postman
     1. `cmd + space`
     2. type `postman`
-
+3. For windows users , on your browser type  `chrome://apps` and then click on `Postman`
 In next exercise we will create a REST request.
 
 ## Exercise-2
@@ -46,8 +46,10 @@ Lets create a REST request message to login into the nexus switch.  This will be
 
     ![postman](/images/postman-2.png)
 
-6. url field type `http://<yourswitch ip>/api/aaaLogin.json`
-7. make sure to select 'JSON' for the payload. Enter the following json code.
+6. method = `POST`
+7. url field type `http://<yourswitch ip>/api/aaaLogin.json`
+8. select the `Body` tab.
+7. make sure to select `JSON` for the payload. Enter the following json code. Adjust the name and password accordingly.
 
     ```
     {
@@ -60,9 +62,10 @@ Lets create a REST request message to login into the nexus switch.  This will be
     }
     ```
 
-8. Click on `Save` and select `save as`
+8. Click on `Save arrow down` and select `save as`
 8. Save the request to the `NXOS-API` collection.
 9. Name it `NXOS-Login`
+10. Click on `Save`
 10. Get you authentication token by clicking on the `Send` Button at the right side of the url. You should see your token in the RESPONSE Window
 
 *Each time you want to configure the switch using REST client, you need to get authentication token*
@@ -87,8 +90,7 @@ Create the json rest request to view the current configuration on eth1/1.  use G
 ## Exercise-4
 ####Viewing the Vlan configuration
 1. Get the authentication token (send login-noxs request)
-2. Verify that Vlan 300 does not exit on the switch.
-3. Create a new request called `get-vlan-infor` using the same steps as you did in exercise 3 above.
+3. Create a new request called `get-vlan-infor` using the same steps as you did in exercise 3 above. Basically making a copy of the `Get-Interface-Status` request using `save as` command.
 4. Use `GET` request with the following url   `http://<yourswitchip>/api/mo/sys/bd/bd-[vlan-300].json`
 5. You don't need anything in the body part of the request.
 6. Save the Request by clicking the `Save` button again
@@ -102,14 +104,15 @@ You should not see vlan 300 in the RESPONSE window.  If you do see it, delete by
 1. Using visore, locate the dn of the vlan. Take this time to learn how to use visore.  Hint: look for class "BDEntity". Use the mind map above to help u out too. Remember since we have not created the vlan 300 as yet, that object will not be in data store.  You will need the class name to create the object of that class. In this case, we will be creating a child object of class BDEntity.  This child class is call L2BD.
 2. Switch to Postman window
 3. Get the authentication token (send login-noxs request)
-4. Create a new request called `config-vlan` in the `NXOS-API` folder.
+4. Create a new request called `config-vlan` in the `NXOS-API` folder. Use the same method. Do `save as` on a exiting request.
 5. In the URL field , select `POST` and then type your object url.  It should look something like this `http://<switchip>/api/mo/sys/bd.json`
 6. Change the request type to be `POST`
 7. In the BODY of the POST Request type following JSON code.  
 https://github.com/Hemakuma/networkautomation/blob/master/configs/config-vlan.json
-7. Send a POST request by pressing on the `Send` button.
+7. Click `Save` to save the request.
+8. Send a POST request by pressing on the `Send` button.
 8. Verify the vlan is configured.
-9. Select  `get-vlan-infor` request again from your collection. Then press `SEND`.  Verify that this time around you got some data about vlan 300
+    9. Select  `get-vlan-infor` request again from your collection. Then press `SEND`.  Verify that this time around you got some data about vlan 300
 
 ##Exercise-6
 ####Modifying Objects Configuring Physical interfaces

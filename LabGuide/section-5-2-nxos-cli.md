@@ -27,7 +27,7 @@ The best way to get started is to use the sandbox to generate your base code and
     1. Open up a terminal and go to your `training`  directory
     2. type `cd training`
     3. type `source source.docker`
-    4. `docker attach nxtoolkit`  (for windows users  `winpty docker attach nxtoolkit`)
+    4. `docker attach nxtoolkit`  (for windows users  make sure you are using `docker quick terminal`)
     5. Press enter twice to see the bash shell of the container
     6. This will log you into your nxtoolkit container.  You should see `root@nxtoolkit` prompt
 
@@ -41,7 +41,7 @@ The best way to get started is to use the sandbox to generate your base code and
     2. `python create-vlan.py`
 5. Verify that vlan 900 is now configured on the switch
     1. Switch  to your `ssh session to the switch` terminal
-    2. `show vlan`  <-- verify that vlan got created
+    2. `show run vlan`  <-- verify that vlan got created
 
 ###Exercise-2
 ####VLAN Consistency Checker
@@ -64,7 +64,9 @@ Its no fun just creating one vlan. We could do this faster with CLI.   Lets writ
 6. Read the code and try to make sense of it.  Keep doing this with all the scripts we write.  You will see a pattern on how the codes are written.  
 7. Go to your nxtoolkit container terminal window and run this script.  This script should be in your `myscript` folder.  
 8. run the script `python vlan-consist-check.py`  
-9. Login to your switch (ssh admin@<switch ip> )and verify that those vlans are created.  `Show vlan`
+9. Switch to your switch console window
+10. verify that those vlans are created.  `Show run vlan`
+11. Re-run the script. This time it should not make any changes and it verified that all the required vlans are on the switch.  Go ahead and delete one vlan and try to re-run the script.
 
 
 ###Exercise-3
