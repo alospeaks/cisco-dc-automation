@@ -469,7 +469,7 @@ We created a role for base configuration.  All the base configuration such ntp, 
 https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
 4. Your file should look like this.
 
-    ![ansiblerole](/images/ansiblerole-301.png)
+    ![ansiblerole](/images/ansible-301.png)
 
 ##Customer User Cases
 
