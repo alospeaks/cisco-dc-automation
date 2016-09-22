@@ -572,7 +572,7 @@ Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You
 ----
 
 ## Hostport Configuration.
-Another command operations tasks to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
+Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
 
 ###Exercise 1
 #### Hostport configuration repository
