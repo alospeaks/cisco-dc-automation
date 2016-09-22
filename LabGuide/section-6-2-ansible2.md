@@ -530,7 +530,7 @@ We created a role to hold all the base configuration data.  Base configuration i
 
     ```
     ---
-    - hosts: n9k-1
+    - hosts: all
       connection: local
       strategy: free
       roles:
@@ -539,13 +539,28 @@ We created a role to hold all the base configuration data.  Base configuration i
     ```
 4. Save the file `CMD + S`
 
-###Exercise 6
+###Exercise 7
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
     1. `ansible-playbook -i hosts deploy-baseconfig.yml`
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
+
+###Excercise 8
+#### New NTP server
+Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we go one file and make this change and then run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  This will be on disruption in service.
+
+1. switch to `ATOM` editor
+    2. Navigate to `ansible --> roles --> baseconfig --> vars`
+    2. Open up the `main.yml` file
+    3. add this a line to your `NTP server list`
+    4. `- 192.200.0.2`
+2. Switch to the ansible terminal window
+    1. Run the playbook again
+    2. `ansible-playbook -i hosts deploy-baseconfig.yml`
+3. Login into your switch.
+    1. Verify that ansible has made those configuration.
 
 
 ##Customer User Cases
