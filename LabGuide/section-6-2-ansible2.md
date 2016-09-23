@@ -339,7 +339,11 @@ notice how the register variable is used in the template.
 
 
 #Roles
-Roles simplify the organization of the playbook.
+Simply put, roles are a further level of abstraction that can be useful for organizing playbooks. As you add more and more functionality and flexibility to your playbooks, they can become unwieldy and difficult to maintain as a single file. Roles allow you to create very minimal playbooks that then look to a directory structure to determine the actual configuration steps they need to perform.
+
+Organizing things into roles also allows you to reuse common configuration steps between different types of servers. This is already possible by "including" other files within a playbook, but with roles, these types of links between files are automatic based on a specific directory hierarchy.
+
+In general, the idea behind roles is to allow you to define what a server is supposed to do, instead of having to specify the exact steps needed to get a server to act a certain way.
 
 ##Base Configuration
 Applying the base configuration to all switches in the inventory using jinja2 template.  Templates are good for mostly static configuration.  Since base configuration does not change that often, it is good idea to put them in a template.
