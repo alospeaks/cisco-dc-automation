@@ -35,6 +35,7 @@
          - [Create jinja2 template for the uplink configuration.](#create-jinja2-template-for-the-uplink-configuration)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
          - [Lets run the playbook](#lets-run-the-playbook)   
+   - [Section-6-2-6: Hostport Configuration.](#section-6-2-6-hostport-configuration)   
          - [Hostport configuration repository](#hostport-configuration-repository)   
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
@@ -695,7 +696,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 4. Verify that ansible has made those configuration.
 
 
-##Section-6-2-6: Hostport Configuration.
+## Section-6-2-6: Hostport Configuration.
 Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
 
 ###Exercise 1
