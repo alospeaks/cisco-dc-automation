@@ -26,7 +26,7 @@ the same tasks in multiple playbooks, turn them into roles.
 http://docs.ansible.com/ansible/list_of_network_modules.html
 
 
-## Part 1 : Ansible Setup
+## Section-6-2-1 : Ansible Setup
 ### Exercise 1
 #### Setting up the directory structure to host ansible files
 1. Switch to `ATOM` Editor
@@ -154,7 +154,7 @@ To get snippet
 
 ----
 
-## Part 2 : Simple Ansible Playbooks
+## Section-6-2-2 : Simple Ansible Playbooks
 
 ###Exercise 1
 ####Gather facts about the switch
@@ -249,7 +249,9 @@ http://docs.ansible.com/ansible/nxos_config_module.html
     1. `ansible-playbook -i hosts ex-config-module.yml`
 6. Verify the configuration on using Switch CLI. `show access-list`
 
-#Roles
+Roles
+-----
+
 Simply put, roles are a further level of abstraction that can be useful for organizing playbooks. As you add more and more functionality and flexibility to your playbooks, they can become unwieldy and difficult to maintain as a single file. Roles allow you to create very minimal playbooks that then look to a directory structure to determine the actual configuration steps they need to perform.
 
 Organizing things into roles also allows you to reuse common configuration steps between different types of servers. This is already possible by "including" other files within a playbook, but with roles, these types of links between files are automatic based on a specific directory hierarchy.
@@ -257,7 +259,7 @@ Organizing things into roles also allows you to reuse common configuration steps
 In general, the idea behind roles is to allow you to define what a server is supposed to do, instead of having to specify the exact steps needed to get a server to act a certain way.
 
 ----
-##Base Configuration
+## Section-6-2-3: Base Configuration
 Applying the base configuration to all switches in the inventory using jinja2 template.  Templates are good for mostly static configuration.  Since base configuration does not change that often, it is good idea to put them in a template.
 
 ###Exercise 1
@@ -428,7 +430,7 @@ Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You
 
 
 ----
-## Automating VLAN provisioning
+## Section-6-2-4: Automating VLAN provisioning
 **Problem Statement**
 Users perform manual Day-2 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-2 configuration activity is performing routine VLAN related operations:
 1. Check if VLAN exists
@@ -548,7 +550,7 @@ Modify the playbook so that vlan 40 is removed from all the switches.
 ----
 
 
-## Uplink port Configuration.
+## Section-6-2-5: Uplink port Configuration.
 In this section, we will be configuring uplink ports. This will include changing the interface to L3 mode and then assigning ip to it.  We are going to use jinja2 template for this.
 
 ###Exercise 1
@@ -649,7 +651,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 
 
 ----
-## Hostport Configuration.
+##Section-6-2-6: Hostport Configuration.
 Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
 
 ###Exercise 1
@@ -748,23 +750,8 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
 4. Verify that ansible has made those configuration.
 
 ###Excercise 8
-#### New NTP server ????
-Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
-
-1. Switch to `ATOM` editor
-    2. Navigate to `ansible --> roles --> baseconfig --> vars`
-    2. Open up the `main.yml` file
-    3. add this a line to your `NTP server list`
-    4. `- 192.200.0.2`
-2. Switch to the ansible terminal window
-    1. Run the playbook again
-    2. `ansible-playbook -i hosts deploy-baseconfig.yml`
-3. Login into your switch.
-    1. Verify that ansible has made those configuration.
-4. Switch to `ATOM` editor.
-    1. Navigate to `ansible --> roles --> baseconfig-->backup`
-    2. you should see your backupfiles
-
+#### Add new server port
+configure a new server port on n9k-1 port eth1/8
 
 #Ansible Tips
 ###How to see which ansible modules are installed?
