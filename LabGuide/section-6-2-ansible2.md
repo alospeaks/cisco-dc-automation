@@ -249,6 +249,7 @@ http://docs.ansible.com/ansible/nxos_config_module.html
     1. `ansible-playbook -i hosts ex-config-module.yml`
 6. Verify the configuration on using Switch CLI. `show access-list`
 
+----
 Roles
 -----
 
