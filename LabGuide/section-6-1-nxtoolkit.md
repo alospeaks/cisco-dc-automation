@@ -16,7 +16,7 @@ NXToolKit
       - [Exercise 5](#exercise-5)   
          - [Create a Script that displays all the interfaces that have "operational state" as up.](#create-a-script-that-displays-all-the-interfaces-that-have-operational-state-as-up)   
       - [Exercise 6](#exercise-6)   
-      - [Configuring VLAN using nxtoolkit](#configuring-vlan-using-nxtoolkit)   
+         - [Configuring VLAN using nxtoolkit](#configuring-vlan-using-nxtoolkit)   
       - [Exercise 7](#exercise-7)   
          - [Configuring Physical interface](#configuring-physical-interface)   
       - [Exercise 8](#exercise-8)   
@@ -153,7 +153,7 @@ List Comprehensions in Python
 
 
 ### Exercise 6
-### Configuring VLAN using nxtoolkit
+#### Configuring VLAN using nxtoolkit
 **Goal:** Configure Vlan 300 and 301 using nxtoolkit
 
 **Solution:** Modify `nx-create-l2bds.py`
