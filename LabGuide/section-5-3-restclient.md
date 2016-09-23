@@ -5,18 +5,18 @@ REST Client
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
    - [REST Client](#rest-client)   
-- [Working With Rest Client (Postman)](#working-with-rest-client-postman)   
-   - [Exercise-1](#exercise-1)   
+   - [Working With Rest Client (Postman)](#working-with-rest-client-postman)   
+      - [Exercise-1](#exercise-1)   
          - [Installing POSTMAN](#installing-postman)   
-   - [Exercise-2](#exercise-2)   
+      - [Exercise-2](#exercise-2)   
          - [Creating your First REST Request](#creating-your-first-rest-request)   
-   - [Exercise-3](#exercise-3)   
+      - [Exercise-3](#exercise-3)   
          - [Viewing the current configuration of a physical interface (Interface status)](#viewing-the-current-configuration-of-a-physical-interface-interface-status)   
-   - [Exercise-4](#exercise-4)   
+      - [Exercise-4](#exercise-4)   
          - [Viewing the Vlan configuration](#viewing-the-vlan-configuration)   
-   - [Exercise-5](#exercise-5)   
+      - [Exercise-5](#exercise-5)   
          - [Configure Vlan 300 using REST Client](#configure-vlan-300-using-rest-client)   
-   - [Exercise-6](#exercise-6)   
+      - [Exercise-6](#exercise-6)   
          - [Modifying Objects Configuring Physical interfaces](#modifying-objects-configuring-physical-interfaces)   
 
 <!-- /MDTOC -->
@@ -24,12 +24,12 @@ REST Client
 
 
 
-# Working With Rest Client (Postman)
+## Working With Rest Client (Postman)
 Postman helps you be extremely efficient while working with APIs. With Postman, you can construct requests quickly, save them for later use and analyze the responses sent by the API.
 
 We will be using `Postman`REST client  to sent REST API calls to the nexus switch to change the MO.  For this, you will need have google chrome browser installed.  if you don't have chrome browser, please installed it.
 
-## Exercise-1
+### Exercise-1
 #### Installing POSTMAN
 1. Download it and install Postman REST client for chrome browser.  
 https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
@@ -39,7 +39,7 @@ https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddom
 3. For windows users , on your browser type  `chrome://apps` and then click on `Postman`
 In next exercise we will create a REST request.
 
-## Exercise-2
+### Exercise-2
 #### Creating your First REST Request
 HTTP has 2 types of message, **Request** and **Response**. The request message has methods. Commonly used methods are **POST, GET, DELETE**
 
@@ -80,7 +80,7 @@ Lets create a REST request message to login into the nexus switch.  This will be
 
 *Each time you want to configure the switch using REST client, you need to get authentication token*
 
-## Exercise-3
+### Exercise-3
 #### Viewing the current configuration of a physical interface (Interface status)
 Create the json rest request to view the current configuration on eth1/1.  use GET request.
 
@@ -97,7 +97,7 @@ Create the json rest request to view the current configuration on eth1/1.  use G
 
     ![postman](/images/postman-3.png)  
 
-## Exercise-4
+### Exercise-4
 #### Viewing the Vlan configuration
 1. Get the authentication token (send login-noxs request)
 3. Create a new request called `get-vlan-infor` using the same steps as you did in exercise 3 above. Basically making a copy of the `Get-Interface-Status` request using `save as` command.
@@ -109,7 +109,7 @@ Create the json rest request to view the current configuration on eth1/1.  use G
 You should not see vlan 300 in the RESPONSE window.  If you do see it, delete by changing the GET request to DELETE request and send it to the switch.  Then switch it back to GET request to verify that vlan 300 does not exist on the switch.
 
 
-## Exercise-5
+### Exercise-5
 #### Configure Vlan 300 using REST Client
 1. Using visore, locate the dn of the vlan. Take this time to learn how to use visore.  Hint: look for class "BDEntity". Use the mind map above to help u out too. Remember since we have not created the vlan 300 as yet, that object will not be in data store.  You will need the class name to create the object of that class. In this case, we will be creating a child object of class BDEntity.  This child class is call L2BD.
 2. Switch to Postman window
@@ -124,7 +124,7 @@ https://github.com/Hemakuma/networkautomation/blob/master/configs/config-vlan.js
 8. Verify the vlan is configured.
     9. Select  `get-vlan-infor` request again from your collection. Then press `SEND`.  Verify that this time around you got some data about vlan 300
 
-## Exercise-6
+### Exercise-6
 #### Modifying Objects Configuring Physical interfaces
 Modify the physical interface eth1/1 as follows:
 ```
