@@ -358,7 +358,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 4. Save the file `CMD + S`
 
 ###Exercise 6
-#### Create playbook tasks to create base configuration.
+#### Create playbook tasks for base configuration.
 1. Navigate to `ansible --> roles --> baseconfig --> tasks`
 2. Open up the `main.yml` file
 3. Copy and paste the following:
@@ -528,10 +528,15 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
-###Exercise 8
-#### Removing Vlans
-Modify the playbook so that vlan 40 is removed from all the switches.
+**Homework**
 
+###Exercise 8
+#### Adding new Vlans
+Modify the the roles to add vlan 800 to all the switches.
+
+###Exercise 9
+#### Removing  Vlans
+Modify the playbook so that vlan 40 is removed from all the switches.
 ----
 
 
