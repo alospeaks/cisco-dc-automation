@@ -1,43 +1,35 @@
-**Table of Contents**
 
-- [Docker](#)
-	- [Docker Toolbox](#)
-		- [Exercise-1](#)
-			- [Installing Docker-Toolbox](#)
-			- [Tune your VM for faster performance](#)
-		- [Exercise-2](#)
-			- [Working with Docker Machine Utility](#)
-		- [Exercise-3](#)
-			- [Ssh into your Docker VM](#)
-		- [Exercise-4](#)
-			- [Creating source file.](#)
-		- [Exercise-5](#)
-			- [Setting the Environment variables using source file](#)
-	- [Nxtoolkit Container](#)
-		- [Exercise-6](#)
-			- [Creating nxtoolkit image](#)
-		- [Exercise-7](#)
-			- [Spin up a nxtoolkit Container using this image](#)
-	- [Ansible Docker Container](#)
-		- [Exercise-8](#)
-			- [Build Ansible Dockerfile](#)
-		- [Exercise-9](#)
-			- [Creating Ansible Container using Docker](#)
-			- [Configuring the container](#)
-- [Creating Docker host for Tools](#)
-	- [Jenkins  Container](#)
-		- [Exercise 9](#)
-			- [Creating Jenkins Container](#)
-		- [Create Dockerfile](#)
-			- [Pull the Jenkins image from dockerhub](#)
-			- [Build the new image](#)
-	- [Gitlab Container](#)
-		- [Create gitlab docker compose file](#)
-		- [Spin up gitlab container](#)
-		- [Configure gitlab](#)
-- [Docker Tips](#)
 
-#Docker
+Docker
+---
+
+**Table of Contents - Dockers**
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [Docker](#docker)   
+   - [Introduction](#introduction)   
+   - [Docker Toolbox](#docker-toolbox)   
+      - [Exercise-1](#exercise-1)   
+         - [Installing Docker-Toolbox](#installing-docker-toolbox)   
+      - [Exercise-2](#exercise-2)   
+         - [Working with Docker Machine Utility](#working-with-docker-machine-utility)   
+      - [Exercise 2](#exercise-2)   
+         - [Tune your VM for faster performance](#tune-your-vm-for-faster-performance)   
+      - [Exercise-4](#exercise-4)   
+         - [Creating source file.](#creating-source-file)   
+      - [Exercise-5](#exercise-5)   
+         - [Setting the Environment variables using source file](#setting-the-environment-variables-using-source-file)   
+      - [Common Docker-machine commands](#common-docker-machine-commands)   
+      - [Exercise-3](#exercise-3)   
+         - [Ssh into your Docker VM](#ssh-into-your-docker-vm)   
+      - [Some helpful docker commands](#some-helpful-docker-commands)   
+
+<!-- /MDTOC -->
+
+
+
+Introduction
+---
 Docker containers wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries – anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
 
 We will be using Dockers are lot in this lab so spent some time learning it on the internet.
@@ -55,13 +47,13 @@ Learn more about dockers at https://www.docker.com/
 Cisco VPN/anyconnect breaks docker communication.  
 Make sure you disconnect from anyconnect and use blizzard or wired connection while doing docker exercises.
 ```
-##Docker Toolbox
+## Docker Toolbox
 Docker-toolbox allows you to run docker on your laptop (both in mac or windows).  Follow the link below to install it on your laptop.  Basically it downloads a virtual box boot2docker VM and runs docker engine inside it.  By default this VM is named `default`.  Docker has created `docker-machine` utility to manage docker VM from command line. Basically you can `start / stop / restart` the Docker VM using docker-machine utility.  You can create additional docker machine using the `create` command.  Learn more about it here https://docs.docker.com/machine/
 
 ![docker](/images/docker-i-2.png)
 
-###Exercise-1
-####Installing Docker-Toolbox
+### Exercise-1
+#### Installing Docker-Toolbox
 1. Download and install docker toolbox. Use all the default settings for the installation.
 	https://www.docker.com/products/docker-toolbox
 
@@ -72,8 +64,8 @@ Whenever we say open terminal in this lab guide, please open `Docker Quickstart`
 **Do not open the command line**
 
 
-###Exercise-2
-####Working with Docker Machine Utility
+### Exercise-2
+#### Working with Docker Machine Utility
 When you installed docker tool, `docker-machine` automatically got installed. `docker-machine` utility lets you manage docker engines on different hypervisors including virtualbox. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
 
 ***Make sure you do not have any VPN connections such as Cisco's Anyconnect turned on. This will break the docker functionality***
@@ -91,12 +83,12 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 5. `docker-machine create --driver virtualbox default`
 6. `docker-machine ls`  <-- you should see the docker engine running.
 5. This should show you all the docker engines that this docker machine is managing.  Your installation of docker toolbox should have created a docker VM named `default` in the Virtualbox.  This a boot2docker VM  that runs the docker engine.  You can use `docker-machine` to manage this docker engine.
-6. make sure your running docker Client version 1.12.0 or higher on your laptop.  `docker version`. 
+6. make sure your running docker Client version 1.12.0 or higher on your laptop.  `docker version`.
 
 
-###Exercise 2
+### Exercise 2
 (Don't do it in the class if you only have 8G RAM)
-####Tune your VM for faster performance
+#### Tune your VM for faster performance
 1. Open up virtual box
 2. Power off the `default VM`.  Right click and select `power off`.
 2. select the `default` VM
@@ -107,7 +99,7 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 
 
 ### Exercise-4
-####Creating source file.
+#### Creating source file.
 Source file are used to set the environment variable to communicate to the docker process running install a VM installed in the virtualbox.
 
 1. In the same terminal window
@@ -121,7 +113,7 @@ Source file are used to set the environment variable to communicate to the docke
 
 
 ### Exercise-5
-####Setting the Environment variables using source file
+#### Setting the Environment variables using source file
 Now, you can use the `source.docker` file to source your environment variables.
 
 1. Switch to your terminal Window.
@@ -142,8 +134,8 @@ docker-machine start default
 ##Extras
 **Do not do this in the class**
 
-###Exercise-3
-####Ssh into your Docker VM
+### Exercise-3
+#### Ssh into your Docker VM
 You can also ssh into the docker VM. This is not needed for this lab, but just showing you the feature of docker-machine.
 `docker-machine ssh  default`
 Notice, after you run this command, you will get inside the Docker VM on the Virtual Box.  This VM runs your docker engine. You can run your docker command directly on this VM.  Go ahead and type
