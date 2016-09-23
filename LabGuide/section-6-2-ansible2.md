@@ -1,16 +1,5 @@
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Content**
 
-	- [Ansible - Using Ansible to manage NXOS devices (Introduction)](#)
-	- [Section-6-2-1 : Ansible Setup](#)
-		- [Exercise 1](#)
-			- [Setting up the directory structure to host ansible files](#)
-		- [Exercise 3](#)
-			- [Creating Host Inventory File](#)
-		- [Exercise 4](#)
-			- [Creating credentials file](#)
-		- [Exercise 5](#)
-			- [Ping Test.  Make sure your Switch can reach internet.](#)
-	- [Exercise 6](#)<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
    - [Ansible - Using Ansible to manage NXOS devices (Introduction)](#ansible-using-ansible-to-manage-nxos-devices-introduction)   
    - [Section-6-2-1 : Ansible Setup](#section-6-2-1-ansible-setup)   
