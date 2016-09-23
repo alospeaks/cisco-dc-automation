@@ -1,6 +1,23 @@
-#NXOS Onbox Programmability Guide
----
-In progress ..do not do this section
+NXOS Onbox Programmability Guide
+----
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [NXOS Onbox Programmability Guide](#nxos-onbox-programmability-guide)   
+   - [** In progress ..do not do this section**](#in-progress-do-not-do-this-section)   
+   - [Guestshell (optional)](#guestshell-optional)   
+      - [Exercise 1 - Playing with guestshell](#exercise-1-playing-with-guestshell)   
+   - [Scheduler](#scheduler)   
+   - [Python](#python)   
+   - [Bash Shell (optional)](#bash-shell-optional)   
+      - [Exercise 1:  Enable bash shell](#exercise-1-enable-bash-shell)   
+      - [Exercise 2:  Using with bash shell](#exercise-2-using-with-bash-shell)   
+
+<!-- /MDTOC -->
+
+
+
+** In progress ..do not do this section**
+----
 
 
 
