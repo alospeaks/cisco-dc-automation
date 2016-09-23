@@ -32,9 +32,10 @@ http://docs.ansible.com/ansible/list_of_network_modules.html
 3. Select new folder
 4. name it `roles`
 5. Repeat above and create following folders.
-    6. templates
-    7. groups_vars
-    8. hosts_vars
+    1. templates
+    2. groups_vars
+    3. hosts_vars
+    4. files
 
 ### Exercise 3
 ####Creating Host Inventory File
@@ -154,7 +155,7 @@ To get snippet
 ## Part 2 : Simple Ansible Playbooks
 
 ###Exercise 1
-####Get all the information about the switch
+####Gather facts about the switch
 use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 
 1. Under `ansible` folder , create a new file. Right click and select `New File`
@@ -174,14 +175,28 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
         - name: get switch facts
           nxos_facts:
 
-        - template: src=templates/facts.j2 dest=files/facts/{{ inventory_hostname }}_facts.json
+        - template: src=templates/facts.j2 dest=files/{{ inventory_hostname }}_facts.json
     ```
 
-5. create jinja2 template to store the data
-6. Right click on the `templates` folder and create a new file. name it `facts.j2`
-7. Add the following content to it:
+5. Save the file `CMD + S`
+6. create jinja2 template to store the data
+6. Right click on the `templates` folder and create a new file. Name it `facts.j2`
+7. Add the following content to this file:
+
     ```
     DEVICE: {{ inventory_hostname }}
+
+    Version:
+    {{ kickstart | to_nice_json }}
+
+    Platform:
+    {{ platform | to_nice_json }}
+    
+    vlan Info:
+    {{ vlan_list | to_nice_json }}
+
+    Interfaces:
+    {{ interfaces_list | to_nice_json }}
 
     Power Supply Info:
     {{ power_supply_info | to_nice_json }}
@@ -192,7 +207,8 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 
 5. switch to ansible container and run the playbook
     1. `ansible-playbook -i hosts ex-show-facts.yml`
-6. Switch to ATOM and go to files directory. View the json files for each of the switch.
+6. Switch to ATOM and go to `files` directory. View the json files for each of the switch.
+
 
 ###Exercise 1
 ####Using the show version module
