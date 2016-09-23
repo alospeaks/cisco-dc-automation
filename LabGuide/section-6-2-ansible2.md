@@ -1,5 +1,5 @@
 
-#Ansible - Using Ansible to manage NXOS devices
+#Ansible - Using Ansible to manage NXOS devices (Introduction)
 Ansible is an open-source software platform for configuring ,managing and orchestrating compute and switching infrastructure. Ansible features a state-driven resource model that describes the desired state of computer systems and services.  Ansible is agentless and uses push model while puppet and chef are pull model using agents on the host.  Ansible uses YAML to configure playbooks.
 Playbooks contains one or multiple plays and plays contains one or multiple tasks.  Tasks talks to ansible module. Ansible module are python scripts that configures the devices in the inventory  list.   Playbook is applied to host inventory file.  Inventory file contains list of all the devices that needs to be automated. Within a single play, you can specify which host this play applies to  from the list of all available host defined in the inventory file.
 
@@ -24,7 +24,7 @@ the same tasks in multiple playbooks, turn them into roles.
 http://docs.ansible.com/ansible/list_of_network_modules.html
 
 
-## Ansible Setup
+## Part 1 : Ansible Setup
 ### Exercise 1
 #### Setting up the directory structure to host ansible files
 1. Switch to `ATOM` Editor
@@ -139,15 +139,40 @@ http://docs.ansible.com/ansible/faq.html
 3. Run Ping playbook.
     1. `ansible-playbook -i hosts ping.yml`
 
+#####Ansible Help
+To see all the nexus modules:
+ansible-doc -l | grep nxos
+
+To get snippet
+ansible-doc -s nxos_config
+
+
 
 ----
 
-## Ansible Simple Playbook
+## Part 2 : Ansible Simple Playbook
 
-###Exercise 1 (don't do this WIP)
+###Exercise 1
+####Using the show version module
+1. Under `ansible` folder , create a new file. Right click and select `New File`
+3. name it `ex-show-version.yml`
+4. copy and past the following :
+gather facts
+command module
+debug module
+
+5. switch to ansible container and run the playbook
+    1. `ansible-playbook -i hosts ex-show-version.yml`
+6. Verify the configuration on using Switch CLI
+7.
+###Exercise 2
 ####Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
 http://docs.ansible.com/ansible/nxos_config_module.html
+
+1. Under `ansible` folder , create a new file. Right click and select `New File`
+2. name it `ex-config-module.yml`
+3. copy and past the following :
 
 ```
 ---
@@ -165,12 +190,6 @@ http://docs.ansible.com/ansible/nxos_config_module.html
           - 10 permit ip 10.241.16.91/32 any
           - 20 permit ip 140.84.159.66/32 any
           - 30 permit ip 140.84.54.128/26 any
-          - 40 permit ip 152.69.77.16/28 any
-          - 50 permit ip 152.69.77.32/28 any
-          - 60 permit ip 10.153.162.0/23 any
-          - 70 permit ip 10.153.162.0/23 any
-          - 80 permit ip 10.153.162.0/23 any
-          - 90 permit ip 10.153.162.0/23 any
           - 240 deny ip any any
         parents: ip access-list 50-SNMP-Access
         before: ip access-list 50-SNMP-Access
@@ -178,167 +197,9 @@ http://docs.ansible.com/ansible/nxos_config_module.html
         provider: "{{ creds }}"
 
 ```
-
-###Exercise 2
-####Using the nxos_template module
-
-###Exercise 3
-####Creating the data file
-1. Switch back to the `ATOM` editor
-2. Right click on the `ansible` folder and select `New File`
-3. name the folder `base-vars.yml`
-4. copy and paste the following in the file.
-
-    ```
-    snmp_acl:
-        - 10.241.16.91/32
-        - 10.132.243.9/32
-        - 152.69.77.32/28
-    ```
-5. Save the file `cmd + S`
-
-###Exercise 4
-####Using Creating Jinja2 template
-1. Go to `Ansible` folder and then to `templates` folder
-2. Right click on the `templates` folder and select `New File`
-3. name the file `basetemplate.j2`
-4. copy and paste the following:
-
-    ```
-    #snmp acl configuration
-    no ip access-list 50-SNMP-Access
-    ip access-list 50-SNMP-Access
-       {% for sourceip in snmp_acl %}
-       permit ip {{ sourceip }} any
-       {% endfor %}
-       deny ip any any
-    ```
-7. Save the file `cmd + S`
-
-
-###Exercise 5
-####Creating playbook to configure switch using jinja2 template
-In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp access list.  
-
-This playbook will use the data file (base-vars.yml) and render those data into the jinja2 template (basetemplate.j2). The playbook (baseconfig.yml) calls this jinja2 template via ansible  nxos template module.
-
-This modules provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
-
-2. Using `ATOM` create a new playbook. Right click on the `ansible` folder and select `New File`
-3. name it `baseconfig.yml`
-4. It should look like this
-
-    ```
-    ---
-    - name: template testing
-      hosts: n9k-1
-      connection: local
-      gather_facts: no
-      tasks:
-        - name: obtain login credentials
-          include_vars: credentials.yml
-        #contains all the base configuration data
-        - name: getting the data file
-          include_vars: base-vars.yml
-
-        #renders the jinja2 template
-        - name: configure base template
-          nxos_template:
-            provider: "{{ creds }}"
-            src: basetemplate.j2
-    ```
-
-5. you can take a look at my file here:   https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/baseconfig.yml
-
-
-#### Running the playbook
-1. Switch to ansible container terminal
-2. cd to ansible folder and run the playbook
-3. `ansible-playbook -i hosts baseconfig.yml`
-
-
-#### Verifying the configuration on the switches
-1. switch to ssh session to the switch
-2. `show run`
-3. verify the configuration
-
-###Exercise 11
-####Adding more base configuration
-1. update your data file with other data that you need to have in your base configuration.
-2. Here is my list, you can add anything u like.
-3. https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/base-vars.yml
-
-![ansible2](/images/ansible2-1.png)
-
-####Updating the jinja2 template
-1. From the 'Atom' editor
-2. open `basetemplate.j2`
-3. update the template to reflect what u want in your configuration.
-4. It should look similar to this.
-
-    ![ansible2](/images/ansible2-2.png)
-
-5. Take a look at my template here:  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
-
-#### Run the playbook again
-1. Switch to the ansible terminal
-2. `ansible-playbook -i hosts baseconfig.yml`
-
-#### Verify the configuration on the switches
-1. switch to ssh session to the switch
-2. `show run`
-3. verify the configuration
-
-###Exercise 12
-####Base Configuration on switches
-Ensure the all the switches in the DC has following base configuration
-
-
-ntp server 10.68.0.41 use-vrf management
-
-
-
-### Exercise 14
-###Configure ipv4 address to the interface
-Configure interface eth1/1 with 10.1.100.2/24
-
-1. Switch to your ansible terminal
-2. Lets make a copy of this script.
-3. cp examples-ipv4interface.yml  hk-ipv4interface.yml
-4. Switch to ATOM editor
-5. double click the file and edit it. Modified as per requirement.  you will have to delete few things and make sure
-http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hk-ipv4interface.yml
-6. Switch to the Switch CLI terminal
-7. Verify that no ip address is configured on eth1/1
-8. show run interface
-9. Switch to ansible terminal
-10. run the playbook
-11. ansible-playbook -i hosts hk-ipv4interface.yml
-12. Repeat 3 and compare the result.
-
-### Exercise 15
-####Show neighbors
-
-1. Switch to your ansible terminal
-2. Lets make a copy of this script.
-3. `cp get-neighbors.yml  hk-get-neigbors.yml`
-4. Switch to ATOM windows
-5. edit the file
-6. modify the source and destination for the template.
-http://gitlab.cisco.com/hemakuma/se-training/blob/master/ansible/how-to/hk-get-neigbors.yml
-
-7. This tells ansible to use the jinja2 template named neigbhors.j2 located at /nxos-ansible/templates/ folder to format the output.  It also tells ansible to  place the out in the /nxos-ansible/myscripts/ folder and name it neighbors.json.
-register saves the output in a variable called my_neighbor.   Read more about register variable here  Conditionals — Ansible Documentation
-click  ansible --> templates --> neighbors.j2
-notice how the register variable is used in the template.
-8. Switch to ansible window
-9. run the playbook
-10. `ansible-playbook  -i hosts hk-get-neigbors.yml`
-11. Switch to ATOM Editor
-12. Examine the output
-13. click on ansible folder.
-14. you should see `neighbors.json` file.  Double click it and examine the output.
-
+5. switch to ansible container and run the playbook
+    1. `ansible-playbook -i hosts ex-config-module.yml`
+6. Verify the configuration on using Switch CLI
 
 #Roles
 Simply put, roles are a further level of abstraction that can be useful for organizing playbooks. As you add more and more functionality and flexibility to your playbooks, they can become unwieldy and difficult to maintain as a single file. Roles allow you to create very minimal playbooks that then look to a directory structure to determine the actual configuration steps they need to perform.
@@ -395,7 +256,7 @@ We created a role to hold all the base configuration data.  Base configuration i
     ![ansiblerole](/images/ansible-301.png)
 
 
-###Exercise 3
+###Exercise 4
 #### Create jinja2 template for the base configuration.
 
 nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
@@ -431,7 +292,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 
 4. Save the file `CMD + S`
 
-###Exercise 4
+###Exercise 5
 #### Create handler to save the configuration
 1. Navigate to `ansible --> roles --> baseconfig --> handlers`
 2. Open up the `main.yml` file
@@ -447,7 +308,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
     ```
 4. Save the file `CMD + S`
 
-###Exercise 5
+###Exercise 6
 #### Create tasks to create a template for base configuration.
 1. Navigate to `ansible --> roles --> baseconfig --> tasks`
 2. Open up the `main.yml` file
@@ -470,7 +331,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 5. Save the file `CMD + S`
 
 
-###Exercise 6
+###Exercise 7
 #### Create playbook to push this base configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-baseconfig.yml`
@@ -487,7 +348,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
     ```
 4. Save the file `CMD + S`
 
-###Exercise 7
+###Exercise 8
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -495,7 +356,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
-###Excercise 8
+###Excercise 9
 #### New NTP server
 Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
 
@@ -515,10 +376,7 @@ Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You
 
 
 ----
-## VLAN configuration
-
-### Exercise 13
-####Practical Example - Automating VLAN provisioning
+## Automating VLAN provisioning
 **Problem Statement**
 Users perform manual Day-2 operations to configure network elements repeatedly for the purpose of on-boarding new workloads. One common category of Day-2 configuration activity is performing routine VLAN related operations:
 1. Check if VLAN exists
@@ -540,7 +398,7 @@ Ensure following vlans are configured on all the switches.
 
 
 
-
+### Exercise 10
 #### vlan configuration repository
 We created a role to hold all the vlan configuration data. Lets modify it to meet the above requirement.
 
@@ -834,84 +692,6 @@ Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You
 4. Switch to `ATOM` editor.
     1. Navigate to `ansible --> roles --> baseconfig-->backup`
     2. you should see your backupfiles
-
-
-##Customer User Cases
-
-###Exercise 1
-####Configuring roles
-  base config automation (e.g. AAA, syslog/snmp, acl 50, NTP, etc)  for Cisco
-
-Here is the Customers base configuration that they like to automate using ansible.
-
-```
-ntp server 10.68.0.41 use-vrf management
-ntp server 10.68.0.42 use-vrf management
-ntp server 10.246.0.1 use-vrf management
-ntp server 10.246.0.2 use-vrf management
-ntp server 144.20.15.229 use-vrf management
-ntp server 144.20.15.230 use-vrf management
-ntp source-interface  mgmt0
-
-ip access-list 50-SNMP-Access
-  5 permit ip 10.132.243.9/32 any
-  10 permit ip 10.241.16.91/32 any
-  20 permit ip 140.84.159.66/32 any
-  30 permit ip 140.84.54.128/26 any
-  40 permit ip 152.69.77.16/28 any
-  50 permit ip 152.69.77.32/28 any
-  60 permit ip 10.153.162.0/23 any
-  70 permit ip 10.153.162.0/23 any
-  80 permit ip 10.153.162.0/23 any
-  90 permit ip 10.153.162.0/23 any
-  100 permit ip 148.87.43.0/24 any
-  110 permit ip 141.146.7.0/25 any
-  120 permit ip 148.87.109.0/25 any
-  130 permit ip 10.177.40.45/32 any
-  140 permit ip 10.172.212.62/32 any
-  150 permit ip 192.135.82.116/32 any
-  160 permit ip 10.165.246.75/32 any
-  170 permit ip 148.87.13.32/27 any
-  180 permit ip 139.185.121.0/24 any
-  190 permit ip 10.167.208.87/32 any
-  200 permit ip 10.221.65.11/32 any
-  210 permit ip 172.17.10.3/32 any
-  220 permit ip 172.17.16.35/32 any
-  230 permit ip 10.222.24.144/28 any
-  240 deny ip any any
-
-radius-server host 10.230.86.165 key 7 “radiuskey” authentication accounting
-radius-server host 152.69.76.90 key 7 “radiuskey" authentication accounting
-
-aaa group server radius pdit_radius
-    server 10.230.86.165
-    server 152.69.76.90
-    use-vrf management
-    source-interface mgmt0
-
-
-cli alias name wri copy run start
-cli alias name q exit
-cli alias name swt switchto vdc
-cli alias name wr copy run start
-line console
-  exec-timeout 10
-line vty
-  session-limit 15
-  exec-timeout 10
-
-ip radius source-interface mgmt0
-
-logging server 144.20.94.2 5 use-vrf management
-logging server 10.222.24.82 5 use-vrf management
-logging server 10.236.130.4 5 use-vrf management
-logging timestamp microseconds
-logging monitor 7
-logging level syslog 5
-logging level local7 6
-no logging console
-
-```
 
 
 #Ansible Tips
