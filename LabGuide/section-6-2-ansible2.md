@@ -142,16 +142,57 @@ http://docs.ansible.com/ansible/faq.html
 
 #####Ansible Help
 To see all the nexus modules:
-ansible-doc -l | grep nxos
+`ansible-doc -l | grep nxos`
 
 To get snippet
-ansible-doc -s nxos_config
+`ansible-doc -s nxos_config`
 
 
 
 ----
 
-## Part 2 : Ansible Simple Playbook
+## Part 2 : Simple Ansible Playbooks
+
+###Exercise 1
+####Get all the information about the switch
+use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
+
+1. Under `ansible` folder , create a new file. Right click and select `New File`
+3. name it `ex-show-facts.yml`
+4. copy and past the following :
+
+    ```
+    ---
+    - name: get facts
+      hosts:n9k-1
+      connection: local
+      gather_facts: no
+      tasks:
+        - name: obtain login credentials
+          include_vars: credentials.yml
+
+        - name: get switch facts
+          nxos_facts:
+
+        - template: src=templates/facts.j2 dest=files/facts/{{ inventory_hostname }}_facts.json
+    ```
+
+5. create jinja2 template to store the data
+6. Right click on the `templates` folder and create a new file. name it `facts.j2`
+7. Add the following content to it:
+    ```
+    DEVICE: {{ inventory_hostname }}
+
+    Power Supply Info:
+    {{ power_supply_info | to_nice_json }}
+
+    Fan Info:
+    {{ fan_info | to_nice_json }}
+    ```
+
+5. switch to ansible container and run the playbook
+    1. `ansible-playbook -i hosts ex-show-version.yml`
+6. Verify the configuration on using Switch CLI
 
 ###Exercise 1
 ####Using the show version module
@@ -165,7 +206,7 @@ debug module
 5. switch to ansible container and run the playbook
     1. `ansible-playbook -i hosts ex-show-version.yml`
 6. Verify the configuration on using Switch CLI
-7.
+
 ###Exercise 2
 ####Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
