@@ -447,7 +447,7 @@ Ensure following vlans are configured on all the switches.
 
 
 
-### Exercise 10
+### Exercise 1
 #### vlan configuration repository
 This role allows us to Configure and maintain vlans on all the switches.
 Lets update the vars directory with all our variables.
