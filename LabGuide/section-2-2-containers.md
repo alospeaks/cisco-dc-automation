@@ -1,12 +1,36 @@
+Docker Containers
+---
 
-#Docker Containers
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [Docker Containers](#docker-containers)   
+   - [Gitlab and Jenkins Container](#gitlab-and-jenkins-container)   
+      - [Exercise-1](#exercise-1)   
+         - [Create docker compose file to install gitlab and jenkins](#create-docker-compose-file-to-install-gitlab-and-jenkins)   
+      - [Exercise-2](#exercise-2)   
+         - [Spin up gitlab and jenkins container](#spin-up-gitlab-and-jenkins-container)   
+   - [Ansible Docker Container](#ansible-docker-container)   
+      - [Exercise-1](#exercise-1)   
+         - [Run the Ansible container](#run-the-ansible-container)   
+   - [Nxtoolkit Container](#nxtoolkit-container)   
+      - [Exercise-1](#exercise-1)   
+         - [Run the Nxtoolkit container](#run-the-nxtoolkit-container)   
+      - [Exercise 2](#exercise-2)   
+         - [Spin up a nxtoolkit Container using this image](#spin-up-a-nxtoolkit-container-using-this-image)   
+   - [Docker Tips](#docker-tips)   
+
+<!-- /MDTOC -->
+
+
+
+
 Lets build some containers on our docker engine.
 
 ## Gitlab and Jenkins Container
 We need gitlab for distributed source control of our files.  We could have used github but we wanted to see full integration with Jenkins and other tools, therefore we installed it locally.  With dockers, installing these opensource software is pretty easy.  In this section we will be installing couple of docker containers.
 
-###Exercise-1
-####Create docker compose file to install gitlab and jenkins
+### Exercise-1
+#### Create docker compose file to install gitlab and jenkins
 Docker compose is one way of spinning up docker containers. Basically you create a docker-compose.yml file and run docker-compose up command.
 
 1. Switch to the terminal window
@@ -54,8 +78,8 @@ Docker compose is one way of spinning up docker containers. Basically you create
 
   ```
 
-###Exercise-2
-####Spin up gitlab and jenkins container
+### Exercise-2
+#### Spin up gitlab and jenkins container
 
 1. Switch to the terminal window
 2. cd `training`
@@ -71,10 +95,10 @@ Docker compose is one way of spinning up docker containers. Basically you create
 **We will configure gitlab and jenkins in later section**
 
 
-##Ansible Docker Container
+## Ansible Docker Container
 Lets install Ansible on  a docker container.
 
-###Exercise-1
+### Exercise-1
 #### Run the Ansible container
 1. Switch to `ATOM` editor
   1. Right click on the `training` folder and select `New Folder`.  Name it `ansible`.
@@ -96,13 +120,13 @@ Lets install Ansible on  a docker container.
 
 ## Nxtoolkit Container
 Nxtoolkit container is prebuilt container that has Cisco nxtoolkit installed.  nxtoolkit provides python libraries and examples on how to interact with Cisco's Nexus switches using NXAPI.
-###Exercise-1
+### Exercise-1
 #### Run the Nxtoolkit container
 1. Switch to `ATOM`
 2. Right click on the `training` folder and select `New Folder`. Name it `nxtoolkit`
 
-###Exercise 2
-####Spin up a nxtoolkit Container using this image
+### Exercise 2
+#### Spin up a nxtoolkit Container using this image
 1. Switchback to the terminal window.
 2. type `pwd` to verify your working directory. You should be in the `training/nxtoolkit` directory
 3. Mac Users    
@@ -132,7 +156,7 @@ You are now ready to do off box programming.
 
 
 
-#Docker Tips
+## Docker Tips
 If your boot2docker can not resolve dns entry?
 `docker-machine default ssh`
 
