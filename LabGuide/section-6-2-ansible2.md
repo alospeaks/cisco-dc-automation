@@ -254,6 +254,7 @@ Organizing things into roles also allows you to reuse common configuration steps
 
 In general, the idea behind roles is to allow you to define what a server is supposed to do, instead of having to specify the exact steps needed to get a server to act a certain way.
 
+----
 ##Base Configuration
 Applying the base configuration to all switches in the inventory using jinja2 template.  Templates are good for mostly static configuration.  Since base configuration does not change that often, it is good idea to put them in a template.
 
