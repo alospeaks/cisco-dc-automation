@@ -1,11 +1,42 @@
-##NXToolKit
+NXToolKit
+---
+**Table of Contents**
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [NXToolKit](#nxtoolkit)   
+   - [Introduction](#introduction)   
+      - [Exercise 1](#exercise-1)   
+         - [Creating  login credential file.](#creating-login-credential-file)   
+      - [Exercise 2](#exercise-2)   
+         - [Logging in your nxtoolkit container](#logging-in-your-nxtoolkit-container)   
+      - [Exercise 3](#exercise-3)   
+         - [Running nxos show commands using nxtoolkit](#running-nxos-show-commands-using-nxtoolkit)   
+      - [Exercise 4](#exercise-4)   
+         - [Showing all vlans configured on the switch](#showing-all-vlans-configured-on-the-switch)   
+      - [Exercise 5](#exercise-5)   
+         - [Create a Script that displays all the interfaces that have "operational state" as up.](#create-a-script-that-displays-all-the-interfaces-that-have-operational-state-as-up)   
+      - [Exercise 6](#exercise-6)   
+      - [Configuring VLAN using nxtoolkit](#configuring-vlan-using-nxtoolkit)   
+      - [Exercise 7](#exercise-7)   
+         - [Configuring Physical interface](#configuring-physical-interface)   
+      - [Exercise 8](#exercise-8)   
+         - [Configuring L3 Interface](#configuring-l3-interface)   
+      - [Exercise 9](#exercise-9)   
+         - [Configuring SVI (optional)](#configuring-svi-optional)   
+      - [Exercise 10](#exercise-10)   
+         - [Deleting SVI (optional)](#deleting-svi-optional)   
+
+<!-- /MDTOC -->
+
+Introduction
+---
 NXtoolkit is a object based programmability in the Open NX-OS.Nxtoolkit is a set of python libraries that allow basic configuration of the Cisco Nexus 9000/3000 Series Switch. It is intended to allow users to quickly begin using the REST API and accelerate the process of programming and automating a Cisco Nexus 9000/3000 based network.
 
 It abstracts away the complexity of the API.  
 https://github.com/datacenter/nxtoolkit
 
 ### Exercise 1
-####Creating  login credential file.
+#### Creating  login credential file.
 All the python scripts requires switch login information (Credentials).  You can either manually type it each time you run these sample scripts or you can put it in file called `credentials.py` file and the scripts will automatically read the credentials from this file.
 
 1. Switch to  `ATOM` editor window
@@ -19,7 +50,7 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
 
 
 ### Exercise 2
-####Logging in your nxtoolkit container
+#### Logging in your nxtoolkit container
 1. Close any terminal window you have already open.
 2. Open a new terminal window.  For exercises in this section, we will use this terminal.  (windows users, open up `git bash` terminal)
 3. Login to the container
@@ -31,7 +62,8 @@ https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/credentials.
 
    ```
 
-### Exercise 3:  Running nxos show commands using nxtoolkit
+### Exercise 3
+#### Running nxos show commands using nxtoolkit
 1. Inside nxtoolkit container, type the following.
 2. `cd myscripts`
 3. `cd samples`
@@ -52,7 +84,7 @@ If you have time, get a look at the what "interface class" module does..GitHub -
 https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 
 ### Exercise 4
-####Showing all vlans configured on the switch
+#### Showing all vlans configured on the switch
 
 1. Switch to  your nxostoolkit terminal
 2. type `./nx-show-l2bds.py`
@@ -68,7 +100,8 @@ https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 
 **TIP:**  Going forward, keep both of the terminal window open; use nxtoolkit terminal to run the python scripts and use the ssh session to switch to verify the configurations.
 
-### Exercise 5:  Create a Script that displays all the interfaces that have "operational state" as up.
+### Exercise 5
+#### Create a Script that displays all the interfaces that have "operational state" as up.
 
 1. Lets make copy of `nx-show-interfaces.py` and modify the copy  (u can name it anything you like but i usually put my initials as prefix to the original script so that i can easily find my scripts later )
 2. In your nxtoolkit terminal
@@ -120,7 +153,7 @@ List Comprehensions in Python
 
 
 ### Exercise 6
-###Configuring VLAN using nxtoolkit
+### Configuring VLAN using nxtoolkit
 **Goal:** Configure Vlan 300 and 301 using nxtoolkit
 
 **Solution:** Modify `nx-create-l2bds.py`
@@ -148,8 +181,8 @@ By now you should have got the hang of how to run scripts. How to switch between
 http://gitlab.cisco.com/hemakuma/se-training/tree/master/nxtoolkit/samples
 
 
-###Exercise 7
-####Configuring Physical interface
+### Exercise 7
+#### Configuring Physical interface
 In this exercise, we will configure interface eth1/2, eth1/3 as follows:
 ```
 access vlan: 300
@@ -178,8 +211,8 @@ description: "Configured by nxtoolkit"
 **Reference**
 Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make sense of it.  https://github.com/datacenter/nxtoolkit/blob/master/nxtoolkit/nxphysobject.py
 
-###Exercise 8
-####Configuring L3 Interface
+### Exercise 8
+#### Configuring L3 Interface
 
 **Goal:** Configure interface eth1/2 with ip address of 192.168.60.1/24
 
@@ -197,8 +230,8 @@ Take a look at all the libraries that nxtoolkit uses at git hub.  Try to make se
    2. `./hk-config-ipv4.py`
 5. Verify the configuration on the switch CLI.
 
-###Exercise 9
-####Configuring SVI (optional)
+### Exercise 9
+#### Configuring SVI (optional)
 Optional ...do it later; not in the class
 
 Configure following SVIs:
@@ -220,8 +253,8 @@ Note: vlans should be already created by the script in exercise 6.
 
    HELP  https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/hk-config-svi.py
 
-###Exercise 10
-####Deleting SVI (optional)
+### Exercise 10
+#### Deleting SVI (optional)
 Delete following SVI
 vlan 301
 
