@@ -2,20 +2,7 @@
 ---
 In progress ..do not do this section
 
-##EEM
-##Scheduler
-##Python
-##Guestshell (optional)
-###Exercise 1 - Playing with guestshell
-##Bash Shell (optional)
-###Exercise 1:  Enable bash shell
-###Exercise 2:  Using with bash shell
-##Sandbox
-###Exercise 1:  Enabling NXAPI on your NXOSv Switch
-###Exercise 2: Accessing and using the NXAPI using Sandbox built inside the switch.
-###Exercise 3:  Show command from Sandbox.
-###Exercise 4: Configuring VLAN 999 using Sandbox
-###Exercise 5:  Generating Python Code.
+
 
 
 ## Guestshell (optional)
