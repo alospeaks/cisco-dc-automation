@@ -1,6 +1,6 @@
 1. we need linux server
 
-
+2. Full evpn configuration
 
 
 
