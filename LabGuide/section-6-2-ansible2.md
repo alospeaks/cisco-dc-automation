@@ -176,38 +176,9 @@ http://docs.ansible.com/ansible/nxos_config_module.html
         provider: "{{ creds }}"
 
 ```
-###using nxos_vlan module (WIP)
-http://docs.ansible.com/ansible/nxos_vlan_module.html
-
-The to ansible scalabilty and readability is to how you separate your data from the configuration.
-
 
 ###Exercise 7
 ####Using the nxos_template module
-
-nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
-
-**What is Jinja2 Template?**
-
-Jinja2 is a very popular and powerful Python-based template engine. Templates look very similar to normal text-based files except for the occasional variables or code that surrounds the special tags. These get evaluated and are mostly replaced by values at runtime, creating a text file, which is then copied to the destination host. The following are the two types of tags that Jinja2 templates accept:
-
-`{{ }}` embeds variables inside a template and prints its value in the resulting file. This is the most common use of a template.
-For example: `{{ hostname }}`
-
-`{% %}` embeds statements of code inside a template, for example, for a loop, it embeds the if-else statements, which are evaluated at runtime but are not printed.
-
-So where does jinja2 gets the values for its variables?  At the runtime of the playbook, Jinja2 has access to all the variable that is reference inside that particular playbook.  So the variables inside the jinja2 template is substituted with the values from the facts and variable obtained from the playbook at the run time.
-
-
-**Steps to create the templates:**
-
-1. Always start with the actual configuration file.
-2. Identify the parameters that needs to be dynamically generated
-3. create a template. Add variables as you see fit.
-4. create the variable file.
-5. create the playbook
-6. run the playbook
-
 
 ###Exercise 8
 ####Creating the data file
@@ -420,6 +391,32 @@ We created a role to hold all the base configuration data.  Base configuration i
 
 ###Exercise 3
 #### Create jinja2 template for the base configuration.
+
+nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
+
+**What is Jinja2 Template?**
+
+Jinja2 is a very popular and powerful Python-based template engine. Templates look very similar to normal text-based files except for the occasional variables or code that surrounds the special tags. These get evaluated and are mostly replaced by values at runtime, creating a text file, which is then copied to the destination host. The following are the two types of tags that Jinja2 templates accept:
+
+`{{ }}` embeds variables inside a template and prints its value in the resulting file. This is the most common use of a template.
+For example: `{{ hostname }}`
+
+`{% %}` embeds statements of code inside a template, for example, for a loop, it embeds the if-else statements, which are evaluated at runtime but are not printed.
+
+So where does jinja2 gets the values for its variables?  At the runtime of the playbook, Jinja2 has access to all the variable that is reference inside that particular playbook.  So the variables inside the jinja2 template is substituted with the values from the facts and variable obtained from the playbook at the run time.
+
+
+**Steps to create the templates:**
+
+1. Always start with the actual configuration file.
+2. Identify the parameters that needs to be dynamically generated
+3. create a template. Add variables as you see fit.
+4. create the variable file.
+5. create the playbook
+6. run the playbook
+
+---
+
 1. Navigate to `ansible --> roles --> baseconfig --> templates`
 2. Right click on the `templates` folder and select `New File`. Name it `basetemplate.j2`
 3. copy and paste the content from this link.  This is the jinja 2 template.
