@@ -24,7 +24,7 @@ the same tasks in multiple playbooks, turn them into roles.
 http://docs.ansible.com/ansible/list_of_network_modules.html
 
 
-
+## Ansible Setup
 ### Exercise 1
 #### Setting up the directory structure to host ansible files
 1. Switch to `ATOM` Editor
@@ -140,9 +140,11 @@ http://docs.ansible.com/ansible/faq.html
     1. `ansible-playbook -i hosts ping.yml`
 
 
+----
 
+## Ansible Simple Playbook
 
-###Exercise 6 (don't do this WIP)
+###Exercise 1 (don't do this WIP)
 ####Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
 http://docs.ansible.com/ansible/nxos_config_module.html
@@ -177,10 +179,10 @@ http://docs.ansible.com/ansible/nxos_config_module.html
 
 ```
 
-###Exercise 7
+###Exercise 2
 ####Using the nxos_template module
 
-###Exercise 8
+###Exercise 3
 ####Creating the data file
 1. Switch back to the `ATOM` editor
 2. Right click on the `ansible` folder and select `New File`
@@ -195,7 +197,7 @@ http://docs.ansible.com/ansible/nxos_config_module.html
     ```
 5. Save the file `cmd + S`
 
-###Exercise 9
+###Exercise 4
 ####Using Creating Jinja2 template
 1. Go to `Ansible` folder and then to `templates` folder
 2. Right click on the `templates` folder and select `New File`
@@ -214,7 +216,7 @@ http://docs.ansible.com/ansible/nxos_config_module.html
 7. Save the file `cmd + S`
 
 
-###Exercise 10
+###Exercise 5
 ####Creating playbook to configure switch using jinja2 template
 In this exercise, we will be using the data file (base-vars.yml) and jinja2 template (basetemplate.j2) to configure multiple snmp access list.  
 
