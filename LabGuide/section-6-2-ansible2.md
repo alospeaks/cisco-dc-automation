@@ -191,8 +191,8 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
     ```
 
 5. switch to ansible container and run the playbook
-    1. `ansible-playbook -i hosts ex-show-version.yml`
-6. Verify the configuration on using Switch CLI
+    1. `ansible-playbook -i hosts ex-show-facts.yml`
+6. Switch to ATOM and go to files directory. View the json files for each of the switch.
 
 ###Exercise 1
 ####Using the show version module
