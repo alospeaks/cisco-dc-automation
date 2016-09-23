@@ -1,16 +1,37 @@
-#Off Box Programmming
+Off Box Programming
+----
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [Off Box Programming](#off-box-programming)   
+   - [Introduction](#introduction)   
+   - [NXAPI CLI Based](#nxapi-cli-based)   
+      - [Exercise-1](#exercise-1)   
+         - [Creating VLAN using python code.](#creating-vlan-using-python-code)   
+      - [Exercise-2](#exercise-2)   
+         - [VLAN Consistency Checker](#vlan-consistency-checker)   
+      - [Exercise-3](#exercise-3)   
+         - [Write a python script to show the version of the switch.](#write-a-python-script-to-show-the-version-of-the-switch)   
+      - [Exercise-4](#exercise-4)   
+         - [Downloading Sample Codes](#downloading-sample-codes)   
+      - [Exercise-5](#exercise-5)   
+         - [Doing more complex scripting](#doing-more-complex-scripting)   
+
+<!-- /MDTOC -->
+
+Introduction
+---
 There is different ways that you can modify the attributes of the managed objects (MO). See picture below.  In this section will be using NXAPI-CLI based and NXAPI-REST based to manipulate these objects.
 Both methods are modifying the underlaying MOs.  NXAPI-CLI is sending CLI commands over HTTP to the switch.  The webserver in the switch strips off the http and sends the command to the CLI API which then modifies the MO.  NXAPI-REST directly modifying the MO.
 
 ![ob-1](/images/ob-2.png)  
 
-##NXAPI CLI Based
+## NXAPI CLI Based
 NX-API CLI based, is a easy way to programmatically configure and extract information  from Nexus switches. However it is not a REST API,   basically it send cli command wrapped around  HTTP in json or xml format . The response you get are also in json or xml which is very easy to manipulate.
 It uses pycsco library.
 https://github.com/jedelman8/pycsco: python modules to simplify the use of working with cisco nexus switches
 
-###Exercise-1
-####Creating VLAN using python code.
+### Exercise-1
+#### Creating VLAN using python code.
 The best way to get started is to use the sandbox to generate your base code and then modify it to meet your requirement.
 
 1. Create vlan 900 using python code generated from sandbox.
@@ -43,8 +64,8 @@ The best way to get started is to use the sandbox to generate your base code and
     1. Switch  to your `ssh session to the switch` terminal
     2. `show run vlan`  <-- verify that vlan got created
 
-###Exercise-2
-####VLAN Consistency Checker
+### Exercise-2
+#### VLAN Consistency Checker
 Its no fun just creating one vlan. We could do this faster with CLI.   Lets write up a little complex script.  This script uses `python lists` and `for` loops.  Google it up and learn little bit about lists and loops.  The goal should be to start learning from others code.  See how they do it and they practice with your own. Google if it doesn't make sense.
 
 **Goal:** Create a script to ensure the required vlans are present all the switches you manage in your network.  This is a very common requirement for lots of customers.  They want to make sure all the switches have same vlans configured.
@@ -69,8 +90,8 @@ Its no fun just creating one vlan. We could do this faster with CLI.   Lets writ
 11. Re-run the script. This time it should not make any changes and it verified that all the required vlans are on the switch.  Go ahead and delete one vlan and try to re-run the script.
 
 
-###Exercise-3
-####Write a python script to show the version of the switch.
+### Exercise-3
+#### Write a python script to show the version of the switch.
 **Homework.  Do not do it in the class.**
 
 Use the sandbox to generate the python code to show the version os running on your switch. Make sure to use `json-rpc`.  It is easier to read json rpc format.
@@ -92,8 +113,8 @@ Your output should look like this
 
 *Keep the nxtoolkit container, ATOM text editor and ssh  session  to switch  open all the time. We will be using all of them frequently.  Learn how to switch between them quickly to check and verify your configurations.*
 
-###Exercise-4
-####Downloading Sample Codes
+### Exercise-4
+#### Downloading Sample Codes
 We do not have to reinvent the wheel.  Most of the time, people have already written the script to meet some of your requirement.  All you need to do is to take that script and modify it to meet your requirement.  Some sources of script are git hub,  devnet community etc.
 https://github.com/datacenter/who-moved-my-cli  
 Lets  download some sample codes from git.
@@ -105,8 +126,8 @@ Lets  download some sample codes from git.
     3. `cd who-moved-my-cli`   <-- this is the directory where u will find all the sample scripts that you just downloaded.  
 3. Go to `ATOM` editor and you should see all the codes that you just downloaded.
 
-###Exercise-5
-####Doing more complex scripting
+### Exercise-5
+#### Doing more complex scripting
 *You will not be able to try this script in the lab as you only have one switch.  You need at least 2 switch for this script to work. Try this with real switches.*  
 The beauty of scripting comes, when u start manipulating the data and creating loops to do more complex task.
 
