@@ -9,11 +9,12 @@ DevOps Tools
    - [Code Editor](#code-editor)   
       - [Exercise-1](#exercise-1)   
          - [Installing Atom IDE](#installing-atom-ide)   
+      - [Exercise-2](#exercise-2)   
          - [Add git-plus plugins](#add-git-plus-plugins)   
    - [Virtual Box](#virtual-box)   
-      - [Exercise-2](#exercise-2)   
+      - [Exercise-1](#exercise-1)   
          - [Installing Virtual box](#installing-virtual-box)   
-      - [Exercise 3](#exercise-3)   
+      - [Exercise 2](#exercise-2)   
          - [Verify Virtual box installation](#verify-virtual-box-installation)   
    - [GIT](#git)   
       - [Exercise-1](#exercise-1)   
@@ -22,9 +23,9 @@ DevOps Tools
             - [Windows Users](#windows-users)   
    - [Do not do the sections below. These tool are not needed for the lab.](#do-not-do-the-sections-below-these-tool-are-not-needed-for-the-lab)   
    - [Vagrant Tool](#vagrant-tool)   
-      - [Exercise 4](#exercise-4)   
+      - [Exercise 1](#exercise-1)   
          - [Installing Vagrant Tool](#installing-vagrant-tool)   
-      - [Exercise 5](#exercise-5)   
+      - [Exercise 2](#exercise-2)   
          - [Verify installation of vagrant tool](#verify-installation-of-vagrant-tool)   
 
 <!-- /MDTOC -->
@@ -38,13 +39,15 @@ Introduction
 Most of the developers develop applications on their laptop.  They have most of the application development tools installed on their laptop. We will try to setup similar environment for you on your laptop. This way we can use these tool for today's lab and then you can have it on your laptop to continue your learning.  Lets install some of the tools:
 
 ## Code Editor
+To write codes, you will need a good text editor that does syntax highlighting. Atom is excellent editor for editing  codes. It is opensource so there is no fee for it.  Any text editor with syntax highlight will do.
+
 ### Exercise-1
 #### Installing Atom IDE
-To write codes, you will need a good text editor that does syntax highlighting. Atom is excellent editor for editing  codes. It is opensource so there is no fee for it.  Any text editor with syntax highlight will do.
 
 1. Download and install atom editor for your OS.
 http://atom.io
 
+### Exercise-2
 #### Add git-plus plugins
 1. Click on Atom
 2. click on Preference.
@@ -58,20 +61,24 @@ cmd + shift + H  <-- to get the command window
 ## Virtual Box
 Virtual box is a x86 virtualization product.  Basically it lets you run virutal machines on your laptop.
 
-### Exercise-2
+### Exercise-1
 #### Installing Virtual box
 
 1. Download and install Virtualbox for your OS.
     https://www.virtualbox.org/
 
-
-### Exercise 3
+### Exercise 2
 #### Verify Virtual box installation
 1. On the terminal window type `vboxmanage -v`
 
 
 ## GIT
-For source control.
+GIT is a very popular and efficient open source Version Control System. It tracks content such as files and directories.
+
+GIT stores the file content in BLOBs (binary large objects). The folders are represented as trees. Each tree contains other trees (subfolders) and BLOBs along with a simple text file which consists of the mode, type, name and SHA (Secure Hash Algorithm) of each blob and subtree entry. During repository transfers, even if there are several files with the same content and different names, the GIT software will transfer the BLOB once and then expand it to the different files.
+
+The history of your project is stored in a commit object. Every time you make a modification you have to commit it. The commit file keeps the author, committer, comment and any parent commits that directly precede it.
+
 ### Exercise-1
 #### Installing git
 ##### Mac Users
@@ -91,7 +98,7 @@ For source control.
 
 ## Do not do the sections below. These tool are not needed for the lab.
 ## Vagrant Tool
-### Exercise 4
+### Exercise 1
 #### Installing Vagrant Tool
 1. Download and install vagrant from here
     https://www.vagrantup.com/downloads.html
@@ -99,8 +106,7 @@ For source control.
 For more information see vagrant documentation
 https://www.vagrantup.com/docs/installation/
 
-
-### Exercise 5
+### Exercise 2
 #### Verify installation of vagrant tool
 Verify that it is installed correctly
 
