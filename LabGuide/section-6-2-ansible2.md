@@ -371,6 +371,8 @@ notice how the register variable is used in the template.
 Roles simplify the organization of the playbook.
 
 ##Base Configuration
+Applying the base configuration to all switches in the inventory using jinja2 template.  Templates are good for mostly static configuration.  Since base configuration does not change that often, it is good idea to put them in a template.
+
 ###Exercise 1
 ####Create ansible roles directory structure
 1. Switch to 'ansible container'
@@ -620,12 +622,106 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 
 ----
 
+
+## Uplink port Configuration.
+In this section, we will be configuring uplink ports. This will include changing the interface to L3 mode and then assigning ip to it.  We are going to use jinja2 template for this.
+
+###Exercise 1
+#### Uplinks configuration repository
+We have created a role to hold all the uplink configuration data.  
+
+Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need create folder for each host in this folder.  Ansible will search this folder to look for the variables.
+
+1. Navigate to `ansible --> hosts_vars`
+2. Right click and select `New Folder`. Name it `n9k-1.yml`
+3. copy and paste the following code.
+
+    ```
+    ---
+    uplink_interface:
+      - {int: "ethernet1/1", ip: 192.168.1.2/30}
+      - {int: "ethernet1/2", ip: 192.168.2.2/30}
+
+    ```
+4. Save the file `Cmd+S`
+
+###Exercise 2
+#### Create handler to save the configuration
+1. Navigate to `ansible --> roles --> uplinks --> handlers`
+2. Open up the `main.yml` file
+3. Copy and paste the following
+
+    ```
+    ---
+    # handlers file for baseconfig
+    - name: Save Config
+      nxos_config:
+        provider: "{{ creds }}"
+        lines:
+          - 'copy run start'
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 3
+#### Create playbook tasks to configure the switch ports.
+This time, we are going to use `nxos_template`  module to make these changes.  Read more about it here
+
+https://docs.ansible.com/ansible/nxos_template_module.html
+
+1. Navigate to `ansible --> roles --> uplinks --> tasks`
+2. Open up the `main.yml` file
+3. Copy and paste the following:
+
+    ```
+    ---
+    # tasks file for uplinks
+    - name: configure uplinks template
+      nxos_template:
+        provider: "{{ creds }}"
+        src: interface.j2
+        backup: yes
+      notify:
+        - Save Config
+
+    ```
+5. Save the file `CMD + S`
+
+
+###Exercise 6
+#### Create playbook to push host port configuration to the switch.
+1. Navigate to `ansible` folder
+2. Right click and select `New File`. Name it `deploy-uplinks.yml`
+3. Copy and paste the following:
+
+    ```
+    ---
+    - hosts: all
+      connection: local
+      strategy: free
+      roles:
+        - { role: login, tags: [ 'login' ] }
+        - { role: uplinks, tags: [ 'login', 'uplinks'] }
+    ```
+4. Save the file `CMD + S`
+
+###Exercise 7
+#### Lets run the playbook
+1. Switch to the `ansible container` terminal window.
+2. Run the playbook
+    1. `ansible-playbook -i hosts deploy-hostports.yml`
+3. Login into your switch.
+4. Verify that ansible has made those configuration.
+
+
+
+
+----
 ## Hostport Configuration.
 Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
 
 ###Exercise 1
 #### Hostport configuration repository
-We created a role to hold all the hostport configuration data.  Host port configuration includes things like `switch port access mode`,  etc that needs to be  provisioned to per switches basis.
+We have created a role to hold all the hostport configuration data.  Host port configuration includes things like `switch port access mode`,  etc that needs to be  provisioned to per switches basis.
 
 Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need create folder for each host in this folder.  Ansible will search this folder to look for the variables.
 
