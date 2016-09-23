@@ -3,7 +3,7 @@
 Docker
 ---
 
-**Table of Contents - Dockers**
+**Table of Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
    - [Docker](#docker)   
@@ -11,18 +11,18 @@ Docker
    - [Docker Toolbox](#docker-toolbox)   
       - [Exercise-1](#exercise-1)   
          - [Installing Docker-Toolbox](#installing-docker-toolbox)   
-      - [Exercise-2](#exercise-2)   
+   - [Docker Machine](#docker-machine)   
+      - [Exercise-1](#exercise-1)   
          - [Working with Docker Machine Utility](#working-with-docker-machine-utility)   
       - [Exercise 2](#exercise-2)   
          - [Tune your VM for faster performance](#tune-your-vm-for-faster-performance)   
-      - [Exercise-4](#exercise-4)   
+      - [Exercise 3](#exercise-3)   
          - [Creating source file.](#creating-source-file)   
-      - [Exercise-5](#exercise-5)   
+      - [Exercise 4](#exercise-4)   
          - [Setting the Environment variables using source file](#setting-the-environment-variables-using-source-file)   
-      - [Common Docker-machine commands](#common-docker-machine-commands)   
-      - [Exercise-3](#exercise-3)   
+   - [Common Docker-machine commands](#common-docker-machine-commands)   
+      - [Exercise-1](#exercise-1)   
          - [Ssh into your Docker VM](#ssh-into-your-docker-vm)   
-      - [Some helpful docker commands](#some-helpful-docker-commands)   
 
 <!-- /MDTOC -->
 
@@ -63,12 +63,13 @@ Whenever we say open terminal in this lab guide, please open `Docker Quickstart`
 
 **Do not open the command line**
 
+## Docker Machine
 
-### Exercise-2
-#### Working with Docker Machine Utility
 When you installed docker tool, `docker-machine` automatically got installed. `docker-machine` utility lets you manage docker engines on different hypervisors including virtualbox. Its like a manager of docker engine. Docker engines can be hosted locally on your virtualbox or remotely on the cloud.
 
 ***Make sure you do not have any VPN connections such as Cisco's Anyconnect turned on. This will break the docker functionality***
+### Exercise-1
+#### Working with Docker Machine Utility
 
 1. Open up Terminal window (windows use open up `gitbash`)
 2. Under home directory create a folder and name it `training`
@@ -98,7 +99,7 @@ When you installed docker tool, `docker-machine` automatically got installed. `d
 5. do not start the VM yet. we will do it in the next exercise.
 
 
-### Exercise-4
+### Exercise 3
 #### Creating source file.
 Source file are used to set the environment variable to communicate to the docker process running install a VM installed in the virtualbox.
 
@@ -112,7 +113,7 @@ Source file are used to set the environment variable to communicate to the docke
 	![atom100](/images/source-1.png)
 
 
-### Exercise-5
+### Exercise 4
 #### Setting the Environment variables using source file
 Now, you can use the `source.docker` file to source your environment variables.
 
@@ -122,19 +123,26 @@ Now, you can use the `source.docker` file to source your environment variables.
 3. This will show you all the containers running on your docker host.  Your docker host name is `default`.  You should not see any containers at this time.  We are going to create containers in the next section (containers).
 
 
-### Common Docker-machine commands
+## Common Docker-machine commands
+
 ```
 docker-machine status default
 docker-machine ip default
 docker-machine stop default
 docker-machine start default
+
+To recreate the docker vm or to create a new
+
+`docker-machine create --driver virtualbox default`
+`docker-machine [stop/start/restart/rm] default`
+
 ```
 
 
 ##Extras
 **Do not do this in the class**
 
-### Exercise-3
+### Exercise-1
 #### Ssh into your Docker VM
 You can also ssh into the docker VM. This is not needed for this lab, but just showing you the feature of docker-machine.
 `docker-machine ssh  default`
@@ -146,10 +154,3 @@ Exit
 ```
 
 `exit` will get back to your Mac Terminal
-
-### Some helpful docker commands
-
-To recreate the docker vm or to create a new
-
-`docker-machine create --driver virtualbox default`
-`docker-machine [stop/start/restart/rm] default`
