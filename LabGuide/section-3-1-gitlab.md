@@ -1,65 +1,16 @@
-Gitlab
----
-**Table of Contents**
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
-
-   - [Gitlab](#gitlab)   
-   - [Introduction](#introduction)   
-   - [Creating `ansible` repository on gitlab.](#creating-ansible-repository-on-gitlab)   
-      - [Exercise-1](#exercise-1)   
-         - [Configure gitlab](#configure-gitlab)   
-      - [Exercise-2](#exercise-2)   
-         - [Putting `ansible` directory under git control.](#putting-ansible-directory-under-git-control)   
-      - [Exercise-3](#exercise-3)   
-         - [Verify that file got uploaded to gitlab](#verify-that-file-got-uploaded-to-gitlab)   
-      - [Exercise-4](#exercise-4)   
-         - [Scripting the git push](#scripting-the-git-push)   
-      - [Exercise-5](#exercise-5)   
-         - [Modifying the README file.](#modifying-the-readme-file)   
-      - [Exercise-6](#exercise-6)   
-         - [Push the Updated file to gitlab using script](#push-the-updated-file-to-gitlab-using-script)   
-      - [Exercise-7](#exercise-7)   
-         - [Verify the file has changed on gitlab.](#verify-the-file-has-changed-on-gitlab)   
-      - [Exercise-8](#exercise-8)   
-         - [gitpush.sh script for nxtoolkit repository.](#gitpushsh-script-for-nxtoolkit-repository)   
-   - [Creating `nxtoolkit` repository on gitlab.](#creating-nxtoolkit-repository-on-gitlab)   
-      - [Exercise-1](#exercise-1)   
-         - [Create nxtoolkit project](#create-nxtoolkit-project)   
-      - [Exercise-2](#exercise-2)   
-         - [Putting nxtoolkit directory under git Repository](#putting-nxtoolkit-directory-under-git-repository)   
-   - [Creating gitlab users.](#creating-gitlab-users)   
-      - [Exercise 1](#exercise-1)   
-      - [Create another gitlab account (`developer`)](#create-another-gitlab-account-developer)   
-   - [Working with Git Branch](#working-with-git-branch)   
-      - [Exercise 1](#exercise-1)   
-         - [Creating a git branch](#creating-a-git-branch)   
-      - [Exercise 2](#exercise-2)   
-         - [Editing README.md file](#editing-readmemd-file)   
-      - [Exercise 3](#exercise-3)   
-         - [Push the branch to remote repository (gitlab)](#push-the-branch-to-remote-repository-gitlab)   
-      - [Exercise 4](#exercise-4)   
-         - [Create `Merge Request` on gitlab](#create-merge-request-on-gitlab)   
-      - [Exercise 5](#exercise-5)   
-         - [Merge the branch with master branch](#merge-the-branch-with-master-branch)   
-      - [Exercise 6](#exercise-6)   
-      - [Exercise 7](#exercise-7)   
-         - [Remove the branch](#remove-the-branch)   
-      - [Summary Steps for creating a branch](#summary-steps-for-creating-a-branch)   
-      - [Some useful git command](#some-useful-git-command)   
-
-<!-- /MDTOC -->
-
-
+#gitlab
 ## Introduction
 GIT is a very popular and efficient open source Version Control System. It tracks content such as files and directories for changes. Files transition between 3 states, modified, staged and committed file.  Repository are local but if you want to share your codes with your team, you can also push it to remote/central repository.
 ![GitHub](/images/git-intro-1.png)
 
 **Make sure you have git installed on your system.  See devops tools section.**
 
-For this lab, we have installed our own gitlab server on the docker container. We will use this server for all our exercises. At the end, we will push our configuration files to github.
 
-## Creating `ansible` repository on gitlab.
-### Exercise-1
+
+For this lab, we have installed our own gitlab server on the docker container. We will use this server for all our exercises.
+
+##Creating `ansible` repository on gitlab.
+###Exercise-1
 #### Configure gitlab
 
 1. Open up chrome browser and point it to:
@@ -86,7 +37,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 5. Click on `Create Project`.
 6. Do not close this window. We will use the information on this page for the next exercise.
 
-### Exercise-2
+###Exercise-2
 #### Putting `ansible` directory under git control.
 1. Switch to the terminal window (docker quick start)
 2. `cd training`
@@ -104,7 +55,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
   ![gitlab](/images/gitlab-505.png)
 
-### Exercise-3
+###Exercise-3
 #### Verify that file got uploaded to gitlab
 1. Switch back to you browser
 2. Refresh it
@@ -116,7 +67,7 @@ For this lab, we have installed our own gitlab server on the docker container. W
 
   ![gitlab](/images/gitlab-303.png)
 
-### Exercise-4
+###Exercise-4
 #### Scripting the git push
 For the lab environment, we want to quickly push the changes to the remote repo on the gitlab. In this exercise we going to create a script to automate this process.
 
@@ -135,13 +86,13 @@ For the lab environment, we want to quickly push the changes to the remote repo 
     ```
 6. Save and close the file `cmd + S`
 
-### Exercise-5
+###Exercise-5
 #### Modifying the README file.
 1. Open up the `README.md` file from the `ansible` folder using `ATOM`
 2. Add some contents to it eg `this is my second gitlab edit`
 3. Save it.
 
-### Exercise-6
+###Exercise-6
 #### Push the Updated file to gitlab using script
 1. Switch back to the terminal window.
 2. you should be in the `ansible` directory  (`training/ansible`)
@@ -151,7 +102,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 6. type
 7. `./gitpush.sh`
 
-### Exercise-7
+###Exercise-7
 #### Verify the file has changed on gitlab.
 1. Switch to browser
 2. Take a look at the README.md
@@ -160,11 +111,11 @@ For the lab environment, we want to quickly push the changes to the remote repo 
   ![gitlab](/images/gitlab-302.png)
 
 4. You can compare what changed by clicking on the `README.md` and then on the `History` tab. Select the `update` you want to compare.
-
+Where is the History tab? Not seeing it.
   ![gitlab](/images/gitlab-304.png)
 
 
-### Exercise-8
+###Exercise-8
 #### gitpush.sh script for nxtoolkit repository.
 1. Using `ATOM` copy the `gitpush.sh` file from `ansible` folder.
 2. Paste it in the `nxtoolkit` folder.
@@ -174,17 +125,15 @@ For the lab environment, we want to quickly push the changes to the remote repo 
 4. `chmod +x gitpush.sh`
 7. We will use this script in the next exercise
 
-----
-
-## Creating `nxtoolkit` repository on gitlab.
-### Exercise-1
+##Creating `nxtoolkit` repository on gitlab.
+###Exercise-1
 #### Create nxtoolkit project
 1. login to the gitlab using your own account.
 2. create a new `project`, name it `nxtoolkit`
 
     ![gitlab](/images/gitlab-507.png)
 
-### Exercise-2
+###Exercise-2
 #### Putting nxtoolkit directory under git Repository
 1. Switch to the terminal window
 2. `pwd`  <-- make sure you are in the nxtoolkit directory
@@ -201,7 +150,7 @@ For the lab environment, we want to quickly push the changes to the remote repo 
   ![gitlab](/images/gitlab-508.png)
 6. Switch to gitlab browser and verify that files have been uploaded.
 
----
+
 ## Creating gitlab users.
 ### Exercise 1
 ### Create another gitlab account (`developer`)
@@ -229,11 +178,8 @@ You will use the 2nd account to review the changes. You will use your first acco
 
   ![gitlab](/images/gitlab-512.png)
 
-----
-
 ##Adding project to ATOM
 With git-plus plugin, you can manage git updates directly from ATOM.  In order to do this, you need to open each git repository as ATOM project.
-
 ###Exercise 1
 ####Adding git Projects in ATOM
 1. Switch to `ATOM` Editor
@@ -251,11 +197,10 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
 *You want to this do way so that `ATOM` can track your git changes.  Each git repo should be a `atom project`*
 
-----
 
-## Working with Git Branch
+## Branching
 
-### Exercise 1
+###Exercise 1
 #### Creating a git branch
 1. Switch to terminal window
 2. Navigate to `ansible` folder. `cd training` ; `cd ansible`
@@ -269,7 +214,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
 8. Now lets make some changes to the `README.md` file.
 
-### Exercise 2
+###Exercise 2
 #### Editing README.md file
 1. Switch to `ATOM` Editor.
 2. Go to `ansible` folder and open up `README.md` file.
@@ -279,7 +224,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
   ![branch](/images/branch-1.png)
 
-### Exercise 3
+###Exercise 3
 #### Push the branch to remote repository (gitlab)
 1. Switch back to terminal window.
 2. you should be in the `ansible` directory
@@ -290,7 +235,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 7. `git push -u origin readmeupdate` push the branch to gitlab
 
 
-### Exercise 4
+###Exercise 4
 #### Create `Merge Request` on gitlab
 1. Switch to the chrome browser.
 2. Login to gitlab using your regular account.
@@ -304,7 +249,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
   ![branch](/images/gitlab-514.png)
 
 
-### Exercise 5
+###Exercise 5
 #### Merge the branch with master branch
 1. Log out of gitlab accounts
 2. log back in using `developer`  account.
@@ -323,7 +268,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
   ![branch](/images/gitlab-516.png)
 
-### Exercise 6
+###Exercise 6
 ####Verify the merge
 1. Switch back to your terminal window
   2. make sure you are in the master branch
@@ -340,7 +285,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
 **This is how you can do simple peer reviews on your configuration files.**
 
-### Exercise 7
+###Exercise 7
 #### Remove the branch
 1. switch to the terminal window.
 2. `git branch`
@@ -349,7 +294,10 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 3. this should remove the branch.  We don't need it as we have merged our changes to the master (trunk)
 
 
-### Summary Steps for creating a branch
+
+-----
+
+### Summary Steps
 
 1. Clone project
 2. git clone git@example.com:project-name.git
@@ -366,7 +314,6 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 ### Some useful git command
 
 ```
-git branch
 git log
 git config -l
 git status
