@@ -20,7 +20,8 @@ Docker
          - [Creating source file.](#creating-source-file)   
       - [Exercise 4](#exercise-4)   
          - [Setting the Environment variables using source file](#setting-the-environment-variables-using-source-file)   
-   - [Common Docker-machine commands](#common-docker-machine-commands)   
+      - [Common Docker-machine commands](#common-docker-machine-commands)   
+   - [Extras](#extras)   
       - [Exercise-1](#exercise-1)   
          - [Ssh into your Docker VM](#ssh-into-your-docker-vm)   
 
@@ -123,7 +124,7 @@ Now, you can use the `source.docker` file to source your environment variables.
 3. This will show you all the containers running on your docker host.  Your docker host name is `default`.  You should not see any containers at this time.  We are going to create containers in the next section (containers).
 
 
-## Common Docker-machine commands
+### Common Docker-machine commands
 
 ```
 docker-machine status default
@@ -139,7 +140,7 @@ To recreate the docker vm or to create a new
 ```
 
 
-##Extras
+## Extras
 **Do not do this in the class**
 
 ### Exercise-1
