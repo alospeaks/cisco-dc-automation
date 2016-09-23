@@ -49,11 +49,7 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
     ansible_connection = local
 
     [leafs]
-    leaf1
-
-
-    [DC-1:children]
-    leaf1
+    n9k-1
 
     ```
 4. Delete all the host from the above file , except for the switch that is assigned to you.  Your host file should be similar to the picture below.
