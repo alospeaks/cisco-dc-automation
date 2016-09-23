@@ -529,6 +529,8 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
+
+
 **Homework**
 
 ###Exercise 8
@@ -537,6 +539,7 @@ Modify the the roles to add vlan 800 to all the switches.
 
 ###Exercise 9
 #### Removing  Vlans
+
 Modify the playbook so that vlan 40 is removed from all the switches.
 ----
 
