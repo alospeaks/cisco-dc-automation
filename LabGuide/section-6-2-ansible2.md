@@ -6,11 +6,11 @@
    - [Section-6-2-1 : Ansible Setup](#section-6-2-1-ansible-setup)   
       - [Exercise 1](#exercise-1)   
          - [Setting up the directory structure to host ansible files](#setting-up-the-directory-structure-to-host-ansible-files)   
-      - [Exercise 3](#exercise-3)   
+      - [Exercise 2](#exercise-2)   
          - [Creating Host Inventory File](#creating-host-inventory-file)   
-      - [Exercise 4](#exercise-4)   
+      - [Exercise 3](#exercise-3)   
          - [Creating credentials file](#creating-credentials-file)   
-      - [Exercise 5](#exercise-5)   
+      - [Exercise 4](#exercise-4)   
          - [Ping Test.  Make sure your Switch can reach internet.](#ping-test-make-sure-your-switch-can-reach-internet)   
          - [Login in to your Ansible Container and Run the Playbook](#login-in-to-your-ansible-container-and-run-the-playbook)   
    - [Section-6-2-2 : Simple Ansible Playbooks](#section-6-2-2-simple-ansible-playbooks)   
@@ -45,13 +45,13 @@
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
       - [Exercise 3](#exercise-3)   
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
-      - [Exercise 6](#exercise-6)   
+      - [Exercise 4](#exercise-4)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
-      - [Exercise 7](#exercise-7)   
+      - [Exercise 5](#exercise-5)   
          - [Lets run the playbook](#lets-run-the-playbook)   
-      - [Exercise 8](#exercise-8)   
+      - [Exercise 6](#exercise-6)   
          - [Adding new Vlans](#adding-new-vlans)   
-      - [Exercise 9](#exercise-9)   
+      - [Exercise 7](#exercise-7)   
          - [Removing  Vlans](#removing-vlans)   
    - [Section-6-2-5: Uplink port Configuration.](#section-6-2-5-uplink-port-configuration)   
       - [Exercise 1](#exercise-1)   
@@ -62,10 +62,10 @@
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
       - [Exercise 4](#exercise-4)   
          - [Create jinja2 template for the uplink configuration.](#create-jinja2-template-for-the-uplink-configuration)   
-      - [Exercise 6](#exercise-6)   
+      - [Exercise 5](#exercise-5)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
-      - [Exercise 7](#exercise-7)   
-         - [Lets run the playbook](#lets-run-the-playbook)   
+      - [Exercise 6](#exercise-6)   
+         - [Run the playbook](#run-the-playbook)   
    - [Section-6-2-6: Hostport Configuration.](#section-6-2-6-hostport-configuration)   
       - [Exercise 1](#exercise-1)   
          - [Hostport configuration repository](#hostport-configuration-repository)   
@@ -73,12 +73,14 @@
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
       - [Exercise 3](#exercise-3)   
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
-      - [Exercise 6](#exercise-6)   
+      - [Exercise 4](#exercise-4)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
-      - [Exercise 7](#exercise-7)   
+      - [Exercise 5](#exercise-5)   
          - [Lets run the playbook](#lets-run-the-playbook)   
-      - [Excercise 8](#excercise-8)   
+      - [Excercise 6](#excercise-6)   
          - [Add new server port](#add-new-server-port)   
+   - [Ansible Tips](#ansible-tips)   
+      - [How to see which ansible modules are installed?](#how-to-see-which-ansible-modules-are-installed)   
 
 <!-- /MDTOC -->
 
@@ -123,7 +125,7 @@ http://docs.ansible.com/ansible/list_of_network_modules.html
     3. hosts_vars
     4. files
 
-### Exercise 3
+### Exercise 2
 #### Creating Host Inventory File
 Inventory file contains list of hosts that you want to manage from Ansible.  In our case, it will list of switches that we want to manage by ansible. These host/swiches can be organized in groups.
 
@@ -148,7 +150,7 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 
 You can read more about Inventory file here:  Inventory http://docs.ansible.com/ansible/intro_inventory.html
 
-### Exercise 4
+### Exercise 3
 #### Creating credentials file
 1. Under `ansible` folder , create a new file
 2. name it `credentials.yml`
@@ -169,7 +171,7 @@ To login into the switches, we need the `username` and `password`.  This file wi
 The provider argument accepts keyword arguments and passes them through to the task to assign connection and authentication parameters.**
 https://docs.ansible.com/ansible/intro_networking.html
 
-### Exercise 5
+### Exercise 4
 #### Ping Test.  Make sure your Switch can reach internet.
 You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
 http://docs.ansible.com/ansible/nxos_ping_module.html
@@ -205,7 +207,7 @@ http://docs.ansible.com/ansible/nxos_ping_module.html
 Note:  Environment variables can be set at the play or task level.
 http://docs.ansible.com/ansible/faq.html  
 
-##Exercise 6
+##Exercise 5
 #### Login in to your Ansible Container and Run the Playbook
 1. Go to your terminal window and type the following:
 
@@ -593,7 +595,7 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 5. Save the file `CMD + S`
 
 
-### Exercise 6
+### Exercise 4
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-vlans.yml`
@@ -610,7 +612,7 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
     ```
 4. Save the file `CMD + S`
 
-### Exercise 7
+### Exercise 5
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -622,11 +624,11 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 
 **Homework**
 
-### Exercise 8
+### Exercise 6
 #### Adding new Vlans
 Modify the the roles to add vlan 800 to all the switches.
 
-### Exercise 9
+### Exercise 7
 #### Removing  Vlans
 
 Modify the playbook so that vlan 40 is removed from all the switches.
@@ -707,7 +709,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 4. Save the file `CMD + S`
 
 
-### Exercise 6
+### Exercise 5
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-uplinks.yml`
@@ -724,8 +726,8 @@ https://docs.ansible.com/ansible/nxos_template_module.html
     ```
 4. Save the file `CMD + S`
 
-### Exercise 7
-#### Lets run the playbook
+### Exercise 6
+#### Run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
     1. `ansible-playbook -i hosts deploy-uplinks.yml`
@@ -806,7 +808,7 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
 5. Save the file `CMD + S`
 
 
-### Exercise 6
+### Exercise 4
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-hostports.yml`
@@ -823,7 +825,7 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
     ```
 4. Save the file `CMD + S`
 
-### Exercise 7
+### Exercise 5
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -831,10 +833,10 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
-### Excercise 8
+### Excercise 6
 #### Add new server port
 configure a new server port on n9k-1 port eth1/8
 
-##Ansible Tips
-###How to see which ansible modules are installed?
+## Ansible Tips
+### How to see which ansible modules are installed?
 ansible-doc --list | egrep ^'nxos'
