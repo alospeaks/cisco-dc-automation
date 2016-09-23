@@ -1,7 +1,9 @@
 **Table of  Contents -- Using Ansible to automate NXOS switches**
+---
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
+   - [**Table of  Contents -- Using Ansible to automate NXOS switches**](#table-of-contents-using-ansible-to-automate-nxos-switches)   
    - [Ansible - Using Ansible to manage NXOS devices (Introduction)](#ansible-using-ansible-to-manage-nxos-devices-introduction)   
    - [Section-6-2-1 : Ansible Setup](#section-6-2-1-ansible-setup)   
       - [Exercise 1](#exercise-1)   
