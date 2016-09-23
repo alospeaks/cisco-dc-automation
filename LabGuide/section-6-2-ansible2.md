@@ -97,8 +97,6 @@ Playbooks contains one or multiple plays and plays contains one or multiple task
 
 ![ansibel-1](/images/ansible-1.png)
 
-
-
 **Hosts:** Remote machines Ansible manages.  
 **Groups:** Group of hosts assigned to a pool that can be conveniently targeted and managed together.  
 **Inventory:** File describing the Hosts and Groups in Ansible. what groups a host belongs to, the
