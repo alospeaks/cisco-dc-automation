@@ -4,7 +4,7 @@
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
    - [**Table of  Contents -- Using Ansible to automate NXOS switches**](#table-of-contents-using-ansible-to-automate-nxos-switches)   
-   - [Ansible - Using Ansible to manage NXOS devices (Introduction)](#ansible-using-ansible-to-manage-nxos-devices-introduction)   
+   - [Ansible - Introduction](#ansible-introduction)   
    - [Section-6-2-1 : Ansible Setup](#section-6-2-1-ansible-setup)   
       - [Exercise 1](#exercise-1)   
          - [Setting up the directory structure to host ansible files](#setting-up-the-directory-structure-to-host-ansible-files)   
@@ -87,7 +87,7 @@
 <!-- /MDTOC -->
 
 
-Ansible - Using Ansible to manage NXOS devices (Introduction)
+Ansible - Introduction
 ----
 -----
 Ansible is an open-source software platform for configuring ,managing and orchestrating compute and switching infrastructure. Ansible features a state-driven resource model that describes the desired state of computer systems and services.  Ansible is agentless and uses push model while puppet and chef are pull model using agents on the host.  Ansible uses YAML to configure playbooks.
