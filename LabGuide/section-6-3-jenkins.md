@@ -1,10 +1,37 @@
-#Jenkins
+Jenkins
+---
+**Table of  Contents**
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [Jenkins](#jenkins)   
+   - [Introduction](#introduction)   
+      - [Exercise-1](#exercise-1)   
+         - [Update the hosts file](#update-the-hosts-file)   
+      - [Exercise-2](#exercise-2)   
+         - [Getting Jenkins login password](#getting-jenkins-login-password)   
+      - [Exercise-3](#exercise-3)   
+         - [Login into Jenkins Server](#login-into-jenkins-server)   
+      - [Exercise-4](#exercise-4)   
+         - [Installing jenkins plugins](#installing-jenkins-plugins)   
+      - [Exercise-5](#exercise-5)   
+         - [Creating a job](#creating-a-job)   
+      - [Exercise-6](#exercise-6)   
+         - [Configure the webhook on the gitlab.](#configure-the-webhook-on-the-gitlab)   
+      - [Exercise-6](#exercise-6)   
+         - [Test the automate deployment](#test-the-automate-deployment)   
+      - [Troubleshooting](#troubleshooting)   
+
+<!-- /MDTOC -->
+
+
+Introduction
+-----
 Jenkins is an open source tool that is used for scheduling and running automated tests and deployment.  It is essentially the friendly butler of automation who will handle all of your automation tasks for you once you tell him to do so and he only needs to be told once.
 
 In the Server world, Jenkins can be used to perform the typical build server work, such as doing continuous/official/nightly builds, run tests, or perform some repetitive batch tasks.
 
 ### Exercise-1
-####Update the hosts file
+#### Update the hosts file
 1. Open another terminal window and navigate to training folder
 2. source `source source.docker`
 3. Find out the ip address of your `nxosv` switch.  you can login into the switch and type `show ip int brief vrf  management`.  Note down the ip.
@@ -16,14 +43,14 @@ In the Server world, Jenkins can be used to perform the typical build server wor
 6. repeat this for all the switches you have.
 
 ### Exercise-2
-####Getting Jenkins login password
+#### Getting Jenkins login password
 1. Get the admin password
 	3. type `docker exec -it jenkins  cat /var/jenkins_home/secrets/initialAdminPassword `
 	4. copy the password
 	5. type `docker-machine ip default` and note down the ip address of the docker host
 
 ### Exercise-3
-####Login into Jenkins Server
+#### Login into Jenkins Server
 6. Open up a chrome browser and login in.
 7. `http://<ip>:8080`
 8. type in the admin password that you copied previously.
@@ -156,9 +183,8 @@ Push the configuration to gitlab.
 Watch the jenkins server and see how it will automatically deploy
 
 
-###Troubleshooting
+### Troubleshooting
 **Tips**
-
 Sometime you will need to login into jenkins container to troubleshoot this. Use this method:
 
 `docker exec -u 0 -it jenkins bash`
