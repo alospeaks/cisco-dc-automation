@@ -344,7 +344,8 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 #### Create handler to save the configuration
 1. Navigate to `ansible --> roles --> baseconfig --> handlers`
 2. Open up the `main.yml` file
-3. Copy and paste the following
+3. Copy and paste the following:
+
     ```
     ---
     # handlers file for baseconfig
