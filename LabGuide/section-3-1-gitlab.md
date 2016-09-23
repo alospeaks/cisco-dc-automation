@@ -29,7 +29,7 @@ Gitlab
    - [Creating gitlab users.](#creating-gitlab-users)   
       - [Exercise 1](#exercise-1)   
       - [Create another gitlab account (`developer`)](#create-another-gitlab-account-developer)   
-   - [Git Branching](#git-branching)   
+   - [Working with Git Branch](#working-with-git-branch)   
       - [Exercise 1](#exercise-1)   
          - [Creating a git branch](#creating-a-git-branch)   
       - [Exercise 2](#exercise-2)   
@@ -252,7 +252,7 @@ With git-plus plugin, you can manage git updates directly from ATOM.  In order t
 
 ----
 
-## Git Branching
+## Working with Git Branch
 
 ### Exercise 1
 #### Creating a git branch
