@@ -20,7 +20,7 @@
          - [Gather facts about the switch](#gather-facts-about-the-switch)   
       - [Exercise 2](#exercise-2)   
          - [Using the nxos_config module](#using-the-nxos_config-module)   
-   - [Roles](#roles)   
+   - [Ansible Roles - Introduction](#ansible-roles-introduction)   
    - [Section-6-2-3: Base Configuration](#section-6-2-3-base-configuration)   
       - [Exercise 1](#exercise-1)   
          - [Create ansible roles directory structure](#create-ansible-roles-directory-structure)   
@@ -338,7 +338,7 @@ http://docs.ansible.com/ansible/nxos_config_module.html
 6. Verify the configuration on using Switch CLI. `show access-list`
 
 ----
-Roles
+Ansible Roles - Introduction
 -----
 
 Simply put, roles are a further level of abstraction that can be useful for organizing playbooks. As you add more and more functionality and flexibility to your playbooks, they can become unwieldy and difficult to maintain as a single file. Roles allow you to create very minimal playbooks that then look to a directory structure to determine the actual configuration steps they need to perform.
