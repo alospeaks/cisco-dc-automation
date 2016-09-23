@@ -48,16 +48,12 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
     [all:vars]
     ansible_connection = local
 
-    [n9k-1]
-    172.16.123.134
-    [n9k-2]
-    10.114.217.158
+    [leafs]
+    leaf1
+
 
     [DC-1:children]
-    n9k-1
-
-    [DC-2:children]
-    n9k-2
+    leaf1
 
     ```
 4. Delete all the host from the above file , except for the switch that is assigned to you.  Your host file should be similar to the picture below.
@@ -547,7 +543,7 @@ Ensure following vlans are configured on all the switches.
 #### vlan configuration repository
 We created a role to hold all the vlan configuration data. Lets modify it to meet the above requirement.
 
-Let update the vars directory with all over variables.
+Lets update the vars directory with all our variables.
 
 1. Navigate to `ansible --> roles --> vlans --> vars`
 2. Open `main.yml`
