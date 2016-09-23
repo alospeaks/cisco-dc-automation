@@ -212,7 +212,7 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 
 ###Exercise 2
 ####Using the nxos_config module
-Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
+Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections. nxos_config provides a way to build this sections of configurations. Read more here.
 http://docs.ansible.com/ansible/nxos_config_module.html
 
 1. Under `ansible` folder , create a new file. Right click and select `New File`
