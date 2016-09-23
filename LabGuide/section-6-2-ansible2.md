@@ -1,6 +1,6 @@
-**Table of  Contents -- Using Ansible to automate NXOS switches**
+ Using Ansible to automate NXOS switches
 ---
-
+**Table of  Contents**
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
    - [**Table of  Contents -- Using Ansible to automate NXOS switches**](#table-of-contents-using-ansible-to-automate-nxos-switches)   
