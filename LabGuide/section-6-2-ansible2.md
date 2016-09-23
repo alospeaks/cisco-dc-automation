@@ -7,40 +7,77 @@
       - [Exercise 1](#exercise-1)   
          - [Setting up the directory structure to host ansible files](#setting-up-the-directory-structure-to-host-ansible-files)   
       - [Exercise 3](#exercise-3)   
+         - [Creating Host Inventory File](#creating-host-inventory-file)   
       - [Exercise 4](#exercise-4)   
+         - [Creating credentials file](#creating-credentials-file)   
       - [Exercise 5](#exercise-5)   
+         - [Ping Test.  Make sure your Switch can reach internet.](#ping-test-make-sure-your-switch-can-reach-internet)   
+         - [Login in to your Ansible Container and Run the Playbook](#login-in-to-your-ansible-container-and-run-the-playbook)   
    - [Section-6-2-2 : Simple Ansible Playbooks](#section-6-2-2-simple-ansible-playbooks)   
+      - [Exercise 1](#exercise-1)   
+         - [Gather facts about the switch](#gather-facts-about-the-switch)   
+      - [Exercise 2](#exercise-2)   
+         - [Using the nxos_config module](#using-the-nxos_config-module)   
    - [Roles](#roles)   
    - [Section-6-2-3: Base Configuration](#section-6-2-3-base-configuration)   
+      - [Exercise 1](#exercise-1)   
+         - [Create ansible roles directory structure](#create-ansible-roles-directory-structure)   
+      - [Exercise 2](#exercise-2)   
+         - [Configuring login roles](#configuring-login-roles)   
+      - [Exercise 3](#exercise-3)   
          - [Base configuration repository](#base-configuration-repository)   
+      - [Exercise 4](#exercise-4)   
          - [Create jinja2 template for the base configuration.](#create-jinja2-template-for-the-base-configuration)   
+      - [Exercise 5](#exercise-5)   
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
+      - [Exercise 6](#exercise-6)   
          - [Create playbook tasks for base configuration.](#create-playbook-tasks-for-base-configuration)   
+      - [Exercise 7](#exercise-7)   
          - [Create playbook to push this base configuration to the switch.](#create-playbook-to-push-this-base-configuration-to-the-switch)   
+      - [Exercise 8](#exercise-8)   
          - [Lets run the playbook](#lets-run-the-playbook)   
+      - [Excercise 9](#excercise-9)   
          - [Adding New NTP server](#adding-new-ntp-server)   
    - [Section-6-2-4: Automating VLAN provisioning](#section-6-2-4-automating-vlan-provisioning)   
       - [Exercise 1](#exercise-1)   
          - [vlan configuration repository](#vlan-configuration-repository)   
+      - [Exercise 2](#exercise-2)   
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
+      - [Exercise 3](#exercise-3)   
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
+      - [Exercise 6](#exercise-6)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
+      - [Exercise 7](#exercise-7)   
          - [Lets run the playbook](#lets-run-the-playbook)   
+      - [Exercise 8](#exercise-8)   
          - [Adding new Vlans](#adding-new-vlans)   
+      - [Exercise 9](#exercise-9)   
          - [Removing  Vlans](#removing-vlans)   
    - [Section-6-2-5: Uplink port Configuration.](#section-6-2-5-uplink-port-configuration)   
+      - [Exercise 1](#exercise-1)   
          - [Uplinks configuration repository](#uplinks-configuration-repository)   
+      - [Exercise 2](#exercise-2)   
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
+      - [Exercise 3](#exercise-3)   
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
+      - [Exercise 4](#exercise-4)   
          - [Create jinja2 template for the uplink configuration.](#create-jinja2-template-for-the-uplink-configuration)   
+      - [Exercise 6](#exercise-6)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
+      - [Exercise 7](#exercise-7)   
          - [Lets run the playbook](#lets-run-the-playbook)   
    - [Section-6-2-6: Hostport Configuration.](#section-6-2-6-hostport-configuration)   
+      - [Exercise 1](#exercise-1)   
          - [Hostport configuration repository](#hostport-configuration-repository)   
+      - [Exercise 2](#exercise-2)   
          - [Create handler to save the configuration](#create-handler-to-save-the-configuration)   
+      - [Exercise 3](#exercise-3)   
          - [Create playbook tasks to configure the switch ports.](#create-playbook-tasks-to-configure-the-switch-ports)   
+      - [Exercise 6](#exercise-6)   
          - [Create playbook to push host port configuration to the switch.](#create-playbook-to-push-host-port-configuration-to-the-switch)   
+      - [Exercise 7](#exercise-7)   
          - [Lets run the playbook](#lets-run-the-playbook)   
+      - [Excercise 8](#excercise-8)   
          - [Add new server port](#add-new-server-port)   
 
 <!-- /MDTOC -->
@@ -87,7 +124,7 @@ http://docs.ansible.com/ansible/list_of_network_modules.html
     4. files
 
 ### Exercise 3
-####Creating Host Inventory File
+#### Creating Host Inventory File
 Inventory file contains list of hosts that you want to manage from Ansible.  In our case, it will list of switches that we want to manage by ansible. These host/swiches can be organized in groups.
 
 2. In the `ATOM` Editor , right click on `ansible` folder and select `New File`.
@@ -112,7 +149,7 @@ Inventory file contains list of hosts that you want to manage from Ansible.  In 
 You can read more about Inventory file here:  Inventory http://docs.ansible.com/ansible/intro_inventory.html
 
 ### Exercise 4
-####Creating credentials file
+#### Creating credentials file
 1. Under `ansible` folder , create a new file
 2. name it `credentials.yml`
 3. copy and paste the following.
@@ -133,7 +170,7 @@ The provider argument accepts keyword arguments and passes them through to the t
 https://docs.ansible.com/ansible/intro_networking.html
 
 ### Exercise 5
-####Ping Test.  Make sure your Switch can reach internet.
+#### Ping Test.  Make sure your Switch can reach internet.
 You need to get yourself familiarize with nxos ansible modules.  Take a look at the ping module.  
 http://docs.ansible.com/ansible/nxos_ping_module.html
 
@@ -169,7 +206,7 @@ Note:  Environment variables can be set at the play or task level.
 http://docs.ansible.com/ansible/faq.html  
 
 ##Exercise 6
-####Login in to your Ansible Container and Run the Playbook
+#### Login in to your Ansible Container and Run the Playbook
 1. Go to your terminal window and type the following:
 
     ```
@@ -203,8 +240,8 @@ To get snippet
 
 ## Section-6-2-2 : Simple Ansible Playbooks
 
-###Exercise 1
-####Gather facts about the switch
+### Exercise 1
+#### Gather facts about the switch
 use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 
 1. Under `ansible` folder , create a new file. Right click and select `New File`
@@ -259,8 +296,8 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 6. Switch to ATOM and go to `files` directory. View the json files for each of the switch.
 
 
-###Exercise 2
-####Using the nxos_config module
+### Exercise 2
+#### Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections. nxos_config provides a way to build this sections of configurations. Read more here.
 http://docs.ansible.com/ansible/nxos_config_module.html
 
@@ -310,8 +347,8 @@ In general, the idea behind roles is to allow you to define what a server is sup
 ## Section-6-2-3: Base Configuration
 Applying the base configuration to all switches in the inventory using jinja2 template.  Templates are good for mostly static configuration.  Since base configuration does not change that often, it is good idea to put them in a template.
 
-###Exercise 1
-####Create ansible roles directory structure
+### Exercise 1
+#### Create ansible roles directory structure
 Ansible galaxy provides a very easy way to create the directory structure to host your roles.
 
 1. Switch to 'ansible container'
@@ -322,8 +359,8 @@ Ansible galaxy provides a very easy way to create the directory structure to hos
 6. type `ansible-galaxy init uplinks`
 7. type `ansible-galaxy init hostports`
 
-###Exercise 2
-####Configuring login roles
+### Exercise 2
+#### Configuring login roles
 This role allows us to login into the switches.
 
 1. Switch to `Atom` Editor
@@ -345,7 +382,7 @@ This role allows us to login into the switches.
 
 6. Save the file `Cmd+S`
 
-###Exercise 3
+### Exercise 3
 #### Base configuration repository
 This role allows us to do base configuration on all the switches. Base configuration includes things like ntp, snmp, alias etc that needs to be  provisioned to all switches.
 
@@ -359,7 +396,7 @@ This role allows us to do base configuration on all the switches. Base configura
     ![ansiblerole](/images/ansible-301.png)
 
 
-###Exercise 4
+### Exercise 4
 
 To configure base configuration, we are going to use nxos_template module. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.  This module uses jinja2 template.  
 
@@ -393,7 +430,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 
 4. Save the file `CMD + S`
 
-###Exercise 5
+### Exercise 5
 #### Create handler to save the configuration
 1. Navigate to `ansible --> roles --> baseconfig --> handlers`
 2. Open up the `main.yml` file
@@ -410,7 +447,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
     ```
 4. Save the file `CMD + S`
 
-###Exercise 6
+### Exercise 6
 #### Create playbook tasks for base configuration.
 1. Navigate to `ansible --> roles --> baseconfig --> tasks`
 2. Open up the `main.yml` file
@@ -433,7 +470,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 5. Save the file `CMD + S`
 
 
-###Exercise 7
+### Exercise 7
 #### Create playbook to push this base configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-baseconfig.yml`
@@ -450,7 +487,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
     ```
 4. Save the file `CMD + S`
 
-###Exercise 8
+### Exercise 8
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -458,7 +495,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
-###Excercise 9
+### Excercise 9
 #### Adding New NTP server
 Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
 
@@ -519,7 +556,7 @@ Lets update the vars directory with all our variables.
     ```
 4. Save the file `Cmd+S`
 
-###Exercise 2
+### Exercise 2
 #### Create handler to save the configuration
 1. Navigate to `ansible --> roles --> vlans --> handlers`
 2. Open up the `main.yml` file
@@ -536,7 +573,7 @@ Lets update the vars directory with all our variables.
     ```
 4. Save the file `CMD + S`
 
-###Exercise 3
+### Exercise 3
 #### Create playbook tasks to configure the switch ports.
 This time, we are going to use `nxos_vlan` module to make these changes.  Read more about it here
 https://docs.ansible.com/ansible/nxos_vlan_module.html
@@ -556,7 +593,7 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 5. Save the file `CMD + S`
 
 
-###Exercise 6
+### Exercise 6
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-vlans.yml`
@@ -573,7 +610,7 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
     ```
 4. Save the file `CMD + S`
 
-###Exercise 7
+### Exercise 7
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -585,11 +622,11 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 
 **Homework**
 
-###Exercise 8
+### Exercise 8
 #### Adding new Vlans
 Modify the the roles to add vlan 800 to all the switches.
 
-###Exercise 9
+### Exercise 9
 #### Removing  Vlans
 
 Modify the playbook so that vlan 40 is removed from all the switches.
@@ -601,7 +638,7 @@ Modify the playbook so that vlan 40 is removed from all the switches.
 ## Section-6-2-5: Uplink port Configuration.
 In this section, we will be configuring uplink ports. This will include changing the interface to L3 mode and then assigning ip to it.  We are going to use jinja2 template for this.
 
-###Exercise 1
+### Exercise 1
 #### Uplinks configuration repository
 This role allows us to create configuration for uplinks on the switches. Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need to create a folder for each host in `host_vars` folder.  Ansible will search this folder to look for the variables.
 
@@ -618,7 +655,7 @@ This role allows us to create configuration for uplinks on the switches. Since t
     ```
 4. Save the file `Cmd+S`
 
-###Exercise 2
+### Exercise 2
 #### Create handler to save the configuration
 1. Navigate to `ansible --> roles --> uplinks --> handlers`
 2. Open up the `main.yml` file
@@ -635,7 +672,7 @@ This role allows us to create configuration for uplinks on the switches. Since t
     ```
 4. Save the file `CMD + S`
 
-###Exercise 3
+### Exercise 3
 #### Create playbook tasks to configure the switch ports.
 This time, we are going to use `nxos_template`  module to make these changes.  Read more about it here
 
@@ -659,7 +696,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
     ```
 5. Save the file `CMD + S`
 
-###Exercise 4
+### Exercise 4
 #### Create jinja2 template for the uplink configuration.
 1. Navigate to `ansible --> roles --> uplinks --> templates`
 2. Right click on the `templates` folder and select `New File`. Name it `interface.j2`
@@ -670,7 +707,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 4. Save the file `CMD + S`
 
 
-###Exercise 6
+### Exercise 6
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-uplinks.yml`
@@ -687,7 +724,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
     ```
 4. Save the file `CMD + S`
 
-###Exercise 7
+### Exercise 7
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -699,7 +736,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 ## Section-6-2-6: Hostport Configuration.
 Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
 
-###Exercise 1
+### Exercise 1
 #### Hostport configuration repository
 We have created a role to hold all the hostport configuration data.  Host port configuration includes things like `switch port access mode`,  etc that needs to be  provisioned to per switches basis.
 
@@ -719,7 +756,7 @@ Since the config is per switch basis, we need to hold the variables in the `host
     ```
 4. Save the file `Cmd+S`
 
-###Exercise 2
+### Exercise 2
 #### Create handler to save the configuration
 1. Navigate to `ansible --> roles --> hostports --> handlers`
 2. Open up the `main.yml` file
@@ -736,7 +773,7 @@ Since the config is per switch basis, we need to hold the variables in the `host
     ```
 4. Save the file `CMD + S`
 
-###Exercise 3
+### Exercise 3
 #### Create playbook tasks to configure the switch ports.
 This time, we are going to use `nxos_interface`  and `nxos_switchport` module to make these changes.  Read more about it here
 
@@ -769,7 +806,7 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
 5. Save the file `CMD + S`
 
 
-###Exercise 6
+### Exercise 6
 #### Create playbook to push host port configuration to the switch.
 1. Navigate to `ansible` folder
 2. Right click and select `New File`. Name it `deploy-hostports.yml`
@@ -786,7 +823,7 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
     ```
 4. Save the file `CMD + S`
 
-###Exercise 7
+### Exercise 7
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
@@ -794,10 +831,10 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
-###Excercise 8
+### Excercise 8
 #### Add new server port
 configure a new server port on n9k-1 port eth1/8
 
-#Ansible Tips
+##Ansible Tips
 ###How to see which ansible modules are installed?
 ansible-doc --list | egrep ^'nxos'
