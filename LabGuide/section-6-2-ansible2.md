@@ -191,7 +191,7 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 
     Platform:
     {{ platform | to_nice_json }}
-    
+
     vlan Info:
     {{ vlan_list | to_nice_json }}
 
@@ -210,19 +210,6 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 6. Switch to ATOM and go to `files` directory. View the json files for each of the switch.
 
 
-###Exercise 1
-####Using the show version module
-1. Under `ansible` folder , create a new file. Right click and select `New File`
-3. name it `ex-show-version.yml`
-4. copy and past the following :
-gather facts
-command module
-debug module
-
-5. switch to ansible container and run the playbook
-    1. `ansible-playbook -i hosts ex-show-version.yml`
-6. Verify the configuration on using Switch CLI
-
 ###Exercise 2
 ####Using the nxos_config module
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections
@@ -232,32 +219,32 @@ http://docs.ansible.com/ansible/nxos_config_module.html
 2. name it `ex-config-module.yml`
 3. copy and past the following :
 
-```
----
-- name: snmp access-list
-  hosts: n9k-1
-  connection: local
-  gather_facts: no
-  tasks:
-    - name: obtain login credentials
-      include_vars: credentials.yml
+    ```
+    ---
+    - name:  access-list-101
+      hosts: n9k-1
+      connection: local
+      gather_facts: no
+      tasks:
+        - name: obtain login credentials
+          include_vars: credentials.yml
 
-    - nxos_config:
-        lines:
-          - 5 permit ip 10.132.243.9/32 any
-          - 10 permit ip 10.241.16.91/32 any
-          - 20 permit ip 140.84.159.66/32 any
-          - 30 permit ip 140.84.54.128/26 any
-          - 240 deny ip any any
-        parents: ip access-list 50-SNMP-Access
-        before: ip access-list 50-SNMP-Access
-        match: exact
-        provider: "{{ creds }}"
+        - nxos_config:
+            lines:
+              - 5 permit ip 10.132.243.9/32 any
+              - 10 permit ip 10.241.16.91/32 any
+              - 20 permit ip 140.84.159.66/32 any
+              - 30 permit ip 140.84.54.128/26 any
+              - 240 deny ip any any
+            parents: ip access-list 101-internet-Access
+            before: ip access-list 101-internet-Access
+            match: exact
+            provider: "{{ creds }}"
 
-```
+    ```
 5. switch to ansible container and run the playbook
     1. `ansible-playbook -i hosts ex-config-module.yml`
-6. Verify the configuration on using Switch CLI
+6. Verify the configuration on using Switch CLI. `show access-list`
 
 #Roles
 Simply put, roles are a further level of abstraction that can be useful for organizing playbooks. As you add more and more functionality and flexibility to your playbooks, they can become unwieldy and difficult to maintain as a single file. Roles allow you to create very minimal playbooks that then look to a directory structure to determine the actual configuration steps they need to perform.
