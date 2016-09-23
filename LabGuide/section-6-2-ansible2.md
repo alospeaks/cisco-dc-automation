@@ -543,15 +543,6 @@ Ensure following vlans are configured on all the switches.
 
 
 
-Now lets first verify that we do not have these vlans configured on our switch.
-Switch to the Switch CLI terminal
-show vlan
-Run the ansible playbook
-Switch to ansible container terminal and type
-ansible-playbook -i hosts hk-vlan.yml
-Repeat step 3 and compare the result.
-Repeat step 4.  What do you notice? do you see all green?  This the idempotent nature of ansible.  It will not change anything if there is no change.  Compare is will cli, if you repeat the command, it will reconfig the switch eventhough it is already configured.
-
 
 #### vlan configuration repository
 We created a role to hold all the vlan configuration data. Lets modify it to meet the above requirement.
@@ -736,7 +727,7 @@ https://docs.ansible.com/ansible/nxos_switchport_module.html
 4. Verify that ansible has made those configuration.
 
 ###Excercise 8
-#### New NTP server
+#### New NTP server ????
 Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
 
 1. Switch to `ATOM` editor
