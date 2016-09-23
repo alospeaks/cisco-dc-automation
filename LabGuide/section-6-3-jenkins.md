@@ -11,7 +11,7 @@ In the Server world, Jenkins can be used to perform the typical build server wor
 4. Update the hosts files on the jenkins server  since we are not using dns
 5. type
 
-	`docker exec -it jenkins /bin/sh -c "echo 172.16.123.135 leaf1 > /etc/hosts"`
+	`docker exec -it jenkins /bin/sh -c "echo 172.16.123.135 n9k-1 > /etc/hosts"`
 
 6. repeat this for all the switches you have.
 
