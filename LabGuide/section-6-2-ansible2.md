@@ -695,9 +695,6 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 4. Verify that ansible has made those configuration.
 
 
-
-
-----
 ##Section-6-2-6: Hostport Configuration.
 Another common Day 2 operations tasks is to configure hosts/server ports.  We want to have consistent configuration on all the server facing ports.
 
