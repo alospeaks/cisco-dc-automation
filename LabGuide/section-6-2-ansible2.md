@@ -215,13 +215,13 @@ use nxos_facts module .  https://docs.ansible.com/ansible/nxos_facts_module.html
 Cisco NXOS configurations use a simple block indent file syntax for segmenting configuration into sections. nxos_config provides a way to build this sections of configurations. Read more here.
 http://docs.ansible.com/ansible/nxos_config_module.html
 
-1. Under `ansible` folder , create a new file. Right click and select `New File`
+1. Under `ansible` folder , create a new file. Right click on `ansibe` folder and select `New File`
 2. name it `ex-config-module.yml`
 3. copy and past the following :
 
     ```
     ---
-    - name:  access-list-101
+    - name:  101-internet-access list
       hosts: n9k-1
       connection: local
       gather_facts: no
@@ -236,13 +236,14 @@ http://docs.ansible.com/ansible/nxos_config_module.html
               - 20 permit ip 140.84.159.66/32 any
               - 30 permit ip 140.84.54.128/26 any
               - 240 deny ip any any
-            parents: ip access-list 101-internet-Access
-            before: ip access-list 101-internet-Access
+            parents: ip access-list 101-internet-access
+            before: ip access-list 101-internet-access
             match: exact
             provider: "{{ creds }}"
 
     ```
-5. switch to ansible container and run the playbook
+5. Save the file `CMD + S`
+6. Switch to ansible container and run the playbook
     1. `ansible-playbook -i hosts ex-config-module.yml`
 6. Verify the configuration on using Switch CLI. `show access-list`
 
@@ -258,6 +259,8 @@ Applying the base configuration to all switches in the inventory using jinja2 te
 
 ###Exercise 1
 ####Create ansible roles directory structure
+Ansible galaxy provides a very easy way to create the directory structure to host your roles.
+
 1. Switch to 'ansible container'
 2. cd to roles directory
 3. type `ansible-galaxy init login`
@@ -267,7 +270,9 @@ Applying the base configuration to all switches in the inventory using jinja2 te
 7. type `ansible-galaxy init hostports`
 
 ###Exercise 2
-####Configuring roles
+####Configuring login roles
+This role allows us to login into the switches.
+
 1. Switch to `Atom` Editor
 2. go to `login` folder under `roles`.
 3. expand it
@@ -289,7 +294,7 @@ Applying the base configuration to all switches in the inventory using jinja2 te
 
 ###Exercise 3
 #### Base configuration repository
-We created a role to hold all the base configuration data.  Base configuration includes things like ntp, snmp, alias etc that needs to be  provisioned to all switches.
+This role allows us to do base configuration on all the switches. Base configuration includes things like ntp, snmp, alias etc that needs to be  provisioned to all switches.
 
 1. Navigate to `ansible --> roles --> baseconfig --> vars`
 2. Open up the `main.yml` file
@@ -302,9 +307,8 @@ We created a role to hold all the base configuration data.  Base configuration i
 
 
 ###Exercise 4
-#### Create jinja2 template for the base configuration.
 
-nxos_template manages network device configurations over SSH or NXAPI. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.
+To configure base configuration, we are going to use nxos_template module. This module allows implementers to work with the device running-config. It provides a way to push a set of commands onto a network device by evaluating the current running-config and only pushing configuration commands that are not already configured. The config source can be a set of commands or a template.  This module uses jinja2 template.  
 
 **What is Jinja2 Template?**
 
@@ -315,8 +319,7 @@ For example: `{{ hostname }}`
 
 `{% %}` embeds statements of code inside a template, for example, for a loop, it embeds the if-else statements, which are evaluated at runtime but are not printed.
 
-So where does jinja2 gets the values for its variables?  At the runtime of the playbook, Jinja2 has access to all the variable that is reference inside that particular playbook.  So the variables inside the jinja2 template is substituted with the values from the facts and variable obtained from the playbook at the run time.
-
+So where does jinja2 gets the values for its variables?  At the runtime of the playbook, Jinja2 has access to all the variable that are referenced inside that particular playbook.  So the values for the variables inside the jinja2 template is substituted with the values from the facts and variable obtained from the playbook at the run time.
 
 **Steps to create the templates:**
 
@@ -328,10 +331,10 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 6. run the playbook
 
 ---
-
+#### Create jinja2 template for the base configuration.
 1. Navigate to `ansible --> roles --> baseconfig --> templates`
 2. Right click on the `templates` folder and select `New File`. Name it `basetemplate.j2`
-3. copy and paste the content from this link.  This is the jinja 2 template.
+3. Copy and paste the content from this link.  This is the jinja 2 template.
 
     https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
 
@@ -354,7 +357,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 4. Save the file `CMD + S`
 
 ###Exercise 6
-#### Create tasks to create a template for base configuration.
+#### Create playbook tasks to create base configuration.
 1. Navigate to `ansible --> roles --> baseconfig --> tasks`
 2. Open up the `main.yml` file
 3. Copy and paste the following:
@@ -372,7 +375,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
       notify:
         - Save Config
     ```
-4. Note we are specifying the jinja2 template to be used to build this baseconfig file.  Also we are going to back the configuration prior to making any changes.  Finally we will save the configurtion.
+4. Note we are specifying the jinja2 template to be used to build this baseconfig file.  Also we are going to backup current running configuration prior to making any changes.  Finally we will save the configuration.
 5. Save the file `CMD + S`
 
 
@@ -402,7 +405,7 @@ So where does jinja2 gets the values for its variables?  At the runtime of the p
 4. Verify that ansible has made those configuration.
 
 ###Excercise 9
-#### New NTP server
+#### Adding New NTP server
 Lets say Server guys added a new `NTP server` which has ip of `192.200.0.2`. You want to update all your switches in your DC to reflect this change.  Today, you might be logging into all the switches and manually typing this in.  With ansible, we to go one file (the variables file) and make this modification.  Then we run the playbook again.  Within secs , it will update your entire DC switches with the new ntp server information.  Note, ansible is idempotent, therefore it will not change anything else except that one small change.  Therefore this is not be disruptive change.
 
 1. Switch to `ATOM` editor
@@ -445,8 +448,7 @@ Ensure following vlans are configured on all the switches.
 
 ### Exercise 10
 #### vlan configuration repository
-We created a role to hold all the vlan configuration data. Lets modify it to meet the above requirement.
-
+This role allows us to Configure and maintain vlans on all the switches.
 Lets update the vars directory with all our variables.
 
 1. Navigate to `ansible --> roles --> vlans --> vars`
@@ -458,7 +460,7 @@ Lets update the vars directory with all our variables.
         - { vlan_id: 10, name: web, state: present }
         - { vlan_id: 20, name: app, state: present }
         - { vlan_id: 30, name: db, state: present }
-        - { vlan_id: 40, name: misc, state: absent }
+        - { vlan_id: 40, name: misc, state: present }
         - { vlan_id: 99, name: native_vlan, state: present }
     ```
 4. Save the file `Cmd+S`
@@ -525,6 +527,9 @@ https://docs.ansible.com/ansible/nxos_vlan_module.html
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
+###Exercise 8
+#### Removing Vlans
+Modify the playbook so that vlan 40 is removed from all the switches.
 
 ----
 
@@ -534,9 +539,7 @@ In this section, we will be configuring uplink ports. This will include changing
 
 ###Exercise 1
 #### Uplinks configuration repository
-We have created a role to hold all the uplink configuration data.  
-
-Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need create folder for each host in this folder.  Ansible will search this folder to look for the variables.
+This role allows us to create configuration for uplinks on the switches. Since the config is per switch basis, we need to hold the variables in the `host_vars`. We need to create a folder for each host in `host_vars` folder.  Ansible will search this folder to look for the variables.
 
 1. Navigate to `ansible --> hosts_vars`
 2. Right click and select `New Folder`. Name it `n9k-1.yml`
@@ -592,6 +595,16 @@ https://docs.ansible.com/ansible/nxos_template_module.html
     ```
 5. Save the file `CMD + S`
 
+###Exercise 4
+#### Create jinja2 template for the uplink configuration.
+1. Navigate to `ansible --> roles --> uplinks --> templates`
+2. Right click on the `templates` folder and select `New File`. Name it `interface.j2`
+3. Copy and paste the content from this link.  This is the jinja 2 template.
+
+    https://github.com/Hemakuma/cisco-dc-automation/blob/master/configs/basetemplate.j2
+
+4. Save the file `CMD + S`
+
 
 ###Exercise 6
 #### Create playbook to push host port configuration to the switch.
@@ -614,7 +627,7 @@ https://docs.ansible.com/ansible/nxos_template_module.html
 #### Lets run the playbook
 1. Switch to the `ansible container` terminal window.
 2. Run the playbook
-    1. `ansible-playbook -i hosts deploy-hostports.yml`
+    1. `ansible-playbook -i hosts deploy-uplinks.yml`
 3. Login into your switch.
 4. Verify that ansible has made those configuration.
 
