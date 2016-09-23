@@ -121,6 +121,7 @@ http://docs.ansible.com/ansible/faq.html
 ##Exercise 6
 ####Login in to your Ansible Container and Run the Playbook
 1. Go to your terminal window and type the following:
+
     ```
     cd training
     source source.docker
