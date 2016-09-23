@@ -1,8 +1,18 @@
-- [NXAPI (object-based REST Client)](#)
-	- [Exercise 1](#)
-		- [Browsing the object store](#)
 
-##NXAPI (object-based REST Client)
+NXAPI (object-based REST Client)
+---
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+   - [NXAPI (object-based REST Client)](#nxapi-object-based-rest-client)   
+   - [Introduction](#introduction)   
+      - [Exercise 1](#exercise-1)   
+         - [Browsing the object store](#browsing-the-object-store)   
+
+<!-- /MDTOC -->
+
+Introduction
+---
 Camden release incorporated a RESTful API, with an underlaying object based data structure. It is organized in the Parent/Child hierarchy  MIT.
 The DME (data management engine) holds the repository for the state of the managed system in the Management Information Tree (MIT). The MIT manages and maintains the whole hierarchical tree of objects on the switch, with each object representing the configuration, operational status, accompanying statistics and associated faults for a switch function. The MIT is the single source of truth for the configuration and operational status of NX-OS features and elements. Object instances, also referred to as Managed Object (MOs), are stored in the MIT in a hierarchical tree.  The MO database is organized in such a way that there is a parent-child hierarchy, meaning there is a root node followed by a hierarchical group of children.
 Every object in the object store will have a DN (distinguished name).
@@ -22,11 +32,11 @@ Object Store
 
 ![nxrest-1](/images/nxrest-3.png)
 
-###Exercise 1
-####Browsing the object store
+### Exercise 1
+#### Browsing the object store
 *Make sure your switch has following feature enabled. `feature nxapi`.*  
 
-Objects are stored in data store inside the switch. Data management engine (DME) is used to manipulate object inside the Data store. There is a northbound API that exposures switch features externally and also there is a southbound API that interacts with the physical hardware.  Everything inside the switch is modeled inside this object store in a MIT. You can look at the objects stored in the data store and get their attributes using a inbuilt app on the switch called visore.
+Objects are stored in object store inside the switch. Data management engine (DME) is used to manipulate object inside this object store. There is a northbound API that exposures switch features externally and also there is a southbound API that interacts with the physical hardware.  Everything inside the switch is modeled inside this object store in a MIT. You can look at the objects stored in the data store and get their attributes using a inbuilt app on the switch called visore.
 
 1. Open up Chrome browser and  in the address field, point it to the url of your NXOSv switch.
     1. `http://<switchip>/visore.html`
@@ -52,6 +62,7 @@ Objects are stored in data store inside the switch. Data management engine (DME)
 ----
 **Common classes**  
 
+```
 InterfaceEntity <-- to manupliate all the physical interfaces  
 l1PhysIf  
 BDEntity <-- for the vlans  
@@ -62,3 +73,5 @@ CdpEntity
 dhcpEntity  
 dnsEntity  
 L3Inst  
+
+```
